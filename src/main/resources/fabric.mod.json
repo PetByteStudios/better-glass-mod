@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "betterglass",
+	"version": "${version}",
+	"name": "Better Glass",
+	"description": "Better Glass adds various different new glass types and glass blocks!",
+	"authors": [
+		"joelfrom08 — PetByte"
+	],
+	"contact": {
+		"homepage": "https://petbyte.dev/",
+		"sources": "https://github.com/PetByteStudios/better-glass-mod"
+	},
+	"license": "MIT-License",
+	"icon": "assets/betterglass/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.petbyte.betterglass.BetterGlass"
+		],
+		"fabric-datagen": [
+			"dev.petbyte.betterglass.BetterGlassDataGenerator"
+		]
+	},
+	"mixins": [
+		"betterglass.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
