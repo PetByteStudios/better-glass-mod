@@ -3,7 +3,8 @@ plugins {
 	id 'maven-publish'
 }
 
-version = project.mod_version
+def commitHash = 'git rev-parse --short HEAD'.execute().text.trim()
+version = "${project.mod_version}-git${commitHash}"
 group = project.maven_group
 
 repositories {
