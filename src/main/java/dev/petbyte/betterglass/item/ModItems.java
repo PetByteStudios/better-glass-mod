@@ -11,7 +11,7 @@ import net.minecraft.world.item.Item;
 import java.util.function.Function;
 
 public class ModItems {
-    public static final Item TEST_ITEM = registerItem("test_item", Item::new);
+    // public static final Item TEST_ITEM = registerItem("test_item", Item::new);
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name),

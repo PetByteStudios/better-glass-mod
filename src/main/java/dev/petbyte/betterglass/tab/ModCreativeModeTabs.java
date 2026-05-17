@@ -2,7 +2,6 @@ package dev.petbyte.betterglass.tab;
 
 import dev.petbyte.betterglass.BetterGlass;
 import dev.petbyte.betterglass.block.ModBlocks;
-import dev.petbyte.betterglass.item.ModItems;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -17,7 +16,6 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModBlocks.CLEAR_GLASS))
                     .title(Component.translatable("creativemodetab.betterglass.betterglass"))
                     .displayItems((parameters, output) -> {
-                        output.accept(ModItems.TEST_ITEM);
                         output.accept(ModBlocks.CLEAR_GLASS);
                     }).build());
 
