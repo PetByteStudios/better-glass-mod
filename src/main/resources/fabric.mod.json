@@ -19,6 +19,9 @@
 		"main": [
 			"dev.petbyte.betterglass.BetterGlass"
 		],
+		"client": [
+			"dev.petbyte.betterglass.BetterGlassClient"
+		],
 		"fabric-datagen": [
 			"dev.petbyte.betterglass.BetterGlassDataGenerator"
 		]
