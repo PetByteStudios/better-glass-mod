@@ -3,8 +3,10 @@ plugins {
 	id 'maven-publish'
 }
 
+// For full mod releases, comment following two lines and uncomment line below. For pre-releases, do the inverse.
 def commitHash = 'git rev-parse --short HEAD'.execute().text.trim()
 version = "${project.mod_version}-git${commitHash}"
+// version = project.mod_version
 group = project.maven_group
 
 repositories {
