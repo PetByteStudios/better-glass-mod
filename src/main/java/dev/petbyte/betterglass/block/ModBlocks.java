@@ -9,17 +9,26 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.TransparentBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 
 import java.util.function.Function;
 
 public class ModBlocks {
-    public static final Block TEST_BLOCK = registerBlock("test_block",
-            properties -> new Block(properties.
-                    strength(1.0f)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.GLASS)));
+    public static final Block CLEAR_GLASS = registerBlock("clear_glass",
+            properties -> new TransparentBlock(properties
+                    .strength(0.3F)
+                    .sound(SoundType.GLASS)
+                    .instrument(NoteBlockInstrument.HAT)
+                    .noOcclusion()
+                    .isValidSpawn(Blocks::never)
+                    .isRedstoneConductor(Blocks::never)
+                    .isSuffocating(Blocks::never)
+                    .isViewBlocking(Blocks::never)
+            ));
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
