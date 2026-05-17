@@ -12,7 +12,14 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
 public class ModCreativeModeTabs {
-    public static final CreativeModeTab BETTER_GLASS_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, "better_glass"), FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.TEST_BLOCK)).title(Component.translatable("creativemodetab.betterglass.betterglass")).displayItems((parameters, output) -> {output.accept(ModItems.TEST_ITEM); output.accept(ModBlocks.TEST_BLOCK);}).build());
+    public static final CreativeModeTab BETTER_GLASS_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+            Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, "better_glass"), FabricCreativeModeTab.builder()
+                    .icon(() -> new ItemStack(ModBlocks.TEST_BLOCK))
+                    .title(Component.translatable("creativemodetab.betterglass.betterglass"))
+                    .displayItems((parameters, output) -> {
+                        output.accept(ModItems.TEST_ITEM);
+                        output.accept(ModBlocks.TEST_BLOCK);
+                    }).build());
 
     public static void registerModCreativeModeTabs() {
         BetterGlass.LOGGER.info("Registering Creative Mode Tabs for %s".formatted(BetterGlass.MOD_ID));

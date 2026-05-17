@@ -15,7 +15,11 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import java.util.function.Function;
 
 public class ModBlocks {
-    public static final Block TEST_BLOCK = registerBlock("test_block", properties -> new Block(properties.strength(1.0f).requiresCorrectToolForDrops().sound(SoundType.GLASS)));
+    public static final Block TEST_BLOCK = registerBlock("test_block",
+            properties -> new Block(properties.
+                    strength(1.0f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.GLASS)));
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
@@ -24,7 +28,10 @@ public class ModBlocks {
     }
 
     private static void registerBlockItem(String name, Block block) {
-        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name), new BlockItem(block, new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name)))));
+        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name),
+                new BlockItem(block, new Item.Properties()
+                        .useBlockDescriptionPrefix()
+                        .setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name)))));
     }
 
     public static void registerModBlocks() {
