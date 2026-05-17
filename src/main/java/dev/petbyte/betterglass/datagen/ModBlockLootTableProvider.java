@@ -1,3 +1,4 @@
+/*
 package dev.petbyte.betterglass.datagen;
 
 import dev.petbyte.betterglass.block.ModBlocks;
@@ -14,6 +15,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
 
     @Override
     public void generate() {
-        dropSelf(ModBlocks.TEST_BLOCK);
+        dropSelf(ModBlocks.CLEAR_GLASS);
     }
 }
+*/
