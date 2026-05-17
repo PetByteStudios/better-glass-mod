@@ -1,6 +1,7 @@
 package dev.petbyte.betterglass;
 
 import dev.petbyte.betterglass.item.ModItems;
+import dev.petbyte.betterglass.tab.ModCreativeModeTabs;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -12,6 +13,7 @@ public class BetterGlass implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModCreativeModeTabs.registerModCreativeModeTabs();
 		ModItems.registerModItems();
 	}
 }
