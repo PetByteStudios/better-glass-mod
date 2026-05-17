@@ -1,13 +1,11 @@
 package dev.petbyte.betterglass.item;
 
 import dev.petbyte.betterglass.BetterGlass;
-import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 
 import java.util.function.Function;
@@ -22,8 +20,14 @@ public class ModItems {
     public static void registerModItems() {
         BetterGlass.LOGGER.info("Registering Mod Items for %s".formatted(BetterGlass.MOD_ID));
 
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
+        /*
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> {
             output.accept(TEST_ITEM);
         });
+
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COLORED_BLOCKS).register(output -> {
+            output.accept(TEST_ITEM);
+        });
+        */
     }
 }
