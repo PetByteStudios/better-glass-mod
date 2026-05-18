@@ -16,6 +16,22 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         blockModelGenerators.createTrivialCube(ModBlocks.CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.WHITE_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.LIGHT_GRAY_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.GRAY_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.BLACK_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.BROWN_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.RED_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.ORANGE_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.YELLOW_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.LIME_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.GREEN_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.CYAN_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.LIGHT_BLUE_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.BLUE_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.PURPLE_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.MAGENTA_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.PINK_COLORED_CLEAR_GLASS);
     }
 
 

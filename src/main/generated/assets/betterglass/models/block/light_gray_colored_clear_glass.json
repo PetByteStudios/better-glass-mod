@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "betterglass:block/light_gray_colored_clear_glass"
+  }
+}

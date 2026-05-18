@@ -1,4 +1,20 @@
 {
   "block.betterglass.clear_glass": "Clear Glass",
+  "block.betterglass.white_colored_clear_glass": "White Colored Clear Glass",
+  "block.betterglass.light_gray_colored_clear_glass": "Light Gray Colored Clear Glass",
+  "block.betterglass.gray_colored_clear_glass": "Gray Colored Clear Glass",
+  "block.betterglass.black_colored_clear_glass": "Black Colored Clear Glass",
+  "block.betterglass.brown_colored_clear_glass": "Brown Colored Clear Glass",
+  "block.betterglass.red_colored_clear_glass": "Red Colored Clear Glass",
+  "block.betterglass.orange_colored_clear_glass": "Orange Colored Clear Glass",
+  "block.betterglass.yellow_colored_clear_glass": "Yellow Colored Clear Glass",
+  "block.betterglass.lime_colored_clear_glass": "Lime Colored Clear Glass",
+  "block.betterglass.green_colored_clear_glass": "Green Colored Clear Glass",
+  "block.betterglass.cyan_colored_clear_glass": "Cyan Colored Clear Glass",
+  "block.betterglass.light_blue_colored_clear_glass": "Light Blue Colored Clear Glass",
+  "block.betterglass.blue_colored_clear_glass": "Blue Colored Clear Glass",
+  "block.betterglass.purple_colored_clear_glass": "Purple Colored Clear Glass",
+  "block.betterglass.magenta_colored_clear_glass": "Magenta Colored Clear Glass",
+  "block.betterglass.pink_colored_clear_glass": "Pink Colored Clear Glass",
   "creativemodetab.betterglass.betterglass": "Better Glass"
 }
