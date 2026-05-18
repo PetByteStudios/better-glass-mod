@@ -1,6 +1,7 @@
 package dev.petbyte.betterglass.datagen;
 
 import dev.petbyte.betterglass.block.ModBlocks;
+import dev.petbyte.betterglass.tag.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
@@ -42,5 +43,14 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
         valueLookupBuilder(ConventionalBlockTags.GLASS_BLOCKS_COLORLESS)
                 .add(ModBlocks.CLEAR_GLASS)
                 .add(ModBlocks.SCRATCHED_GLASS);
+
+        valueLookupBuilder(ModTags.CLEAR_GLASS).add(ModBlocks.CLEAR_GLASS).addAll(ModBlocks.COLORED_CLEAR_GLASS.values()).addAll(ModBlocks.STAINED_CLEAR_GLASS.values());
+        valueLookupBuilder(ModTags.SCRATCHED_GLASS).add(ModBlocks.SCRATCHED_GLASS).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values()).addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
+        valueLookupBuilder(ModTags.COLORED_GLASS).addAll(ModBlocks.COLORED_CLEAR_GLASS.values()).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values());
+        valueLookupBuilder(ModTags.STAINED_GLASS).addAll(ModBlocks.STAINED_CLEAR_GLASS.values()).addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
+        valueLookupBuilder(ModTags.COLORED_CLEAR_GLASS).addAll(ModBlocks.COLORED_CLEAR_GLASS.values());
+        valueLookupBuilder(ModTags.COLORED_SCRATCHED_GLASS).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values());
+        valueLookupBuilder(ModTags.STAINED_CLEAR_GLASS).addAll(ModBlocks.STAINED_CLEAR_GLASS.values());
+        valueLookupBuilder(ModTags.STAINED_SCRATCHED_GLASS).addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
     }
 }
