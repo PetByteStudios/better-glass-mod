@@ -50,6 +50,22 @@
   "block.betterglass.purple_colored_scratched_glass": "Purple Colored Scratched Glass",
   "block.betterglass.magenta_colored_scratched_glass": "Magenta Colored Scratched Glass",
   "block.betterglass.pink_colored_scratched_glass": "Pink Colored Scratched Glass",
+  "block.betterglass.white_stained_scratched_glass": "White Stained Scratched Glass",
+  "block.betterglass.light_gray_stained_scratched_glass": "Light Gray Stained Scratched Glass",
+  "block.betterglass.gray_stained_scratched_glass": "Gray Stained Scratched Glass",
+  "block.betterglass.black_stained_scratched_glass": "Black Stained Scratched Glass",
+  "block.betterglass.brown_stained_scratched_glass": "Brown Stained Scratched Glass",
+  "block.betterglass.red_stained_scratched_glass": "Red Stained Scratched Glass",
+  "block.betterglass.orange_stained_scratched_glass": "Orange Stained Scratched Glass",
+  "block.betterglass.yellow_stained_scratched_glass": "Yellow Stained Scratched Glass",
+  "block.betterglass.lime_stained_scratched_glass": "Lime Stained Scratched Glass",
+  "block.betterglass.green_stained_scratched_glass": "Green Stained Scratched Glass",
+  "block.betterglass.cyan_stained_scratched_glass": "Cyan Stained Scratched Glass",
+  "block.betterglass.light_blue_stained_scratched_glass": "Light Blue Stained Scratched Glass",
+  "block.betterglass.blue_stained_scratched_glass": "Blue Stained Scratched Glass",
+  "block.betterglass.purple_stained_scratched_glass": "Purple Stained Scratched Glass",
+  "block.betterglass.magenta_stained_scratched_glass": "Magenta Stained Scratched Glass",
+  "block.betterglass.pink_stained_scratched_glass": "Pink Stained Scratched Glass",
 
   "creativemodetab.betterglass.betterglass": "Better Glass"
 }

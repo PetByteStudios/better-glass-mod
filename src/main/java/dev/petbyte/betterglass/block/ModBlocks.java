@@ -87,6 +87,22 @@ public class ModBlocks {
     public static final Block PURPLE_COLORED_SCRATCHED_GLASS = registerGlassBlock("purple_colored_scratched_glass");
     public static final Block MAGENTA_COLORED_SCRATCHED_GLASS = registerGlassBlock("magenta_colored_scratched_glass");
     public static final Block PINK_COLORED_SCRATCHED_GLASS = registerGlassBlock("pink_colored_scratched_glass");
+    public static final Block WHITE_STAINED_SCRATCHED_GLASS = registerGlassBlock("white_stained_scratched_glass");
+    public static final Block LIGHT_GRAY_STAINED_SCRATCHED_GLASS = registerGlassBlock("light_gray_stained_scratched_glass");
+    public static final Block GRAY_STAINED_SCRATCHED_GLASS = registerGlassBlock("gray_stained_scratched_glass");
+    public static final Block BLACK_STAINED_SCRATCHED_GLASS = registerGlassBlock("black_stained_scratched_glass");
+    public static final Block BROWN_STAINED_SCRATCHED_GLASS = registerGlassBlock("brown_stained_scratched_glass");
+    public static final Block RED_STAINED_SCRATCHED_GLASS = registerGlassBlock("red_stained_scratched_glass");
+    public static final Block ORANGE_STAINED_SCRATCHED_GLASS = registerGlassBlock("orange_stained_scratched_glass");
+    public static final Block YELLOW_STAINED_SCRATCHED_GLASS = registerGlassBlock("yellow_stained_scratched_glass");
+    public static final Block LIME_STAINED_SCRATCHED_GLASS = registerGlassBlock("lime_stained_scratched_glass");
+    public static final Block GREEN_STAINED_SCRATCHED_GLASS = registerGlassBlock("green_stained_scratched_glass");
+    public static final Block CYAN_STAINED_SCRATCHED_GLASS = registerGlassBlock("cyan_stained_scratched_glass");
+    public static final Block LIGHT_BLUE_STAINED_SCRATCHED_GLASS = registerGlassBlock("light_blue_stained_scratched_glass");
+    public static final Block BLUE_STAINED_SCRATCHED_GLASS = registerGlassBlock("blue_stained_scratched_glass");
+    public static final Block PURPLE_STAINED_SCRATCHED_GLASS = registerGlassBlock("purple_stained_scratched_glass");
+    public static final Block MAGENTA_STAINED_SCRATCHED_GLASS = registerGlassBlock("magenta_stained_scratched_glass");
+    public static final Block PINK_STAINED_SCRATCHED_GLASS = registerGlassBlock("pink_stained_scratched_glass");
 
     public static List<Block> BETTER_GLASS_BLOCKS = List.of(
             CLEAR_GLASS, WHITE_COLORED_CLEAR_GLASS, LIGHT_GRAY_COLORED_CLEAR_GLASS, GRAY_COLORED_CLEAR_GLASS, BLACK_COLORED_CLEAR_GLASS,
@@ -100,7 +116,10 @@ public class ModBlocks {
             SCRATCHED_GLASS, WHITE_COLORED_SCRATCHED_GLASS, LIGHT_GRAY_COLORED_SCRATCHED_GLASS, GRAY_COLORED_SCRATCHED_GLASS, BLACK_COLORED_SCRATCHED_GLASS,
             BROWN_COLORED_SCRATCHED_GLASS, RED_COLORED_SCRATCHED_GLASS, ORANGE_COLORED_SCRATCHED_GLASS, YELLOW_COLORED_SCRATCHED_GLASS, LIME_COLORED_SCRATCHED_GLASS,
             GREEN_COLORED_SCRATCHED_GLASS, CYAN_COLORED_SCRATCHED_GLASS, LIGHT_BLUE_COLORED_SCRATCHED_GLASS, BLUE_COLORED_SCRATCHED_GLASS, PURPLE_COLORED_SCRATCHED_GLASS,
-            MAGENTA_COLORED_SCRATCHED_GLASS, PINK_COLORED_SCRATCHED_GLASS
+            MAGENTA_COLORED_SCRATCHED_GLASS, PINK_COLORED_SCRATCHED_GLASS, WHITE_STAINED_SCRATCHED_GLASS, LIGHT_GRAY_STAINED_SCRATCHED_GLASS, GRAY_STAINED_SCRATCHED_GLASS, BLACK_STAINED_SCRATCHED_GLASS,
+            BROWN_STAINED_SCRATCHED_GLASS, RED_STAINED_SCRATCHED_GLASS, ORANGE_STAINED_SCRATCHED_GLASS, YELLOW_STAINED_SCRATCHED_GLASS, LIME_STAINED_SCRATCHED_GLASS,
+            GREEN_STAINED_SCRATCHED_GLASS, CYAN_STAINED_SCRATCHED_GLASS, LIGHT_BLUE_STAINED_SCRATCHED_GLASS, BLUE_STAINED_SCRATCHED_GLASS, PURPLE_STAINED_SCRATCHED_GLASS,
+            MAGENTA_STAINED_SCRATCHED_GLASS, PINK_STAINED_SCRATCHED_GLASS
             );
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {

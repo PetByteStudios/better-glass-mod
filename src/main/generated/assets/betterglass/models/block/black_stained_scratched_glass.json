@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "betterglass:block/black_stained_scratched_glass"
+  }
+}
