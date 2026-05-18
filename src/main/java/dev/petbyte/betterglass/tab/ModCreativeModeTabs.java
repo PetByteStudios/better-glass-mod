@@ -33,6 +33,22 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PURPLE_COLORED_CLEAR_GLASS);
                         output.accept(ModBlocks.MAGENTA_COLORED_CLEAR_GLASS);
                         output.accept(ModBlocks.PINK_COLORED_CLEAR_GLASS);
+                        output.accept(ModBlocks.WHITE_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.LIGHT_GRAY_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.GRAY_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.BLACK_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.BROWN_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.RED_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.ORANGE_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.YELLOW_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.LIME_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.GREEN_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.CYAN_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.LIGHT_BLUE_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.BLUE_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.PURPLE_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.MAGENTA_STAINED_CLEAR_GLASS);
+                        output.accept(ModBlocks.PINK_STAINED_CLEAR_GLASS);
                     }).build());
 
     public static void registerModCreativeModeTabs() {

@@ -49,6 +49,22 @@ public class ModBlocks {
     public static final Block PURPLE_COLORED_CLEAR_GLASS = registerGlassBlock("purple_colored_clear_glass");
     public static final Block MAGENTA_COLORED_CLEAR_GLASS = registerGlassBlock("magenta_colored_clear_glass");
     public static final Block PINK_COLORED_CLEAR_GLASS = registerGlassBlock("pink_colored_clear_glass");
+    public static final Block WHITE_STAINED_CLEAR_GLASS = registerGlassBlock("white_stained_clear_glass");
+    public static final Block LIGHT_GRAY_STAINED_CLEAR_GLASS = registerGlassBlock("light_gray_stained_clear_glass");
+    public static final Block GRAY_STAINED_CLEAR_GLASS = registerGlassBlock("gray_stained_clear_glass");
+    public static final Block BLACK_STAINED_CLEAR_GLASS = registerGlassBlock("black_stained_clear_glass");
+    public static final Block BROWN_STAINED_CLEAR_GLASS = registerGlassBlock("brown_stained_clear_glass");
+    public static final Block RED_STAINED_CLEAR_GLASS = registerGlassBlock("red_stained_clear_glass");
+    public static final Block ORANGE_STAINED_CLEAR_GLASS = registerGlassBlock("orange_stained_clear_glass");
+    public static final Block YELLOW_STAINED_CLEAR_GLASS = registerGlassBlock("yellow_stained_clear_glass");
+    public static final Block LIME_STAINED_CLEAR_GLASS = registerGlassBlock("lime_stained_clear_glass");
+    public static final Block GREEN_STAINED_CLEAR_GLASS = registerGlassBlock("green_stained_clear_glass");
+    public static final Block CYAN_STAINED_CLEAR_GLASS = registerGlassBlock("cyan_stained_clear_glass");
+    public static final Block LIGHT_BLUE_STAINED_CLEAR_GLASS = registerGlassBlock("light_blue_stained_clear_glass");
+    public static final Block BLUE_STAINED_CLEAR_GLASS = registerGlassBlock("blue_stained_clear_glass");
+    public static final Block PURPLE_STAINED_CLEAR_GLASS = registerGlassBlock("purple_stained_clear_glass");
+    public static final Block MAGENTA_STAINED_CLEAR_GLASS = registerGlassBlock("magenta_stained_clear_glass");
+    public static final Block PINK_STAINED_CLEAR_GLASS = registerGlassBlock("pink_stained_clear_glass");
 
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
@@ -91,6 +107,22 @@ public class ModBlocks {
             output.accept(PURPLE_COLORED_CLEAR_GLASS);
             output.accept(MAGENTA_COLORED_CLEAR_GLASS);
             output.accept(PINK_COLORED_CLEAR_GLASS);
+            output.accept(WHITE_STAINED_CLEAR_GLASS);
+            output.accept(LIGHT_GRAY_STAINED_CLEAR_GLASS);
+            output.accept(GRAY_STAINED_CLEAR_GLASS);
+            output.accept(BLACK_STAINED_CLEAR_GLASS);
+            output.accept(BROWN_STAINED_CLEAR_GLASS);
+            output.accept(RED_STAINED_CLEAR_GLASS);
+            output.accept(ORANGE_STAINED_CLEAR_GLASS);
+            output.accept(YELLOW_STAINED_CLEAR_GLASS);
+            output.accept(LIME_STAINED_CLEAR_GLASS);
+            output.accept(GREEN_STAINED_CLEAR_GLASS);
+            output.accept(CYAN_STAINED_CLEAR_GLASS);
+            output.accept(LIGHT_BLUE_STAINED_CLEAR_GLASS);
+            output.accept(BLUE_STAINED_CLEAR_GLASS);
+            output.accept(PURPLE_STAINED_CLEAR_GLASS);
+            output.accept(MAGENTA_STAINED_CLEAR_GLASS);
+            output.accept(PINK_STAINED_CLEAR_GLASS);
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COLORED_BLOCKS).register(output -> {
@@ -111,6 +143,22 @@ public class ModBlocks {
             output.accept(PURPLE_COLORED_CLEAR_GLASS);
             output.accept(MAGENTA_COLORED_CLEAR_GLASS);
             output.accept(PINK_COLORED_CLEAR_GLASS);
+            output.accept(WHITE_STAINED_CLEAR_GLASS);
+            output.accept(LIGHT_GRAY_STAINED_CLEAR_GLASS);
+            output.accept(GRAY_STAINED_CLEAR_GLASS);
+            output.accept(BLACK_STAINED_CLEAR_GLASS);
+            output.accept(BROWN_STAINED_CLEAR_GLASS);
+            output.accept(RED_STAINED_CLEAR_GLASS);
+            output.accept(ORANGE_STAINED_CLEAR_GLASS);
+            output.accept(YELLOW_STAINED_CLEAR_GLASS);
+            output.accept(LIME_STAINED_CLEAR_GLASS);
+            output.accept(GREEN_STAINED_CLEAR_GLASS);
+            output.accept(CYAN_STAINED_CLEAR_GLASS);
+            output.accept(LIGHT_BLUE_STAINED_CLEAR_GLASS);
+            output.accept(BLUE_STAINED_CLEAR_GLASS);
+            output.accept(PURPLE_STAINED_CLEAR_GLASS);
+            output.accept(MAGENTA_STAINED_CLEAR_GLASS);
+            output.accept(PINK_STAINED_CLEAR_GLASS);
         });
     }
 }

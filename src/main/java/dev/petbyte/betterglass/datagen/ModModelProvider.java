@@ -32,6 +32,22 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(ModBlocks.PURPLE_COLORED_CLEAR_GLASS);
         blockModelGenerators.createTrivialCube(ModBlocks.MAGENTA_COLORED_CLEAR_GLASS);
         blockModelGenerators.createTrivialCube(ModBlocks.PINK_COLORED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.WHITE_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.LIGHT_GRAY_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.GRAY_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.BLACK_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.BROWN_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.RED_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.ORANGE_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.YELLOW_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.LIME_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.GREEN_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.CYAN_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.LIGHT_BLUE_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.BLUE_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.PURPLE_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.MAGENTA_STAINED_CLEAR_GLASS);
+        blockModelGenerators.createTrivialCube(ModBlocks.PINK_STAINED_CLEAR_GLASS);
     }
 
 
