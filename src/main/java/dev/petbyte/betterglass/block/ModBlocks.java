@@ -19,7 +19,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 
 import java.util.ArrayList;
-import java.util.EnumMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -37,6 +37,13 @@ public class ModBlocks {
                 .isViewBlocking(Blocks::never);
     }
 
+    public static final List<DyeColor> DYE_ORDER = List.of(
+            DyeColor.WHITE, DyeColor.LIGHT_GRAY, DyeColor.GRAY, DyeColor.BLACK,
+            DyeColor.BROWN, DyeColor.RED, DyeColor.ORANGE, DyeColor.YELLOW,
+            DyeColor.LIME, DyeColor.GREEN, DyeColor.CYAN, DyeColor.LIGHT_BLUE,
+            DyeColor.BLUE, DyeColor.PURPLE, DyeColor.MAGENTA, DyeColor.PINK
+    );
+
     public static final Block CLEAR_GLASS = registerGlassBlock("clear_glass");
     public static final Block SCRATCHED_GLASS = registerGlassBlock("scratched_glass");
 
@@ -44,13 +51,13 @@ public class ModBlocks {
             CLEAR_GLASS, SCRATCHED_GLASS
     ));
 
-    public static final Map<DyeColor, Block> COLORED_CLEAR_GLASS = new EnumMap<>(DyeColor.class);
-    public static final Map<DyeColor, Block> STAINED_CLEAR_GLASS = new EnumMap<>(DyeColor.class);
-    public static final Map<DyeColor, Block> COLORED_SCRATCHED_GLASS = new EnumMap<>(DyeColor.class);
-    public static final Map<DyeColor, Block> STAINED_SCRATCHED_GLASS = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, Block> COLORED_CLEAR_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> STAINED_CLEAR_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> COLORED_SCRATCHED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> STAINED_SCRATCHED_GLASS = new LinkedHashMap<>();
 
     static {
-        for (DyeColor color : DyeColor.values()) {
+        for (DyeColor color : DYE_ORDER) {
             COLORED_CLEAR_GLASS.put(color, registerGlassBlock(color.getName() + "_colored_clear_glass"));
             STAINED_CLEAR_GLASS.put(color, registerGlassBlock(color.getName() + "_stained_clear_glass"));
             COLORED_SCRATCHED_GLASS.put(color, registerGlassBlock(color.getName() + "_colored_scratched_glass"));
