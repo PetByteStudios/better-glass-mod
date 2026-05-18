@@ -70,6 +70,8 @@ public class ModBlocks {
     public static final Block MAGENTA_STAINED_CLEAR_GLASS = registerGlassBlock("magenta_stained_clear_glass");
     public static final Block PINK_STAINED_CLEAR_GLASS = registerGlassBlock("pink_stained_clear_glass");
 
+    public static final Block SCRATCHED_GLASS = registerGlassBlock("scratched_glass");
+
     public static List<Block> BETTER_GLASS_BLOCKS = List.of(
             CLEAR_GLASS, WHITE_COLORED_CLEAR_GLASS, LIGHT_GRAY_COLORED_CLEAR_GLASS, GRAY_COLORED_CLEAR_GLASS, BLACK_COLORED_CLEAR_GLASS,
             BROWN_COLORED_CLEAR_GLASS, RED_COLORED_CLEAR_GLASS, ORANGE_COLORED_CLEAR_GLASS, YELLOW_COLORED_CLEAR_GLASS, LIME_COLORED_CLEAR_GLASS,
@@ -77,9 +79,10 @@ public class ModBlocks {
             MAGENTA_COLORED_CLEAR_GLASS, PINK_COLORED_CLEAR_GLASS, WHITE_STAINED_CLEAR_GLASS, LIGHT_GRAY_STAINED_CLEAR_GLASS, GRAY_STAINED_CLEAR_GLASS, BLACK_STAINED_CLEAR_GLASS,
             BROWN_STAINED_CLEAR_GLASS, RED_STAINED_CLEAR_GLASS, ORANGE_STAINED_CLEAR_GLASS, YELLOW_STAINED_CLEAR_GLASS, LIME_STAINED_CLEAR_GLASS,
             GREEN_STAINED_CLEAR_GLASS, CYAN_STAINED_CLEAR_GLASS, LIGHT_BLUE_STAINED_CLEAR_GLASS, BLUE_STAINED_CLEAR_GLASS, PURPLE_STAINED_CLEAR_GLASS,
-            MAGENTA_STAINED_CLEAR_GLASS, PINK_STAINED_CLEAR_GLASS
-    );
+            MAGENTA_STAINED_CLEAR_GLASS, PINK_STAINED_CLEAR_GLASS,
 
+            SCRATCHED_GLASS
+    );
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
