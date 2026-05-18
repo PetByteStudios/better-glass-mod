@@ -9,6 +9,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -17,7 +18,10 @@ import net.minecraft.world.level.block.TransparentBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 
+import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 
 public class ModBlocks {
@@ -33,94 +37,31 @@ public class ModBlocks {
                 .isViewBlocking(Blocks::never);
     }
 
-    // To be used.
-    // public static List<String> COLORS = List.of("white", "light_gray", "gray", "black", "brown", "red", "orange", "yellow", "lime", "green", "cyan", "light_blue", "blue", "purple", "magenta", "pink" );
-
     public static final Block CLEAR_GLASS = registerGlassBlock("clear_glass");
-    public static final Block WHITE_COLORED_CLEAR_GLASS = registerGlassBlock("white_colored_clear_glass");
-    public static final Block LIGHT_GRAY_COLORED_CLEAR_GLASS = registerGlassBlock("light_gray_colored_clear_glass");
-    public static final Block GRAY_COLORED_CLEAR_GLASS = registerGlassBlock("gray_colored_clear_glass");
-    public static final Block BLACK_COLORED_CLEAR_GLASS = registerGlassBlock("black_colored_clear_glass");
-    public static final Block BROWN_COLORED_CLEAR_GLASS = registerGlassBlock("brown_colored_clear_glass");
-    public static final Block RED_COLORED_CLEAR_GLASS = registerGlassBlock("red_colored_clear_glass");
-    public static final Block ORANGE_COLORED_CLEAR_GLASS = registerGlassBlock("orange_colored_clear_glass");
-    public static final Block YELLOW_COLORED_CLEAR_GLASS = registerGlassBlock("yellow_colored_clear_glass");
-    public static final Block LIME_COLORED_CLEAR_GLASS = registerGlassBlock("lime_colored_clear_glass");
-    public static final Block GREEN_COLORED_CLEAR_GLASS = registerGlassBlock("green_colored_clear_glass");
-    public static final Block CYAN_COLORED_CLEAR_GLASS = registerGlassBlock("cyan_colored_clear_glass");
-    public static final Block LIGHT_BLUE_COLORED_CLEAR_GLASS = registerGlassBlock("light_blue_colored_clear_glass");
-    public static final Block BLUE_COLORED_CLEAR_GLASS = registerGlassBlock("blue_colored_clear_glass");
-    public static final Block PURPLE_COLORED_CLEAR_GLASS = registerGlassBlock("purple_colored_clear_glass");
-    public static final Block MAGENTA_COLORED_CLEAR_GLASS = registerGlassBlock("magenta_colored_clear_glass");
-    public static final Block PINK_COLORED_CLEAR_GLASS = registerGlassBlock("pink_colored_clear_glass");
-    public static final Block WHITE_STAINED_CLEAR_GLASS = registerGlassBlock("white_stained_clear_glass");
-    public static final Block LIGHT_GRAY_STAINED_CLEAR_GLASS = registerGlassBlock("light_gray_stained_clear_glass");
-    public static final Block GRAY_STAINED_CLEAR_GLASS = registerGlassBlock("gray_stained_clear_glass");
-    public static final Block BLACK_STAINED_CLEAR_GLASS = registerGlassBlock("black_stained_clear_glass");
-    public static final Block BROWN_STAINED_CLEAR_GLASS = registerGlassBlock("brown_stained_clear_glass");
-    public static final Block RED_STAINED_CLEAR_GLASS = registerGlassBlock("red_stained_clear_glass");
-    public static final Block ORANGE_STAINED_CLEAR_GLASS = registerGlassBlock("orange_stained_clear_glass");
-    public static final Block YELLOW_STAINED_CLEAR_GLASS = registerGlassBlock("yellow_stained_clear_glass");
-    public static final Block LIME_STAINED_CLEAR_GLASS = registerGlassBlock("lime_stained_clear_glass");
-    public static final Block GREEN_STAINED_CLEAR_GLASS = registerGlassBlock("green_stained_clear_glass");
-    public static final Block CYAN_STAINED_CLEAR_GLASS = registerGlassBlock("cyan_stained_clear_glass");
-    public static final Block LIGHT_BLUE_STAINED_CLEAR_GLASS = registerGlassBlock("light_blue_stained_clear_glass");
-    public static final Block BLUE_STAINED_CLEAR_GLASS = registerGlassBlock("blue_stained_clear_glass");
-    public static final Block PURPLE_STAINED_CLEAR_GLASS = registerGlassBlock("purple_stained_clear_glass");
-    public static final Block MAGENTA_STAINED_CLEAR_GLASS = registerGlassBlock("magenta_stained_clear_glass");
-    public static final Block PINK_STAINED_CLEAR_GLASS = registerGlassBlock("pink_stained_clear_glass");
-
     public static final Block SCRATCHED_GLASS = registerGlassBlock("scratched_glass");
-    public static final Block WHITE_COLORED_SCRATCHED_GLASS = registerGlassBlock("white_colored_scratched_glass");
-    public static final Block LIGHT_GRAY_COLORED_SCRATCHED_GLASS = registerGlassBlock("light_gray_colored_scratched_glass");
-    public static final Block GRAY_COLORED_SCRATCHED_GLASS = registerGlassBlock("gray_colored_scratched_glass");
-    public static final Block BLACK_COLORED_SCRATCHED_GLASS = registerGlassBlock("black_colored_scratched_glass");
-    public static final Block BROWN_COLORED_SCRATCHED_GLASS = registerGlassBlock("brown_colored_scratched_glass");
-    public static final Block RED_COLORED_SCRATCHED_GLASS = registerGlassBlock("red_colored_scratched_glass");
-    public static final Block ORANGE_COLORED_SCRATCHED_GLASS = registerGlassBlock("orange_colored_scratched_glass");
-    public static final Block YELLOW_COLORED_SCRATCHED_GLASS = registerGlassBlock("yellow_colored_scratched_glass");
-    public static final Block LIME_COLORED_SCRATCHED_GLASS = registerGlassBlock("lime_colored_scratched_glass");
-    public static final Block GREEN_COLORED_SCRATCHED_GLASS = registerGlassBlock("green_colored_scratched_glass");
-    public static final Block CYAN_COLORED_SCRATCHED_GLASS = registerGlassBlock("cyan_colored_scratched_glass");
-    public static final Block LIGHT_BLUE_COLORED_SCRATCHED_GLASS = registerGlassBlock("light_blue_colored_scratched_glass");
-    public static final Block BLUE_COLORED_SCRATCHED_GLASS = registerGlassBlock("blue_colored_scratched_glass");
-    public static final Block PURPLE_COLORED_SCRATCHED_GLASS = registerGlassBlock("purple_colored_scratched_glass");
-    public static final Block MAGENTA_COLORED_SCRATCHED_GLASS = registerGlassBlock("magenta_colored_scratched_glass");
-    public static final Block PINK_COLORED_SCRATCHED_GLASS = registerGlassBlock("pink_colored_scratched_glass");
-    public static final Block WHITE_STAINED_SCRATCHED_GLASS = registerGlassBlock("white_stained_scratched_glass");
-    public static final Block LIGHT_GRAY_STAINED_SCRATCHED_GLASS = registerGlassBlock("light_gray_stained_scratched_glass");
-    public static final Block GRAY_STAINED_SCRATCHED_GLASS = registerGlassBlock("gray_stained_scratched_glass");
-    public static final Block BLACK_STAINED_SCRATCHED_GLASS = registerGlassBlock("black_stained_scratched_glass");
-    public static final Block BROWN_STAINED_SCRATCHED_GLASS = registerGlassBlock("brown_stained_scratched_glass");
-    public static final Block RED_STAINED_SCRATCHED_GLASS = registerGlassBlock("red_stained_scratched_glass");
-    public static final Block ORANGE_STAINED_SCRATCHED_GLASS = registerGlassBlock("orange_stained_scratched_glass");
-    public static final Block YELLOW_STAINED_SCRATCHED_GLASS = registerGlassBlock("yellow_stained_scratched_glass");
-    public static final Block LIME_STAINED_SCRATCHED_GLASS = registerGlassBlock("lime_stained_scratched_glass");
-    public static final Block GREEN_STAINED_SCRATCHED_GLASS = registerGlassBlock("green_stained_scratched_glass");
-    public static final Block CYAN_STAINED_SCRATCHED_GLASS = registerGlassBlock("cyan_stained_scratched_glass");
-    public static final Block LIGHT_BLUE_STAINED_SCRATCHED_GLASS = registerGlassBlock("light_blue_stained_scratched_glass");
-    public static final Block BLUE_STAINED_SCRATCHED_GLASS = registerGlassBlock("blue_stained_scratched_glass");
-    public static final Block PURPLE_STAINED_SCRATCHED_GLASS = registerGlassBlock("purple_stained_scratched_glass");
-    public static final Block MAGENTA_STAINED_SCRATCHED_GLASS = registerGlassBlock("magenta_stained_scratched_glass");
-    public static final Block PINK_STAINED_SCRATCHED_GLASS = registerGlassBlock("pink_stained_scratched_glass");
 
-    public static List<Block> BETTER_GLASS_BLOCKS = List.of(
-            CLEAR_GLASS, WHITE_COLORED_CLEAR_GLASS, LIGHT_GRAY_COLORED_CLEAR_GLASS, GRAY_COLORED_CLEAR_GLASS, BLACK_COLORED_CLEAR_GLASS,
-            BROWN_COLORED_CLEAR_GLASS, RED_COLORED_CLEAR_GLASS, ORANGE_COLORED_CLEAR_GLASS, YELLOW_COLORED_CLEAR_GLASS, LIME_COLORED_CLEAR_GLASS,
-            GREEN_COLORED_CLEAR_GLASS, CYAN_COLORED_CLEAR_GLASS, LIGHT_BLUE_COLORED_CLEAR_GLASS, BLUE_COLORED_CLEAR_GLASS, PURPLE_COLORED_CLEAR_GLASS,
-            MAGENTA_COLORED_CLEAR_GLASS, PINK_COLORED_CLEAR_GLASS, WHITE_STAINED_CLEAR_GLASS, LIGHT_GRAY_STAINED_CLEAR_GLASS, GRAY_STAINED_CLEAR_GLASS, BLACK_STAINED_CLEAR_GLASS,
-            BROWN_STAINED_CLEAR_GLASS, RED_STAINED_CLEAR_GLASS, ORANGE_STAINED_CLEAR_GLASS, YELLOW_STAINED_CLEAR_GLASS, LIME_STAINED_CLEAR_GLASS,
-            GREEN_STAINED_CLEAR_GLASS, CYAN_STAINED_CLEAR_GLASS, LIGHT_BLUE_STAINED_CLEAR_GLASS, BLUE_STAINED_CLEAR_GLASS, PURPLE_STAINED_CLEAR_GLASS,
-            MAGENTA_STAINED_CLEAR_GLASS, PINK_STAINED_CLEAR_GLASS,
+    public static List<Block> BETTER_GLASS_BLOCKS = new ArrayList<>(List.of(
+            CLEAR_GLASS, SCRATCHED_GLASS
+    ));
 
-            SCRATCHED_GLASS, WHITE_COLORED_SCRATCHED_GLASS, LIGHT_GRAY_COLORED_SCRATCHED_GLASS, GRAY_COLORED_SCRATCHED_GLASS, BLACK_COLORED_SCRATCHED_GLASS,
-            BROWN_COLORED_SCRATCHED_GLASS, RED_COLORED_SCRATCHED_GLASS, ORANGE_COLORED_SCRATCHED_GLASS, YELLOW_COLORED_SCRATCHED_GLASS, LIME_COLORED_SCRATCHED_GLASS,
-            GREEN_COLORED_SCRATCHED_GLASS, CYAN_COLORED_SCRATCHED_GLASS, LIGHT_BLUE_COLORED_SCRATCHED_GLASS, BLUE_COLORED_SCRATCHED_GLASS, PURPLE_COLORED_SCRATCHED_GLASS,
-            MAGENTA_COLORED_SCRATCHED_GLASS, PINK_COLORED_SCRATCHED_GLASS, WHITE_STAINED_SCRATCHED_GLASS, LIGHT_GRAY_STAINED_SCRATCHED_GLASS, GRAY_STAINED_SCRATCHED_GLASS, BLACK_STAINED_SCRATCHED_GLASS,
-            BROWN_STAINED_SCRATCHED_GLASS, RED_STAINED_SCRATCHED_GLASS, ORANGE_STAINED_SCRATCHED_GLASS, YELLOW_STAINED_SCRATCHED_GLASS, LIME_STAINED_SCRATCHED_GLASS,
-            GREEN_STAINED_SCRATCHED_GLASS, CYAN_STAINED_SCRATCHED_GLASS, LIGHT_BLUE_STAINED_SCRATCHED_GLASS, BLUE_STAINED_SCRATCHED_GLASS, PURPLE_STAINED_SCRATCHED_GLASS,
-            MAGENTA_STAINED_SCRATCHED_GLASS, PINK_STAINED_SCRATCHED_GLASS
-            );
+    public static final Map<DyeColor, Block> COLORED_CLEAR_GLASS = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, Block> STAINED_CLEAR_GLASS = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, Block> COLORED_SCRATCHED_GLASS = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, Block> STAINED_SCRATCHED_GLASS = new EnumMap<>(DyeColor.class);
+
+    static {
+        for (DyeColor color : DyeColor.values()) {
+            COLORED_CLEAR_GLASS.put(color, registerGlassBlock(color.getName() + "_colored_clear_glass"));
+            STAINED_CLEAR_GLASS.put(color, registerGlassBlock(color.getName() + "_stained_clear_glass"));
+            COLORED_SCRATCHED_GLASS.put(color, registerGlassBlock(color.getName() + "_colored_scratched_glass"));
+            STAINED_SCRATCHED_GLASS.put(color, registerGlassBlock(color.getName() + "_stained_scratched_glass"));
+        }
+
+        BETTER_GLASS_BLOCKS.addAll(COLORED_CLEAR_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(STAINED_CLEAR_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(COLORED_SCRATCHED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(STAINED_SCRATCHED_GLASS.values());
+    }
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
