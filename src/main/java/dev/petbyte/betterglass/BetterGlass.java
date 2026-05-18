@@ -2,9 +2,9 @@ package dev.petbyte.betterglass;
 
 import dev.petbyte.betterglass.block.ModBlocks;
 import dev.petbyte.betterglass.item.ModItems;
+import dev.petbyte.betterglass.recipe.ModRecipes;
 import dev.petbyte.betterglass.tab.ModCreativeModeTabs;
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,5 +25,6 @@ public class BetterGlass implements ModInitializer {
 		ModCreativeModeTabs.registerModCreativeModeTabs();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModRecipes.registerRecipeTypes();
 	}
 }
