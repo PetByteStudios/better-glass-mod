@@ -23,11 +23,10 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "betterglass:brown_colored_clear_glass"
+          "name": "betterglass:cyan_colored_clear_glass"
         }
       ],
       "rolls": 1.0
     }
-  ],
-  "random_sequence": "minecraft:blocks/glass"
+  ]
 }
