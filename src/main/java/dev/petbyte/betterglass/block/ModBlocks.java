@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.TransparentBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 
+import java.util.List;
 import java.util.function.Function;
 
 public class ModBlocks {
@@ -31,6 +32,9 @@ public class ModBlocks {
                 .isSuffocating(Blocks::never)
                 .isViewBlocking(Blocks::never);
     }
+
+    // To be used.
+    // public static List<String> COLORS = List.of("white", "light_gray", "gray", "black", "brown", "red", "orange", "yellow", "lime", "green", "cyan", "light_blue", "blue", "purple", "magenta", "pink" );
 
     public static final Block CLEAR_GLASS = registerGlassBlock("clear_glass");
     public static final Block WHITE_COLORED_CLEAR_GLASS = registerGlassBlock("white_colored_clear_glass");
@@ -66,6 +70,16 @@ public class ModBlocks {
     public static final Block MAGENTA_STAINED_CLEAR_GLASS = registerGlassBlock("magenta_stained_clear_glass");
     public static final Block PINK_STAINED_CLEAR_GLASS = registerGlassBlock("pink_stained_clear_glass");
 
+    public static List<Block> BETTER_GLASS_BLOCKS = List.of(
+            CLEAR_GLASS, WHITE_COLORED_CLEAR_GLASS, LIGHT_GRAY_COLORED_CLEAR_GLASS, GRAY_COLORED_CLEAR_GLASS, BLACK_COLORED_CLEAR_GLASS,
+            BROWN_COLORED_CLEAR_GLASS, RED_COLORED_CLEAR_GLASS, ORANGE_COLORED_CLEAR_GLASS, YELLOW_COLORED_CLEAR_GLASS, LIME_COLORED_CLEAR_GLASS,
+            GREEN_COLORED_CLEAR_GLASS, CYAN_COLORED_CLEAR_GLASS, LIGHT_BLUE_COLORED_CLEAR_GLASS, BLUE_COLORED_CLEAR_GLASS, PURPLE_COLORED_CLEAR_GLASS,
+            MAGENTA_COLORED_CLEAR_GLASS, PINK_COLORED_CLEAR_GLASS, WHITE_STAINED_CLEAR_GLASS, LIGHT_GRAY_STAINED_CLEAR_GLASS, GRAY_STAINED_CLEAR_GLASS, BLACK_STAINED_CLEAR_GLASS,
+            BROWN_STAINED_CLEAR_GLASS, RED_STAINED_CLEAR_GLASS, ORANGE_STAINED_CLEAR_GLASS, YELLOW_STAINED_CLEAR_GLASS, LIME_STAINED_CLEAR_GLASS,
+            GREEN_STAINED_CLEAR_GLASS, CYAN_STAINED_CLEAR_GLASS, LIGHT_BLUE_STAINED_CLEAR_GLASS, BLUE_STAINED_CLEAR_GLASS, PURPLE_STAINED_CLEAR_GLASS,
+            MAGENTA_STAINED_CLEAR_GLASS, PINK_STAINED_CLEAR_GLASS
+    );
+
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
@@ -89,76 +103,9 @@ public class ModBlocks {
     public static void registerModBlocks() {
         BetterGlass.LOGGER.info("Registering Mod Blocks for %s".formatted(BetterGlass.MOD_ID));
 
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> {
-            output.accept(CLEAR_GLASS);
-            output.accept(WHITE_COLORED_CLEAR_GLASS);
-            output.accept(LIGHT_GRAY_COLORED_CLEAR_GLASS);
-            output.accept(GRAY_COLORED_CLEAR_GLASS);
-            output.accept(BLACK_COLORED_CLEAR_GLASS);
-            output.accept(BROWN_COLORED_CLEAR_GLASS);
-            output.accept(RED_COLORED_CLEAR_GLASS);
-            output.accept(ORANGE_COLORED_CLEAR_GLASS);
-            output.accept(YELLOW_COLORED_CLEAR_GLASS);
-            output.accept(LIME_COLORED_CLEAR_GLASS);
-            output.accept(GREEN_COLORED_CLEAR_GLASS);
-            output.accept(CYAN_COLORED_CLEAR_GLASS);
-            output.accept(LIGHT_BLUE_COLORED_CLEAR_GLASS);
-            output.accept(BLUE_COLORED_CLEAR_GLASS);
-            output.accept(PURPLE_COLORED_CLEAR_GLASS);
-            output.accept(MAGENTA_COLORED_CLEAR_GLASS);
-            output.accept(PINK_COLORED_CLEAR_GLASS);
-            output.accept(WHITE_STAINED_CLEAR_GLASS);
-            output.accept(LIGHT_GRAY_STAINED_CLEAR_GLASS);
-            output.accept(GRAY_STAINED_CLEAR_GLASS);
-            output.accept(BLACK_STAINED_CLEAR_GLASS);
-            output.accept(BROWN_STAINED_CLEAR_GLASS);
-            output.accept(RED_STAINED_CLEAR_GLASS);
-            output.accept(ORANGE_STAINED_CLEAR_GLASS);
-            output.accept(YELLOW_STAINED_CLEAR_GLASS);
-            output.accept(LIME_STAINED_CLEAR_GLASS);
-            output.accept(GREEN_STAINED_CLEAR_GLASS);
-            output.accept(CYAN_STAINED_CLEAR_GLASS);
-            output.accept(LIGHT_BLUE_STAINED_CLEAR_GLASS);
-            output.accept(BLUE_STAINED_CLEAR_GLASS);
-            output.accept(PURPLE_STAINED_CLEAR_GLASS);
-            output.accept(MAGENTA_STAINED_CLEAR_GLASS);
-            output.accept(PINK_STAINED_CLEAR_GLASS);
-        });
-
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COLORED_BLOCKS).register(output -> {
-            output.accept(CLEAR_GLASS);
-            output.accept(WHITE_COLORED_CLEAR_GLASS);
-            output.accept(LIGHT_GRAY_COLORED_CLEAR_GLASS);
-            output.accept(GRAY_COLORED_CLEAR_GLASS);
-            output.accept(BLACK_COLORED_CLEAR_GLASS);
-            output.accept(BROWN_COLORED_CLEAR_GLASS);
-            output.accept(RED_COLORED_CLEAR_GLASS);
-            output.accept(ORANGE_COLORED_CLEAR_GLASS);
-            output.accept(YELLOW_COLORED_CLEAR_GLASS);
-            output.accept(LIME_COLORED_CLEAR_GLASS);
-            output.accept(GREEN_COLORED_CLEAR_GLASS);
-            output.accept(CYAN_COLORED_CLEAR_GLASS);
-            output.accept(LIGHT_BLUE_COLORED_CLEAR_GLASS);
-            output.accept(BLUE_COLORED_CLEAR_GLASS);
-            output.accept(PURPLE_COLORED_CLEAR_GLASS);
-            output.accept(MAGENTA_COLORED_CLEAR_GLASS);
-            output.accept(PINK_COLORED_CLEAR_GLASS);
-            output.accept(WHITE_STAINED_CLEAR_GLASS);
-            output.accept(LIGHT_GRAY_STAINED_CLEAR_GLASS);
-            output.accept(GRAY_STAINED_CLEAR_GLASS);
-            output.accept(BLACK_STAINED_CLEAR_GLASS);
-            output.accept(BROWN_STAINED_CLEAR_GLASS);
-            output.accept(RED_STAINED_CLEAR_GLASS);
-            output.accept(ORANGE_STAINED_CLEAR_GLASS);
-            output.accept(YELLOW_STAINED_CLEAR_GLASS);
-            output.accept(LIME_STAINED_CLEAR_GLASS);
-            output.accept(GREEN_STAINED_CLEAR_GLASS);
-            output.accept(CYAN_STAINED_CLEAR_GLASS);
-            output.accept(LIGHT_BLUE_STAINED_CLEAR_GLASS);
-            output.accept(BLUE_STAINED_CLEAR_GLASS);
-            output.accept(PURPLE_STAINED_CLEAR_GLASS);
-            output.accept(MAGENTA_STAINED_CLEAR_GLASS);
-            output.accept(PINK_STAINED_CLEAR_GLASS);
-        });
+        for (Block block : BETTER_GLASS_BLOCKS) {
+            CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> output.accept(block));
+            CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COLORED_BLOCKS).register(output -> output.accept(block));
+        }
     }
 }
