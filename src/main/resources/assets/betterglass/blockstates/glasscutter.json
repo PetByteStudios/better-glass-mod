@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "betterglass:block/glasscutter",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "betterglass:block/glasscutter"
+    },
+    "facing=south": {
+      "model": "betterglass:block/glasscutter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "betterglass:block/glasscutter",
+      "y": 270
+    }
+  }
+}

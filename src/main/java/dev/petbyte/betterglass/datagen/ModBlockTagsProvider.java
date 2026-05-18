@@ -52,5 +52,7 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
         valueLookupBuilder(ModTags.COLORED_SCRATCHED_GLASS).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values());
         valueLookupBuilder(ModTags.STAINED_CLEAR_GLASS).addAll(ModBlocks.STAINED_CLEAR_GLASS.values());
         valueLookupBuilder(ModTags.STAINED_SCRATCHED_GLASS).addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
+
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.GLASSCUTTER);
     }
 }

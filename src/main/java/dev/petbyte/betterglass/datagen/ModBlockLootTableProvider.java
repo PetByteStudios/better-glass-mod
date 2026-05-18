@@ -18,5 +18,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
             add(block, createSilkTouchOnlyTable(block));
         }
+
+        dropSelf(ModBlocks.GLASSCUTTER);
     }
 }
