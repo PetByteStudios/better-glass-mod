@@ -8,6 +8,7 @@ import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.StonecutterBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jspecify.annotations.NonNull;
 
 public class GlasscutterBlock extends StonecutterBlock {
     public GlasscutterBlock(Properties settings) {
@@ -15,9 +16,9 @@ public class GlasscutterBlock extends StonecutterBlock {
     }
 
     @Override
-    public MenuProvider getMenuProvider(BlockState state, Level world, BlockPos pos) {
+    public MenuProvider getMenuProvider(@NonNull BlockState state, @NonNull Level world, @NonNull BlockPos pos) {
         return new SimpleMenuProvider(
-                (syncId, inv, player) -> new GlasscutterMenu(syncId, inv, ContainerLevelAccess.create(world, pos)),
+                (syncId, inv, _) -> new GlasscutterMenu(syncId, inv, ContainerLevelAccess.create(world, pos)),
                 Component.translatable("container.betterglass.glasscutter")
         );
     }

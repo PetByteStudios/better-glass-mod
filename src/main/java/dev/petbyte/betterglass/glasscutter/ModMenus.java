@@ -9,7 +9,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.MenuType;
 
-public class RegisterGlasscutterMenu {
+public class ModMenus {
     public static final MenuType<GlasscutterMenu> GLASSCUTTER_MENU =
             Registry.register(
                     BuiltInRegistries.MENU,

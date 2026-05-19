@@ -12,6 +12,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
+import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -21,7 +22,7 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider registries) {
+    protected void addTags(HolderLookup.@NonNull Provider registries) {
         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
             valueLookupBuilder(BlockTags.IMPERMEABLE).add(block);
             valueLookupBuilder(ConventionalBlockTags.GLASS_BLOCKS).add(block);

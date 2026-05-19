@@ -16,13 +16,14 @@ public class ModCreativeModeTabs {
             Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, "better_glass"), FabricCreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModBlocks.CLEAR_GLASS))
                     .title(Component.translatable("creativemodetab.betterglass.betterglass"))
-                    .displayItems((parameters, output) -> {
+                    .displayItems((_, output) -> {
                         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
                             output.accept(block);
                         }
                     }).build());
 
     public static void registerModCreativeModeTabs() {
+        //noinspection StringConcatenationArgumentToLogCall
         BetterGlass.LOGGER.info("Registering Creative Mode Tabs for %s".formatted(BetterGlass.MOD_ID));
     }
 }

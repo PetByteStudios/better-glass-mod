@@ -5,6 +5,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.StonecutterMenu;
+import org.jspecify.annotations.NonNull;
 
 public class GlasscutterMenu extends StonecutterMenu {
     private ContainerLevelAccess access;
@@ -19,7 +20,7 @@ public class GlasscutterMenu extends StonecutterMenu {
     }
 
     @Override
-    public boolean stillValid(Player player) {
+    public boolean stillValid(@NonNull Player player) {
         return stillValid(this.access, player, ModBlocks.GLASSCUTTER);
     }
 }

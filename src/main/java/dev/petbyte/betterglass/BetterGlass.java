@@ -1,7 +1,7 @@
 package dev.petbyte.betterglass;
 
 import dev.petbyte.betterglass.block.ModBlocks;
-import dev.petbyte.betterglass.glasscutter.RegisterGlasscutterMenu;
+import dev.petbyte.betterglass.glasscutter.ModMenus;
 import dev.petbyte.betterglass.item.ModItems;
 import dev.petbyte.betterglass.tab.ModCreativeModeTabs;
 import net.fabricmc.api.ModInitializer;
@@ -16,7 +16,7 @@ public class BetterGlass implements ModInitializer {
 
 	public static final String MOD_VERSION = FabricLoader.getInstance()
 			.getModContainer(MOD_ID)
-			.get()
+			.orElseThrow()
 			.getMetadata()
 			.getVersion()
 			.getFriendlyString();
@@ -26,6 +26,6 @@ public class BetterGlass implements ModInitializer {
 		ModCreativeModeTabs.registerModCreativeModeTabs();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-		RegisterGlasscutterMenu.RegisterGlasscutterMenu();
+		ModMenus.RegisterGlasscutterMenu();
 	}
 }
