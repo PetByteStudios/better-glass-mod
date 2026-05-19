@@ -1,0 +1,550 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/digit_0.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee00" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/digit_1.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee01" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/digit_2.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee02" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/digit_3.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee03" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/digit_4.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee04" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/digit_5.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee05" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/digit_6.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee06" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/digit_7.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee07" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/digit_8.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee08" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/digit_9.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee09" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_a.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee0a" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_b.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee0b" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_c.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee0c" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_d.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee0d" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_e.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee0e" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_f.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee0f" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_g.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee10" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_h.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee11" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_i.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee12" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_j.png",
+      "ascent": 8,
+      "height": 16,
+      "chars": [ "\uee13" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_k.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee14" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_l.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee15" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_m.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee16" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_n.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee17" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_o.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee18" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_p.png",
+      "ascent": 6,
+      "height": 16,
+      "chars": [ "\uee19" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_q.png",
+      "ascent": 6,
+      "height": 16,
+      "chars": [ "\uee1a" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_r.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee1b" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_s.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee1c" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_t.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee1d" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_u.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee1e" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_v.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee1f" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_w.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee20" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_x.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee21" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_y.png",
+      "ascent": 8,
+      "height": 16,
+      "chars": [ "\uee22" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/small_z.png",
+      "ascent": 4,
+      "height": 16,
+      "chars": [ "\uee23" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_a.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee24" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_b.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee25" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_c.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee26" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_d.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee27" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_e.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee28" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_f.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee29" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_g.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee2a" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_h.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee2b" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_i.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee2c" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_j.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee2d" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_k.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee2e" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_l.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee2f" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_m.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee30" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_n.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee31" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_o.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee32" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_p.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee33" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_q.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee34" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_r.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee35" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_s.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee36" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_t.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee37" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_u.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee38" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_v.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee39" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_w.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee3a" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_x.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee3b" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_y.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee3c" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/capital_z.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee3d" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/dot.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee3e" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/comma.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee3f" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/colon.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee40" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/semicolon.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee41" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/exclamation_mark.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee42" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/question_mark.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee43" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/hyphen.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee44" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/plus.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee45" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/equals.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee46" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/open_bracket.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee47" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/closed_bracket.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee48" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/open_curly_bracket.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee49" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/closed_curly_bracket.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee4a" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/open_square_bracket.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee4b" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/closed_square_bracket.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee4c" ]
+    },
+    {
+      "type": "bitmap",
+      "file": "betterglass:glasscutter_font/slash.png",
+      "ascent": 12,
+      "height": 16,
+      "chars": [ "\uee4d" ]
+    }
+  ]
+}
