@@ -1,6 +1,7 @@
 package dev.petbyte.betterglass.block;
 
 import dev.petbyte.betterglass.BetterGlass;
+import dev.petbyte.betterglass.glasscutter.GlasscutterBlock;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -11,7 +12,10 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.TransparentBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 
@@ -70,7 +74,7 @@ public class ModBlocks {
     public static final Block GLASSCUTTER = registerGlasscutter();
 
     public static Block registerGlasscutter() {
-        Block toRegister = new StonecutterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONECUTTER)
+        Block toRegister = new GlasscutterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONECUTTER)
                 .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, "glasscutter"))));
         registerBlockItem("glasscutter", toRegister);
         return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, "glasscutter"), toRegister);
