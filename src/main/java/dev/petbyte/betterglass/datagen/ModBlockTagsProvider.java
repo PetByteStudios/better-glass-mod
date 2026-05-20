@@ -45,14 +45,14 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.CLEAR_GLASS)
                 .add(ModBlocks.SCRATCHED_GLASS);
 
-        valueLookupBuilder(ModTags.CLEAR_GLASS).add(ModBlocks.CLEAR_GLASS).addAll(ModBlocks.COLORED_CLEAR_GLASS.values()).addAll(ModBlocks.STAINED_CLEAR_GLASS.values());
-        valueLookupBuilder(ModTags.SCRATCHED_GLASS).add(ModBlocks.SCRATCHED_GLASS).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values()).addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
-        valueLookupBuilder(ModTags.COLORED_GLASS).addAll(ModBlocks.COLORED_CLEAR_GLASS.values()).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values());
-        valueLookupBuilder(ModTags.STAINED_GLASS).addAll(ModBlocks.STAINED_CLEAR_GLASS.values()).addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
-        valueLookupBuilder(ModTags.COLORED_CLEAR_GLASS).addAll(ModBlocks.COLORED_CLEAR_GLASS.values());
-        valueLookupBuilder(ModTags.COLORED_SCRATCHED_GLASS).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values());
-        valueLookupBuilder(ModTags.STAINED_CLEAR_GLASS).addAll(ModBlocks.STAINED_CLEAR_GLASS.values());
-        valueLookupBuilder(ModTags.STAINED_SCRATCHED_GLASS).addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
+        valueLookupBuilder(ModTags.Blocks.CLEAR_GLASS).add(ModBlocks.CLEAR_GLASS).addAll(ModBlocks.COLORED_CLEAR_GLASS.values()).addAll(ModBlocks.STAINED_CLEAR_GLASS.values());
+        valueLookupBuilder(ModTags.Blocks.SCRATCHED_GLASS).add(ModBlocks.SCRATCHED_GLASS).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values()).addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
+        valueLookupBuilder(ModTags.Blocks.COLORED_GLASS).addAll(ModBlocks.COLORED_CLEAR_GLASS.values()).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values());
+        valueLookupBuilder(ModTags.Blocks.STAINED_GLASS).addAll(ModBlocks.STAINED_CLEAR_GLASS.values()).addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
+        valueLookupBuilder(ModTags.Blocks.COLORED_CLEAR_GLASS).addAll(ModBlocks.COLORED_CLEAR_GLASS.values());
+        valueLookupBuilder(ModTags.Blocks.COLORED_SCRATCHED_GLASS).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values());
+        valueLookupBuilder(ModTags.Blocks.STAINED_CLEAR_GLASS).addAll(ModBlocks.STAINED_CLEAR_GLASS.values());
+        valueLookupBuilder(ModTags.Blocks.STAINED_SCRATCHED_GLASS).addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
 
         valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.GLASSCUTTER);
     }
