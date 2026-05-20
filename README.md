@@ -1,10 +1,4 @@
 # Better Glass
-tbd. default below.
+Better Glass is a mod for Fabric 26.1.2 that adds 363\* new Glass Blocks, and way more to come!
 
-## Setup
-
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+\* 66 blocks as of writing this, v1.0.0-beta.3; 363 is a rough calculation of total blocks expected by v1.0.0
