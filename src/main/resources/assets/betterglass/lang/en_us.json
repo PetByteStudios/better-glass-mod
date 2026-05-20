@@ -1,7 +1,8 @@
 {
   "block.betterglass.glasscutter": "Glasscutter (Temp. W.I.P.)",
   "container.betterglass.glasscutter": "Glasscutter",
-  "container.betterglass.glasscutter.easter_egg": "(aka. fancy stonecutter. soz)",
+  "container.betterglass.glasscutter.easter_egg.spacing": "   ",
+  "container.betterglass.glasscutter.easter_egg.text": "(aka. fancy stonecutter. soz)",
 
   "block.betterglass.clear_glass": "Clear Glass",
   "block.betterglass.white_colored_clear_glass": "White Colored Clear Glass",

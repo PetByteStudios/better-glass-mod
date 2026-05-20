@@ -1,6 +1,5 @@
 package dev.petbyte.betterglass.glasscutter;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
@@ -23,10 +22,10 @@ public class GlasscutterBlock extends StonecutterBlock {
         return new SimpleMenuProvider(
                 (syncId, inv, _) -> new GlasscutterMenu(syncId, inv, ContainerLevelAccess.create(world, pos)),
                 Component.translatable("container.betterglass.glasscutter")
-                        .append((Component.translatable("container.betterglass.glasscutter.easter_egg"))
+                        .append(Component.translatable("container.betterglass.glasscutter.easter_egg.spacing"))
+                        .append((Component.translatable("container.betterglass.glasscutter.easter_egg.text"))
                                 .withStyle(style -> style
-                                        .withFont(new FontDescription.Resource(Identifier.fromNamespaceAndPath("betterglass", "glasscutter")))
-                                        .withColor(ChatFormatting.RED)))
+                                        .withFont(new FontDescription.Resource(Identifier.fromNamespaceAndPath("betterglass", "glasscutter")))))
         );
     }
 }
