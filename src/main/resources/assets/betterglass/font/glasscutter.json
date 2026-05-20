@@ -1,0 +1,11 @@
+{
+  "providers": [
+    {
+      "type": "ttf",
+      "file": "betterglass:petbyte_glasscutter.ttf",
+      "oversample": 2.0,
+      "shift": [0, 0],
+      "size": 11.0
+    }
+  ]
+}

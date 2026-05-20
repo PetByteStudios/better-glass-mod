@@ -1,7 +1,10 @@
 package dev.petbyte.betterglass.glasscutter;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.FontDescription;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.inventory.ContainerLevelAccess;
@@ -20,6 +23,10 @@ public class GlasscutterBlock extends StonecutterBlock {
         return new SimpleMenuProvider(
                 (syncId, inv, _) -> new GlasscutterMenu(syncId, inv, ContainerLevelAccess.create(world, pos)),
                 Component.translatable("container.betterglass.glasscutter")
+                        .append((Component.translatable("container.betterglass.glasscutter.easter_egg"))
+                                .withStyle(style -> style
+                                        .withFont(new FontDescription.Resource(Identifier.fromNamespaceAndPath("betterglass", "glasscutter")))
+                                        .withColor(ChatFormatting.RED)))
         );
     }
 }
