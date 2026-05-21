@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "green_stained_glass",
+  "key": {
+    "G": "betterglass:green_stained_scratched_glass"
+  },
+  "pattern": [
+    "GG",
+    "GG"
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:green_stained_glass"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_scratched_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:scratched_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:clear_glass_from_scratched_glass_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_scratched_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:clear_glass_from_scratched_glass_stonecutting"
+    ]
+  }
+}

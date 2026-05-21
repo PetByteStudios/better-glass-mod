@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:white_stained_clear_glass",
+  "result": {
+    "id": "minecraft:white_stained_glass"
+  }
+}

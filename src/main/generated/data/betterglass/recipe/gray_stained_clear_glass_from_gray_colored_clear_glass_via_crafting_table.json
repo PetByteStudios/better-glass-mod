@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "gray_stained_clear_glass",
+  "key": {
+    "G": "betterglass:gray_colored_clear_glass",
+    "W": "minecraft:gray_dye"
+  },
+  "pattern": [
+    " G ",
+    "GWG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:gray_stained_clear_glass"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "orange_stained_clear_glass",
+  "key": {
+    "G": "#betterglass:stained_clear_glass",
+    "W": "minecraft:orange_dye"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:orange_stained_clear_glass"
+  }
+}

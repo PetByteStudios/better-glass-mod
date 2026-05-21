@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "blue_colored_scratched_glass",
+  "key": {
+    "G": "#betterglass:colored_scratched_glass",
+    "W": "minecraft:blue_dye"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:blue_colored_scratched_glass"
+  }
+}

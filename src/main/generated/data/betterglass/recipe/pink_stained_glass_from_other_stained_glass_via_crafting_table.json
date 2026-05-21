@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "pink_stained_glass",
+  "key": {
+    "G": "#betterglass:stained_vanilla_glass_block",
+    "W": "minecraft:pink_dye"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "minecraft:pink_stained_glass"
+  }
+}

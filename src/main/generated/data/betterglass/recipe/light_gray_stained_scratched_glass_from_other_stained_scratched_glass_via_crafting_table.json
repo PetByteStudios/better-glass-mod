@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "light_gray_stained_scratched_glass",
+  "key": {
+    "G": "#betterglass:stained_scratched_glass",
+    "W": "minecraft:light_gray_dye"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:light_gray_stained_scratched_glass"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_red_colored_scratched_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:red_colored_scratched_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:red_stained_scratched_glass_from_red_colored_scratched_glass_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_red_colored_scratched_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:red_stained_scratched_glass_from_red_colored_scratched_glass_stonecutting"
+    ]
+  }
+}
