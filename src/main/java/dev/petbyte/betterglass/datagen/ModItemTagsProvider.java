@@ -12,6 +12,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -64,5 +65,20 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider{
                 .addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values().stream().map(Block::asItem).toList());
         valueLookupBuilder(ModTags.Items.STAINED_SCRATCHED_GLASS)
                 .addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values().stream().map(Block::asItem).toList());
+
+        valueLookupBuilder(ModTags.Items.STAINED_VANILLA_GLASS_BLOCK).add(Blocks.WHITE_STAINED_GLASS.asItem())
+                .add(Blocks.LIGHT_GRAY_STAINED_GLASS.asItem()).add(Blocks.GRAY_STAINED_GLASS.asItem()).add(Blocks.BLACK_STAINED_GLASS.asItem())
+                .add(Blocks.BROWN_STAINED_GLASS.asItem()).add(Blocks.RED_STAINED_GLASS.asItem()).add(Blocks.YELLOW_STAINED_GLASS.asItem())
+                .add(Blocks.ORANGE_STAINED_GLASS.asItem()).add(Blocks.LIME_STAINED_GLASS.asItem()).add(Blocks.GREEN_STAINED_GLASS.asItem())
+                .add(Blocks.CYAN_STAINED_GLASS.asItem()).add(Blocks.LIGHT_BLUE_STAINED_GLASS.asItem()).add(Blocks.BLUE_STAINED_GLASS.asItem())
+                .add(Blocks.PURPLE_STAINED_GLASS.asItem()).add(Blocks.MAGENTA_STAINED_GLASS.asItem()).add(Blocks.PINK_STAINED_GLASS.asItem())
+                .addOptionalTag(ModTags.Items.STAINED_VANILLA_GLASS);
+        valueLookupBuilder(ModTags.Items.STAINED_VANILLA_GLASS_PANE).add(Blocks.WHITE_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.LIGHT_GRAY_STAINED_GLASS_PANE.asItem()).add(Blocks.GRAY_STAINED_GLASS_PANE.asItem()).add(Blocks.BLACK_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.BROWN_STAINED_GLASS_PANE.asItem()).add(Blocks.RED_STAINED_GLASS_PANE.asItem()).add(Blocks.YELLOW_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.ORANGE_STAINED_GLASS_PANE.asItem()).add(Blocks.LIME_STAINED_GLASS_PANE.asItem()).add(Blocks.GREEN_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.CYAN_STAINED_GLASS_PANE.asItem()).add(Blocks.LIGHT_BLUE_STAINED_GLASS_PANE.asItem()).add(Blocks.BLUE_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.PURPLE_STAINED_GLASS_PANE.asItem()).add(Blocks.MAGENTA_STAINED_GLASS_PANE.asItem()).add(Blocks.PINK_STAINED_GLASS_PANE.asItem())
+                .addOptionalTag(ModTags.Items.STAINED_VANILLA_GLASS);
     }
 }

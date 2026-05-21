@@ -21,6 +21,10 @@ public class ModTags {
         public static final TagKey<Block> STAINED_CLEAR_GLASS = createBlockTag("stained_clear_glass");
         public static final TagKey<Block> COLORED_SCRATCHED_GLASS = createBlockTag("colored_scratched_glass");
         public static final TagKey<Block> STAINED_SCRATCHED_GLASS = createBlockTag("stained_scratched_glass");
+
+        public static final TagKey<Block> STAINED_VANILLA_GLASS_BLOCK = createBlockTag("stained_vanilla_glass_block");
+        public static final TagKey<Block> STAINED_VANILLA_GLASS_PANE = createBlockTag("stained_vanilla_glass_pane");
+        public static final TagKey<Block> STAINED_VANILLA_GLASS = createBlockTag("stained_vanilla_glass");
     }
 
     public static class Items {
@@ -36,5 +40,9 @@ public class ModTags {
         public static final TagKey<Item> STAINED_CLEAR_GLASS = createItemTag("stained_clear_glass");
         public static final TagKey<Item> COLORED_SCRATCHED_GLASS = createItemTag("colored_scratched_glass");
         public static final TagKey<Item> STAINED_SCRATCHED_GLASS = createItemTag("stained_scratched_glass");
+
+        public static final TagKey<Item> STAINED_VANILLA_GLASS_BLOCK = createItemTag("stained_vanilla_glass_block");
+        public static final TagKey<Item> STAINED_VANILLA_GLASS_PANE = createItemTag("stained_vanilla_glass_pane");
+        public static final TagKey<Item> STAINED_VANILLA_GLASS = createItemTag("stained_vanilla_glass");
     }
 }
