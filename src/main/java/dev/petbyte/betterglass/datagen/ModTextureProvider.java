@@ -17,8 +17,7 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 public class ModTextureProvider implements DataProvider {
-    public ModTextureProvider() {
-    }
+    public ModTextureProvider() { }
 
     Path resourcesDir = Path.of("../../src/main/resources");
     Path templatesDir = resourcesDir.resolve("assets/betterglass/templates");
