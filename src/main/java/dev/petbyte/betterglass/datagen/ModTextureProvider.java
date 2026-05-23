@@ -20,53 +20,109 @@ public class ModTextureProvider implements DataProvider {
     public ModTextureProvider() {
     }
 
+    Path resourcesDir = Path.of("../../src/main/resources");
+    Path templatesDir = resourcesDir.resolve("assets/betterglass/templates");
+    Path templateJson = templatesDir.resolve("palettes/template.json");
+
     @Override
     public @NonNull CompletableFuture<?> run(@NonNull CachedOutput cache) {
         try {
-            Path resourcesDir = Path.of("../../src/main/resources");
-            Path templatesDir = resourcesDir.resolve("assets/betterglass/templates");
-            Path outputDir = resourcesDir.resolve("../generated/assets/betterglass/textures/block");
-
-            Path templateJson = templatesDir.resolve("palettes/template.json");
-
             for (String colorName : List.of("white", "light_gray", "gray", "black",
                     "brown", "red", "orange", "yellow", "lime", "green",
                     "cyan", "light_blue", "blue", "purple", "magenta", "pink", "undyed")) {
 
-                Path paletteJson = templatesDir.resolve("palettes/" + colorName + ".json");
+                Path paletteJson = templatesDir.resolve("palettes/%s.json".formatted(colorName));
                 LinkedHashMap<Integer, Integer> palette = loadPalette(templateJson, paletteJson);
 
-                for (String blockType : List.of("clear_glass", "scratched_glass", "vanilla_glass")) {
-                    // Colored
-                    BufferedImage template = ImageIO.read(
-                            templatesDir.resolve("blocks/" + blockType + ".png").toFile()
-                    );
-                    BufferedImage coloredResult = applyPalette(template, palette);
-                    if (blockType.equals("vanilla_glass") && colorName.equals("undyed")) { outputDir = outputDir.resolve("../../../minecraft/textures/block"); }  // If doing undyed vanilla glass, change output
-                    else { outputDir = outputDir.resolve("../../../betterglass/textures/block"); } // Otherwise, stay on betterglass namespace (it's stupid and hacky and ugly, but it works)
-                    saveTexture(coloredResult, outputDir.resolve((colorName.equals("undyed") ? "" : "%s_colored_".formatted(colorName)) + ((colorName.equals("undyed") && blockType.equals("vanilla_glass")) ? "glass" : blockType) + ".png"));
+                GenerateColoredModdedGlass(colorName, palette);
+                GenerateColoredVanillaGlass(colorName, palette);
+                if (colorName.equals("undyed")) { continue; } // No need to generate a Stained variant of Undyed
+                GenerateStainedModdedGlass(colorName, palette);
+                GenerateStainedVanillaGlass(colorName, palette);
+            }
+            return CompletableFuture.allOf();
+        } catch (IOException e) {
+            throw new RuntimeException("Texture datagen failed at run(): ", e);
+        }
+    }
 
-                    if (colorName.equals("undyed")) { continue; } // No need to generate a Stained variant of Undyed
-
-                    // Stained
-                    String lastPaletteColor = Integer.toHexString(palette.sequencedValues().getLast());
-                    BufferedImage stainedResult = new BufferedImage(template.getWidth(), template.getHeight(), BufferedImage.TYPE_INT_ARGB);
-                    Graphics2D g2d = stainedResult.createGraphics();
-                    g2d.setColor(new Color(Integer.parseUnsignedInt("40%s".formatted(lastPaletteColor.substring(2)),16), true)); // color is the last palette color at 40₁₆ alpha
-                    g2d.fillRect(0, 0, stainedResult.getWidth(), stainedResult.getHeight());
-                    BufferedImage stainedForeground = applyPalette(template, palette);
-                    g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f)); // set drawmode to 50% alpha (?)
-                    g2d.drawImage(stainedForeground, 0, 0, null); // add foreground
-                    g2d.dispose();
-                    if (blockType.equals("vanilla_glass")) { outputDir = outputDir.resolve("../../../minecraft/textures/block"); } // If staining vanilla glass, change output
-                    else { outputDir = outputDir.resolve("../../../betterglass/textures/block"); } // Otherwise, stay on betterglass namespace (it's stupid and hacky and ugly, but it works)
-                    saveTexture(stainedResult, outputDir.resolve(("%s_stained_".formatted(colorName)) + (blockType.equals("vanilla_glass") ? "glass" : blockType) + ".png"));
-                }
+    private void GenerateColoredModdedGlass(String colorName, LinkedHashMap<Integer, Integer> palette) {
+        try {
+            for (String blockType : List.of("clear_glass", "scratched_glass")) {
+                BufferedImage template = ImageIO.read(
+                        templatesDir.resolve("blocks/%s.png".formatted(blockType)).toFile()
+                );
+                BufferedImage coloredResult = applyPalette(template, palette);
+                Path outputDir = resourcesDir.resolve("../generated/assets/betterglass/textures/block");
+                saveTexture(coloredResult, outputDir.resolve((colorName.equals("undyed") ? "%s.png".formatted(blockType) : "%s_colored_%s.png".formatted(colorName, blockType))));
             }
         } catch (IOException e) {
-            throw new RuntimeException("Texture datagen failed", e);
+            throw new RuntimeException("Texture datagen failed at GenerateColoredModdedGlass(): ", e);
         }
-        return CompletableFuture.allOf();
+    }
+
+    private void GenerateStainedModdedGlass(String colorName, LinkedHashMap<Integer, Integer> palette) {
+        try {
+            for (String blockType : List.of("clear_glass", "scratched_glass")) {
+                BufferedImage template = ImageIO.read(
+                        templatesDir.resolve("blocks/%s.png".formatted(blockType)).toFile()
+                );
+
+                String lastPaletteColor = Integer.toHexString(palette.sequencedValues().getLast());
+                BufferedImage stainedResult = new BufferedImage(template.getWidth(), template.getHeight(), BufferedImage.TYPE_INT_ARGB);
+                Graphics2D g2d = stainedResult.createGraphics();
+                g2d.setColor(new Color(Integer.parseUnsignedInt("40%s".formatted(lastPaletteColor.substring(2)),16), true)); // color is the last palette color at 40₁₆ alpha
+                g2d.fillRect(0, 0, stainedResult.getWidth(), stainedResult.getHeight());
+                BufferedImage stainedForeground = applyPalette(template, palette);
+                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f)); // set drawmode to 50% alpha (?)
+                g2d.drawImage(stainedForeground, 0, 0, null); // add foreground
+                g2d.dispose();
+                Path outputDir = resourcesDir.resolve("../generated/assets/betterglass/textures/block");
+                saveTexture(stainedResult, outputDir.resolve(("%s_stained_%s.png".formatted(colorName, blockType))));
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Texture datagen failed at GenerateColoredModdedGlass(): ", e);
+        }
+    }
+
+    private void GenerateColoredVanillaGlass(String colorName, LinkedHashMap<Integer, Integer> palette) {
+        try {
+            BufferedImage template = ImageIO.read(
+                    templatesDir.resolve("blocks/vanilla_glass.png").toFile()
+            );
+            BufferedImage coloredResult = applyPalette(template, palette);
+            Path outputDir = resourcesDir.resolve("../generated/assets/betterglass/textures/block");
+            if (colorName.equals("undyed")) {
+                outputDir = outputDir.resolve("../../../minecraft/textures/block");
+                saveTexture(coloredResult, outputDir.resolve("glass.png"));
+            } else {
+                saveTexture(coloredResult, outputDir.resolve(("%s_colored_vanilla_glass.png".formatted(colorName))));
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Texture datagen failed at GenerateColoredVanillaGlass(): ", e);
+        }
+    }
+
+    private void GenerateStainedVanillaGlass(String colorName, LinkedHashMap<Integer, Integer> palette) {
+        try {
+            BufferedImage template = ImageIO.read(
+                    templatesDir.resolve("blocks/vanilla_glass.png").toFile()
+            );
+
+            String lastPaletteColor = Integer.toHexString(palette.sequencedValues().getLast());
+            BufferedImage stainedResult = new BufferedImage(template.getWidth(), template.getHeight(), BufferedImage.TYPE_INT_ARGB);
+            Graphics2D g2d = stainedResult.createGraphics();
+            g2d.setColor(new Color(Integer.parseUnsignedInt("40%s".formatted(lastPaletteColor.substring(2)),16), true)); // color is the last palette color at 40₁₆ alpha
+            g2d.fillRect(0, 0, stainedResult.getWidth(), stainedResult.getHeight());
+            BufferedImage stainedForeground = applyPalette(template, palette);
+            g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f)); // set drawmode to 50% alpha (?)
+            g2d.drawImage(stainedForeground, 0, 0, null); // add foreground
+            g2d.dispose();
+            Path outputDir = resourcesDir.resolve("../generated/assets/minecraft/textures/block");
+            saveTexture(stainedResult, outputDir.resolve("%s_stained_glass.png".formatted(colorName)));
+        } catch (IOException e) {
+            throw new RuntimeException("Texture datagen failed at GenerateStainedVanillaGlass(): ", e);
+        }
     }
 
     private BufferedImage applyPalette(BufferedImage template, Map<Integer, Integer> paletteMap) {
