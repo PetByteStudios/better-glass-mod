@@ -36,17 +36,20 @@ public class ModTextureProvider implements DataProvider {
                 Path paletteJson = templatesDir.resolve("palettes/" + colorName + ".json");
                 LinkedHashMap<Integer, Integer> palette = loadPalette(templateJson, paletteJson);
 
-                for (String blockType : List.of("clear_glass", "scratched_glass")) {
+                for (String blockType : List.of("clear_glass", "scratched_glass", "vanilla_glass")) {
                     // Colored
                     BufferedImage template = ImageIO.read(
                             templatesDir.resolve("blocks/" + blockType + ".png").toFile()
                     );
                     BufferedImage coloredResult = applyPalette(template, palette);
-                    saveTexture(coloredResult, outputDir.resolve((colorName.equals("undyed") ? "" : "%s_colored_".formatted(colorName))  + blockType + ".png"));
+                    if (blockType.equals("vanilla_glass") && colorName.equals("undyed")) { outputDir = outputDir.resolve("../../../minecraft/textures/block"); }  // If doing undyed vanilla glass, change output
+                    else { outputDir = outputDir.resolve("../../../betterglass/textures/block"); } // Otherwise, stay on betterglass namespace (it's stupid and hacky and ugly, but it works)
+                    saveTexture(coloredResult, outputDir.resolve((colorName.equals("undyed") ? "" : "%s_colored_".formatted(colorName)) + ((colorName.equals("undyed") && blockType.equals("vanilla_glass")) ? "glass" : blockType) + ".png"));
+
+                    if (colorName.equals("undyed")) { continue; } // No need to generate a Stained variant of Undyed
 
                     // Stained
                     String lastPaletteColor = Integer.toHexString(palette.sequencedValues().getLast());
-
                     BufferedImage stainedResult = new BufferedImage(template.getWidth(), template.getHeight(), BufferedImage.TYPE_INT_ARGB);
                     Graphics2D g2d = stainedResult.createGraphics();
                     g2d.setColor(new Color(Integer.parseUnsignedInt("40%s".formatted(lastPaletteColor.substring(2)),16), true)); // color is the last palette color at 40₁₆ alpha
@@ -55,7 +58,9 @@ public class ModTextureProvider implements DataProvider {
                     g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f)); // set drawmode to 50% alpha (?)
                     g2d.drawImage(stainedForeground, 0, 0, null); // add foreground
                     g2d.dispose();
-                    saveTexture(stainedResult, outputDir.resolve((colorName.equals("undyed") ? "" : "%s_stained_".formatted(colorName))  + blockType + ".png"));
+                    if (blockType.equals("vanilla_glass")) { outputDir = outputDir.resolve("../../../minecraft/textures/block"); } // If staining vanilla glass, change output
+                    else { outputDir = outputDir.resolve("../../../betterglass/textures/block"); } // Otherwise, stay on betterglass namespace (it's stupid and hacky and ugly, but it works)
+                    saveTexture(stainedResult, outputDir.resolve(("%s_stained_".formatted(colorName)) + (blockType.equals("vanilla_glass") ? "glass" : blockType) + ".png"));
                 }
             }
         } catch (IOException e) {
