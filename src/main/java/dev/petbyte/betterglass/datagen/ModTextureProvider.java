@@ -97,6 +97,6 @@ public class ModTextureProvider implements DataProvider {
 
     @Override
     public @NonNull String getName() {
-        return "";
+        return "BetterGlass Textures";
     }
 }
