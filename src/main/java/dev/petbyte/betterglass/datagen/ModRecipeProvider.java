@@ -425,6 +425,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public @NonNull String getName() {
-        return "BetterGlass Recipes";
+        return "Recipes";
     }
 }
