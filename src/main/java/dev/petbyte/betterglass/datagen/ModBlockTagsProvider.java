@@ -48,7 +48,7 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
 
         valueLookupBuilder(ModTags.Blocks.CLEAR_GLASS).add(ModBlocks.CLEAR_GLASS).addAll(ModBlocks.COLORED_CLEAR_GLASS.values()).addAll(ModBlocks.STAINED_CLEAR_GLASS.values());
         valueLookupBuilder(ModTags.Blocks.SCRATCHED_GLASS).add(ModBlocks.SCRATCHED_GLASS).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values()).addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
-        valueLookupBuilder(ModTags.Blocks.COLORED_GLASS).addAll(ModBlocks.COLORED_CLEAR_GLASS.values()).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values());
+        valueLookupBuilder(ModTags.Blocks.COLORED_GLASS).addAll(ModBlocks.COLORED_CLEAR_GLASS.values()).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values()).addAll(ModBlocks.COLORED_VANILLA_GLASS.values());
         valueLookupBuilder(ModTags.Blocks.STAINED_GLASS).addAll(ModBlocks.STAINED_CLEAR_GLASS.values()).addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
         valueLookupBuilder(ModTags.Blocks.COLORED_CLEAR_GLASS).addAll(ModBlocks.COLORED_CLEAR_GLASS.values());
         valueLookupBuilder(ModTags.Blocks.COLORED_SCRATCHED_GLASS).addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values());
@@ -71,5 +71,8 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(Blocks.CYAN_STAINED_GLASS_PANE).add(Blocks.LIGHT_BLUE_STAINED_GLASS_PANE).add(Blocks.BLUE_STAINED_GLASS_PANE)
                 .add(Blocks.PURPLE_STAINED_GLASS_PANE).add(Blocks.MAGENTA_STAINED_GLASS_PANE).add(Blocks.PINK_STAINED_GLASS_PANE)
                 .addOptionalTag(ModTags.Blocks.STAINED_VANILLA_GLASS);
+
+        valueLookupBuilder(ModTags.Blocks.COLORED_VANILLA_GLASS)
+                .addAll(ModBlocks.COLORED_VANILLA_GLASS.values());
     }
 }

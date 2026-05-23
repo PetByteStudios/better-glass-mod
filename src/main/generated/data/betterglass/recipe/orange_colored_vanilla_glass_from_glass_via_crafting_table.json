@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "orange_colored_vanilla_glass",
+  "key": {
+    "G": "minecraft:glass",
+    "W": "minecraft:orange_dye"
+  },
+  "pattern": [
+    " G ",
+    "GWG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:orange_colored_vanilla_glass"
+  }
+}

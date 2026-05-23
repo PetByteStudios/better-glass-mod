@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "pink_colored_vanilla_glass",
+  "key": {
+    "G": "minecraft:glass",
+    "W": "minecraft:pink_dye"
+  },
+  "pattern": [
+    " G ",
+    "GWG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:pink_colored_vanilla_glass"
+  }
+}

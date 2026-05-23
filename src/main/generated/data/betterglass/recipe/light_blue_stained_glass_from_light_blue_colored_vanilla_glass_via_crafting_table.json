@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "light_blue_stained_glass",
+  "key": {
+    "G": "betterglass:light_blue_colored_vanilla_glass",
+    "W": "minecraft:light_blue_dye"
+  },
+  "pattern": [
+    " G ",
+    "GWG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:light_blue_stained_glass"
+  }
+}

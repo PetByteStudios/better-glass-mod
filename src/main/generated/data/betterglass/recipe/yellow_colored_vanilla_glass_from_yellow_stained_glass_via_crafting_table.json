@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "yellow_colored_vanilla_glass",
+  "key": {
+    "G": "minecraft:yellow_stained_glass",
+    "W": "#c:buckets/water"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:yellow_colored_vanilla_glass"
+  }
+}

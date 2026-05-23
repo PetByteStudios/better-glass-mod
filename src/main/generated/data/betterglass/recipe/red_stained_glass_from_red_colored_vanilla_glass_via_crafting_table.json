@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "red_stained_glass",
+  "key": {
+    "G": "betterglass:red_colored_vanilla_glass",
+    "W": "minecraft:red_dye"
+  },
+  "pattern": [
+    " G ",
+    "GWG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:red_stained_glass"
+  }
+}

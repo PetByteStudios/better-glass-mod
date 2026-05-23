@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "black_colored_vanilla_glass",
+  "key": {
+    "G": "#betterglass:colored_vanilla_glass",
+    "W": "minecraft:black_dye"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:black_colored_vanilla_glass"
+  }
+}

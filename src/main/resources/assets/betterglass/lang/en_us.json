@@ -72,6 +72,23 @@
   "block.betterglass.magenta_stained_scratched_glass": "Magenta Stained Scratched Glass",
   "block.betterglass.pink_stained_scratched_glass": "Pink Stained Scratched Glass",
 
+  "block.betterglass.white_colored_vanilla_glass": "White Colored Glass",
+  "block.betterglass.light_gray_colored_vanilla_glass": "Light Gray Colored Glass",
+  "block.betterglass.gray_colored_vanilla_glass": "Gray Colored Glass",
+  "block.betterglass.black_colored_vanilla_glass": "Black Colored Glass",
+  "block.betterglass.brown_colored_vanilla_glass": "Brown Colored Glass",
+  "block.betterglass.red_colored_vanilla_glass": "Red Colored Glass",
+  "block.betterglass.orange_colored_vanilla_glass": "Orange Colored Glass",
+  "block.betterglass.yellow_colored_vanilla_glass": "Yellow Colored Glass",
+  "block.betterglass.lime_colored_vanilla_glass": "Lime Colored Glass",
+  "block.betterglass.green_colored_vanilla_glass": "Green Colored Glass",
+  "block.betterglass.cyan_colored_vanilla_glass": "Cyan Colored Glass",
+  "block.betterglass.light_blue_colored_vanilla_glass": "Light Blue Colored Glass",
+  "block.betterglass.blue_colored_vanilla_glass": "Blue Colored Glass",
+  "block.betterglass.purple_colored_vanilla_glass": "Purple Colored Glass",
+  "block.betterglass.magenta_colored_vanilla_glass": "Magenta Colored Glass",
+  "block.betterglass.pink_colored_vanilla_glass": "Pink Colored Glass",
+
   "tag.block.clear_glass": "Clear Glass",
   "tag.block.scratched_glass": "Scratched Glass",
   "tag.block.colored_glass": "Colored Glass",
@@ -83,6 +100,7 @@
   "tag.block.stained_vanilla_glass_block": "Stained Vanilla Glass Block",
   "tag.block.stained_vanilla_glass_pane": "Stained Vanilla Glass Pane",
   "tag.block.stained_vanilla_glass": "Stained Vanilla Glass",
+  "tag.block.colored_vanilla_glass": "Colored Vanilla Glass",
   "tag.item.clear_glass": "Clear Glass",
   "tag.item.scratched_glass": "Scratched Glass",
   "tag.item.colored_glass": "Colored Glass",
@@ -94,6 +112,7 @@
   "tag.item.stained_vanilla_glass_block": "Stained Vanilla Glass Block",
   "tag.item.stained_vanilla_glass_pane": "Stained Vanilla Glass Pane",
   "tag.item.stained_vanilla_glass": "Stained Vanilla Glass",
+  "tag.item.colored_vanilla_glass": "Colored Vanilla Glass",
 
   "creativemodetab.betterglass.betterglass": "Better Glass"
 }

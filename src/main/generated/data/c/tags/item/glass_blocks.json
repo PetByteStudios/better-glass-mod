@@ -65,6 +65,22 @@
     "betterglass:blue_stained_scratched_glass",
     "betterglass:purple_stained_scratched_glass",
     "betterglass:magenta_stained_scratched_glass",
-    "betterglass:pink_stained_scratched_glass"
+    "betterglass:pink_stained_scratched_glass",
+    "betterglass:white_colored_vanilla_glass",
+    "betterglass:light_gray_colored_vanilla_glass",
+    "betterglass:gray_colored_vanilla_glass",
+    "betterglass:black_colored_vanilla_glass",
+    "betterglass:brown_colored_vanilla_glass",
+    "betterglass:red_colored_vanilla_glass",
+    "betterglass:orange_colored_vanilla_glass",
+    "betterglass:yellow_colored_vanilla_glass",
+    "betterglass:lime_colored_vanilla_glass",
+    "betterglass:green_colored_vanilla_glass",
+    "betterglass:cyan_colored_vanilla_glass",
+    "betterglass:light_blue_colored_vanilla_glass",
+    "betterglass:blue_colored_vanilla_glass",
+    "betterglass:purple_colored_vanilla_glass",
+    "betterglass:magenta_colored_vanilla_glass",
+    "betterglass:pink_colored_vanilla_glass"
   ]
 }

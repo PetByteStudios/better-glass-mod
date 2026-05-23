@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "gray_colored_vanilla_glass",
+  "key": {
+    "G": "minecraft:glass",
+    "W": "minecraft:gray_dye"
+  },
+  "pattern": [
+    " G ",
+    "GWG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:gray_colored_vanilla_glass"
+  }
+}

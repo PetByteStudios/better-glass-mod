@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "pink_colored_vanilla_glass",
+  "key": {
+    "G": "minecraft:pink_stained_glass",
+    "W": "#c:buckets/water"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:pink_colored_vanilla_glass"
+  }
+}

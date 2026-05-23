@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:orange_stained_glass",
+  "result": {
+    "id": "betterglass:orange_colored_vanilla_glass"
+  }
+}

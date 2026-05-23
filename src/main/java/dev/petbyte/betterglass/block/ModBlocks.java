@@ -57,18 +57,24 @@ public class ModBlocks {
     public static final Map<DyeColor, Block> COLORED_SCRATCHED_GLASS = new LinkedHashMap<>();
     public static final Map<DyeColor, Block> STAINED_SCRATCHED_GLASS = new LinkedHashMap<>();
 
+    public static final Map<DyeColor, Block> COLORED_VANILLA_GLASS = new LinkedHashMap<>();
+
     static {
         for (DyeColor color : DYE_ORDER) {
             COLORED_CLEAR_GLASS.put(color, registerGlassBlock(color.getName() + "_colored_clear_glass"));
             STAINED_CLEAR_GLASS.put(color, registerGlassBlock(color.getName() + "_stained_clear_glass"));
             COLORED_SCRATCHED_GLASS.put(color, registerGlassBlock(color.getName() + "_colored_scratched_glass"));
             STAINED_SCRATCHED_GLASS.put(color, registerGlassBlock(color.getName() + "_stained_scratched_glass"));
+
+            COLORED_VANILLA_GLASS.put(color, registerGlassBlock(color.getName() + "_colored_vanilla_glass"));
         }
 
         BETTER_GLASS_BLOCKS.addAll(COLORED_CLEAR_GLASS.values());
         BETTER_GLASS_BLOCKS.addAll(STAINED_CLEAR_GLASS.values());
         BETTER_GLASS_BLOCKS.addAll(COLORED_SCRATCHED_GLASS.values());
         BETTER_GLASS_BLOCKS.addAll(STAINED_SCRATCHED_GLASS.values());
+
+        BETTER_GLASS_BLOCKS.addAll(COLORED_VANILLA_GLASS.values());
     }
 
     public static final Block GLASSCUTTER = registerGlasscutter();

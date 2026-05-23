@@ -80,5 +80,8 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider{
                 .add(Blocks.CYAN_STAINED_GLASS_PANE.asItem()).add(Blocks.LIGHT_BLUE_STAINED_GLASS_PANE.asItem()).add(Blocks.BLUE_STAINED_GLASS_PANE.asItem())
                 .add(Blocks.PURPLE_STAINED_GLASS_PANE.asItem()).add(Blocks.MAGENTA_STAINED_GLASS_PANE.asItem()).add(Blocks.PINK_STAINED_GLASS_PANE.asItem())
                 .addOptionalTag(ModTags.Items.STAINED_VANILLA_GLASS);
+
+        valueLookupBuilder(ModTags.Items.COLORED_VANILLA_GLASS)
+                .addAll(ModBlocks.COLORED_VANILLA_GLASS.values().stream().map(Block::asItem).toList());
     }
 }
