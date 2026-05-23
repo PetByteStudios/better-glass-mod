@@ -29,128 +29,46 @@ public class ModTextureProvider implements DataProvider {
             for (String colorName : List.of("white", "light_gray", "gray", "black",
                     "brown", "red", "orange", "yellow", "lime", "green",
                     "cyan", "light_blue", "blue", "purple", "magenta", "pink", "undyed")) {
-
                 Path paletteJson = templatesDir.resolve("palettes/%s.json".formatted(colorName));
                 LinkedHashMap<Integer, Integer> palette = loadPalette(templateJson, paletteJson);
 
-                GenerateStainedGlassPaneTops(colorName, palette);
+                for (String blockType : List.of("clear_glass", "scratched_glass", "vanilla_glass")) {
+                    BufferedImage template = ImageIO.read(templatesDir.resolve("blocks/%s.png".formatted(blockType)).toFile());
+                    BufferedImage result = applyPalette(template, palette);
+                    Path outputDir = resourcesDir.resolve("../generated/assets/%s/textures/block".formatted(blockType.equals("vanilla_glass") && colorName.equals("undyed") ? "minecraft" : "betterglass"));
+                    saveTexture(result, outputDir.resolve((colorName.equals("undyed") ? "%s.png".formatted(blockType.equals("vanilla_glass") ? "glass" : blockType) : "%s_colored_%s.png".formatted(colorName, blockType))));
 
-                GenerateColoredModdedGlass(colorName, palette);
-                GenerateColoredVanillaGlass(colorName, palette);
-                if (colorName.equals("undyed")) { continue; } // No need to generate a Stained variant of Undyed
-                GenerateStainedModdedGlass(colorName, palette);
-                GenerateStainedVanillaGlass(colorName, palette);
+                    if (colorName.equals("undyed")) { continue; }
+
+                    result = applyStain(template, palette);
+                    if (blockType.equals("vanilla_glass")) { outputDir = outputDir.resolve("../../../minecraft/textures/block"); }
+                    saveTexture(result, outputDir.resolve("%s_stained_%s.png".formatted(colorName, blockType.equals("vanilla_glass") ? "glass" : blockType)));
+                }
+
+                GenerateStainedGlassPaneTops(colorName, palette);
             }
             return CompletableFuture.allOf();
-        } catch (IOException e) {
-            throw new RuntimeException("Texture datagen failed at run(): ", e);
         }
-    }
-
-    private void GenerateColoredModdedGlass(String colorName, LinkedHashMap<Integer, Integer> palette) {
-        try {
-            for (String blockType : List.of("clear_glass", "scratched_glass")) {
-                BufferedImage template = ImageIO.read(
-                        templatesDir.resolve("blocks/%s.png".formatted(blockType)).toFile()
-                );
-                BufferedImage result = applyPalette(template, palette);
-                Path outputDir = resourcesDir.resolve("../generated/assets/betterglass/textures/block");
-                saveTexture(result, outputDir.resolve((colorName.equals("undyed") ? "%s.png".formatted(blockType) : "%s_colored_%s.png".formatted(colorName, blockType))));
-            }
-        } catch (IOException e) {
-            throw new RuntimeException("Texture datagen failed at GenerateColoredModdedGlass(): ", e);
-        }
-    }
-
-    private void GenerateStainedModdedGlass(String colorName, LinkedHashMap<Integer, Integer> palette) {
-        try {
-            for (String blockType : List.of("clear_glass", "scratched_glass")) {
-                BufferedImage template = ImageIO.read(
-                        templatesDir.resolve("blocks/%s.png".formatted(blockType)).toFile()
-                );
-
-                String lastPaletteColor = Integer.toHexString(palette.sequencedValues().getLast());
-                BufferedImage result = new BufferedImage(template.getWidth(), template.getHeight(), BufferedImage.TYPE_INT_ARGB);
-                Graphics2D g2d = result.createGraphics();
-                g2d.setColor(new Color(Integer.parseUnsignedInt("40%s".formatted(lastPaletteColor.substring(2)),16), true)); // color is the last palette color at 40₁₆ alpha
-                g2d.fillRect(0, 0, result.getWidth(), result.getHeight());
-                BufferedImage stainedForeground = applyPalette(template, palette);
-                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f)); // set drawmode to 50% alpha (?)
-                g2d.drawImage(stainedForeground, 0, 0, null); // add foreground
-                g2d.dispose();
-                Path outputDir = resourcesDir.resolve("../generated/assets/betterglass/textures/block");
-                saveTexture(result, outputDir.resolve(("%s_stained_%s.png".formatted(colorName, blockType))));
-            }
-        } catch (IOException e) {
-            throw new RuntimeException("Texture datagen failed at GenerateColoredModdedGlass(): ", e);
-        }
-    }
-
-    private void GenerateColoredVanillaGlass(String colorName, LinkedHashMap<Integer, Integer> palette) {
-        try {
-            BufferedImage template = ImageIO.read(
-                    templatesDir.resolve("blocks/vanilla_glass.png").toFile()
-            );
-            BufferedImage result = applyPalette(template, palette);
-            Path outputDir = resourcesDir.resolve("../generated/assets/betterglass/textures/block");
-            if (colorName.equals("undyed")) {
-                outputDir = outputDir.resolve("../../../minecraft/textures/block");
-                saveTexture(result, outputDir.resolve("glass.png"));
-            } else {
-                saveTexture(result, outputDir.resolve(("%s_colored_vanilla_glass.png".formatted(colorName))));
-            }
-        } catch (IOException e) {
-            throw new RuntimeException("Texture datagen failed at GenerateColoredVanillaGlass(): ", e);
-        }
-    }
-
-    private void GenerateStainedVanillaGlass(String colorName, LinkedHashMap<Integer, Integer> palette) {
-        try {
-            BufferedImage template = ImageIO.read(
-                    templatesDir.resolve("blocks/vanilla_glass.png").toFile()
-            );
-
-            String lastPaletteColor = Integer.toHexString(palette.sequencedValues().getLast());
-            BufferedImage result = new BufferedImage(template.getWidth(), template.getHeight(), BufferedImage.TYPE_INT_ARGB);
-            Graphics2D g2d = result.createGraphics();
-            g2d.setColor(new Color(Integer.parseUnsignedInt("40%s".formatted(lastPaletteColor.substring(2)),16), true)); // color is the last palette color at 40₁₆ alpha
-            g2d.fillRect(0, 0, result.getWidth(), result.getHeight());
-            BufferedImage stainedForeground = applyPalette(template, palette);
-            g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f)); // set drawmode to 50% alpha (?)
-            g2d.drawImage(stainedForeground, 0, 0, null); // add foreground
-            g2d.dispose();
-            Path outputDir = resourcesDir.resolve("../generated/assets/minecraft/textures/block");
-            saveTexture(result, outputDir.resolve("%s_stained_glass.png".formatted(colorName)));
-        } catch (IOException e) {
-            throw new RuntimeException("Texture datagen failed at GenerateStainedVanillaGlass(): ", e);
-        }
+        catch (IOException e) { throw new RuntimeException("Texture datagen failed at GenerateColoredVanillaGlass(): ", e); }
     }
 
     private void GenerateStainedGlassPaneTops(String colorName, LinkedHashMap<Integer, Integer> palette) {
         try {
-            BufferedImage template = ImageIO.read(
-                    templatesDir.resolve("blocks/glass_pane_top.png").toFile()
-            );
+            BufferedImage template = ImageIO.read(templatesDir.resolve("blocks/glass_pane_top.png").toFile());
 
             Path outputDir = resourcesDir.resolve("../generated/assets/minecraft/textures/block");
             if (colorName.equals("undyed")) {
                 BufferedImage result = applyPalette(template, palette);
                 saveTexture(result, outputDir.resolve("glass_pane_top.png"));
             } else {
-                String lastPaletteColor = Integer.toHexString(palette.sequencedValues().getLast());
                 BufferedImage result = new BufferedImage(template.getWidth(), template.getHeight(), BufferedImage.TYPE_INT_ARGB);
                 Graphics2D g2d = result.createGraphics();
-                g2d.setColor(new Color(Integer.parseUnsignedInt("40%s".formatted(lastPaletteColor.substring(2)),16), true)); // color is the last palette color at 40₁₆ alpha
-                g2d.fillRect(0, 0, result.getWidth(), result.getHeight());
-                BufferedImage stainedForeground = applyPalette(template, palette);
-                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f)); // set drawmode to 50% alpha (?)
-                g2d.drawImage(stainedForeground, 0, 0, null); // add foreground
-                g2d.dispose();
+                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
+                g2d.drawImage(applyPalette(template, palette), 0, 0, null);
                 saveTexture(result, outputDir.resolve(("%s_stained_glass_pane_top.png".formatted(colorName))));
             }
-        } catch (IOException e) {
-            throw new RuntimeException("Texture datagen failed at GenerateStainedGlassPaneTops(): ", e);
         }
+        catch (IOException e) { throw new RuntimeException("Texture datagen failed at GenerateColoredVanillaGlass(): ", e); }
     }
 
     private BufferedImage applyPalette(BufferedImage template, Map<Integer, Integer> paletteMap) {
@@ -161,6 +79,19 @@ public class ModTextureProvider implements DataProvider {
                 result.setRGB(x, y, paletteMap.getOrDefault(pixel, pixel));
             }
         }
+        return result;
+    }
+
+    private BufferedImage applyStain(BufferedImage template, LinkedHashMap<Integer, Integer> paletteMap) {
+        String lastPaletteColor = Integer.toHexString(paletteMap.sequencedValues().getLast());
+        BufferedImage result = new BufferedImage(template.getWidth(), template.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2d = result.createGraphics();
+        g2d.setColor(new Color(Integer.parseUnsignedInt("40%s".formatted(lastPaletteColor.substring(2)),16), true)); // color is the last palette color at 40₁₆ alpha
+        g2d.fillRect(0, 0, result.getWidth(), result.getHeight());
+        BufferedImage stainedForeground = applyPalette(template, paletteMap);
+        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f)); // set drawmode to 50% alpha (?)
+        g2d.drawImage(stainedForeground, 0, 0, null); // add foreground
+        g2d.dispose();
         return result;
     }
 
