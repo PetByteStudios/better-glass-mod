@@ -8,17 +8,37 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 public class ConnectedTexturesProvider implements DataProvider {
     public ConnectedTexturesProvider() { }
 
     Path resourcesDir = Path.of("../../src/main/resources");
-    Path connectionsJson = resourcesDir.resolve("assets/betterglass/templates/connections.json");
     Path outputBetterGlassDir = resourcesDir.resolve("../generated/assets/betterglass/optifine/ctm/betterglass/");
     Path outputVanillaDir = resourcesDir.resolve("../generated/assets/betterglass/optifine/ctm/minecraft/");
 
     Path finalOutput = null;
+
+    public static Map<String, List<int[]>> sidePixels = Map.of(
+            "top", List.of(new int[]{1, 0}, new int[]{2, 0}, new int[]{3, 0}, new int[]{4, 0},
+                    new int[]{5, 0}, new int[]{6, 0}, new int[]{7, 0}, new int[]{8, 0}, new int[]{9, 0},
+                    new int[]{10, 0}, new int[]{11, 0}, new int[]{12, 0}, new int[]{13, 0}, new int[]{14, 0}),
+            "bottom", List.of(new int[]{1, 15}, new int[]{2, 15}, new int[]{3, 15}, new int[]{4, 15},
+                    new int[]{5, 15}, new int[]{6, 15}, new int[]{7, 15}, new int[]{8, 15}, new int[]{9, 15},
+                    new int[]{10, 15}, new int[]{11, 15}, new int[]{12, 15}, new int[]{13, 15}, new int[]{14, 15}),
+            "left", List.of(new int[]{0, 1}, new int[]{0, 2}, new int[]{0, 3}, new int[]{0, 4},
+                    new int[]{0, 5}, new int[]{0, 6}, new int[]{0, 7}, new int[]{0, 8}, new int[]{0, 9},
+                    new int[]{0, 10}, new int[]{0, 11}, new int[]{0, 12}, new int[]{0, 13}, new int[]{0, 14}),
+            "right", List.of(new int[]{15, 1}, new int[]{15, 2}, new int[]{15, 3}, new int[]{15, 4},
+                    new int[]{15, 5}, new int[]{15, 6}, new int[]{15, 7}, new int[]{15, 8}, new int[]{15, 9},
+                    new int[]{15, 10}, new int[]{15, 11}, new int[]{15, 12}, new int[]{15, 13}, new int[]{15, 14}),
+            "top_left", List.of(new int[]{0, 0}),
+            "top_right", List.of(new int[]{15, 0}),
+            "bottom_left", List.of(new int[]{0, 15}),
+            "bottom_right", List.of(new int[]{15, 15})
+            );
+
 
     @Override
     public @NonNull CompletableFuture<?> run(@NonNull CachedOutput cache) {
@@ -28,8 +48,8 @@ public class ConnectedTexturesProvider implements DataProvider {
                     if (colorType.equals("undyed")) {
                         String blockProperties = """
                                 method=ctm
-                                matchTiles=%1$s
-                                matchBlocks=%1$s
+                                matchTiles=%2$s:%1$s
+                                matchBlocks=%2$s:%1$s
                                 tiles=0-46
                                 connect=block
                                 resourceCondition=%2$s:textures/block/%1$s.png
@@ -47,8 +67,8 @@ public class ConnectedTexturesProvider implements DataProvider {
 
                         String blockProperties = """
                                 method=ctm
-                                matchTiles=%1$s
-                                matchBlocks=%1$s
+                                matchTiles=%2$s:%1$s
+                                matchBlocks=%2$s:%1$s
                                 tiles=0-46
                                 connect=block
                                 resourceCondition=%2$s:textures/block/%1$s.png
@@ -72,6 +92,6 @@ public class ConnectedTexturesProvider implements DataProvider {
 
     @Override
     public @NonNull String getName() {
-        return "BetterGlass ConnectedTextures";
+        return "ConnectedTextures";
     }
 }

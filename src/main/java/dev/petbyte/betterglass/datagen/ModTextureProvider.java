@@ -1,5 +1,6 @@
 package dev.petbyte.betterglass.datagen;
 
+import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
@@ -9,8 +10,10 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,9 +50,10 @@ public class ModTextureProvider implements DataProvider {
 
                 GenerateStainedGlassPaneTops(colorName, palette);
             }
+            GenerateConnectingTextures();
             return CompletableFuture.allOf();
         }
-        catch (IOException e) { throw new RuntimeException("Texture datagen failed at GenerateColoredVanillaGlass(): ", e); }
+        catch (IOException e) { throw new RuntimeException("Texture datagen failed at run(): ", e); }
     }
 
     private void GenerateStainedGlassPaneTops(String colorName, LinkedHashMap<Integer, Integer> palette) {
@@ -68,7 +72,68 @@ public class ModTextureProvider implements DataProvider {
                 saveTexture(result, outputDir.resolve(("%s_stained_glass_pane_top.png".formatted(colorName))));
             }
         }
-        catch (IOException e) { throw new RuntimeException("Texture datagen failed at GenerateColoredVanillaGlass(): ", e); }
+        catch (IOException e) { throw new RuntimeException("Texture datagen failed at GenerateStainedGlassPaneTops(): ", e); }
+    }
+
+    private void GenerateConnectingTextures() {
+        try {
+            // Load connections JSON once
+            Type mapType = new TypeToken<Map<String, List<String>>>() {
+            }.getType();
+            Map<String, List<String>> connections = new Gson().fromJson(
+                    Files.readString(templatesDir.resolve("connections.json")), mapType
+            );
+
+             for (String colorName : List.of("white", "light_gray", "gray", "black",
+                    "brown", "red", "orange", "yellow", "lime", "green",
+                    "cyan", "light_blue", "blue", "purple", "magenta", "pink", "undyed")) {
+                Path paletteJson = templatesDir.resolve("palettes/%s.json".formatted(colorName));
+                LinkedHashMap<Integer, Integer> palette = loadPalette(templateJson, paletteJson);
+
+                for (String blockType : List.of("clear_glass", "scratched_glass", "vanilla_glass")) {
+                    BufferedImage template = ImageIO.read(templatesDir.resolve("blocks/%s.png".formatted(blockType)).toFile());
+
+                    Path ctmDir = resourcesDir.resolve("../generated/assets/betterglass/optifine/ctm/betterglass/%s".formatted(blockType.equals("vanilla_glass") ? "glass" : blockType));
+                    // Colored
+                    generateCTMTiles(template, palette, false, ConnectedTexturesProvider.sidePixels, connections, ctmDir.resolve(colorName.equals("undyed") ? "undyed" : "colored/%s".formatted(colorName)), blockType.equals("vanilla_glass"));
+
+                    // Stained (skip undyed)
+                    if (!colorName.equals("undyed")) {
+                        generateCTMTiles(template, palette, true, ConnectedTexturesProvider.sidePixels, connections, ctmDir.resolve("stained/%s".formatted(colorName)), blockType.equals("vanilla_glass"));
+                    }
+                }
+            }
+        }
+        catch (IOException e) { throw new RuntimeException("Texture datagen failed at GenerateConnectingTextures(): ", e); }
+    }
+
+    private void generateCTMTiles(BufferedImage base, LinkedHashMap<Integer, Integer> palette, boolean stained,
+                                  Map<String, List<int[]>> sidePixels, Map<String, List<String>> connections, Path outputDir, boolean vanilla) {
+        try {
+            for (Map.Entry<String, List<String>> entry : connections.entrySet()) {
+                int tileIndex = Integer.parseInt(entry.getKey());
+                List<String> sides = entry.getValue();
+
+                // Start with a copy of the base template
+                BufferedImage tile = stained ? applyStain(base, palette) : applyPalette(base, palette);
+
+                // Remove pixels for each connected side
+                for (String side : sides) {
+                    List<int[]> pixels = sidePixels.get(side);
+                    if (pixels == null) continue;
+                    for (int[] px : pixels) {
+                        tile.setRGB(px[0], px[1], 0x00000000); // fully transparent
+                    }
+                }
+
+                if ((stained || outputDir.endsWith("undyed")) && vanilla) {
+                    outputDir = Paths.get(outputDir.toString().replace("ctm\\betterglass", "ctm\\minecraft"));
+                    outputDir = Paths.get(outputDir.toString().replace("ctm/betterglass", "ctm/minecraft"));
+                }
+                saveTexture(tile, outputDir.resolve("%d.png".formatted(tileIndex)));
+            }
+        }
+        catch (IOException e) { throw new RuntimeException("Texture datagen failed at generateCTMTiles(): ", e); }
     }
 
     private BufferedImage applyPalette(BufferedImage template, Map<Integer, Integer> paletteMap) {
