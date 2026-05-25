@@ -3,14 +3,15 @@
 	"id": "betterglass",
 	"version": "${version}",
 	"name": "Better Glass",
-	"description": "Better Glass adds various different new glass types and glass blocks!",
+	"description": "Better Glass adds various different new glass types and glass blocks!\n\n  §l§6© 2026 PetByte§r\n\nCONTACT: contact@petbyte.dev for General Contact, dev.contact@petbyte.dev for development-related inquiries.",
 	"authors": [
-		"joelfrom08",
-		"© 2026 PetByte"
+		"joelfrom08"
 	],
 	"contact": {
 		"homepage": "https://petbyte.dev/",
-		"sources": "https://github.com/PetByteStudios/better-glass-mod"
+		"sources": "https://github.com/PetByteStudios/better-glass-mod",
+		"issues": "https://github.com/PetByteStudios/better-glass-mod/issues",
+		"email": "contact@petbyte.dev"
 	},
 	"license": "MIT-License",
 	"icon": "assets/betterglass/icon.png",
@@ -34,5 +35,15 @@
 		"minecraft": "~26.1.2",
 		"java": ">=25",
 		"fabric-api": "*"
+	},
+	"custom": {
+		"modmenu": {
+			"update_checker": true,
+			"links": {
+				"modmenu.modrinth": "https://modrinth.com/mod/SLUG_TO_BE_DECIDED",
+				"modmenu.curseforge": "https://www.curseforge.com/minecraft/mc-mods/betterglass",
+				"modmenu.twitch": "https://twitch.tv/joelfrom08"
+			}
+		}
 	}
 }
