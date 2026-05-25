@@ -43,7 +43,7 @@ public class ConnectedTexturesProvider implements DataProvider {
     @Override
     public @NonNull CompletableFuture<?> run(@NonNull CachedOutput cache) {
         try {
-            for (String blockType : List.of("scratched_glass", "clear_glass", "vanilla_glass")) {
+            for (String blockType : List.of("clear_glass", "scratched_glass", "vanilla_glass")) {
                 for (String colorType : List.of("undyed", "stained", "colored")) {
                     if (colorType.equals("undyed")) {
                         String blockProperties = """
@@ -63,7 +63,7 @@ public class ConnectedTexturesProvider implements DataProvider {
                     for (String colorName : List.of("white", "light_gray", "gray", "black",
                             "brown", "red", "orange", "yellow", "lime", "green",
                             "cyan", "light_blue", "blue", "purple", "magenta", "pink")) {
-                        String handledBlock = "%s_%s_%s".formatted(colorName, colorType, (blockType.equals("vanilla_glass") ? "glass" : blockType));
+                        String handledBlock = "%s_%s_%s".formatted(colorName, colorType, (blockType.equals("vanilla_glass") && colorType.equals("stained") ? "glass" : blockType));
 
                         String blockProperties = """
                                 method=ctm
