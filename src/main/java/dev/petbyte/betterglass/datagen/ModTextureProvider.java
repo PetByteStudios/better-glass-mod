@@ -99,7 +99,7 @@ public class ModTextureProvider implements DataProvider {
 
                     // Stained (skip undyed)
                     if (!colorName.equals("undyed")) {
-                        generateCTMTiles(template, palette, true, ConnectedTexturesProvider.sidePixels, connections, ctmDir.resolve("stained/%s".formatted(colorName)), blockType.equals("vanilla_glass"));
+                       generateCTMTiles(template, palette, true, ConnectedTexturesProvider.sidePixels, connections, ctmDir.resolve("stained/%s".formatted(colorName)), blockType.equals("vanilla_glass"));
                     }
                 }
             }
@@ -122,7 +122,8 @@ public class ModTextureProvider implements DataProvider {
                     List<int[]> pixels = sidePixels.get(side);
                     if (pixels == null) continue;
                     for (int[] px : pixels) {
-                        tile.setRGB(px[0], px[1], 0x00000000); // fully transparent
+                        if (!stained) tile.setRGB(px[0], px[1], 0x00000000);
+                        else tile.setRGB(px[0], px[1], Integer.parseUnsignedInt("40%s".formatted(Integer.toHexString(palette.sequencedValues().getLast()).substring(2)),16));
                     }
                 }
 
