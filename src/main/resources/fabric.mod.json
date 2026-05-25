@@ -36,6 +36,9 @@
 		"java": ">=25",
 		"fabric-api": "*"
 	},
+	"suggests": {
+		"continuity": "~3.0"
+	},
 	"custom": {
 		"modmenu": {
 			"update_checker": true,
