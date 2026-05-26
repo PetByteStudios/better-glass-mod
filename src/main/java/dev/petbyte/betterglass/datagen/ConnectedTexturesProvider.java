@@ -52,7 +52,6 @@ public class ConnectedTexturesProvider implements DataProvider {
                                 matchBlocks=%2$s:%1$s
                                 tiles=0-46
                                 connect=block
-                                resourceCondition=%2$s:textures/block/%1$s.png
                                 """.formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), (blockType.equals("vanilla_glass") ? "minecraft" : "betterglass"));
 
                         finalOutput = (blockType.equals("vanilla_glass") ? outputVanillaDir : outputBetterGlassDir).resolve("%s/%s/block.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), colorType));
@@ -71,7 +70,6 @@ public class ConnectedTexturesProvider implements DataProvider {
                                 matchBlocks=%2$s:%1$s
                                 tiles=0-46
                                 connect=block
-                                resourceCondition=%2$s:textures/block/%1$s.png
                                 """.formatted(handledBlock, (blockType.equals("vanilla_glass") && colorType.equals("stained") ? "minecraft" : "betterglass"));
 
                         if (blockType.equals("vanilla_glass")) {
