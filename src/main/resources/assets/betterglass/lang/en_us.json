@@ -114,5 +114,10 @@
   "tag.item.stained_vanilla_glass": "Stained Vanilla Glass",
   "tag.item.colored_vanilla_glass": "Colored Vanilla Glass",
 
-  "creativemodetab.betterglass.betterglass": "Better Glass"
+  "creativemodetab.betterglass.betterglass": "Better Glass",
+
+  "resourcePack.betterglass.connecting_textures.name": "Better Glass: Connecting Textures",
+  "resourcePack.betterglass.connecting_textures.description": "Requires Continuity. Currently broken, see git@a7b16a8b8f",
+  "resourcePack.betterglass.base_assets.name": "Better Glass: Base Assets",
+  "resourcePack.betterglass.base_assets.description": "The base textures for Better Glass"
 }

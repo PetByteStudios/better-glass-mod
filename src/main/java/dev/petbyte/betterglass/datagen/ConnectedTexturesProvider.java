@@ -15,8 +15,8 @@ public class ConnectedTexturesProvider implements DataProvider {
     public ConnectedTexturesProvider() { }
 
     Path resourcesDir = Path.of("../../src/main/resources");
-    Path outputBetterGlassDir = resourcesDir.resolve("../generated/assets/betterglass/optifine/ctm/betterglass/");
-    Path outputVanillaDir = resourcesDir.resolve("../generated/assets/betterglass/optifine/ctm/minecraft/");
+    Path outputBetterGlassDir = resourcesDir.resolve("../generated/resourcepacks/connecting_textures/assets/betterglass/optifine/ctm/betterglass/");
+    Path outputVanillaDir = resourcesDir.resolve("../generated/resourcepacks/connecting_textures/assets/betterglass/optifine/ctm/minecraft/");
 
     Path finalOutput = null;
 

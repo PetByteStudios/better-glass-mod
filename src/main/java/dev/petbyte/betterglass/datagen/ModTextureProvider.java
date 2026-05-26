@@ -38,7 +38,7 @@ public class ModTextureProvider implements DataProvider {
                 for (String blockType : List.of("clear_glass", "scratched_glass", "vanilla_glass")) {
                     BufferedImage template = ImageIO.read(templatesDir.resolve("blocks/%s.png".formatted(blockType)).toFile());
                     BufferedImage result = applyPalette(template, palette);
-                    Path outputDir = resourcesDir.resolve("../generated/assets/%s/textures/block".formatted(blockType.equals("vanilla_glass") && colorName.equals("undyed") ? "minecraft" : "betterglass"));
+                    Path outputDir = resourcesDir.resolve("../generated/resourcepacks/base_assets/assets/%s/textures/block".formatted(blockType.equals("vanilla_glass") && colorName.equals("undyed") ? "minecraft" : "betterglass"));
                     saveTexture(result, outputDir.resolve((colorName.equals("undyed") ? "%s.png".formatted(blockType.equals("vanilla_glass") ? "glass" : blockType) : "%s_colored_%s.png".formatted(colorName, blockType))));
 
                     if (colorName.equals("undyed")) { continue; }
@@ -60,7 +60,7 @@ public class ModTextureProvider implements DataProvider {
         try {
             BufferedImage template = ImageIO.read(templatesDir.resolve("blocks/glass_pane_top.png").toFile());
 
-            Path outputDir = resourcesDir.resolve("../generated/assets/minecraft/textures/block");
+            Path outputDir = resourcesDir.resolve("../generated/resourcepacks/base_assets/assets/minecraft/textures/block");
             if (colorName.equals("undyed")) {
                 BufferedImage result = applyPalette(template, palette);
                 saveTexture(result, outputDir.resolve("glass_pane_top.png"));
@@ -93,7 +93,7 @@ public class ModTextureProvider implements DataProvider {
                 for (String blockType : List.of("clear_glass", "scratched_glass", "vanilla_glass")) {
                     BufferedImage template = ImageIO.read(templatesDir.resolve("blocks/%s.png".formatted(blockType)).toFile());
 
-                    Path ctmDir = resourcesDir.resolve("../generated/assets/betterglass/optifine/ctm/betterglass/%s".formatted(blockType.equals("vanilla_glass") ? "glass" : blockType));
+                    Path ctmDir = resourcesDir.resolve("../generated/resourcepacks/connecting_textures/assets/betterglass/optifine/ctm/betterglass/%s".formatted(blockType.equals("vanilla_glass") ? "glass" : blockType));
                     // Colored
                     generateCTMTiles(template, palette, false, ConnectedTexturesProvider.sidePixels, connections, ctmDir.resolve(colorName.equals("undyed") ? "undyed" : "colored/%s".formatted(colorName)), blockType.equals("vanilla_glass"));
 
