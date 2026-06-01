@@ -20,6 +20,7 @@ public class ModCreativeModeTabs {
                         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
                             output.accept(block);
                         }
+                        output.accept(ModBlocks.GLASSCUTTER);
                     }).build());
 
     public static void registerModCreativeModeTabs() {
