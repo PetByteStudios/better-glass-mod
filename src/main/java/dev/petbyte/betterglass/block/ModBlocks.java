@@ -111,7 +111,6 @@ public class ModBlocks {
         BetterGlass.LOGGER.info("Registering Mod Blocks for %s".formatted(BetterGlass.MOD_ID));
 
         for (Block block : BETTER_GLASS_BLOCKS) {
-            CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> output.accept(block));
             CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COLORED_BLOCKS).register(output -> output.accept(block));
         }
 
