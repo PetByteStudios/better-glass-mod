@@ -74,5 +74,7 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
 
         valueLookupBuilder(ModTags.Blocks.COLORED_VANILLA_GLASS)
                 .addAll(ModBlocks.COLORED_VANILLA_GLASS.values());
+
+        valueLookupBuilder(ModTags.Blocks.CLEAR_GLASS_PANE).add(ModBlocks.CLEAR_GLASS_PANE);
     }
 }

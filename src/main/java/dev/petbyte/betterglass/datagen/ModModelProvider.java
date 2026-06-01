@@ -18,8 +18,11 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(@NonNull BlockModelGenerators blockModelGenerators) {
         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
+            if (block == ModBlocks.CLEAR_GLASS) { continue; }
             blockModelGenerators.createTrivialCube(block);
         }
+
+        blockModelGenerators.createGlassBlocks(ModBlocks.CLEAR_GLASS, ModBlocks.CLEAR_GLASS_PANE);
     }
 
 

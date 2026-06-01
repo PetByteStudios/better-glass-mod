@@ -14,6 +14,7 @@ public class ModTags {
         }
 
         public static final TagKey<Block> CLEAR_GLASS = createBlockTag("clear_glass");
+        public static final TagKey<Block> CLEAR_GLASS_PANE = createBlockTag("clear_glass_pane");
         public static final TagKey<Block> SCRATCHED_GLASS = createBlockTag("scratched_glass");
         public static final TagKey<Block> COLORED_GLASS = createBlockTag("colored_glass");
         public static final TagKey<Block> STAINED_GLASS = createBlockTag("stained_glass");
@@ -35,6 +36,7 @@ public class ModTags {
         }
 
         public static final TagKey<Item> CLEAR_GLASS = createItemTag("clear_glass");
+        public static final TagKey<Item> CLEAR_GLASS_PANE = createItemTag("clear_glass_pane");
         public static final TagKey<Item> SCRATCHED_GLASS = createItemTag("scratched_glass");
         public static final TagKey<Item> COLORED_GLASS = createItemTag("colored_glass");
         public static final TagKey<Item> STAINED_GLASS = createItemTag("stained_glass");

@@ -51,6 +51,12 @@ public class ModTextureProvider implements DataProvider {
                 GenerateStainedGlassPaneTops(colorName, palette);
             }
             GenerateConnectingTextures();
+
+            BufferedImage template = ImageIO.read(templatesDir.resolve("blocks/glass_pane_top.png").toFile());
+            BufferedImage result = applyPalette(template, loadPalette(templateJson, templatesDir.resolve("palettes/undyed.json")));
+            Path outputDir = resourcesDir.resolve("../generated/resourcepacks/base_assets/assets/betterglass/textures/block");
+            saveTexture(result, outputDir.resolve("clear_glass_pane_top.png"));
+
             return CompletableFuture.allOf();
         }
         catch (IOException e) { throw new RuntimeException("Texture datagen failed at run(): ", e); }

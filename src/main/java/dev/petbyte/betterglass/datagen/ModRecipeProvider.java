@@ -419,6 +419,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                     stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STAINED_SCRATCHED_GLASS.get(color), ModBlocks.COLORED_SCRATCHED_GLASS.get(color));
                     stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, STAINED_VANILLA_GLASS_BLOCK.get(color), ModBlocks.COLORED_VANILLA_GLASS.get(color));
                 }
+
+
+                // ******************************************* //
+                //                                             //
+                //           CRAFTING TABLE: PANES             //
+                //                                             //
+                // ******************************************* //
+
+
+                shaped(RecipeCategory.DECORATIONS, ModBlocks.CLEAR_GLASS_PANE, 16)
+                        .pattern("GGG").pattern("GGG").define('G', ModBlocks.CLEAR_GLASS)
+                        .unlockedBy("has_clear_glass", has(ModBlocks.CLEAR_GLASS)).group("clear_glass_pane")
+                        .save(output, "clear_glass_pane_from_clear_glass_via_crafting_table");
             }
         };
     }

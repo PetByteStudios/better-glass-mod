@@ -83,5 +83,7 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider{
 
         valueLookupBuilder(ModTags.Items.COLORED_VANILLA_GLASS)
                 .addAll(ModBlocks.COLORED_VANILLA_GLASS.values().stream().map(Block::asItem).toList());
+
+        valueLookupBuilder(ModTags.Items.CLEAR_GLASS_PANE).add(ModBlocks.CLEAR_GLASS_PANE.asItem());
     }
 }

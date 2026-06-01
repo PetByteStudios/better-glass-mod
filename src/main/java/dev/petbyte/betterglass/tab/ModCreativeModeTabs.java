@@ -17,7 +17,7 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModBlocks.CLEAR_GLASS))
                     .title(Component.translatable("creativemodetab.betterglass.betterglass"))
                     .displayItems((_, output) -> {
-                        for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
+                        for (Block block : ModBlocks.BETTER_GLASS_ALL) {
                             output.accept(block);
                         }
                         output.accept(ModBlocks.GLASSCUTTER);

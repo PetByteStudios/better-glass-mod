@@ -15,7 +15,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
 
     @Override
     public void generate() {
-        for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
+        for (Block block : ModBlocks.BETTER_GLASS_ALL) {
             add(block, createSilkTouchOnlyTable(block));
         }
 

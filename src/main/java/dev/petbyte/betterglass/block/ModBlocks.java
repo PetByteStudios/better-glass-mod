@@ -32,6 +32,14 @@ public class ModBlocks {
                 .isViewBlocking(Blocks::never);
     }
 
+    private static BlockBehaviour.Properties glassPaneProperties() {
+        return BlockBehaviour.Properties.of()
+                .strength(0.3F)
+                .sound(SoundType.GLASS)
+                .instrument(NoteBlockInstrument.HAT)
+                .noOcclusion();
+    }
+
     public static final List<DyeColor> DYE_ORDER = List.of(
             DyeColor.WHITE, DyeColor.LIGHT_GRAY, DyeColor.GRAY, DyeColor.BLACK,
             DyeColor.BROWN, DyeColor.RED, DyeColor.ORANGE, DyeColor.YELLOW,
@@ -42,9 +50,17 @@ public class ModBlocks {
     public static final Block CLEAR_GLASS = registerGlassBlock("clear_glass");
     public static final Block SCRATCHED_GLASS = registerGlassBlock("scratched_glass");
 
+    public static final Block CLEAR_GLASS_PANE = registerIronBarsBlock("clear_glass_pane");
+
     public static List<Block> BETTER_GLASS_BLOCKS = new ArrayList<>(List.of(
             CLEAR_GLASS, SCRATCHED_GLASS
     ));
+
+    public static List<Block> BETTER_GLASS_PANES = new ArrayList<>(List.of(
+            CLEAR_GLASS_PANE
+    ));
+
+    public static List<Block> BETTER_GLASS_ALL = new ArrayList<>();
 
     public static final Map<DyeColor, Block> COLORED_CLEAR_GLASS = new LinkedHashMap<>();
     public static final Map<DyeColor, Block> STAINED_CLEAR_GLASS = new LinkedHashMap<>();
@@ -69,6 +85,10 @@ public class ModBlocks {
         BETTER_GLASS_BLOCKS.addAll(STAINED_SCRATCHED_GLASS.values());
 
         BETTER_GLASS_BLOCKS.addAll(COLORED_VANILLA_GLASS.values());
+
+
+        BETTER_GLASS_ALL.addAll(BETTER_GLASS_BLOCKS);
+        BETTER_GLASS_ALL.addAll(BETTER_GLASS_PANES);
     }
 
     public static final Block GLASSCUTTER = registerGlasscutter();
@@ -94,6 +114,12 @@ public class ModBlocks {
         return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name), toRegister);
     }
 
+    private static Block registerIronBarsBlock(String name) {
+        Block toRegister = new IronBarsBlock(glassProperties().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
+        registerBlockItem(name, toRegister);
+        return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name), toRegister);
+    }
+
     private static void registerBlockItem(String name, Block block) {
         Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name),
                 new BlockItem(block, new Item.Properties()
@@ -104,7 +130,7 @@ public class ModBlocks {
     public static void registerModBlocks() {
         BetterGlass.LOGGER.info("Registering Mod Blocks for %s".formatted(BetterGlass.MOD_ID));
 
-        for (Block block : BETTER_GLASS_BLOCKS) {
+        for (Block block : BETTER_GLASS_ALL) {
             CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COLORED_BLOCKS).register(output -> output.accept(block));
         }
 
