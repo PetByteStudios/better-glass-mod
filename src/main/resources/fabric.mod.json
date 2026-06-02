@@ -43,7 +43,7 @@
 		"modmenu": {
 			"update_checker": true,
 			"links": {
-				"modmenu.modrinth": "https://modrinth.com/mod/SLUG_TO_BE_DECIDED",
+				"modmenu.modrinth": "https://modrinth.com/mod/petbyte-better-glass",
 				"modmenu.curseforge": "https://www.curseforge.com/minecraft/mc-mods/betterglass",
 				"modmenu.twitch": "https://twitch.tv/joelfrom08"
 			}
