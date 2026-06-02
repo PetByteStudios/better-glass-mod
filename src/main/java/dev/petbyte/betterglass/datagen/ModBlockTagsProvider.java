@@ -82,15 +82,15 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
 
         valueLookupBuilder(ModTags.COLORED_CLEAR_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.COLORED_SCRATCHED_GLASS_BLOCK.block())
-                .addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values());
-
-        valueLookupBuilder(ModTags.COLORED_SCRATCHED_GLASS_PANE.block());
-
         valueLookupBuilder(ModTags.STAINED_CLEAR_GLASS_BLOCK.block())
                 .addAll(ModBlocks.STAINED_CLEAR_GLASS.values());
 
         valueLookupBuilder(ModTags.STAINED_CLEAR_GLASS_PANE.block());
+
+        valueLookupBuilder(ModTags.COLORED_SCRATCHED_GLASS_BLOCK.block())
+                .addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values());
+
+        valueLookupBuilder(ModTags.COLORED_SCRATCHED_GLASS_PANE.block());
 
         valueLookupBuilder(ModTags.STAINED_SCRATCHED_GLASS_BLOCK.block())
                 .addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
