@@ -29,6 +29,7 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
             valueLookupBuilder(ConventionalBlockTags.GLASS_BLOCKS).add(block);
             valueLookupBuilder(ConventionalBlockTags.GLASS_BLOCKS_CHEAP).add(block);
         }
+
         for (DyeColor color : DyeColor.values()) {
             TagKey<Block> colorDyedTag = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "dyed/" + color.getName()));
 
@@ -42,35 +43,45 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
             valueLookupBuilder(colorDyedTag).add(dyedBlocks);
             valueLookupBuilder(ConventionalBlockTags.DYED).add(dyedBlocks);
         }
+
         valueLookupBuilder(ConventionalBlockTags.GLASS_BLOCKS_COLORLESS)
                 .add(ModBlocks.CLEAR_GLASS)
                 .add(ModBlocks.SCRATCHED_GLASS);
+
 
         valueLookupBuilder(ModTags.CLEAR_GLASS_BLOCK.block())
                 .add(ModBlocks.CLEAR_GLASS)
                 .addAll(ModBlocks.COLORED_CLEAR_GLASS.values())
                 .addAll(ModBlocks.STAINED_CLEAR_GLASS.values());
+
+        valueLookupBuilder(ModTags.CLEAR_GLASS_PANE.block())
+                .add(ModBlocks.CLEAR_GLASS_PANE);
+
         valueLookupBuilder(ModTags.SCRATCHED_GLASS_BLOCK.block())
                 .add(ModBlocks.SCRATCHED_GLASS)
                 .addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values())
                 .addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
+
         valueLookupBuilder(ModTags.COLORED_GLASS_BLOCK.block())
                 .addAll(ModBlocks.COLORED_CLEAR_GLASS.values())
                 .addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values())
                 .addAll(ModBlocks.COLORED_VANILLA_GLASS.values());
+
         valueLookupBuilder(ModTags.STAINED_GLASS_BLOCK.block())
                 .addAll(ModBlocks.STAINED_CLEAR_GLASS.values())
                 .addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
+
         valueLookupBuilder(ModTags.COLORED_CLEAR_GLASS_BLOCK.block())
                 .addAll(ModBlocks.COLORED_CLEAR_GLASS.values());
+
         valueLookupBuilder(ModTags.COLORED_SCRATCHED_GLASS_BLOCK.block())
                 .addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values());
+
         valueLookupBuilder(ModTags.STAINED_CLEAR_GLASS_BLOCK.block())
                 .addAll(ModBlocks.STAINED_CLEAR_GLASS.values());
+
         valueLookupBuilder(ModTags.STAINED_SCRATCHED_GLASS_BLOCK.block())
                 .addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
-
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.GLASSCUTTER);
 
         valueLookupBuilder(ModTags.STAINED_VANILLA_GLASS_BLOCK.block()).add(Blocks.WHITE_STAINED_GLASS)
                 .add(Blocks.LIGHT_GRAY_STAINED_GLASS).add(Blocks.GRAY_STAINED_GLASS).add(Blocks.BLACK_STAINED_GLASS)
@@ -78,19 +89,23 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(Blocks.ORANGE_STAINED_GLASS).add(Blocks.LIME_STAINED_GLASS).add(Blocks.GREEN_STAINED_GLASS)
                 .add(Blocks.CYAN_STAINED_GLASS).add(Blocks.LIGHT_BLUE_STAINED_GLASS).add(Blocks.BLUE_STAINED_GLASS)
                 .add(Blocks.PURPLE_STAINED_GLASS).add(Blocks.MAGENTA_STAINED_GLASS).add(Blocks.PINK_STAINED_GLASS);
+
         valueLookupBuilder(ModTags.STAINED_VANILLA_GLASS_PANE.block()).add(Blocks.WHITE_STAINED_GLASS_PANE)
                 .add(Blocks.LIGHT_GRAY_STAINED_GLASS_PANE).add(Blocks.GRAY_STAINED_GLASS_PANE).add(Blocks.BLACK_STAINED_GLASS_PANE)
                 .add(Blocks.BROWN_STAINED_GLASS_PANE).add(Blocks.RED_STAINED_GLASS_PANE).add(Blocks.YELLOW_STAINED_GLASS_PANE)
                 .add(Blocks.ORANGE_STAINED_GLASS_PANE).add(Blocks.LIME_STAINED_GLASS_PANE).add(Blocks.GREEN_STAINED_GLASS_PANE)
                 .add(Blocks.CYAN_STAINED_GLASS_PANE).add(Blocks.LIGHT_BLUE_STAINED_GLASS_PANE).add(Blocks.BLUE_STAINED_GLASS_PANE)
                 .add(Blocks.PURPLE_STAINED_GLASS_PANE).add(Blocks.MAGENTA_STAINED_GLASS_PANE).add(Blocks.PINK_STAINED_GLASS_PANE);
-        valueLookupBuilder(ModTags.STAINED_VANILLA_GLASS_ALL.block())
-                .addTag(ModTags.STAINED_VANILLA_GLASS_BLOCK.block())
-                .addTag(ModTags.STAINED_VANILLA_GLASS_PANE.block());
 
         valueLookupBuilder(ModTags.COLORED_VANILLA_GLASS_BLOCK.block())
                 .addAll(ModBlocks.COLORED_VANILLA_GLASS.values());
 
-        valueLookupBuilder(ModTags.CLEAR_GLASS_PANE.block()).add(ModBlocks.CLEAR_GLASS_PANE);
+
+        valueLookupBuilder(ModTags.STAINED_VANILLA_GLASS_ALL.block())
+                .addTag(ModTags.STAINED_VANILLA_GLASS_BLOCK.block())
+                .addTag(ModTags.STAINED_VANILLA_GLASS_PANE.block());
+
+
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.GLASSCUTTER);
     }
 }
