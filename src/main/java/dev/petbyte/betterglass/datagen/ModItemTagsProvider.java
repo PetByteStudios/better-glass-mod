@@ -44,17 +44,17 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider{
                 .add(ModBlocks.CLEAR_GLASS.asItem())
                 .add(ModBlocks.SCRATCHED_GLASS.asItem());
 
-        copy(ModTags.Blocks.CLEAR_GLASS, ModTags.Items.CLEAR_GLASS);
-        copy(ModTags.Blocks.SCRATCHED_GLASS, ModTags.Items.SCRATCHED_GLASS);
-        copy(ModTags.Blocks.COLORED_GLASS, ModTags.Items.COLORED_GLASS);
-        copy(ModTags.Blocks.STAINED_GLASS, ModTags.Items.STAINED_GLASS);
-        copy(ModTags.Blocks.COLORED_CLEAR_GLASS, ModTags.Items.COLORED_CLEAR_GLASS);
-        copy(ModTags.Blocks.STAINED_CLEAR_GLASS, ModTags.Items.STAINED_CLEAR_GLASS);
-        copy(ModTags.Blocks.COLORED_SCRATCHED_GLASS, ModTags.Items.COLORED_SCRATCHED_GLASS);
-        copy(ModTags.Blocks.STAINED_SCRATCHED_GLASS, ModTags.Items.STAINED_SCRATCHED_GLASS);
-        copy(ModTags.Blocks.STAINED_VANILLA_GLASS_BLOCK, ModTags.Items.STAINED_VANILLA_GLASS_BLOCK);
-        copy(ModTags.Blocks.STAINED_VANILLA_GLASS_PANE, ModTags.Items.STAINED_VANILLA_GLASS_PANE);
-        copy(ModTags.Blocks.COLORED_VANILLA_GLASS, ModTags.Items.COLORED_VANILLA_GLASS);
-        copy(ModTags.Blocks.CLEAR_GLASS_PANE, ModTags.Items.CLEAR_GLASS_PANE);
+        copy(ModTags.CLEAR_GLASS.block(), ModTags.CLEAR_GLASS.item());
+        copy(ModTags.SCRATCHED_GLASS.block(), ModTags.SCRATCHED_GLASS.item());
+        copy(ModTags.COLORED_GLASS.block(), ModTags.COLORED_GLASS.item());
+        copy(ModTags.STAINED_GLASS.block(), ModTags.STAINED_GLASS.item());
+        copy(ModTags.COLORED_CLEAR_GLASS.block(), ModTags.COLORED_CLEAR_GLASS.item());
+        copy(ModTags.STAINED_CLEAR_GLASS.block(), ModTags.STAINED_CLEAR_GLASS.item());
+        copy(ModTags.COLORED_SCRATCHED_GLASS.block(), ModTags.COLORED_SCRATCHED_GLASS.item());
+        copy(ModTags.STAINED_SCRATCHED_GLASS.block(), ModTags.STAINED_SCRATCHED_GLASS.item());
+        copy(ModTags.STAINED_VANILLA_GLASS_BLOCK.block(), ModTags.STAINED_VANILLA_GLASS_BLOCK.item());
+        copy(ModTags.STAINED_VANILLA_GLASS_PANE.block(), ModTags.STAINED_VANILLA_GLASS_PANE.item());
+        copy(ModTags.COLORED_VANILLA_GLASS.block(), ModTags.COLORED_VANILLA_GLASS.item());
+        copy(ModTags.CLEAR_GLASS_PANE.block(), ModTags.CLEAR_GLASS_PANE.item());
     }
 }
