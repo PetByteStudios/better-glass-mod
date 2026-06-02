@@ -15,10 +15,6 @@
     "minecraft:blue_stained_glass",
     "minecraft:purple_stained_glass",
     "minecraft:magenta_stained_glass",
-    "minecraft:pink_stained_glass",
-    {
-      "id": "#betterglass:stained_vanilla_glass_all",
-      "required": false
-    }
+    "minecraft:pink_stained_glass"
   ]
 }

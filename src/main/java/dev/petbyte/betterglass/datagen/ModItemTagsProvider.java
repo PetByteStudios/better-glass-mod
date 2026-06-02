@@ -52,6 +52,7 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider{
         copy(ModTags.STAINED_CLEAR_GLASS.block(), ModTags.STAINED_CLEAR_GLASS.item());
         copy(ModTags.COLORED_SCRATCHED_GLASS.block(), ModTags.COLORED_SCRATCHED_GLASS.item());
         copy(ModTags.STAINED_SCRATCHED_GLASS.block(), ModTags.STAINED_SCRATCHED_GLASS.item());
+        copy(ModTags.STAINED_VANILLA_GLASS_ALL.block(), ModTags.STAINED_VANILLA_GLASS_ALL.item());
         copy(ModTags.STAINED_VANILLA_GLASS_BLOCK.block(), ModTags.STAINED_VANILLA_GLASS_BLOCK.item());
         copy(ModTags.STAINED_VANILLA_GLASS_PANE.block(), ModTags.STAINED_VANILLA_GLASS_PANE.item());
         copy(ModTags.COLORED_VANILLA_GLASS.block(), ModTags.COLORED_VANILLA_GLASS.item());
