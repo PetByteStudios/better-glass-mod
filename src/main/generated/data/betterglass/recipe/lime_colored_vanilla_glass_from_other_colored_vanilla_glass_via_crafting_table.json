@@ -3,7 +3,7 @@
   "category": "building",
   "group": "lime_colored_vanilla_glass",
   "key": {
-    "G": "#betterglass:colored_vanilla_glass",
+    "G": "#betterglass:colored_vanilla_glass_block",
     "W": "minecraft:lime_dye"
   },
   "pattern": [

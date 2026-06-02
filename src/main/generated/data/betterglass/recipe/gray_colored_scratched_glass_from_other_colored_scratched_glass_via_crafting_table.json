@@ -3,7 +3,7 @@
   "category": "building",
   "group": "gray_colored_scratched_glass",
   "key": {
-    "G": "#betterglass:colored_scratched_glass",
+    "G": "#betterglass:colored_scratched_glass_block",
     "W": "minecraft:gray_dye"
   },
   "pattern": [

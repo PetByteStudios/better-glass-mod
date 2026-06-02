@@ -3,7 +3,7 @@
   "category": "building",
   "group": "light_blue_stained_clear_glass",
   "key": {
-    "G": "#betterglass:stained_clear_glass",
+    "G": "#betterglass:stained_clear_glass_block",
     "W": "minecraft:light_blue_dye"
   },
   "pattern": [

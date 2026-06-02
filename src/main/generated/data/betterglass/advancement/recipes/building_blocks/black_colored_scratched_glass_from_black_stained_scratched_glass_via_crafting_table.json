@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#betterglass:stained_scratched_glass"
+            "items": "#betterglass:stained_scratched_glass_block"
           }
         ]
       },

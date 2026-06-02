@@ -3,7 +3,7 @@
   "category": "building",
   "group": "brown_stained_scratched_glass",
   "key": {
-    "G": "#betterglass:stained_scratched_glass",
+    "G": "#betterglass:stained_scratched_glass_block",
     "W": "minecraft:brown_dye"
   },
   "pattern": [

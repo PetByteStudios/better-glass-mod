@@ -3,7 +3,7 @@
   "category": "building",
   "group": "lime_stained_clear_glass",
   "key": {
-    "G": "#betterglass:stained_clear_glass",
+    "G": "#betterglass:stained_clear_glass_block",
     "W": "minecraft:lime_dye"
   },
   "pattern": [

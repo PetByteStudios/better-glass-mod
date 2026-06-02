@@ -44,18 +44,35 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider{
                 .add(ModBlocks.CLEAR_GLASS.asItem())
                 .add(ModBlocks.SCRATCHED_GLASS.asItem());
 
-        copy(ModTags.CLEAR_GLASS.block(), ModTags.CLEAR_GLASS.item());
-        copy(ModTags.SCRATCHED_GLASS.block(), ModTags.SCRATCHED_GLASS.item());
-        copy(ModTags.COLORED_GLASS.block(), ModTags.COLORED_GLASS.item());
-        copy(ModTags.STAINED_GLASS.block(), ModTags.STAINED_GLASS.item());
-        copy(ModTags.COLORED_CLEAR_GLASS.block(), ModTags.COLORED_CLEAR_GLASS.item());
-        copy(ModTags.STAINED_CLEAR_GLASS.block(), ModTags.STAINED_CLEAR_GLASS.item());
-        copy(ModTags.COLORED_SCRATCHED_GLASS.block(), ModTags.COLORED_SCRATCHED_GLASS.item());
-        copy(ModTags.STAINED_SCRATCHED_GLASS.block(), ModTags.STAINED_SCRATCHED_GLASS.item());
+        copy(ModTags.CLEAR_GLASS_ALL.block(), ModTags.CLEAR_GLASS_ALL.item());
+        copy(ModTags.CLEAR_GLASS_BLOCK.block(), ModTags.CLEAR_GLASS_BLOCK.item());
+        copy(ModTags.CLEAR_GLASS_PANE.block(), ModTags.CLEAR_GLASS_PANE.item());
+        copy(ModTags.SCRATCHED_GLASS_ALL.block(), ModTags.SCRATCHED_GLASS_ALL.item());
+        copy(ModTags.SCRATCHED_GLASS_BLOCK.block(), ModTags.SCRATCHED_GLASS_BLOCK.item());
+        copy(ModTags.SCRATCHED_GLASS_PANE.block(), ModTags.SCRATCHED_GLASS_PANE.item());
+        copy(ModTags.COLORED_GLASS_ALL.block(), ModTags.COLORED_GLASS_ALL.item());
+        copy(ModTags.COLORED_GLASS_BLOCK.block(), ModTags.COLORED_GLASS_BLOCK.item());
+        copy(ModTags.COLORED_GLASS_PANE.block(), ModTags.COLORED_GLASS_PANE.item());
+        copy(ModTags.STAINED_GLASS_ALL.block(), ModTags.STAINED_GLASS_ALL.item());
+        copy(ModTags.STAINED_GLASS_BLOCK.block(), ModTags.STAINED_GLASS_BLOCK.item());
+        copy(ModTags.STAINED_GLASS_PANE.block(), ModTags.STAINED_GLASS_PANE.item());
+        copy(ModTags.COLORED_CLEAR_GLASS_ALL.block(), ModTags.COLORED_CLEAR_GLASS_ALL.item());
+        copy(ModTags.COLORED_CLEAR_GLASS_BLOCK.block(), ModTags.COLORED_CLEAR_GLASS_BLOCK.item());
+        copy(ModTags.COLORED_CLEAR_GLASS_PANE.block(), ModTags.COLORED_CLEAR_GLASS_PANE.item());
+        copy(ModTags.STAINED_CLEAR_GLASS_ALL.block(), ModTags.STAINED_CLEAR_GLASS_ALL.item());
+        copy(ModTags.STAINED_CLEAR_GLASS_BLOCK.block(), ModTags.STAINED_CLEAR_GLASS_BLOCK.item());
+        copy(ModTags.STAINED_CLEAR_GLASS_PANE.block(), ModTags.STAINED_CLEAR_GLASS_PANE.item());
+        copy(ModTags.COLORED_SCRATCHED_GLASS_ALL.block(), ModTags.COLORED_SCRATCHED_GLASS_ALL.item());
+        copy(ModTags.COLORED_SCRATCHED_GLASS_BLOCK.block(), ModTags.COLORED_SCRATCHED_GLASS_BLOCK.item());
+        copy(ModTags.COLORED_SCRATCHED_GLASS_PANE.block(), ModTags.COLORED_SCRATCHED_GLASS_PANE.item());
+        copy(ModTags.STAINED_SCRATCHED_GLASS_ALL.block(), ModTags.STAINED_SCRATCHED_GLASS_ALL.item());
+        copy(ModTags.STAINED_SCRATCHED_GLASS_BLOCK.block(), ModTags.STAINED_SCRATCHED_GLASS_BLOCK.item());
+        copy(ModTags.STAINED_SCRATCHED_GLASS_PANE.block(), ModTags.STAINED_SCRATCHED_GLASS_PANE.item());
         copy(ModTags.STAINED_VANILLA_GLASS_ALL.block(), ModTags.STAINED_VANILLA_GLASS_ALL.item());
         copy(ModTags.STAINED_VANILLA_GLASS_BLOCK.block(), ModTags.STAINED_VANILLA_GLASS_BLOCK.item());
         copy(ModTags.STAINED_VANILLA_GLASS_PANE.block(), ModTags.STAINED_VANILLA_GLASS_PANE.item());
-        copy(ModTags.COLORED_VANILLA_GLASS.block(), ModTags.COLORED_VANILLA_GLASS.item());
-        copy(ModTags.CLEAR_GLASS_PANE.block(), ModTags.CLEAR_GLASS_PANE.item());
+        copy(ModTags.COLORED_VANILLA_GLASS_ALL.block(), ModTags.COLORED_VANILLA_GLASS_ALL.item());
+        copy(ModTags.COLORED_VANILLA_GLASS_BLOCK.block(), ModTags.COLORED_VANILLA_GLASS_BLOCK.item());
+        copy(ModTags.COLORED_VANILLA_GLASS_PANE.block(), ModTags.COLORED_VANILLA_GLASS_PANE.item());
     }
 }

@@ -15,7 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#betterglass:stained_clear_glass"
+            "items": "#betterglass:stained_clear_glass_block"
           }
         ]
       },

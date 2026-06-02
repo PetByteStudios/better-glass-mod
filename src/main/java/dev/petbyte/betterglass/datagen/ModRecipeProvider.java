@@ -9,6 +9,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -81,6 +82,39 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             Map.entry(DyeColor.PINK, Blocks.PINK_STAINED_GLASS_PANE)
     );
 
+    private static final Map<String, TagKey<Item>> itemTags = Map.ofEntries(
+            Map.entry("clear_glass_all", ModTags.CLEAR_GLASS_ALL.item()),
+            Map.entry("clear_glass_block", ModTags.CLEAR_GLASS_BLOCK.item()),
+            Map.entry("clear_glass_pane", ModTags.CLEAR_GLASS_PANE.item()),
+            Map.entry("scratched_glass_all", ModTags.SCRATCHED_GLASS_ALL.item()),
+            Map.entry("scratched_glass_block", ModTags.SCRATCHED_GLASS_BLOCK.item()),
+            Map.entry("scratched_glass_pane", ModTags.SCRATCHED_GLASS_PANE.item()),
+            Map.entry("colored_glass_all", ModTags.COLORED_GLASS_ALL.item()),
+            Map.entry("colored_glass_block", ModTags.COLORED_GLASS_BLOCK.item()),
+            Map.entry("colored_glass_pane", ModTags.COLORED_GLASS_PANE.item()),
+            Map.entry("stained_glass_all", ModTags.STAINED_GLASS_ALL.item()),
+            Map.entry("stained_glass_block", ModTags.STAINED_GLASS_BLOCK.item()),
+            Map.entry("stained_glass_pane", ModTags.STAINED_GLASS_PANE.item()),
+            Map.entry("colored_clear_glass_all", ModTags.COLORED_CLEAR_GLASS_ALL.item()),
+            Map.entry("colored_clear_glass_block", ModTags.COLORED_CLEAR_GLASS_BLOCK.item()),
+            Map.entry("colored_clear_glass_pane", ModTags.COLORED_CLEAR_GLASS_PANE.item()),
+            Map.entry("stained_clear_glass_all", ModTags.STAINED_CLEAR_GLASS_ALL.item()),
+            Map.entry("stained_clear_glass_block", ModTags.STAINED_CLEAR_GLASS_BLOCK.item()),
+            Map.entry("stained_clear_glass_pane", ModTags.STAINED_CLEAR_GLASS_PANE.item()),
+            Map.entry("colored_scratched_glass_all", ModTags.COLORED_SCRATCHED_GLASS_ALL.item()),
+            Map.entry("colored_scratched_glass_block", ModTags.COLORED_SCRATCHED_GLASS_BLOCK.item()),
+            Map.entry("colored_scratched_glass_pane", ModTags.COLORED_SCRATCHED_GLASS_PANE.item()),
+            Map.entry("stained_scratched_glass_all", ModTags.STAINED_SCRATCHED_GLASS_ALL.item()),
+            Map.entry("stained_scratched_glass_block", ModTags.STAINED_SCRATCHED_GLASS_BLOCK.item()),
+            Map.entry("stained_scratched_glass_pane", ModTags.STAINED_SCRATCHED_GLASS_PANE.item()),
+            Map.entry("stained_vanilla_glass_all", ModTags.STAINED_VANILLA_GLASS_ALL.item()),
+            Map.entry("stained_vanilla_glass_block", ModTags.STAINED_VANILLA_GLASS_BLOCK.item()),
+            Map.entry("stained_vanilla_glass_pane", ModTags.STAINED_VANILLA_GLASS_PANE.item()),
+            Map.entry("colored_vanilla_glass_all", ModTags.COLORED_VANILLA_GLASS_ALL.item()),
+            Map.entry("colored_vanilla_glass_block", ModTags.COLORED_VANILLA_GLASS_BLOCK.item()),
+            Map.entry("colored_vanilla_glass_pane", ModTags.COLORED_VANILLA_GLASS_PANE.item())
+    );
+
     @Override
     protected @NonNull RecipeProvider createRecipeProvider(HolderLookup.@NonNull Provider registries, @NonNull RecipeOutput output) {
         return new RecipeProvider(registries, output) {
@@ -110,14 +144,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 for (DyeColor color : DyeColor.values()) {
                     shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COLORED_CLEAR_GLASS.get(color), 8)
                             .pattern("GGG").pattern("GWG").pattern("GGG").define('G', ModBlocks.STAINED_CLEAR_GLASS.get(color))
-                            .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_stained_clear_glass", has(ModTags.STAINED_CLEAR_GLASS.item()))
+                            .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_stained_clear_glass", has(itemTags.get("stained_clear_glass_block")))
                             .unlockedBy("has_water_bucket", has(ConventionalItemTags.WATER_BUCKETS)).group("%s_colored_clear_glass".formatted(color.getName()))
                             .save(output, "%s_colored_clear_glass_from_%s_stained_clear_glass_via_crafting_table".formatted(color.getName(), color.getName()));
                 }
                 // COLORED CLEAR -> UNDYED CLEAR
                 shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CLEAR_GLASS, 8).pattern("GGG")
-                        .pattern("GWG").pattern("GGG").define('G', ModTags.COLORED_CLEAR_GLASS.item())
-                        .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_colored_clear_glass", has(ModTags.COLORED_CLEAR_GLASS.item()))
+                        .pattern("GWG").pattern("GGG").define('G', itemTags.get("colored_clear_glass_block"))
+                        .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_colored_clear_glass", has(itemTags.get("colored_clear_glass_block")))
                         .unlockedBy("has_water_bucket", has(ConventionalItemTags.WATER_BUCKETS)).group("clear_glass")
                         .save(output, "clear_glass_from_colored_clear_glass_via_crafting_table");
 
@@ -149,18 +183,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 // RE-DYE ANY COLORED CLEAR
                 for (DyeColor color : DyeColor.values()) {
                     shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COLORED_CLEAR_GLASS.get(color), 8)
-                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', ModTags.COLORED_CLEAR_GLASS.item())
+                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', itemTags.get("colored_clear_glass_block"))
                             .define('W', DYES.get(color))
-                            .unlockedBy("has_colored_clear_glass", has(ModTags.COLORED_CLEAR_GLASS.item()))
+                            .unlockedBy("has_colored_clear_glass", has(itemTags.get("colored_clear_glass_block")))
                             .unlockedBy("has_%s_dye".formatted(color.getName()), has(DYES.get(color))).group("%s_colored_clear_glass".formatted(color.getName()))
                             .save(output, "%s_colored_clear_glass_from_other_colored_clear_glass_via_crafting_table".formatted(color.getName()));
                 }
                 // RE-DYE ANY STAINED CLEAR
                 for (DyeColor color : DyeColor.values()) {
                     shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STAINED_CLEAR_GLASS.get(color), 8)
-                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', ModTags.STAINED_CLEAR_GLASS.item())
+                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', itemTags.get("stained_clear_glass_block"))
                             .define('W', DYES.get(color))
-                            .unlockedBy("has_stained_clear_glass", has(ModTags.STAINED_CLEAR_GLASS.item()))
+                            .unlockedBy("has_stained_clear_glass", has(itemTags.get("stained_clear_glass_block")))
                             .unlockedBy("has_%s_dye".formatted(color.getName()), has(DYES.get(color))).group("%s_stained_clear_glass".formatted(color.getName()))
                             .save(output, "%s_stained_clear_glass_from_other_stained_clear_glass_via_crafting_table".formatted(color.getName()));
                 }
@@ -170,14 +204,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 for (DyeColor color : DyeColor.values()) {
                     shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COLORED_SCRATCHED_GLASS.get(color), 8)
                             .pattern("GGG").pattern("GWG").pattern("GGG").define('G', ModBlocks.STAINED_SCRATCHED_GLASS.get(color))
-                            .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_stained_scratched_glass", has(ModTags.STAINED_SCRATCHED_GLASS.item()))
+                            .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_stained_scratched_glass", has(itemTags.get("stained_scratched_glass_block")))
                             .unlockedBy("has_water_bucket", has(ConventionalItemTags.WATER_BUCKETS)).group("%s_colored_scratched_glass".formatted(color.getName()))
                             .save(output, "%s_colored_scratched_glass_from_%s_stained_scratched_glass_via_crafting_table".formatted(color.getName(), color.getName()));
                 }
                 // COLORED SCRATCHED -> UNDYED SCRATCHED
                 shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SCRATCHED_GLASS, 8).pattern("GGG")
-                        .pattern("GWG").pattern("GGG").define('G', ModTags.COLORED_SCRATCHED_GLASS.item())
-                        .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_colored_scratched_glass", has(ModTags.COLORED_SCRATCHED_GLASS.item()))
+                        .pattern("GWG").pattern("GGG").define('G', itemTags.get("colored_scratched_glass_block"))
+                        .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_colored_scratched_glass", has(itemTags.get("colored_scratched_glass_block")))
                         .unlockedBy("has_water_bucket", has(ConventionalItemTags.WATER_BUCKETS)).group("scratched_glass")
                         .save(output, "scratched_glass_from_colored_scratched_glass_via_crafting_table");
 
@@ -209,18 +243,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 // RE-DYE ANY COLORED SCRATCHED
                 for (DyeColor color : DyeColor.values()) {
                     shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COLORED_SCRATCHED_GLASS.get(color), 8)
-                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', ModTags.COLORED_SCRATCHED_GLASS.item())
+                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', itemTags.get("colored_scratched_glass_block"))
                             .define('W', DYES.get(color))
-                            .unlockedBy("has_colored_scratched_glass", has(ModTags.COLORED_SCRATCHED_GLASS.item()))
+                            .unlockedBy("has_colored_scratched_glass", has(itemTags.get("colored_scratched_glass_block")))
                             .unlockedBy("has_%s_dye".formatted(color.getName()), has(DYES.get(color))).group("%s_colored_scratched_glass".formatted(color.getName()))
                             .save(output, "%s_colored_scratched_glass_from_other_colored_scratched_glass_via_crafting_table".formatted(color.getName()));
                 }
                 // RE-DYE ANY STAINED SCRATCHED
                 for (DyeColor color : DyeColor.values()) {
                     shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STAINED_SCRATCHED_GLASS.get(color), 8)
-                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', ModTags.STAINED_SCRATCHED_GLASS.item())
+                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', itemTags.get("stained_scratched_glass_block"))
                             .define('W', DYES.get(color))
-                            .unlockedBy("has_stained_scratched_glass", has(ModTags.STAINED_SCRATCHED_GLASS.item()))
+                            .unlockedBy("has_stained_scratched_glass", has(itemTags.get("stained_scratched_glass_block")))
                             .unlockedBy("has_%s_dye".formatted(color.getName()), has(DYES.get(color))).group("%s_stained_scratched_glass".formatted(color.getName()))
                             .save(output, "%s_stained_scratched_glass_from_other_stained_scratched_glass_via_crafting_table".formatted(color.getName()));
                 }
@@ -237,7 +271,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 for (DyeColor color : DyeColor.values()) {
                     shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COLORED_VANILLA_GLASS.get(color), 8)
                             .pattern("GGG").pattern("GWG").pattern("GGG").define('G', STAINED_VANILLA_GLASS_BLOCK.get(color))
-                            .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_stained_glass", has(ModTags.STAINED_VANILLA_GLASS_BLOCK.item()))
+                            .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_stained_glass", has(itemTags.get("stained_vanilla_glass_block")))
                             .unlockedBy("has_water_bucket", has(ConventionalItemTags.WATER_BUCKETS)).group("%s_colored_vanilla_glass".formatted(color.getName()))
                             .save(output, "%s_colored_vanilla_glass_from_%s_stained_glass_via_crafting_table".formatted(color.getName(), color.getName()));
                 }
@@ -261,41 +295,41 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 // COLORED BLOCK -> UNDYED BLOCK
                 shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.GLASS, 8).pattern("GGG")
-                        .pattern("GWG").pattern("GGG").define('G', ModTags.COLORED_VANILLA_GLASS.item())
-                        .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_colored_vanilla_glass", has(ModTags.COLORED_VANILLA_GLASS.item()))
+                        .pattern("GWG").pattern("GGG").define('G', itemTags.get("colored_vanilla_glass_block"))
+                        .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_colored_vanilla_glass", has(itemTags.get("colored_vanilla_glass_block")))
                         .unlockedBy("has_water_bucket", has(ConventionalItemTags.WATER_BUCKETS)).group("glass")
                         .save(output, "glass_from_colored_vanilla_glass_via_crafting_table");
                 // STAINED PANE -> UNDYED PANE
                 shaped(RecipeCategory.DECORATIONS, Blocks.GLASS_PANE, 8).pattern("GGG")
-                        .pattern("GWG").pattern("GGG").define('G', ModTags.STAINED_VANILLA_GLASS_PANE.item())
-                        .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_stained_glass_pane", has(ModTags.STAINED_VANILLA_GLASS_PANE.item()))
+                        .pattern("GWG").pattern("GGG").define('G', itemTags.get("stained_vanilla_glass_pane"))
+                        .define('W', ConventionalItemTags.WATER_BUCKETS).unlockedBy("has_stained_glass_pane", has(itemTags.get("stained_vanilla_glass_pane")))
                         .unlockedBy("has_water_bucket", has(ConventionalItemTags.WATER_BUCKETS)).group("glass_pane")
                         .save(output, "glass_pane_from_stained_glass_pane_via_crafting_table");
 
                 // RE-DYE ANY STAINED BLOCK
                 for (DyeColor color : DyeColor.values()) {
                     shaped(RecipeCategory.BUILDING_BLOCKS, STAINED_VANILLA_GLASS_BLOCK.get(color), 8)
-                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', ModTags.STAINED_VANILLA_GLASS_BLOCK.item())
+                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', itemTags.get("stained_vanilla_glass_block"))
                             .define('W', DYES.get(color))
-                            .unlockedBy("has_stained_vanilla_glass", has(ModTags.STAINED_VANILLA_GLASS_BLOCK.item()))
+                            .unlockedBy("has_stained_vanilla_glass", has(itemTags.get("stained_vanilla_glass_block")))
                             .unlockedBy("has_%s_dye".formatted(color.getName()), has(DYES.get(color))).group("%s_stained_glass".formatted(color.getName()))
                             .save(output, "%s_stained_glass_from_other_stained_glass_via_crafting_table".formatted(color.getName()));
                 }
                 // RE-DYE ANY STAINED PANE
                 for (DyeColor color : DyeColor.values()) {
                     shaped(RecipeCategory.DECORATIONS, STAINED_VANILLA_GLASS_PANE.get(color), 8)
-                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', ModTags.STAINED_VANILLA_GLASS_PANE.item())
+                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', itemTags.get("stained_vanilla_glass_pane"))
                             .define('W', DYES.get(color))
-                            .unlockedBy("has_stained_vanilla_glass_pane", has(ModTags.STAINED_VANILLA_GLASS_PANE.item()))
+                            .unlockedBy("has_stained_vanilla_glass_pane", has(itemTags.get("stained_vanilla_glass_pane")))
                             .unlockedBy("has_%s_dye".formatted(color.getName()), has(DYES.get(color))).group("%s_stained_glass_pane".formatted(color.getName()))
                             .save(output, "%s_stained_glass_pane_from_other_stained_glass_pane_via_crafting_table".formatted(color.getName()));
                 }
                 // RE-DYE ANY COLORED VANILLA
                 for (DyeColor color : DyeColor.values()) {
                     shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COLORED_VANILLA_GLASS.get(color), 8)
-                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', ModTags.COLORED_VANILLA_GLASS.item())
+                            .pattern("GGG").pattern("GWG").pattern("GGG").define('G', itemTags.get("colored_vanilla_glass_block"))
                             .define('W', DYES.get(color))
-                            .unlockedBy("has_colored_vanilla_glass", has(ModTags.COLORED_VANILLA_GLASS.item()))
+                            .unlockedBy("has_colored_vanilla_glass", has(itemTags.get("colored_vanilla_glass_block")))
                             .unlockedBy("has_%s_dye".formatted(color.getName()), has(DYES.get(color))).group("%s_colored_vanilla_glass".formatted(color.getName()))
                             .save(output, "%s_colored_vanilla_glass_from_other_colored_vanilla_glass_via_crafting_table".formatted(color.getName()));
                 }

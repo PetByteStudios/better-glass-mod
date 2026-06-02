@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#betterglass:colored_vanilla_glass"
+            "items": "#betterglass:colored_vanilla_glass_block"
           }
         ]
       },

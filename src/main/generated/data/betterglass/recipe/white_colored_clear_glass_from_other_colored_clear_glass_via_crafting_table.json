@@ -3,7 +3,7 @@
   "category": "building",
   "group": "white_colored_clear_glass",
   "key": {
-    "G": "#betterglass:colored_clear_glass",
+    "G": "#betterglass:colored_clear_glass_block",
     "W": "minecraft:white_dye"
   },
   "pattern": [

@@ -3,7 +3,7 @@
   "category": "building",
   "group": "gray_colored_vanilla_glass",
   "key": {
-    "G": "#betterglass:colored_vanilla_glass",
+    "G": "#betterglass:colored_vanilla_glass_block",
     "W": "minecraft:gray_dye"
   },
   "pattern": [
