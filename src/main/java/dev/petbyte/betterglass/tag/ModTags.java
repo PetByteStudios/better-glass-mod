@@ -33,9 +33,9 @@ public class ModTags {
     public static final TagPair COLORED_SCRATCHED_GLASS = TagPair.create("colored_scratched_glass");
     public static final TagPair STAINED_SCRATCHED_GLASS = TagPair.create("stained_scratched_glass");
 
+    public static final TagPair STAINED_VANILLA_GLASS_ALL = TagPair.create("stained_vanilla_glass_all");
     public static final TagPair STAINED_VANILLA_GLASS_BLOCK = TagPair.create("stained_vanilla_glass_block");
     public static final TagPair STAINED_VANILLA_GLASS_PANE = TagPair.create("stained_vanilla_glass_pane");
-    public static final TagPair STAINED_VANILLA_GLASS = TagPair.create("stained_vanilla_glass");
 
     public static final TagPair COLORED_VANILLA_GLASS = TagPair.create("colored_vanilla_glass");
 }

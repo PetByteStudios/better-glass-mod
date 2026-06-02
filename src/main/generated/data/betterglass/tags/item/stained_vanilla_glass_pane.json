@@ -17,7 +17,7 @@
     "minecraft:magenta_stained_glass_pane",
     "minecraft:pink_stained_glass_pane",
     {
-      "id": "#betterglass:stained_vanilla_glass",
+      "id": "#betterglass:stained_vanilla_glass_all",
       "required": false
     }
   ]

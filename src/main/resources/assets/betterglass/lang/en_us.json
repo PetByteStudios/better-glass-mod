@@ -102,7 +102,7 @@
   "tag.block.betterglass.stained_scratched_glass": "Stained Scratched Glass",
   "tag.block.betterglass.stained_vanilla_glass_block": "Stained Vanilla Glass Block",
   "tag.block.betterglass.stained_vanilla_glass_pane": "Stained Vanilla Glass Pane",
-  "tag.block.betterglass.stained_vanilla_glass": "Stained Vanilla Glass",
+  "tag.block.betterglass.stained_vanilla_glass_all": "Stained Vanilla Glass (All)",
   "tag.block.betterglass.colored_vanilla_glass": "Colored Vanilla Glass",
   "tag.item.betterglass.clear_glass": "Clear Glass",
   "tag.item.betterglass.clear_glass_pane": "Clear Glass Pane",
@@ -115,7 +115,7 @@
   "tag.item.betterglass.stained_scratched_glass": "Stained Scratched Glass",
   "tag.item.betterglass.stained_vanilla_glass_block": "Stained Vanilla Glass Block",
   "tag.item.betterglass.stained_vanilla_glass_pane": "Stained Vanilla Glass Pane",
-  "tag.item.betterglass.stained_vanilla_glass": "Stained Vanilla Glass",
+  "tag.item.betterglass.stained_vanilla_glass_all": "Stained Vanilla Glass (All)",
   "tag.item.betterglass.colored_vanilla_glass": "Colored Vanilla Glass",
 
   "creativemodetab.betterglass.betterglass": "Better Glass",

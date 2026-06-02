@@ -63,14 +63,14 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(Blocks.ORANGE_STAINED_GLASS).add(Blocks.LIME_STAINED_GLASS).add(Blocks.GREEN_STAINED_GLASS)
                 .add(Blocks.CYAN_STAINED_GLASS).add(Blocks.LIGHT_BLUE_STAINED_GLASS).add(Blocks.BLUE_STAINED_GLASS)
                 .add(Blocks.PURPLE_STAINED_GLASS).add(Blocks.MAGENTA_STAINED_GLASS).add(Blocks.PINK_STAINED_GLASS)
-                .addOptionalTag(ModTags.STAINED_VANILLA_GLASS.block());
+                .addOptionalTag(ModTags.STAINED_VANILLA_GLASS_ALL.block());
         valueLookupBuilder(ModTags.STAINED_VANILLA_GLASS_PANE.block()).add(Blocks.WHITE_STAINED_GLASS_PANE)
                 .add(Blocks.LIGHT_GRAY_STAINED_GLASS_PANE).add(Blocks.GRAY_STAINED_GLASS_PANE).add(Blocks.BLACK_STAINED_GLASS_PANE)
                 .add(Blocks.BROWN_STAINED_GLASS_PANE).add(Blocks.RED_STAINED_GLASS_PANE).add(Blocks.YELLOW_STAINED_GLASS_PANE)
                 .add(Blocks.ORANGE_STAINED_GLASS_PANE).add(Blocks.LIME_STAINED_GLASS_PANE).add(Blocks.GREEN_STAINED_GLASS_PANE)
                 .add(Blocks.CYAN_STAINED_GLASS_PANE).add(Blocks.LIGHT_BLUE_STAINED_GLASS_PANE).add(Blocks.BLUE_STAINED_GLASS_PANE)
                 .add(Blocks.PURPLE_STAINED_GLASS_PANE).add(Blocks.MAGENTA_STAINED_GLASS_PANE).add(Blocks.PINK_STAINED_GLASS_PANE)
-                .addOptionalTag(ModTags.STAINED_VANILLA_GLASS.block());
+                .addOptionalTag(ModTags.STAINED_VANILLA_GLASS_ALL.block());
 
         valueLookupBuilder(ModTags.COLORED_VANILLA_GLASS.block())
                 .addAll(ModBlocks.COLORED_VANILLA_GLASS.values());
