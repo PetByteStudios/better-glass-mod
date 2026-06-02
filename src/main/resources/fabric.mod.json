@@ -31,10 +31,10 @@
 		"betterglass.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.19.2",
-		"minecraft": "~26.1.2",
+		"fabricloader": ">=0.18.5",
+		"minecraft": "~26.1",
 		"java": ">=25",
-		"fabric-api": "*"
+		"fabric-api": ">=0.144.0"
 	},
 	"suggests": {
 		"continuity": "~3.0"
