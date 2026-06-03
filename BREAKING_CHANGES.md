@@ -17,3 +17,41 @@ None
 - `assets/textures/minecraft` and `assets/textures/betterglass` have been moved to a resource pack
   - Should have no major effect on gameplay, still notable
 - Removed glasscutter font's individual png assets
+
+# v1.0.0-beta.5..v1.0.0-beta.6
+- Renamed various tags
+  - `clear_glass` -> `clear_glass_block`
+  - `scratched_glass` -> `scratched_glass_block`
+  - `colored_glass` -> `colored_glass_block`
+  - `stained_glass` -> `stained_glass_block`
+  - `colored_clear_glass` -> `colored_clear_glass_block`
+  - `stained_clear_glass` -> `stained_clear_glass_block`
+  - `colored_scratched_glass` -> `colored_scratched_glass_block`
+  - `stained_scratched_glass` -> `stained_scratched_glass_block`
+  - `stained_vanilla_glass` -> `stained_vanilla_glass_all`
+  - `colored_vanilla_glass` -> `colored_vanilla_glass_block`
+- Split tags
+  - `clear_glass_all`
+  - `clear_glass_pane`
+  - `scratched_glass_all`
+  - `scratched_glass_pane`
+  - `colored_glass_all`
+  - `colored_glass_pane`
+  - `stained_glass_all`
+  - `stained_glass_pane`
+  - `colored_clear_glass_all`
+  - `colored_clear_glass_pane`
+  - `stained_clear_glass_all`
+  - `stained_clear_glass_pane`
+  - `colored_scratched_glass_all`
+  - `colored_scratched_glass_pane`
+  - `stained_scratched_glass_all`
+  - `stained_scratched_glass_pane`
+  - `colored_vanilla_glass_all`
+  - `colored_vanilla_glass_pane`
+- All the tag changes caused major changes to recipes, translation keys, and of course, tag definition and contents
+- Changed dependencies
+  - `fabricloader`: `>=0.19.2` -> `>=0.18.5`
+  - `minecraft`: `~26.1.2` -> `~26.1`
+  - `fabric-api`: `*` -> `>=0.144.0`
+- Model Generation now uses `createGlassBlocks()` instead of `createTrivialCube()` for Glass blocks
