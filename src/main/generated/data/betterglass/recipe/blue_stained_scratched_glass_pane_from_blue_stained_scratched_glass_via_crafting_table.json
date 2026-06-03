@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "blue_stained_scratched_glass_pane",
+  "key": {
+    "G": "betterglass:blue_stained_scratched_glass"
+  },
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "result": {
+    "count": 16,
+    "id": "betterglass:blue_stained_scratched_glass_pane"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "blue_stained_scratched_glass_pane",
+  "key": {
+    "G": "betterglass:blue_colored_scratched_glass_pane",
+    "W": "minecraft:blue_dye"
+  },
+  "pattern": [
+    " G ",
+    "GWG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:blue_stained_scratched_glass_pane"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:red_colored_clear_glass_pane",
+  "result": {
+    "id": "betterglass:red_colored_vanilla_glass_pane"
+  }
+}

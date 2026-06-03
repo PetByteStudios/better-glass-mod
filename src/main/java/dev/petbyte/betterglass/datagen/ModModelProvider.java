@@ -1,13 +1,13 @@
 package dev.petbyte.betterglass.datagen;
 
 import dev.petbyte.betterglass.block.ModBlocks;
-// import dev.petbyte.betterglass.item.ModItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.world.level.block.Block;
 import org.jspecify.annotations.NonNull;
+
+// import dev.petbyte.betterglass.item.ModItems;
 // import net.minecraft.client.data.models.model.ModelTemplates;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -17,12 +17,12 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(@NonNull BlockModelGenerators blockModelGenerators) {
-        for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
-            if (block == ModBlocks.CLEAR_GLASS) { continue; }
-            blockModelGenerators.createTrivialCube(block);
+        for (int i = 0; i < ModBlocks.BETTER_GLASS_BLOCKS.size(); i++) {
+            blockModelGenerators.createGlassBlocks(
+                    ModBlocks.BETTER_GLASS_BLOCKS.get(i),
+                    ModBlocks.BETTER_GLASS_PANES.get(i)
+            );
         }
-
-        blockModelGenerators.createGlassBlocks(ModBlocks.CLEAR_GLASS, ModBlocks.CLEAR_GLASS_PANE);
     }
 
 

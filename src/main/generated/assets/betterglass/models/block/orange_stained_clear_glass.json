@@ -1,6 +1,9 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "betterglass:block/orange_stained_clear_glass"
+    "all": {
+      "force_translucent": true,
+      "sprite": "betterglass:block/orange_stained_clear_glass"
+    }
   }
 }

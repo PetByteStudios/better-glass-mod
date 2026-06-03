@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "yellow_stained_scratched_glass_pane",
+  "key": {
+    "G": "betterglass:yellow_stained_scratched_glass"
+  },
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "result": {
+    "count": 16,
+    "id": "betterglass:yellow_stained_scratched_glass_pane"
+  }
+}

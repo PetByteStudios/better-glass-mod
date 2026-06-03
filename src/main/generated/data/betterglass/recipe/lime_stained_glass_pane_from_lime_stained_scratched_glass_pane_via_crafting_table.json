@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "lime_stained_glass_pane",
+  "key": {
+    "G": "betterglass:lime_stained_scratched_glass_pane"
+  },
+  "pattern": [
+    "GG",
+    "GG"
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:lime_stained_glass_pane"
+  }
+}

@@ -51,32 +51,43 @@ public class ModBlocks {
     public static final Block SCRATCHED_GLASS = registerGlassBlock("scratched_glass");
 
     public static final Block CLEAR_GLASS_PANE = registerIronBarsBlock("clear_glass_pane");
+    public static final Block SCRATCHED_GLASS_PANE = registerIronBarsBlock("scratched_glass_pane");
 
     public static List<Block> BETTER_GLASS_BLOCKS = new ArrayList<>(List.of(
             CLEAR_GLASS, SCRATCHED_GLASS
     ));
 
     public static List<Block> BETTER_GLASS_PANES = new ArrayList<>(List.of(
-            CLEAR_GLASS_PANE
+            CLEAR_GLASS_PANE, SCRATCHED_GLASS_PANE
     ));
 
     public static List<Block> BETTER_GLASS_ALL = new ArrayList<>();
 
     public static final Map<DyeColor, Block> COLORED_CLEAR_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> COLORED_CLEAR_GLASS_PANE = new LinkedHashMap<>();
     public static final Map<DyeColor, Block> STAINED_CLEAR_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> STAINED_CLEAR_GLASS_PANE = new LinkedHashMap<>();
     public static final Map<DyeColor, Block> COLORED_SCRATCHED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> COLORED_SCRATCHED_GLASS_PANE = new LinkedHashMap<>();
     public static final Map<DyeColor, Block> STAINED_SCRATCHED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> STAINED_SCRATCHED_GLASS_PANE = new LinkedHashMap<>();
 
     public static final Map<DyeColor, Block> COLORED_VANILLA_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> COLORED_VANILLA_GLASS_PANE = new LinkedHashMap<>();
 
     static {
         for (DyeColor color : DYE_ORDER) {
             COLORED_CLEAR_GLASS.put(color, registerGlassBlock(color.getName() + "_colored_clear_glass"));
+            COLORED_CLEAR_GLASS_PANE.put(color, registerIronBarsBlock(color.getName() + "_colored_clear_glass_pane"));
             STAINED_CLEAR_GLASS.put(color, registerGlassBlock(color.getName() + "_stained_clear_glass"));
+            STAINED_CLEAR_GLASS_PANE.put(color, registerIronBarsBlock(color.getName() + "_stained_clear_glass_pane"));
             COLORED_SCRATCHED_GLASS.put(color, registerGlassBlock(color.getName() + "_colored_scratched_glass"));
+            COLORED_SCRATCHED_GLASS_PANE.put(color, registerIronBarsBlock(color.getName() + "_colored_scratched_glass_pane"));
             STAINED_SCRATCHED_GLASS.put(color, registerGlassBlock(color.getName() + "_stained_scratched_glass"));
+            STAINED_SCRATCHED_GLASS_PANE.put(color, registerIronBarsBlock(color.getName() + "_stained_scratched_glass_pane"));
 
             COLORED_VANILLA_GLASS.put(color, registerGlassBlock(color.getName() + "_colored_vanilla_glass"));
+            COLORED_VANILLA_GLASS_PANE.put(color, registerIronBarsBlock(color.getName() + "_colored_vanilla_glass_pane"));
         }
 
         BETTER_GLASS_BLOCKS.addAll(COLORED_CLEAR_GLASS.values());
@@ -85,6 +96,14 @@ public class ModBlocks {
         BETTER_GLASS_BLOCKS.addAll(STAINED_SCRATCHED_GLASS.values());
 
         BETTER_GLASS_BLOCKS.addAll(COLORED_VANILLA_GLASS.values());
+
+        BETTER_GLASS_PANES.addAll(COLORED_CLEAR_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(STAINED_CLEAR_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(COLORED_SCRATCHED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(STAINED_SCRATCHED_GLASS_PANE.values());
+
+        BETTER_GLASS_PANES.addAll(COLORED_VANILLA_GLASS_PANE.values());
+
 
 
         BETTER_GLASS_ALL.addAll(BETTER_GLASS_BLOCKS);
@@ -134,6 +153,6 @@ public class ModBlocks {
             CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COLORED_BLOCKS).register(output -> output.accept(block));
         }
 
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(output -> {output.insertAfter(Items.STONECUTTER, GLASSCUTTER);});
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(output -> output.insertAfter(Items.STONECUTTER, GLASSCUTTER));
     }
 }

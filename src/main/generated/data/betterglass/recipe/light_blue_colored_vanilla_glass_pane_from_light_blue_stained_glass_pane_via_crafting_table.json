@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "light_blue_colored_vanilla_glass_pane",
+  "key": {
+    "G": "minecraft:light_blue_stained_glass_pane",
+    "W": "#c:buckets/water"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:light_blue_colored_vanilla_glass_pane"
+  }
+}

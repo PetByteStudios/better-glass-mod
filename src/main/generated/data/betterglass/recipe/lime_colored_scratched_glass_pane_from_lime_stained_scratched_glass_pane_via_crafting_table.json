@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "lime_colored_scratched_glass_pane",
+  "key": {
+    "G": "betterglass:lime_stained_scratched_glass_pane",
+    "W": "#c:buckets/water"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:lime_colored_scratched_glass_pane"
+  }
+}

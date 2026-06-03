@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_light_blue_colored_scratched_glass_pane": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:light_blue_colored_scratched_glass_pane"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:light_blue_colored_vanilla_glass_pane_from_light_blue_colored_scratched_glass_pane_via_crafting_table"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_light_blue_colored_scratched_glass_pane"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:light_blue_colored_vanilla_glass_pane_from_light_blue_colored_scratched_glass_pane_via_crafting_table"
+    ]
+  }
+}

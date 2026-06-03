@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "betterglass:block/black_colored_vanilla_glass"
+  }
+}

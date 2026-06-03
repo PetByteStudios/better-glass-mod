@@ -1,3 +1,36 @@
 {
-  "values": []
+  "values": [
+    "betterglass:white_stained_clear_glass_pane",
+    "betterglass:light_gray_stained_clear_glass_pane",
+    "betterglass:gray_stained_clear_glass_pane",
+    "betterglass:black_stained_clear_glass_pane",
+    "betterglass:brown_stained_clear_glass_pane",
+    "betterglass:red_stained_clear_glass_pane",
+    "betterglass:orange_stained_clear_glass_pane",
+    "betterglass:yellow_stained_clear_glass_pane",
+    "betterglass:lime_stained_clear_glass_pane",
+    "betterglass:green_stained_clear_glass_pane",
+    "betterglass:cyan_stained_clear_glass_pane",
+    "betterglass:light_blue_stained_clear_glass_pane",
+    "betterglass:blue_stained_clear_glass_pane",
+    "betterglass:purple_stained_clear_glass_pane",
+    "betterglass:magenta_stained_clear_glass_pane",
+    "betterglass:pink_stained_clear_glass_pane",
+    "betterglass:white_stained_scratched_glass_pane",
+    "betterglass:light_gray_stained_scratched_glass_pane",
+    "betterglass:gray_stained_scratched_glass_pane",
+    "betterglass:black_stained_scratched_glass_pane",
+    "betterglass:brown_stained_scratched_glass_pane",
+    "betterglass:red_stained_scratched_glass_pane",
+    "betterglass:orange_stained_scratched_glass_pane",
+    "betterglass:yellow_stained_scratched_glass_pane",
+    "betterglass:lime_stained_scratched_glass_pane",
+    "betterglass:green_stained_scratched_glass_pane",
+    "betterglass:cyan_stained_scratched_glass_pane",
+    "betterglass:light_blue_stained_scratched_glass_pane",
+    "betterglass:blue_stained_scratched_glass_pane",
+    "betterglass:purple_stained_scratched_glass_pane",
+    "betterglass:magenta_stained_scratched_glass_pane",
+    "betterglass:pink_stained_scratched_glass_pane"
+  ]
 }

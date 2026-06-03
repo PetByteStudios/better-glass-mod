@@ -36,47 +36,46 @@ public class ModTextureProvider implements DataProvider {
                 LinkedHashMap<Integer, Integer> palette = loadPalette(templateJson, paletteJson);
 
                 for (String blockType : List.of("clear_glass", "scratched_glass", "vanilla_glass")) {
+                    // BLOCKS
                     BufferedImage template = ImageIO.read(templatesDir.resolve("blocks/%s.png".formatted(blockType)).toFile());
                     BufferedImage result = applyPalette(template, palette);
                     Path outputDir = resourcesDir.resolve("../generated/resourcepacks/base_assets/assets/%s/textures/block".formatted(blockType.equals("vanilla_glass") && colorName.equals("undyed") ? "minecraft" : "betterglass"));
                     saveTexture(result, outputDir.resolve((colorName.equals("undyed") ? "%s.png".formatted(blockType.equals("vanilla_glass") ? "glass" : blockType) : "%s_colored_%s.png".formatted(colorName, blockType))));
 
+                    // PANE TOPS
+                    BufferedImage paneTopTemplate = ImageIO.read(templatesDir.resolve("blocks/glass_pane_top.png").toFile());
+                    BufferedImage paneTopResult = applyPalette(paneTopTemplate, palette);
+                    Path paneTopOutputDir = resourcesDir.resolve("../generated/resourcepacks/base_assets/assets/%s/textures/block".formatted(blockType.equals("vanilla_glass") && colorName.equals("undyed") ? "minecraft" : "betterglass"));
+                    saveTexture(paneTopResult, paneTopOutputDir.resolve((colorName.equals("undyed") ? "%s_pane_top.png".formatted(blockType.equals("vanilla_glass") ? "glass" : blockType) : "%s_colored_%s_pane_top.png".formatted(colorName, blockType))));
+
                     if (colorName.equals("undyed")) { continue; }
 
+                    // BLOCKS
                     result = applyStain(template, palette);
                     if (blockType.equals("vanilla_glass")) { outputDir = outputDir.resolve("../../../minecraft/textures/block"); }
                     saveTexture(result, outputDir.resolve("%s_stained_%s.png".formatted(colorName, blockType.equals("vanilla_glass") ? "glass" : blockType)));
-                }
 
-                GenerateStainedGlassPaneTops(colorName, palette);
+                    // PANE TOPS
+                    GenerateStainedGlassPaneTops(colorName, blockType, palette);
+                }
             }
             GenerateConnectingTextures();
-
-            BufferedImage template = ImageIO.read(templatesDir.resolve("blocks/glass_pane_top.png").toFile());
-            BufferedImage result = applyPalette(template, loadPalette(templateJson, templatesDir.resolve("palettes/undyed.json")));
-            Path outputDir = resourcesDir.resolve("../generated/resourcepacks/base_assets/assets/betterglass/textures/block");
-            saveTexture(result, outputDir.resolve("clear_glass_pane_top.png"));
 
             return CompletableFuture.allOf();
         }
         catch (IOException e) { throw new RuntimeException("Texture datagen failed at run(): ", e); }
     }
 
-    private void GenerateStainedGlassPaneTops(String colorName, LinkedHashMap<Integer, Integer> palette) {
+    private void GenerateStainedGlassPaneTops(String colorName, String blockName, LinkedHashMap<Integer, Integer> palette) {
         try {
             BufferedImage template = ImageIO.read(templatesDir.resolve("blocks/glass_pane_top.png").toFile());
+            Path outputDir = resourcesDir.resolve("../generated/resourcepacks/base_assets/assets/%s/textures/block".formatted(blockName.equals("vanilla_glass") ? "minecraft" : "betterglass"));
 
-            Path outputDir = resourcesDir.resolve("../generated/resourcepacks/base_assets/assets/minecraft/textures/block");
-            if (colorName.equals("undyed")) {
-                BufferedImage result = applyPalette(template, palette);
-                saveTexture(result, outputDir.resolve("glass_pane_top.png"));
-            } else {
-                BufferedImage result = new BufferedImage(template.getWidth(), template.getHeight(), BufferedImage.TYPE_INT_ARGB);
-                Graphics2D g2d = result.createGraphics();
-                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.62890625f));
-                g2d.drawImage(applyPalette(template, palette), 0, 0, null);
-                saveTexture(result, outputDir.resolve(("%s_stained_glass_pane_top.png".formatted(colorName))));
-            }
+            BufferedImage result = new BufferedImage(template.getWidth(), template.getHeight(), BufferedImage.TYPE_INT_ARGB);
+            Graphics2D g2d = result.createGraphics();
+            g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.62890625f));
+            g2d.drawImage(applyPalette(template, palette), 0, 0, null);
+            saveTexture(result, outputDir.resolve(("%s_stained_%s_pane_top.png".formatted(colorName, blockName.equals("vanilla_glass") ? "glass" : blockName))));
         }
         catch (IOException e) { throw new RuntimeException("Texture datagen failed at GenerateStainedGlassPaneTops(): ", e); }
     }
@@ -90,7 +89,7 @@ public class ModTextureProvider implements DataProvider {
                     Files.readString(templatesDir.resolve("connections.json")), mapType
             );
 
-             for (String colorName : List.of("white", "light_gray", "gray", "black",
+            for (String colorName : List.of("white", "light_gray", "gray", "black",
                     "brown", "red", "orange", "yellow", "lime", "green",
                     "cyan", "light_blue", "blue", "purple", "magenta", "pink", "undyed")) {
                 Path paletteJson = templatesDir.resolve("palettes/%s.json".formatted(colorName));
@@ -105,7 +104,7 @@ public class ModTextureProvider implements DataProvider {
 
                     // Stained (skip undyed)
                     if (!colorName.equals("undyed")) {
-                       generateCTMTiles(template, palette, true, ConnectedTexturesProvider.sidePixels, connections, ctmDir.resolve("stained/%s".formatted(colorName)), blockType.equals("vanilla_glass"));
+                        generateCTMTiles(template, palette, true, ConnectedTexturesProvider.sidePixels, connections, ctmDir.resolve("stained/%s".formatted(colorName)), blockType.equals("vanilla_glass"));
                     }
                 }
             }

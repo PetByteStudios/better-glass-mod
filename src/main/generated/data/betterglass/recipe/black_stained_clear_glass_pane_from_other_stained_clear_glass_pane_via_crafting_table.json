@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "black_stained_clear_glass_pane",
+  "key": {
+    "G": "#betterglass:stained_clear_glass_pane",
+    "W": "minecraft:black_dye"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:black_stained_clear_glass_pane"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "magenta_colored_vanilla_glass_pane",
+  "key": {
+    "G": "#betterglass:colored_vanilla_glass_pane",
+    "W": "minecraft:magenta_dye"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:magenta_colored_vanilla_glass_pane"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "pink_stained_clear_glass_pane",
+  "key": {
+    "G": "betterglass:clear_glass_pane",
+    "W": "minecraft:pink_dye"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:pink_stained_clear_glass_pane"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:clear_glass_pane",
+  "result": {
+    "id": "minecraft:glass_pane"
+  }
+}
