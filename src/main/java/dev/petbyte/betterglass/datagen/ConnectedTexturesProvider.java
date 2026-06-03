@@ -18,7 +18,8 @@ public class ConnectedTexturesProvider implements DataProvider {
     Path outputBetterGlassDir = resourcesDir.resolve("../generated/resourcepacks/connecting_textures/assets/betterglass/optifine/ctm/betterglass/");
     Path outputVanillaDir = resourcesDir.resolve("../generated/resourcepacks/connecting_textures/assets/betterglass/optifine/ctm/minecraft/");
 
-    Path finalOutput = null;
+    Path finalBlockOutput = null;
+    Path finalPaneOutput = null;
 
     public static Map<String, List<int[]>> sidePixels = Map.of(
             "top", List.of(new int[]{1, 0}, new int[]{2, 0}, new int[]{3, 0}, new int[]{4, 0},
@@ -53,10 +54,20 @@ public class ConnectedTexturesProvider implements DataProvider {
                                 tiles=0-46
                                 connect=block
                                 """.formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), (blockType.equals("vanilla_glass") ? "minecraft" : "betterglass"));
+                        String paneProperties = """
+                                method=ctm
+                                matchTiles=%2$s:%1$s
+                                matchBlocks=%2$s:%1$s_pane
+                                tiles=0-46
+                                connect=block
+                                """.formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), (blockType.equals("vanilla_glass") ? "minecraft" : "betterglass"));
 
-                        finalOutput = (blockType.equals("vanilla_glass") ? outputVanillaDir : outputBetterGlassDir).resolve("%s/%s/block.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), colorType));
-                        Files.createDirectories(finalOutput.getParent());
-                        Files.writeString(finalOutput, blockProperties);
+                        finalBlockOutput = (blockType.equals("vanilla_glass") ? outputVanillaDir : outputBetterGlassDir).resolve("%s/%s/block.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), colorType));
+                        finalPaneOutput = (blockType.equals("vanilla_glass") ? outputVanillaDir : outputBetterGlassDir).resolve("%s/%s/pane.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), colorType));
+                        Files.createDirectories(finalBlockOutput.getParent());
+                        Files.createDirectories(finalPaneOutput.getParent());
+                        Files.writeString(finalBlockOutput, blockProperties);
+                        Files.writeString(finalPaneOutput, paneProperties);
                         continue;
                     }
                     for (String colorName : List.of("white", "light_gray", "gray", "black",
@@ -71,14 +82,25 @@ public class ConnectedTexturesProvider implements DataProvider {
                                 tiles=0-46
                                 connect=block
                                 """.formatted(handledBlock, (blockType.equals("vanilla_glass") && colorType.equals("stained") ? "minecraft" : "betterglass"));
+                        String paneProperties = """
+                                method=ctm
+                                matchTiles=%2$s:%1$s
+                                matchBlocks=%2$s:%1$s_pane
+                                tiles=0-46
+                                connect=block
+                                """.formatted(handledBlock, (blockType.equals("vanilla_glass") && colorType.equals("stained") ? "minecraft" : "betterglass"));
 
                         if (blockType.equals("vanilla_glass")) {
-                            finalOutput = (colorType.equals("stained") ? outputVanillaDir : outputBetterGlassDir).resolve("glass/%s/%s/block.properties".formatted(colorType, colorName));
+                            finalBlockOutput = (colorType.equals("stained") ? outputVanillaDir : outputBetterGlassDir).resolve("glass/%s/%s/block.properties".formatted(colorType, colorName));
+                            finalPaneOutput = (colorType.equals("stained") ? outputVanillaDir : outputBetterGlassDir).resolve("glass/%s/%s/pane.properties".formatted(colorType, colorName));
                         } else {
-                            finalOutput = outputBetterGlassDir.resolve("%s/%s/%s/block.properties".formatted(blockType, colorType, colorName));
+                            finalBlockOutput = outputBetterGlassDir.resolve("%s/%s/%s/block.properties".formatted(blockType, colorType, colorName));
+                            finalPaneOutput = outputBetterGlassDir.resolve("%s/%s/%s/pane.properties".formatted(blockType, colorType, colorName));
                         }
-                        Files.createDirectories(finalOutput.getParent());
-                        Files.writeString(finalOutput, blockProperties);
+                        Files.createDirectories(finalBlockOutput.getParent());
+                        Files.createDirectories(finalPaneOutput.getParent());
+                        Files.writeString(finalBlockOutput, blockProperties);
+                        Files.writeString(finalPaneOutput, paneProperties);
                     }
                 }
             }

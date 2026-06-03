@@ -156,7 +156,7 @@
   "creativemodetab.betterglass.betterglass": "Better Glass",
 
   "resourcePack.betterglass.connecting_textures.name": "Better Glass: Connecting Textures",
-  "resourcePack.betterglass.connecting_textures.description": "Requires Continuity Mod (tested with 3.0.1-beta.2)",
+  "resourcePack.betterglass.connecting_textures.description": "Req. Continuity. Glass Pane Culling Fix compatible",
   "resourcePack.betterglass.base_assets.name": "Better Glass: Base Assets",
   "resourcePack.betterglass.base_assets.description": "The base textures for Better Glass"
 }
