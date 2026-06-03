@@ -73,7 +73,7 @@ public class ModTextureProvider implements DataProvider {
             } else {
                 BufferedImage result = new BufferedImage(template.getWidth(), template.getHeight(), BufferedImage.TYPE_INT_ARGB);
                 Graphics2D g2d = result.createGraphics();
-                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
+                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.62890625f));
                 g2d.drawImage(applyPalette(template, palette), 0, 0, null);
                 saveTexture(result, outputDir.resolve(("%s_stained_glass_pane_top.png".formatted(colorName))));
             }

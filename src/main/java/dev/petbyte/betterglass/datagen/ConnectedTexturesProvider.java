@@ -106,7 +106,7 @@ public class ConnectedTexturesProvider implements DataProvider {
             }
             return CompletableFuture.allOf();
         } catch (IOException e) {
-            throw new RuntimeException("Connected Textures Datagen failed at run(): ", e);
+            throw new RuntimeException("Connected Textures Properties Datagen failed at run(): ", e);
         }
     }
 
