@@ -134,7 +134,7 @@ public class ModBlocks {
     }
 
     private static Block registerIronBarsBlock(String name) {
-        Block toRegister = new IronBarsBlock(glassProperties().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
+        Block toRegister = new IronBarsBlock(glassPaneProperties().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
         registerBlockItem(name, toRegister);
         return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name), toRegister);
     }
