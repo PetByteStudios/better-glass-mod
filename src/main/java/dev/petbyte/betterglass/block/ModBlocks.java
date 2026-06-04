@@ -47,18 +47,24 @@ public class ModBlocks {
             DyeColor.BLUE, DyeColor.PURPLE, DyeColor.MAGENTA, DyeColor.PINK
     );
 
+    public static final Block TINTED_GLASS_PANE = registerTintedGlassPane("tinted_glass_pane");
+
     public static final Block CLEAR_GLASS = registerGlassBlock("clear_glass");
     public static final Block SCRATCHED_GLASS = registerGlassBlock("scratched_glass");
+    public static final Block CLEAR_TINTED_GLASS = registerTintedGlassBlock("clear_tinted_glass");
+    public static final Block SCRATCHED_TINTED_GLASS = registerTintedGlassBlock("scratched_tinted_glass");
 
     public static final Block CLEAR_GLASS_PANE = registerIronBarsBlock("clear_glass_pane");
     public static final Block SCRATCHED_GLASS_PANE = registerIronBarsBlock("scratched_glass_pane");
+    public static final Block CLEAR_TINTED_GLASS_PANE = registerTintedGlassPane("clear_tinted_glass_pane");
+    public static final Block SCRATCHED_TINTED_GLASS_PANE = registerTintedGlassPane("scratched_tinted_glass_pane");
 
     public static List<Block> BETTER_GLASS_BLOCKS = new ArrayList<>(List.of(
-            CLEAR_GLASS, SCRATCHED_GLASS
+            CLEAR_GLASS, SCRATCHED_GLASS, CLEAR_TINTED_GLASS, SCRATCHED_TINTED_GLASS
     ));
 
     public static List<Block> BETTER_GLASS_PANES = new ArrayList<>(List.of(
-            CLEAR_GLASS_PANE, SCRATCHED_GLASS_PANE
+            CLEAR_GLASS_PANE, SCRATCHED_GLASS_PANE, CLEAR_TINTED_GLASS_PANE, SCRATCHED_TINTED_GLASS_PANE
     ));
 
     public static List<Block> BETTER_GLASS_ALL = new ArrayList<>();
@@ -75,6 +81,20 @@ public class ModBlocks {
     public static final Map<DyeColor, Block> COLORED_VANILLA_GLASS = new LinkedHashMap<>();
     public static final Map<DyeColor, Block> COLORED_VANILLA_GLASS_PANE = new LinkedHashMap<>();
 
+
+    public static final Map<DyeColor, Block> COLORED_TINTED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> COLORED_TINTED_GLASS_PANE = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> STAINED_TINTED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> STAINED_TINTED_GLASS_PANE = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> COLORED_CLEAR_TINTED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> COLORED_CLEAR_TINTED_GLASS_PANE = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> STAINED_CLEAR_TINTED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> STAINED_CLEAR_TINTED_GLASS_PANE = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> COLORED_SCRATCHED_TINTED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> COLORED_SCRATCHED_TINTED_GLASS_PANE = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> STAINED_SCRATCHED_TINTED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> STAINED_SCRATCHED_TINTED_GLASS_PANE = new LinkedHashMap<>();
+
     static {
         for (DyeColor color : DYE_ORDER) {
             COLORED_CLEAR_GLASS.put(color, registerGlassBlock(color.getName() + "_colored_clear_glass"));
@@ -88,6 +108,20 @@ public class ModBlocks {
 
             COLORED_VANILLA_GLASS.put(color, registerGlassBlock(color.getName() + "_colored_vanilla_glass"));
             COLORED_VANILLA_GLASS_PANE.put(color, registerIronBarsBlock(color.getName() + "_colored_vanilla_glass_pane"));
+
+
+            COLORED_TINTED_GLASS.put(color, registerTintedGlassBlock(color.getName() + "_colored_tinted_glass"));
+            COLORED_TINTED_GLASS_PANE.put(color, registerTintedGlassPane(color.getName() + "_colored_tinted_glass_pane"));
+            STAINED_TINTED_GLASS.put(color, registerTintedGlassBlock(color.getName() + "_stained_tinted_glass"));
+            STAINED_TINTED_GLASS_PANE.put(color, registerTintedGlassPane(color.getName() + "_stained_tinted_glass_pane"));
+            COLORED_CLEAR_TINTED_GLASS.put(color, registerTintedGlassBlock(color.getName() + "_colored_clear_tinted_glass"));
+            COLORED_CLEAR_TINTED_GLASS_PANE.put(color, registerTintedGlassPane(color.getName() + "_colored_clear_tinted_glass_pane"));
+            STAINED_CLEAR_TINTED_GLASS.put(color, registerTintedGlassBlock(color.getName() + "_stained_clear_tinted_glass"));
+            STAINED_CLEAR_TINTED_GLASS_PANE.put(color, registerTintedGlassPane(color.getName() + "_stained_clear_tinted_glass_pane"));
+            COLORED_SCRATCHED_TINTED_GLASS.put(color, registerTintedGlassBlock(color.getName() + "_colored_scratched_tinted_glass"));
+            COLORED_SCRATCHED_TINTED_GLASS_PANE.put(color, registerTintedGlassPane(color.getName() + "_colored_scratched_tinted_glass_pane"));
+            STAINED_SCRATCHED_TINTED_GLASS.put(color, registerTintedGlassBlock(color.getName() + "_stained_scratched_tinted_glass"));
+            STAINED_SCRATCHED_TINTED_GLASS_PANE.put(color, registerTintedGlassPane(color.getName() + "_stained_scratched_tinted_glass_pane"));
         }
 
         BETTER_GLASS_BLOCKS.addAll(COLORED_CLEAR_GLASS.values());
@@ -97,12 +131,30 @@ public class ModBlocks {
 
         BETTER_GLASS_BLOCKS.addAll(COLORED_VANILLA_GLASS.values());
 
+        BETTER_GLASS_BLOCKS.addAll(COLORED_CLEAR_TINTED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(STAINED_CLEAR_TINTED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(COLORED_SCRATCHED_TINTED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(STAINED_SCRATCHED_TINTED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(COLORED_TINTED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(STAINED_TINTED_GLASS.values());
+
+
         BETTER_GLASS_PANES.addAll(COLORED_CLEAR_GLASS_PANE.values());
         BETTER_GLASS_PANES.addAll(STAINED_CLEAR_GLASS_PANE.values());
         BETTER_GLASS_PANES.addAll(COLORED_SCRATCHED_GLASS_PANE.values());
         BETTER_GLASS_PANES.addAll(STAINED_SCRATCHED_GLASS_PANE.values());
 
         BETTER_GLASS_PANES.addAll(COLORED_VANILLA_GLASS_PANE.values());
+
+        BETTER_GLASS_PANES.addAll(COLORED_CLEAR_TINTED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(STAINED_CLEAR_TINTED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(COLORED_SCRATCHED_TINTED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(STAINED_SCRATCHED_TINTED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(COLORED_TINTED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(STAINED_TINTED_GLASS_PANE.values());
+
+        BETTER_GLASS_PANES.add(TINTED_GLASS_PANE); // dumb hack but idc
+
 
 
 
@@ -135,6 +187,18 @@ public class ModBlocks {
 
     private static Block registerIronBarsBlock(String name) {
         Block toRegister = new IronBarsBlock(glassPaneProperties().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
+        registerBlockItem(name, toRegister);
+        return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name), toRegister);
+    }
+
+    private static Block registerTintedGlassBlock(String name) {
+        Block toRegister = new TintedGlassBlock(glassPaneProperties().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
+        registerBlockItem(name, toRegister);
+        return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name), toRegister);
+    }
+
+    private static Block registerTintedGlassPane(String name) {
+        Block toRegister = new TintedGlassPaneBlock(glassPaneProperties().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
         registerBlockItem(name, toRegister);
         return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name), toRegister);
     }

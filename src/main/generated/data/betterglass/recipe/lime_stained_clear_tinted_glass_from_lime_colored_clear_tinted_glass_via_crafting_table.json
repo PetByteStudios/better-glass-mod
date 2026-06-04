@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "lime_stained_clear_tinted_glass",
+  "key": {
+    "G": "betterglass:lime_colored_clear_tinted_glass",
+    "W": "minecraft:lime_dye"
+  },
+  "pattern": [
+    " G ",
+    "GWG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:lime_stained_clear_tinted_glass"
+  }
+}

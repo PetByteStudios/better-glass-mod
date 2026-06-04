@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:yellow_stained_scratched_tinted_glass",
+  "result": {
+    "id": "betterglass:yellow_stained_tinted_glass"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "magenta_stained_scratched_tinted_glass",
+  "key": {
+    "G": "betterglass:scratched_tinted_glass",
+    "W": "minecraft:magenta_dye"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:magenta_stained_scratched_tinted_glass"
+  }
+}

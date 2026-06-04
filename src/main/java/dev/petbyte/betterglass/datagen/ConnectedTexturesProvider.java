@@ -44,26 +44,29 @@ public class ConnectedTexturesProvider implements DataProvider {
     @Override
     public @NonNull CompletableFuture<?> run(@NonNull CachedOutput cache) {
         try {
-            for (String blockType : List.of("clear_glass", "scratched_glass", "vanilla_glass")) {
+            for (String blockType : List.of("clear_glass", "scratched_glass", "vanilla_glass", "clear_tinted_glass", "scratched_tinted_glass", "tinted_glass")) {
                 for (String colorType : List.of("undyed", "stained", "colored")) {
                     if (colorType.equals("undyed")) {
+                        String nameFormat = blockType.equals("vanilla_glass") ? "glass" : blockType;
+                        String namespaceFormat = (blockType.equals("vanilla_glass") || blockType.equals("tinted_glass")) ? "minecraft" : "betterglass";
+
                         String blockProperties = """
                                 method=ctm
                                 matchTiles=%2$s:%1$s
                                 matchBlocks=%2$s:%1$s
                                 tiles=0-46
                                 connect=block
-                                """.formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), (blockType.equals("vanilla_glass") ? "minecraft" : "betterglass"));
+                                """.formatted(nameFormat, namespaceFormat);
                         String paneProperties = """
                                 method=ctm
                                 matchTiles=%2$s:%1$s
                                 matchBlocks=%2$s:%1$s_pane
                                 tiles=0-46
                                 connect=block
-                                """.formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), (blockType.equals("vanilla_glass") ? "minecraft" : "betterglass"));
+                                """.formatted(nameFormat, namespaceFormat);
 
-                        finalBlockOutput = (blockType.equals("vanilla_glass") ? outputVanillaDir : outputBetterGlassDir).resolve("%s/%s/block.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), colorType));
-                        finalPaneOutput = (blockType.equals("vanilla_glass") ? outputVanillaDir : outputBetterGlassDir).resolve("%s/%s/pane.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), colorType));
+                        finalBlockOutput = ((blockType.equals("vanilla_glass") || blockType.equals("tinted_glass")) ? outputVanillaDir : outputBetterGlassDir).resolve("%s/%s/block.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), colorType));
+                        finalPaneOutput = ((blockType.equals("vanilla_glass") || blockType.equals("tinted_glass")) ? outputVanillaDir : outputBetterGlassDir).resolve("%s/%s/pane.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), colorType));
                         Files.createDirectories(finalBlockOutput.getParent());
                         Files.createDirectories(finalPaneOutput.getParent());
                         Files.writeString(finalBlockOutput, blockProperties);
@@ -74,6 +77,7 @@ public class ConnectedTexturesProvider implements DataProvider {
                             "brown", "red", "orange", "yellow", "lime", "green",
                             "cyan", "light_blue", "blue", "purple", "magenta", "pink")) {
                         String handledBlock = "%s_%s_%s".formatted(colorName, colorType, (blockType.equals("vanilla_glass") && colorType.equals("stained") ? "glass" : blockType));
+                        String namespaceFormat = blockType.equals("vanilla_glass") && colorType.equals("stained") ? "minecraft" : "betterglass";
 
                         String blockProperties = """
                                 method=ctm
@@ -81,14 +85,14 @@ public class ConnectedTexturesProvider implements DataProvider {
                                 matchBlocks=%2$s:%1$s
                                 tiles=0-46
                                 connect=block
-                                """.formatted(handledBlock, (blockType.equals("vanilla_glass") && colorType.equals("stained") ? "minecraft" : "betterglass"));
+                                """.formatted(handledBlock, namespaceFormat);
                         String paneProperties = """
                                 method=ctm
                                 matchTiles=%2$s:%1$s
                                 matchBlocks=%2$s:%1$s_pane
                                 tiles=0-46
                                 connect=block
-                                """.formatted(handledBlock, (blockType.equals("vanilla_glass") && colorType.equals("stained") ? "minecraft" : "betterglass"));
+                                """.formatted(handledBlock, namespaceFormat);
 
                         if (blockType.equals("vanilla_glass")) {
                             finalBlockOutput = (colorType.equals("stained") ? outputVanillaDir : outputBetterGlassDir).resolve("glass/%s/%s/block.properties".formatted(colorType, colorName));

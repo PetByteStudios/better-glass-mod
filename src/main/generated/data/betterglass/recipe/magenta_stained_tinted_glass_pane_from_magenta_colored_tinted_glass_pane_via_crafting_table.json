@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "magenta_stained_tinted_glass_pane",
+  "key": {
+    "G": "betterglass:magenta_colored_tinted_glass_pane",
+    "W": "minecraft:magenta_dye"
+  },
+  "pattern": [
+    " G ",
+    "GWG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:magenta_stained_tinted_glass_pane"
+  }
+}

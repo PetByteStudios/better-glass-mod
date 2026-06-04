@@ -25,7 +25,7 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider{
     protected void addTags(HolderLookup.@NonNull Provider registries) {
         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
             valueLookupBuilder(ConventionalItemTags.GLASS_BLOCKS).add(block.asItem());
-            valueLookupBuilder(ConventionalItemTags.GLASS_BLOCKS_CHEAP).add(block.asItem());
+            valueLookupBuilder((block.getName().toString().contains("tinted") ? ConventionalItemTags.GLASS_BLOCKS_TINTED : ConventionalItemTags.GLASS_BLOCKS_CHEAP)).add(block.asItem());
         }
         for (DyeColor color : DyeColor.values()) {
             TagKey<Item> colorDyedTag = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "dyed/" + color.getName()));
@@ -74,5 +74,32 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider{
         copy(ModTags.COLORED_VANILLA_GLASS_ALL.block(), ModTags.COLORED_VANILLA_GLASS_ALL.item());
         copy(ModTags.COLORED_VANILLA_GLASS_BLOCK.block(), ModTags.COLORED_VANILLA_GLASS_BLOCK.item());
         copy(ModTags.COLORED_VANILLA_GLASS_PANE.block(), ModTags.COLORED_VANILLA_GLASS_PANE.item());
+        copy(ModTags.COLORED_TINTED_GLASS_BLOCK.block(), ModTags.COLORED_TINTED_GLASS_BLOCK.item());
+        copy(ModTags.COLORED_TINTED_GLASS_PANE.block(), ModTags.COLORED_TINTED_GLASS_PANE.item());
+        copy(ModTags.COLORED_TINTED_GLASS_ALL.block(), ModTags.COLORED_TINTED_GLASS_ALL.item());
+        copy(ModTags.CLEAR_TINTED_GLASS_BLOCK.block(), ModTags.CLEAR_TINTED_GLASS_BLOCK.item());
+        copy(ModTags.CLEAR_TINTED_GLASS_PANE.block(), ModTags.CLEAR_TINTED_GLASS_PANE.item());
+        copy(ModTags.CLEAR_TINTED_GLASS_ALL.block(), ModTags.CLEAR_TINTED_GLASS_ALL.item());
+        copy(ModTags.SCRATCHED_TINTED_GLASS_BLOCK.block(), ModTags.SCRATCHED_TINTED_GLASS_BLOCK.item());
+        copy(ModTags.SCRATCHED_TINTED_GLASS_PANE.block(), ModTags.SCRATCHED_TINTED_GLASS_PANE.item());
+        copy(ModTags.SCRATCHED_TINTED_GLASS_ALL.block(), ModTags.SCRATCHED_TINTED_GLASS_ALL.item());
+        copy(ModTags.ANY_COLORED_TINTED_GLASS_BLOCK.block(), ModTags.ANY_COLORED_TINTED_GLASS_BLOCK.item());
+        copy(ModTags.ANY_COLORED_TINTED_GLASS_PANE.block(), ModTags.ANY_COLORED_TINTED_GLASS_PANE.item());
+        copy(ModTags.ANY_COLORED_TINTED_GLASS_ALL.block(), ModTags.ANY_COLORED_TINTED_GLASS_ALL.item());
+        copy(ModTags.STAINED_TINTED_GLASS_BLOCK.block(), ModTags.STAINED_TINTED_GLASS_BLOCK.item());
+        copy(ModTags.STAINED_TINTED_GLASS_PANE.block(), ModTags.STAINED_TINTED_GLASS_PANE.item());
+        copy(ModTags.STAINED_TINTED_GLASS_ALL.block(), ModTags.STAINED_TINTED_GLASS_ALL.item());
+        copy(ModTags.COLORED_CLEAR_TINTED_GLASS_BLOCK.block(), ModTags.COLORED_CLEAR_TINTED_GLASS_BLOCK.item());
+        copy(ModTags.COLORED_CLEAR_TINTED_GLASS_PANE.block(), ModTags.COLORED_CLEAR_TINTED_GLASS_PANE.item());
+        copy(ModTags.COLORED_CLEAR_TINTED_GLASS_ALL.block(), ModTags.COLORED_CLEAR_TINTED_GLASS_ALL.item());
+        copy(ModTags.STAINED_CLEAR_TINTED_GLASS_BLOCK.block(), ModTags.STAINED_CLEAR_TINTED_GLASS_BLOCK.item());
+        copy(ModTags.STAINED_CLEAR_TINTED_GLASS_PANE.block(), ModTags.STAINED_CLEAR_TINTED_GLASS_PANE.item());
+        copy(ModTags.STAINED_CLEAR_TINTED_GLASS_ALL.block(), ModTags.STAINED_CLEAR_TINTED_GLASS_ALL.item());
+        copy(ModTags.COLORED_SCRATCHED_TINTED_GLASS_BLOCK.block(), ModTags.COLORED_SCRATCHED_TINTED_GLASS_BLOCK.item());
+        copy(ModTags.COLORED_SCRATCHED_TINTED_GLASS_PANE.block(), ModTags.COLORED_SCRATCHED_TINTED_GLASS_PANE.item());
+        copy(ModTags.COLORED_SCRATCHED_TINTED_GLASS_ALL.block(), ModTags.COLORED_SCRATCHED_TINTED_GLASS_ALL.item());
+        copy(ModTags.STAINED_SCRATCHED_TINTED_GLASS_BLOCK.block(), ModTags.STAINED_SCRATCHED_TINTED_GLASS_BLOCK.item());
+        copy(ModTags.STAINED_SCRATCHED_TINTED_GLASS_PANE.block(), ModTags.STAINED_SCRATCHED_TINTED_GLASS_PANE.item());
+        copy(ModTags.STAINED_SCRATCHED_TINTED_GLASS_ALL.block(), ModTags.STAINED_SCRATCHED_TINTED_GLASS_ALL.item());
     }
 }

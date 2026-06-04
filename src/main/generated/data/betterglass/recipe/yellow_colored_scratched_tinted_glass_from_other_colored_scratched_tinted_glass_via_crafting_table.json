@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "yellow_colored_scratched_tinted_glass",
+  "key": {
+    "G": "#betterglass:colored_scratched_tinted_glass_block",
+    "W": "minecraft:yellow_dye"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:yellow_colored_scratched_tinted_glass"
+  }
+}

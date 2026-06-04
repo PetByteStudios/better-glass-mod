@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "white_stained_scratched_tinted_glass_pane",
+  "key": {
+    "G": "#betterglass:stained_scratched_tinted_glass_pane",
+    "W": "minecraft:white_dye"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:white_stained_scratched_tinted_glass_pane"
+  }
+}

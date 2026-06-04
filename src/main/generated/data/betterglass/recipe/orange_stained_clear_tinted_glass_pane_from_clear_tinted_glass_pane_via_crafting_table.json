@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "orange_stained_clear_tinted_glass_pane",
+  "key": {
+    "G": "betterglass:clear_tinted_glass_pane",
+    "W": "minecraft:orange_dye"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:orange_stained_clear_tinted_glass_pane"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_clear_tinted_glass_pane": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:clear_tinted_glass_pane"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_magenta_dye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:magenta_dye"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:magenta_colored_clear_tinted_glass_pane_from_clear_tinted_glass_pane_via_crafting_table"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_clear_tinted_glass_pane",
+      "has_magenta_dye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:magenta_colored_clear_tinted_glass_pane_from_clear_tinted_glass_pane_via_crafting_table"
+    ]
+  }
+}

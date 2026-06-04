@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:white_stained_clear_tinted_glass_from_white_stained_tinted_glass_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_stained_tinted_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:white_stained_tinted_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_stained_tinted_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:white_stained_clear_tinted_glass_from_white_stained_tinted_glass_stonecutting"
+    ]
+  }
+}

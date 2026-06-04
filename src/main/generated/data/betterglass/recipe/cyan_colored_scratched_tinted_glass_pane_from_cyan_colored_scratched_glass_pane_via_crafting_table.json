@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cyan_colored_scratched_tinted_glass_pane",
+  "key": {
+    "A": "minecraft:amethyst_shard",
+    "G": "betterglass:cyan_colored_scratched_glass_pane"
+  },
+  "pattern": [
+    " A ",
+    "AGA",
+    " A "
+  ],
+  "result": {
+    "count": 2,
+    "id": "betterglass:cyan_colored_scratched_tinted_glass_pane"
+  }
+}

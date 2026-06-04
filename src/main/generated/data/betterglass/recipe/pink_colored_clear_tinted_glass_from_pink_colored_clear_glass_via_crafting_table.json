@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "pink_colored_clear_tinted_glass",
+  "key": {
+    "A": "minecraft:amethyst_shard",
+    "G": "betterglass:pink_colored_clear_glass"
+  },
+  "pattern": [
+    " A ",
+    "AGA",
+    " A "
+  ],
+  "result": {
+    "count": 2,
+    "id": "betterglass:pink_colored_clear_tinted_glass"
+  }
+}

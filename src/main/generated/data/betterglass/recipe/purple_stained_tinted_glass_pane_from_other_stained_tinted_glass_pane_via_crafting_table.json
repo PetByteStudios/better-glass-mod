@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "purple_stained_tinted_glass_pane",
+  "key": {
+    "G": "#betterglass:stained_tinted_glass_pane",
+    "W": "minecraft:purple_dye"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:purple_stained_tinted_glass_pane"
+  }
+}

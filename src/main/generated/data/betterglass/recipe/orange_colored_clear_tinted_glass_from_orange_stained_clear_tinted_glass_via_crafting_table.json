@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "orange_colored_clear_tinted_glass",
+  "key": {
+    "G": "betterglass:orange_stained_clear_tinted_glass",
+    "W": "#c:buckets/water"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:orange_colored_clear_tinted_glass"
+  }
+}

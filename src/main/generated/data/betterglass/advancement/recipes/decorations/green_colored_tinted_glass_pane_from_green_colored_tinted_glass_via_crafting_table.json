@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_green_colored_tinted_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:green_colored_tinted_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:green_colored_tinted_glass_pane_from_green_colored_tinted_glass_via_crafting_table"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_green_colored_tinted_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:green_colored_tinted_glass_pane_from_green_colored_tinted_glass_via_crafting_table"
+    ]
+  }
+}

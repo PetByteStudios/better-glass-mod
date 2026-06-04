@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "yellow_colored_scratched_tinted_glass_pane",
+  "key": {
+    "G": "betterglass:yellow_stained_scratched_tinted_glass_pane",
+    "W": "#c:buckets/water"
+  },
+  "pattern": [
+    "GGG",
+    "GWG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:yellow_colored_scratched_tinted_glass_pane"
+  }
+}

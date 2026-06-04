@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "magenta_stained_tinted_glass",
+  "key": {
+    "A": "minecraft:amethyst_shard",
+    "G": "minecraft:magenta_stained_glass"
+  },
+  "pattern": [
+    " A ",
+    "AGA",
+    " A "
+  ],
+  "result": {
+    "count": 2,
+    "id": "betterglass:magenta_stained_tinted_glass"
+  }
+}

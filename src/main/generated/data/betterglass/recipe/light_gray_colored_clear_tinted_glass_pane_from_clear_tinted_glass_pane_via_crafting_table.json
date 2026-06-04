@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "light_gray_colored_clear_tinted_glass_pane",
+  "key": {
+    "G": "betterglass:clear_tinted_glass_pane",
+    "W": "minecraft:light_gray_dye"
+  },
+  "pattern": [
+    " G ",
+    "GWG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:light_gray_colored_clear_tinted_glass_pane"
+  }
+}

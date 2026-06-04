@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_purple_stained_scratched_tinted_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:purple_stained_scratched_tinted_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:purple_stained_tinted_glass_from_purple_stained_scratched_tinted_glass_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_purple_stained_scratched_tinted_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:purple_stained_tinted_glass_from_purple_stained_scratched_tinted_glass_stonecutting"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "magenta_stained_clear_tinted_glass_pane",
+  "key": {
+    "A": "minecraft:amethyst_shard",
+    "G": "betterglass:magenta_stained_clear_glass_pane"
+  },
+  "pattern": [
+    " A ",
+    "AGA",
+    " A "
+  ],
+  "result": {
+    "count": 2,
+    "id": "betterglass:magenta_stained_clear_tinted_glass_pane"
+  }
+}

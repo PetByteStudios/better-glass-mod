@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "gray_stained_scratched_tinted_glass",
+  "key": {
+    "G": "betterglass:gray_stained_clear_tinted_glass"
+  },
+  "pattern": [
+    "GG",
+    "GG"
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:gray_stained_scratched_tinted_glass"
+  }
+}

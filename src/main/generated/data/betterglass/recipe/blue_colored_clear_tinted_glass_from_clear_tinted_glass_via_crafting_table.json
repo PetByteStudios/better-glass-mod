@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "blue_colored_clear_tinted_glass",
+  "key": {
+    "G": "betterglass:clear_tinted_glass",
+    "W": "minecraft:blue_dye"
+  },
+  "pattern": [
+    " G ",
+    "GWG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:blue_colored_clear_tinted_glass"
+  }
+}

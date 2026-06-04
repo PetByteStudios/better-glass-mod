@@ -56,4 +56,33 @@ public class ModTags {
     public static final TagPair COLORED_VANILLA_GLASS_BLOCK = TagPair.create("colored_vanilla_glass_block");
     public static final TagPair COLORED_VANILLA_GLASS_PANE = TagPair.create("colored_vanilla_glass_pane");
     public static final TagPair COLORED_VANILLA_GLASS_ALL = TagPair.create("colored_vanilla_glass_all");
+
+
+    public static final TagPair COLORED_TINTED_GLASS_BLOCK = TagPair.create("colored_tinted_glass_block");
+    public static final TagPair COLORED_TINTED_GLASS_PANE = TagPair.create("colored_tinted_glass_pane");
+    public static final TagPair COLORED_TINTED_GLASS_ALL = TagPair.create("colored_tinted_glass_all");
+    public static final TagPair CLEAR_TINTED_GLASS_BLOCK = TagPair.create("clear_tinted_glass_block");
+    public static final TagPair CLEAR_TINTED_GLASS_PANE = TagPair.create("clear_tinted_glass_pane");
+    public static final TagPair CLEAR_TINTED_GLASS_ALL = TagPair.create("clear_tinted_glass_all");
+    public static final TagPair SCRATCHED_TINTED_GLASS_BLOCK = TagPair.create("scratched_tinted_glass_block");
+    public static final TagPair SCRATCHED_TINTED_GLASS_PANE = TagPair.create("scratched_tinted_glass_pane");
+    public static final TagPair SCRATCHED_TINTED_GLASS_ALL = TagPair.create("scratched_tinted_glass_all");
+    public static final TagPair ANY_COLORED_TINTED_GLASS_BLOCK = TagPair.create("any_colored_tinted_glass_block");
+    public static final TagPair ANY_COLORED_TINTED_GLASS_PANE = TagPair.create("any_colored_tinted_glass_pane");
+    public static final TagPair ANY_COLORED_TINTED_GLASS_ALL = TagPair.create("any_colored_tinted_glass_all");
+    public static final TagPair STAINED_TINTED_GLASS_BLOCK = TagPair.create("stained_tinted_glass_block");
+    public static final TagPair STAINED_TINTED_GLASS_PANE = TagPair.create("stained_tinted_glass_pane");
+    public static final TagPair STAINED_TINTED_GLASS_ALL = TagPair.create("stained_tinted_glass_all");
+    public static final TagPair COLORED_CLEAR_TINTED_GLASS_BLOCK = TagPair.create("colored_clear_tinted_glass_block");
+    public static final TagPair COLORED_CLEAR_TINTED_GLASS_PANE = TagPair.create("colored_clear_tinted_glass_pane");
+    public static final TagPair COLORED_CLEAR_TINTED_GLASS_ALL = TagPair.create("colored_clear_tinted_glass_all");
+    public static final TagPair STAINED_CLEAR_TINTED_GLASS_BLOCK = TagPair.create("stained_clear_tinted_glass_block");
+    public static final TagPair STAINED_CLEAR_TINTED_GLASS_PANE = TagPair.create("stained_clear_tinted_glass_pane");
+    public static final TagPair STAINED_CLEAR_TINTED_GLASS_ALL = TagPair.create("stained_clear_tinted_glass_all");
+    public static final TagPair COLORED_SCRATCHED_TINTED_GLASS_BLOCK = TagPair.create("colored_scratched_tinted_glass_block");
+    public static final TagPair COLORED_SCRATCHED_TINTED_GLASS_PANE = TagPair.create("colored_scratched_tinted_glass_pane");
+    public static final TagPair COLORED_SCRATCHED_TINTED_GLASS_ALL = TagPair.create("colored_scratched_tinted_glass_all");
+    public static final TagPair STAINED_SCRATCHED_TINTED_GLASS_BLOCK = TagPair.create("stained_scratched_tinted_glass_block");
+    public static final TagPair STAINED_SCRATCHED_TINTED_GLASS_PANE = TagPair.create("stained_scratched_tinted_glass_pane");
+    public static final TagPair STAINED_SCRATCHED_TINTED_GLASS_ALL = TagPair.create("stained_scratched_tinted_glass_all");
 }
