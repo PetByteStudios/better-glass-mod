@@ -7,21 +7,22 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ModTags {
-    /* private static TagKey<Block> createBlockTag(String name) {
-        return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name));
-    }
-    private static TagKey<Item> createItemTag(String name) {
-        return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name));
-    } */
     public record TagPair(TagKey<Block> block, TagKey<Item> item) {
         public static TagPair create(String name) {
-            return new TagPair(
+            TagPair tagPair = new TagPair(
                     TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name)),
                     TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))
             );
+            ALL_TAG_PAIRS.add(tagPair);
+            return tagPair;
         }
     }
+
+    public static List<TagPair> ALL_TAG_PAIRS = new ArrayList<>();
 
     public static final TagPair CLEAR_GLASS_BLOCK = TagPair.create("clear_glass_block");
     public static final TagPair CLEAR_GLASS_PANE = TagPair.create("clear_glass_pane");
