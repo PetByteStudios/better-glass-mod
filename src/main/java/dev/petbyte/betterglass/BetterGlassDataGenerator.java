@@ -17,5 +17,6 @@ public class BetterGlassDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider((FabricPackOutput _) -> new ConnectedTexturesProvider());
 		pack.addProvider((FabricPackOutput _) -> new ModTextureProvider());
+		pack.addProvider(ModLangProvider::new);
 	}
 }
