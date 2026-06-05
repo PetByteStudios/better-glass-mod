@@ -55,3 +55,13 @@ None
   - `minecraft`: `~26.1.2` -> `~26.1`
   - `fabric-api`: `*` -> `>=0.144.0`
 - Model Generation now uses `createGlassBlocks()` instead of `createTrivialCube()` for Glass blocks
+
+# v1.0.0-beta.6..v1.0.0-beta.7
+- Refactored Recipe Generation
+  - This renamed certain criteria.
+    - `has_*_stained_vanilla_glass` -> `has_*_stained_glass`
+    - `has_stained_vanilla_glass` -> `has_stained_glass`
+    - `has_*_stained_vanilla_glass_pane` -> `has_*_stained_glass_pane`
+    - `has_stained_vanilla_glass_pane` -> `has_stained_glass_pane`
+  - Additionally, `/data/betterglass/advancement/recipes/decorations/*_colored_vanilla_glass_pane_from_*_stained_glass_pane_via_crafting_table` had `has_stained_glass` as a criteria. This has been fixed in favor of `has_stained_glass_pane`.
+- Language Files are now part of datagen
