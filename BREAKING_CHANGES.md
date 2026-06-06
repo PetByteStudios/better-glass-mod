@@ -2,6 +2,9 @@ This file documents all the breaking changes between releases. "Breaking change"
 
 It is always recommended to manually check git diffs if you are deeply dependent on this mod.
 
+<details>
+  <summary>v1.0.0 Development</summary>
+
 # v1.0.0-beta.1..v1.0.0-beta.2
 None
 
@@ -65,3 +68,7 @@ None
     - `has_stained_vanilla_glass_pane` -> `has_stained_glass_pane`
   - Additionally, `/data/betterglass/advancement/recipes/decorations/*_colored_vanilla_glass_pane_from_*_stained_glass_pane_via_crafting_table` had `has_stained_glass` as a criteria. This has been fixed in favor of `has_stained_glass_pane`.
 - Language Files are now part of datagen
+
+# v1.0.0-beta.7..v1.0.0-pre.1
+None
+</details>
