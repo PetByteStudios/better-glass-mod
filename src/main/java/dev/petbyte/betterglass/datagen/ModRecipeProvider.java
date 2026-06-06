@@ -288,6 +288,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 TintGlass(ModBlocks.STAINED_SCRATCHED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
                 TintGlass(ModBlocks.STAINED_SCRATCHED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
 
+                UntintGlass(ModBlocks.TINTED_GLASS_PANE, Blocks.GLASS_PANE, RecipeCategory.DECORATIONS);
+                UntintGlass(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                UntintGlass(ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
+                UntintGlass(ModBlocks.SCRATCHED_TINTED_GLASS, ModBlocks.SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                UntintGlass(ModBlocks.SCRATCHED_TINTED_GLASS_PANE, ModBlocks.SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                UntintGlass(ModBlocks.COLORED_TINTED_GLASS, ModBlocks.COLORED_VANILLA_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                UntintGlass(ModBlocks.COLORED_TINTED_GLASS_PANE, ModBlocks.COLORED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
+                UntintGlass(ModBlocks.STAINED_TINTED_GLASS, STAINED_VANILLA_GLASS_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+                UntintGlass(ModBlocks.STAINED_TINTED_GLASS_PANE, STAINED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
+                UntintGlass(ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                UntintGlass(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
+                UntintGlass(ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                UntintGlass(ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
+                UntintGlass(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                UntintGlass(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                UntintGlass(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                UntintGlass(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
+
                 ColoredStainedSwapStonecutter(
                         List.of(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.COLORED_VANILLA_GLASS, ModBlocks.COLORED_TINTED_GLASS, ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS),
                         List.of(ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, STAINED_VANILLA_GLASS_BLOCK, ModBlocks.STAINED_TINTED_GLASS, ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS),
@@ -452,6 +470,28 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                             .pattern(" A ").pattern("AGA").pattern(" A ").define('A', Items.AMETHYST_SHARD)
                             .define('G', input.get(color)).unlockedBy("has_%s".formatted(inputID), has(input.get(color)))
                             .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD)).group(resultID)
+                            .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
+                }
+            }
+
+            private void UntintGlass(Block input, Block result, RecipeCategory recipeCategory) {
+                String inputID = BuiltInRegistries.BLOCK.getKey(input).toString().replaceAll("(minecraft|betterglass):", "");
+                String resultID = BuiltInRegistries.BLOCK.getKey(result).toString().replaceAll("(minecraft|betterglass):", "");
+                shaped(recipeCategory, result, 4)
+                        .pattern(" G ").pattern("GHG").pattern(" G ").define('H', Items.HONEYCOMB)
+                        .define('G', input).unlockedBy("has_%s".formatted(inputID), has(input))
+                        .unlockedBy("has_honeycomb", has(Items.HONEYCOMB)).group(resultID)
+                        .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
+            }
+
+            private void UntintGlass(Map<DyeColor, Block> input, Map<DyeColor, Block> result, RecipeCategory recipeCategory) {
+                for (DyeColor color : DyeColor.values()) {
+                    String inputID = BuiltInRegistries.BLOCK.getKey(input.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
+                    String resultID = BuiltInRegistries.BLOCK.getKey(result.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
+                    shaped(recipeCategory, result.get(color), 4)
+                            .pattern(" G ").pattern("GHG").pattern(" G ").define('H', Items.HONEYCOMB)
+                            .define('G', input.get(color)).unlockedBy("has_%s".formatted(inputID), has(input.get(color)))
+                            .unlockedBy("has_honeycomb", has(Items.HONEYCOMB)).group(resultID)
                             .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
                 }
             }

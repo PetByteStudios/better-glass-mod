@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cyan_stained_clear_glass_pane",
+  "key": {
+    "G": "betterglass:cyan_stained_clear_tinted_glass_pane",
+    "H": "minecraft:honeycomb"
+  },
+  "pattern": [
+    " G ",
+    "GHG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:cyan_stained_clear_glass_pane"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "magenta_colored_scratched_glass",
+  "key": {
+    "G": "betterglass:magenta_colored_scratched_tinted_glass",
+    "H": "minecraft:honeycomb"
+  },
+  "pattern": [
+    " G ",
+    "GHG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:magenta_colored_scratched_glass"
+  }
+}

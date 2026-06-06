@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "black_stained_glass_pane",
+  "key": {
+    "G": "betterglass:black_stained_tinted_glass_pane",
+    "H": "minecraft:honeycomb"
+  },
+  "pattern": [
+    " G ",
+    "GHG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:black_stained_glass_pane"
+  }
+}

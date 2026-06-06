@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "yellow_colored_vanilla_glass",
+  "key": {
+    "G": "betterglass:yellow_colored_tinted_glass",
+    "H": "minecraft:honeycomb"
+  },
+  "pattern": [
+    " G ",
+    "GHG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:yellow_colored_vanilla_glass"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "lime_colored_clear_glass_pane",
+  "key": {
+    "G": "betterglass:lime_colored_clear_tinted_glass_pane",
+    "H": "minecraft:honeycomb"
+  },
+  "pattern": [
+    " G ",
+    "GHG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:lime_colored_clear_glass_pane"
+  }
+}
