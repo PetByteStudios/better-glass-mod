@@ -1,5 +1,6 @@
 package dev.petbyte.betterglass;
 
+import dev.petbyte.betterglass.glasscutter.ModMenus;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
@@ -32,5 +33,7 @@ public class BetterGlassClient implements ClientModInitializer {
                 Component.translatable("resourcePack.betterglass.base_assets.name"),
                 PackActivationType.ALWAYS_ENABLED
         );
+
+        ModMenus.RegisterGlasscutterMenu();
     }
 }
