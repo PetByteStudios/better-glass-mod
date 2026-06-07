@@ -65,8 +65,9 @@ public class ConnectedTexturesProvider implements DataProvider {
                                 connect=block
                                 """.formatted(nameFormat, namespaceFormat);
 
-                        finalBlockOutput = ((blockType.equals("vanilla_glass") || blockType.equals("tinted_glass")) ? outputVanillaDir : outputBetterGlassDir).resolve("%s/%s/block.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), colorType));
-                        finalPaneOutput = ((blockType.equals("vanilla_glass") || blockType.equals("tinted_glass")) ? outputVanillaDir : outputBetterGlassDir).resolve("%s/%s/pane.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), colorType));
+                        Path output = blockType.equals("vanilla_glass") || blockType.equals("tinted_glass") ? outputVanillaDir : outputBetterGlassDir;
+                        finalBlockOutput = output.resolve("%s/%s/block.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), colorType));
+                        finalPaneOutput = output.resolve("%s/%s/pane.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), colorType));
                         Files.createDirectories(finalBlockOutput.getParent());
                         Files.createDirectories(finalPaneOutput.getParent());
                         Files.writeString(finalBlockOutput, blockProperties);
@@ -95,8 +96,9 @@ public class ConnectedTexturesProvider implements DataProvider {
                                 """.formatted(handledBlock, namespaceFormat);
 
                         if (blockType.equals("vanilla_glass")) {
-                            finalBlockOutput = (colorType.equals("stained") ? outputVanillaDir : outputBetterGlassDir).resolve("glass/%s/%s/block.properties".formatted(colorType, colorName));
-                            finalPaneOutput = (colorType.equals("stained") ? outputVanillaDir : outputBetterGlassDir).resolve("glass/%s/%s/pane.properties".formatted(colorType, colorName));
+                            Path output = colorType.equals("stained") ? outputVanillaDir : outputBetterGlassDir;
+                            finalBlockOutput = output.resolve("glass/%s/%s/block.properties".formatted(colorType, colorName));
+                            finalPaneOutput = output.resolve("glass/%s/%s/pane.properties".formatted(colorType, colorName));
                         } else {
                             finalBlockOutput = outputBetterGlassDir.resolve("%s/%s/%s/block.properties".formatted(blockType, colorType, colorName));
                             finalPaneOutput = outputBetterGlassDir.resolve("%s/%s/%s/pane.properties".formatted(blockType, colorType, colorName));

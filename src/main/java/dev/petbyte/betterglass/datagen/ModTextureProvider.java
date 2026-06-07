@@ -132,11 +132,11 @@ public class ModTextureProvider implements DataProvider {
 
                     Path ctmDir = resourcesDir.resolve("../generated/resourcepacks/connecting_textures/assets/betterglass/optifine/ctm/betterglass/%s".formatted(blockType.equals("vanilla_glass") ? "glass" : blockType));
                     // Colored
-                    generateCTMTiles(template, palette, false, ConnectedTexturesProvider.sidePixels, connections, ctmDir.resolve(colorName.equals("undyed") ? "undyed" : "colored/%s".formatted(colorName)), (blockType.equals("vanilla_glass") || blockType.equals("tinted_glass")), blockType.contains("tinted_glass"));
+                    generateCTMTiles(template, palette, false, connections, ctmDir.resolve(colorName.equals("undyed") ? "undyed" : "colored/%s".formatted(colorName)), (blockType.equals("vanilla_glass") || blockType.equals("tinted_glass")), blockType.contains("tinted_glass"));
 
                     // Stained (skip undyed)
                     if (!colorName.equals("undyed")) {
-                        generateCTMTiles(template, palette, true, ConnectedTexturesProvider.sidePixels, connections, ctmDir.resolve("stained/%s".formatted(colorName)), blockType.equals("vanilla_glass"), blockType.contains("tinted_glass"));
+                        generateCTMTiles(template, palette, true, connections, ctmDir.resolve("stained/%s".formatted(colorName)), blockType.equals("vanilla_glass"), blockType.contains("tinted_glass"));
                     }
                 }
             }
@@ -145,7 +145,7 @@ public class ModTextureProvider implements DataProvider {
     }
 
     private void generateCTMTiles(BufferedImage base, LinkedHashMap<Integer, Integer> palette, boolean stained,
-                                  Map<String, List<int[]>> sidePixels, @NonNull Map<String, List<String>> connections, Path outputDir, boolean vanilla, boolean tinted) {
+                                  @NonNull Map<String, List<String>> connections, Path outputDir, boolean vanilla, boolean tinted) {
         try {
             for (Map.Entry<String, List<String>> entry : connections.entrySet()) {
                 int tileIndex = Integer.parseInt(entry.getKey());
@@ -156,7 +156,7 @@ public class ModTextureProvider implements DataProvider {
 
                 // Remove pixels for each connected side
                 for (String side : sides) {
-                    List<int[]> pixels = sidePixels.get(side);
+                    List<int[]> pixels = ConnectedTexturesProvider.sidePixels.get(side);
                     if (pixels == null) continue;
                     for (int[] px : pixels) {
                         if (!stained) tile.setRGB(px[0], px[1], 0x00000000);
