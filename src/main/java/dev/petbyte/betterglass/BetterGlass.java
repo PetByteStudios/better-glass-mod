@@ -20,6 +20,7 @@ public class BetterGlass implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		BetterGlass.LOGGER.info("Booting up %s %s".formatted(BetterGlass.MOD_ID, MOD_VERSION));
 		ModCreativeModeTabs.registerModCreativeModeTabs();
 		ModBlocks.registerModBlocks();
 	}
