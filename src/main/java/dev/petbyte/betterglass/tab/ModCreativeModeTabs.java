@@ -12,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 
 public class ModCreativeModeTabs {
+    @SuppressWarnings("unused")
     public static final CreativeModeTab BETTER_GLASS_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
             Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, "better_glass"), FabricCreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModBlocks.CLEAR_GLASS))
@@ -24,7 +25,6 @@ public class ModCreativeModeTabs {
                     }).build());
 
     public static void registerModCreativeModeTabs() {
-        //noinspection StringConcatenationArgumentToLogCall
         BetterGlass.LOGGER.info("Registering Creative Mode Tabs for %s".formatted(BetterGlass.MOD_ID));
     }
 }
