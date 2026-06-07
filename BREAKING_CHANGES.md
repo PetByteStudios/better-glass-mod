@@ -71,4 +71,7 @@ None
 
 # v1.0.0-beta.7..v1.0.0-pre.1
 None
+
+# v1.0.0-pre.1..v1.0.0-pre.2
+- Removed some unnecessary items, not really breaking
 </details>
