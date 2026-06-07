@@ -7,9 +7,6 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import org.jspecify.annotations.NonNull;
 
-// import dev.petbyte.betterglass.item.ModItems;
-// import net.minecraft.client.data.models.model.ModelTemplates;
-
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricPackOutput output) {
         super(output);
@@ -27,7 +24,5 @@ public class ModModelProvider extends FabricModelProvider {
 
 
     @Override
-    public void generateItemModels(@NonNull ItemModelGenerators itemModelGenerators) {
-        // itemModelGenerators.generateFlatItem(ModItems.TEST_ITEM, ModelTemplates.FLAT_ITEM);
-    }
+    public void generateItemModels(@NonNull ItemModelGenerators itemModelGenerators) { }
 }
