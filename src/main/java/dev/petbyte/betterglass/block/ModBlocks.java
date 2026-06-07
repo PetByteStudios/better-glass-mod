@@ -183,7 +183,7 @@ public class ModBlocks {
     }
 
     private static Block registerTintedGlassBlock(String name) {
-        Block toRegister = new TintedGlassBlock(glassPaneProperties().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
+        Block toRegister = new TintedGlassBlock(glassProperties().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
         registerBlockItem(name, toRegister);
         return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name), toRegister);
     }
