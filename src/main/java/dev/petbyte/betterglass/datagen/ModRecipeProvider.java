@@ -149,190 +149,190 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         return new RecipeProvider(registries, output) {
             @Override
             public void buildRecipes() {
-                ReDyeCraftingTable("colored_clear_glass_block", ModBlocks.COLORED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ReDyeCraftingTable("colored_clear_glass_pane", ModBlocks.COLORED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ReDyeCraftingTable("stained_clear_glass_block", ModBlocks.STAINED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ReDyeCraftingTable("stained_clear_glass_pane", ModBlocks.STAINED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ReDyeCraftingTable("colored_scratched_glass_block", ModBlocks.COLORED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ReDyeCraftingTable("colored_scratched_glass_pane", ModBlocks.COLORED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ReDyeCraftingTable("stained_scratched_glass_block", ModBlocks.STAINED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ReDyeCraftingTable("stained_scratched_glass_pane", ModBlocks.STAINED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ReDyeCraftingTable("colored_vanilla_glass_block", ModBlocks.COLORED_VANILLA_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ReDyeCraftingTable("colored_vanilla_glass_pane", ModBlocks.COLORED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ReDyeCraftingTable("stained_vanilla_glass_block", STAINED_VANILLA_GLASS_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                ReDyeCraftingTable("stained_vanilla_glass_pane", STAINED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
+                reDyeCraftingTable("colored_clear_glass_block", ModBlocks.COLORED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                reDyeCraftingTable("colored_clear_glass_pane", ModBlocks.COLORED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
+                reDyeCraftingTable("stained_clear_glass_block", ModBlocks.STAINED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                reDyeCraftingTable("stained_clear_glass_pane", ModBlocks.STAINED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
+                reDyeCraftingTable("colored_scratched_glass_block", ModBlocks.COLORED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                reDyeCraftingTable("colored_scratched_glass_pane", ModBlocks.COLORED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                reDyeCraftingTable("stained_scratched_glass_block", ModBlocks.STAINED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                reDyeCraftingTable("stained_scratched_glass_pane", ModBlocks.STAINED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                reDyeCraftingTable("colored_vanilla_glass_block", ModBlocks.COLORED_VANILLA_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                reDyeCraftingTable("colored_vanilla_glass_pane", ModBlocks.COLORED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
+                reDyeCraftingTable("stained_vanilla_glass_block", STAINED_VANILLA_GLASS_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+                reDyeCraftingTable("stained_vanilla_glass_pane", STAINED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
 
-                ReDyeCraftingTable("colored_clear_tinted_glass_block", ModBlocks.COLORED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ReDyeCraftingTable("colored_clear_tinted_glass_pane", ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ReDyeCraftingTable("stained_clear_tinted_glass_block", ModBlocks.STAINED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ReDyeCraftingTable("stained_clear_tinted_glass_pane", ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ReDyeCraftingTable("colored_scratched_tinted_glass_block", ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ReDyeCraftingTable("colored_scratched_tinted_glass_pane", ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ReDyeCraftingTable("stained_scratched_tinted_glass_block", ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ReDyeCraftingTable("stained_scratched_tinted_glass_pane", ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ReDyeCraftingTable("colored_tinted_glass_block", ModBlocks.COLORED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ReDyeCraftingTable("colored_tinted_glass_pane", ModBlocks.COLORED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ReDyeCraftingTable("stained_tinted_glass_block", ModBlocks.STAINED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ReDyeCraftingTable("stained_tinted_glass_pane", ModBlocks.STAINED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                reDyeCraftingTable("colored_clear_tinted_glass_block", ModBlocks.COLORED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                reDyeCraftingTable("colored_clear_tinted_glass_pane", ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                reDyeCraftingTable("stained_clear_tinted_glass_block", ModBlocks.STAINED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                reDyeCraftingTable("stained_clear_tinted_glass_pane", ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                reDyeCraftingTable("colored_scratched_tinted_glass_block", ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                reDyeCraftingTable("colored_scratched_tinted_glass_pane", ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                reDyeCraftingTable("stained_scratched_tinted_glass_block", ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                reDyeCraftingTable("stained_scratched_tinted_glass_pane", ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                reDyeCraftingTable("colored_tinted_glass_block", ModBlocks.COLORED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                reDyeCraftingTable("colored_tinted_glass_pane", ModBlocks.COLORED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                reDyeCraftingTable("stained_tinted_glass_block", ModBlocks.STAINED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                reDyeCraftingTable("stained_tinted_glass_pane", ModBlocks.STAINED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
 
-                StainedToColoredCraftingTable("stained_clear_glass_block", ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.COLORED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                StainedToColoredCraftingTable("stained_clear_glass_pane", ModBlocks.STAINED_CLEAR_GLASS_PANE, ModBlocks.COLORED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
-                StainedToColoredCraftingTable("stained_scratched_glass_block", ModBlocks.STAINED_SCRATCHED_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                StainedToColoredCraftingTable("stained_scratched_glass_pane", ModBlocks.STAINED_SCRATCHED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                StainedToColoredCraftingTable("stained_vanilla_glass_block", STAINED_VANILLA_GLASS_BLOCK, ModBlocks.COLORED_VANILLA_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                StainedToColoredCraftingTable("stained_vanilla_glass_pane", STAINED_VANILLA_GLASS_PANE, ModBlocks.COLORED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
+                stainedToColoredCraftingTable("stained_clear_glass_block", ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.COLORED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                stainedToColoredCraftingTable("stained_clear_glass_pane", ModBlocks.STAINED_CLEAR_GLASS_PANE, ModBlocks.COLORED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
+                stainedToColoredCraftingTable("stained_scratched_glass_block", ModBlocks.STAINED_SCRATCHED_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                stainedToColoredCraftingTable("stained_scratched_glass_pane", ModBlocks.STAINED_SCRATCHED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                stainedToColoredCraftingTable("stained_vanilla_glass_block", STAINED_VANILLA_GLASS_BLOCK, ModBlocks.COLORED_VANILLA_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                stainedToColoredCraftingTable("stained_vanilla_glass_pane", STAINED_VANILLA_GLASS_PANE, ModBlocks.COLORED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
 
-                StainedToColoredCraftingTable("stained_clear_tinted_glass_block", ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                StainedToColoredCraftingTable("stained_clear_tinted_glass_pane", ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                StainedToColoredCraftingTable("stained_scratched_tinted_glass_block", ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                StainedToColoredCraftingTable("stained_scratched_tinted_glass_pane", ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                StainedToColoredCraftingTable("stained_tinted_glass_block", ModBlocks.STAINED_TINTED_GLASS, ModBlocks.COLORED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                StainedToColoredCraftingTable("stained_tinted_glass_pane", ModBlocks.STAINED_TINTED_GLASS_PANE, ModBlocks.COLORED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                stainedToColoredCraftingTable("stained_clear_tinted_glass_block", ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                stainedToColoredCraftingTable("stained_clear_tinted_glass_pane", ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                stainedToColoredCraftingTable("stained_scratched_tinted_glass_block", ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                stainedToColoredCraftingTable("stained_scratched_tinted_glass_pane", ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                stainedToColoredCraftingTable("stained_tinted_glass_block", ModBlocks.STAINED_TINTED_GLASS, ModBlocks.COLORED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                stainedToColoredCraftingTable("stained_tinted_glass_pane", ModBlocks.STAINED_TINTED_GLASS_PANE, ModBlocks.COLORED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
 
-                ColoredToUndyedCraftingTable("colored_clear_glass_block", ModBlocks.CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColoredToUndyedCraftingTable("colored_clear_glass_pane", ModBlocks.CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColoredToUndyedCraftingTable("colored_scratched_glass_block", ModBlocks.SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColoredToUndyedCraftingTable("colored_scratched_glass_pane", ModBlocks.SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColoredToUndyedCraftingTable("colored_vanilla_glass_block", Blocks.GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColoredToUndyedCraftingTable("colored_vanilla_glass_pane", Blocks.GLASS_PANE, RecipeCategory.DECORATIONS);
+                coloredToUndyedCraftingTable("colored_clear_glass_block", ModBlocks.CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                coloredToUndyedCraftingTable("colored_clear_glass_pane", ModBlocks.CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
+                coloredToUndyedCraftingTable("colored_scratched_glass_block", ModBlocks.SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                coloredToUndyedCraftingTable("colored_scratched_glass_pane", ModBlocks.SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                coloredToUndyedCraftingTable("colored_vanilla_glass_block", Blocks.GLASS, RecipeCategory.BUILDING_BLOCKS);
+                coloredToUndyedCraftingTable("colored_vanilla_glass_pane", Blocks.GLASS_PANE, RecipeCategory.DECORATIONS);
 
-                ColoredToUndyedCraftingTable("colored_clear_tinted_glass_block", ModBlocks.CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColoredToUndyedCraftingTable("colored_clear_tinted_glass_pane", ModBlocks.CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColoredToUndyedCraftingTable("colored_scratched_tinted_glass_block", ModBlocks.SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColoredToUndyedCraftingTable("colored_scratched_tinted_glass_pane", ModBlocks.SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColoredToUndyedCraftingTable("colored_tinted_glass_block", Blocks.TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColoredToUndyedCraftingTable("colored_tinted_glass_pane", ModBlocks.TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                coloredToUndyedCraftingTable("colored_clear_tinted_glass_block", ModBlocks.CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                coloredToUndyedCraftingTable("colored_clear_tinted_glass_pane", ModBlocks.CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                coloredToUndyedCraftingTable("colored_scratched_tinted_glass_block", ModBlocks.SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                coloredToUndyedCraftingTable("colored_scratched_tinted_glass_pane", ModBlocks.SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                coloredToUndyedCraftingTable("colored_tinted_glass_block", Blocks.TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                coloredToUndyedCraftingTable("colored_tinted_glass_pane", ModBlocks.TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
 
-                ColorOrStainOneStepCraftingTable(ModBlocks.CLEAR_GLASS, ModBlocks.COLORED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.CLEAR_GLASS_PANE, ModBlocks.COLORED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.STAINED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.COLORED_CLEAR_GLASS_PANE, ModBlocks.STAINED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.SCRATCHED_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.SCRATCHED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.COLORED_SCRATCHED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColorOrStainOneStepCraftingTable(Blocks.GLASS, ModBlocks.COLORED_VANILLA_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainOneStepCraftingTable(Blocks.GLASS_PANE, ModBlocks.COLORED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.COLORED_VANILLA_GLASS, STAINED_VANILLA_GLASS_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.COLORED_VANILLA_GLASS_PANE, STAINED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainOneStepCraftingTable(ModBlocks.CLEAR_GLASS, ModBlocks.COLORED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainOneStepCraftingTable(ModBlocks.CLEAR_GLASS_PANE, ModBlocks.COLORED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainOneStepCraftingTable(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.STAINED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainOneStepCraftingTable(ModBlocks.COLORED_CLEAR_GLASS_PANE, ModBlocks.STAINED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainOneStepCraftingTable(ModBlocks.SCRATCHED_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainOneStepCraftingTable(ModBlocks.SCRATCHED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainOneStepCraftingTable(ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainOneStepCraftingTable(ModBlocks.COLORED_SCRATCHED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainOneStepCraftingTable(Blocks.GLASS, ModBlocks.COLORED_VANILLA_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainOneStepCraftingTable(Blocks.GLASS_PANE, ModBlocks.COLORED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainOneStepCraftingTable(ModBlocks.COLORED_VANILLA_GLASS, STAINED_VANILLA_GLASS_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainOneStepCraftingTable(ModBlocks.COLORED_VANILLA_GLASS_PANE, STAINED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
 
-                ColorOrStainOneStepCraftingTable(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.COLORED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.SCRATCHED_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.SCRATCHED_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColorOrStainOneStepCraftingTable(Blocks.TINTED_GLASS, ModBlocks.COLORED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.TINTED_GLASS_PANE, ModBlocks.COLORED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.COLORED_TINTED_GLASS, ModBlocks.STAINED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainOneStepCraftingTable(ModBlocks.COLORED_TINTED_GLASS_PANE, ModBlocks.STAINED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainOneStepCraftingTable(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.COLORED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainOneStepCraftingTable(ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainOneStepCraftingTable(ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainOneStepCraftingTable(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainOneStepCraftingTable(ModBlocks.SCRATCHED_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainOneStepCraftingTable(ModBlocks.SCRATCHED_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainOneStepCraftingTable(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainOneStepCraftingTable(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainOneStepCraftingTable(Blocks.TINTED_GLASS, ModBlocks.COLORED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainOneStepCraftingTable(ModBlocks.TINTED_GLASS_PANE, ModBlocks.COLORED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainOneStepCraftingTable(ModBlocks.COLORED_TINTED_GLASS, ModBlocks.STAINED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainOneStepCraftingTable(ModBlocks.COLORED_TINTED_GLASS_PANE, ModBlocks.STAINED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
 
-                ColorOrStainTwoStepsCraftingTable(ModBlocks.CLEAR_GLASS, ModBlocks.STAINED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainTwoStepsCraftingTable(ModBlocks.CLEAR_GLASS_PANE, ModBlocks.STAINED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColorOrStainTwoStepsCraftingTable(ModBlocks.SCRATCHED_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainTwoStepsCraftingTable(ModBlocks.SCRATCHED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainTwoStepsCraftingTable(ModBlocks.CLEAR_GLASS, ModBlocks.STAINED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainTwoStepsCraftingTable(ModBlocks.CLEAR_GLASS_PANE, ModBlocks.STAINED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainTwoStepsCraftingTable(ModBlocks.SCRATCHED_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainTwoStepsCraftingTable(ModBlocks.SCRATCHED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
 
-                ColorOrStainTwoStepsCraftingTable(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.STAINED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainTwoStepsCraftingTable(ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                ColorOrStainTwoStepsCraftingTable(ModBlocks.SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                ColorOrStainTwoStepsCraftingTable(ModBlocks.SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainTwoStepsCraftingTable(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.STAINED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainTwoStepsCraftingTable(ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                colorOrStainTwoStepsCraftingTable(ModBlocks.SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                colorOrStainTwoStepsCraftingTable(ModBlocks.SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
 
-                BlockToPaneCraftingTable(ModBlocks.CLEAR_GLASS, ModBlocks.CLEAR_GLASS_PANE);
-                BlockToPaneCraftingTable(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.COLORED_CLEAR_GLASS_PANE);
-                BlockToPaneCraftingTable(ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.STAINED_CLEAR_GLASS_PANE);
-                BlockToPaneCraftingTable(ModBlocks.SCRATCHED_GLASS, ModBlocks.SCRATCHED_GLASS_PANE);
-                BlockToPaneCraftingTable(ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS_PANE);
-                BlockToPaneCraftingTable(ModBlocks.STAINED_SCRATCHED_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS_PANE);
-                BlockToPaneCraftingTable(ModBlocks.COLORED_VANILLA_GLASS, ModBlocks.COLORED_VANILLA_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.CLEAR_GLASS, ModBlocks.CLEAR_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.COLORED_CLEAR_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.STAINED_CLEAR_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.SCRATCHED_GLASS, ModBlocks.SCRATCHED_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.STAINED_SCRATCHED_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.COLORED_VANILLA_GLASS, ModBlocks.COLORED_VANILLA_GLASS_PANE);
 
-                BlockToPaneCraftingTable(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.CLEAR_TINTED_GLASS_PANE);
-                BlockToPaneCraftingTable(ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE);
-                BlockToPaneCraftingTable(ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE);
-                BlockToPaneCraftingTable(ModBlocks.SCRATCHED_TINTED_GLASS, ModBlocks.SCRATCHED_TINTED_GLASS_PANE);
-                BlockToPaneCraftingTable(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE);
-                BlockToPaneCraftingTable(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE);
-                BlockToPaneCraftingTable(ModBlocks.COLORED_TINTED_GLASS, ModBlocks.COLORED_TINTED_GLASS_PANE);
-                BlockToPaneCraftingTable(Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.CLEAR_TINTED_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.SCRATCHED_TINTED_GLASS, ModBlocks.SCRATCHED_TINTED_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE);
+                blockToPaneCraftingTable(ModBlocks.COLORED_TINTED_GLASS, ModBlocks.COLORED_TINTED_GLASS_PANE);
+                blockToPaneCraftingTable(Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_PANE);
 
-                CycleThroughBlocksCraftingTableUndyed(List.of(ModBlocks.CLEAR_GLASS, ModBlocks.SCRATCHED_GLASS, Blocks.GLASS), RecipeCategory.BUILDING_BLOCKS);
-                CycleThroughBlocksCraftingTableUndyed(List.of(ModBlocks.CLEAR_GLASS_PANE, ModBlocks.SCRATCHED_GLASS_PANE, Blocks.GLASS_PANE), RecipeCategory.DECORATIONS);
-                CycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.COLORED_VANILLA_GLASS), RecipeCategory.BUILDING_BLOCKS);
-                CycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.COLORED_CLEAR_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_GLASS_PANE, ModBlocks.COLORED_VANILLA_GLASS_PANE), RecipeCategory.DECORATIONS);
-                CycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, STAINED_VANILLA_GLASS_BLOCK), RecipeCategory.BUILDING_BLOCKS);
-                CycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.STAINED_CLEAR_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, STAINED_VANILLA_GLASS_PANE), RecipeCategory.DECORATIONS);
+                cycleThroughBlocksCraftingTableUndyed(List.of(ModBlocks.CLEAR_GLASS, ModBlocks.SCRATCHED_GLASS, Blocks.GLASS), RecipeCategory.BUILDING_BLOCKS);
+                cycleThroughBlocksCraftingTableUndyed(List.of(ModBlocks.CLEAR_GLASS_PANE, ModBlocks.SCRATCHED_GLASS_PANE, Blocks.GLASS_PANE), RecipeCategory.DECORATIONS);
+                cycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.COLORED_VANILLA_GLASS), RecipeCategory.BUILDING_BLOCKS);
+                cycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.COLORED_CLEAR_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_GLASS_PANE, ModBlocks.COLORED_VANILLA_GLASS_PANE), RecipeCategory.DECORATIONS);
+                cycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, STAINED_VANILLA_GLASS_BLOCK), RecipeCategory.BUILDING_BLOCKS);
+                cycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.STAINED_CLEAR_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, STAINED_VANILLA_GLASS_PANE), RecipeCategory.DECORATIONS);
 
-                CycleThroughBlocksCraftingTableUndyed(List.of(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.SCRATCHED_TINTED_GLASS, Blocks.TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
-                CycleThroughBlocksCraftingTableUndyed(List.of(ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.SCRATCHED_TINTED_GLASS_PANE, ModBlocks.TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
-                CycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, ModBlocks.COLORED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
-                CycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.COLORED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
-                CycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
-                CycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
+                cycleThroughBlocksCraftingTableUndyed(List.of(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.SCRATCHED_TINTED_GLASS, Blocks.TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
+                cycleThroughBlocksCraftingTableUndyed(List.of(ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.SCRATCHED_TINTED_GLASS_PANE, ModBlocks.TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
+                cycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, ModBlocks.COLORED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
+                cycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.COLORED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
+                cycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
+                cycleThroughBlocksCraftingTableDyed(List.of(ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
 
-                TintGlass(Blocks.GLASS_PANE, ModBlocks.TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                TintGlass(ModBlocks.CLEAR_GLASS, ModBlocks.CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                TintGlass(ModBlocks.CLEAR_GLASS_PANE, ModBlocks.CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                TintGlass(ModBlocks.SCRATCHED_GLASS, ModBlocks.SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                TintGlass(ModBlocks.SCRATCHED_GLASS_PANE, ModBlocks.SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                TintGlass(ModBlocks.COLORED_VANILLA_GLASS, ModBlocks.COLORED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                TintGlass(ModBlocks.COLORED_VANILLA_GLASS_PANE, ModBlocks.COLORED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                TintGlass(STAINED_VANILLA_GLASS_BLOCK, ModBlocks.STAINED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                TintGlass(STAINED_VANILLA_GLASS_PANE, ModBlocks.STAINED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                TintGlass(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.COLORED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                TintGlass(ModBlocks.COLORED_CLEAR_GLASS_PANE, ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                TintGlass(ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.STAINED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                TintGlass(ModBlocks.STAINED_CLEAR_GLASS_PANE, ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                TintGlass(ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                TintGlass(ModBlocks.COLORED_SCRATCHED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                TintGlass(ModBlocks.STAINED_SCRATCHED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                TintGlass(ModBlocks.STAINED_SCRATCHED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                tintGlass(Blocks.GLASS_PANE, ModBlocks.TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                tintGlass(ModBlocks.CLEAR_GLASS, ModBlocks.CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                tintGlass(ModBlocks.CLEAR_GLASS_PANE, ModBlocks.CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                tintGlass(ModBlocks.SCRATCHED_GLASS, ModBlocks.SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                tintGlass(ModBlocks.SCRATCHED_GLASS_PANE, ModBlocks.SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                tintGlass(ModBlocks.COLORED_VANILLA_GLASS, ModBlocks.COLORED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                tintGlass(ModBlocks.COLORED_VANILLA_GLASS_PANE, ModBlocks.COLORED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                tintGlass(STAINED_VANILLA_GLASS_BLOCK, ModBlocks.STAINED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                tintGlass(STAINED_VANILLA_GLASS_PANE, ModBlocks.STAINED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                tintGlass(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.COLORED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                tintGlass(ModBlocks.COLORED_CLEAR_GLASS_PANE, ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                tintGlass(ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.STAINED_CLEAR_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                tintGlass(ModBlocks.STAINED_CLEAR_GLASS_PANE, ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                tintGlass(ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                tintGlass(ModBlocks.COLORED_SCRATCHED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                tintGlass(ModBlocks.STAINED_SCRATCHED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                tintGlass(ModBlocks.STAINED_SCRATCHED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
 
-                UntintGlass(ModBlocks.TINTED_GLASS_PANE, Blocks.GLASS_PANE, RecipeCategory.DECORATIONS);
-                UntintGlass(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                UntintGlass(ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
-                UntintGlass(ModBlocks.SCRATCHED_TINTED_GLASS, ModBlocks.SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                UntintGlass(ModBlocks.SCRATCHED_TINTED_GLASS_PANE, ModBlocks.SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                UntintGlass(ModBlocks.COLORED_TINTED_GLASS, ModBlocks.COLORED_VANILLA_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                UntintGlass(ModBlocks.COLORED_TINTED_GLASS_PANE, ModBlocks.COLORED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
-                UntintGlass(ModBlocks.STAINED_TINTED_GLASS, STAINED_VANILLA_GLASS_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                UntintGlass(ModBlocks.STAINED_TINTED_GLASS_PANE, STAINED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
-                UntintGlass(ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                UntintGlass(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
-                UntintGlass(ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                UntintGlass(ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
-                UntintGlass(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                UntintGlass(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
-                UntintGlass(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
-                UntintGlass(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                untintGlass(ModBlocks.TINTED_GLASS_PANE, Blocks.GLASS_PANE, RecipeCategory.DECORATIONS);
+                untintGlass(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                untintGlass(ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
+                untintGlass(ModBlocks.SCRATCHED_TINTED_GLASS, ModBlocks.SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                untintGlass(ModBlocks.SCRATCHED_TINTED_GLASS_PANE, ModBlocks.SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                untintGlass(ModBlocks.COLORED_TINTED_GLASS, ModBlocks.COLORED_VANILLA_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                untintGlass(ModBlocks.COLORED_TINTED_GLASS_PANE, ModBlocks.COLORED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
+                untintGlass(ModBlocks.STAINED_TINTED_GLASS, STAINED_VANILLA_GLASS_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+                untintGlass(ModBlocks.STAINED_TINTED_GLASS_PANE, STAINED_VANILLA_GLASS_PANE, RecipeCategory.DECORATIONS);
+                untintGlass(ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                untintGlass(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
+                untintGlass(ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                untintGlass(ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
+                untintGlass(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                untintGlass(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
+                untintGlass(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
+                untintGlass(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
 
-                ColoredStainedSwapStonecutter(
+                coloredStainedSwapStonecutter(
                         List.of(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.COLORED_VANILLA_GLASS, ModBlocks.COLORED_TINTED_GLASS, ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS),
                         List.of(ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, STAINED_VANILLA_GLASS_BLOCK, ModBlocks.STAINED_TINTED_GLASS, ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS),
                         RecipeCategory.BUILDING_BLOCKS
                 );
-                ColoredStainedSwapStonecutter(
+                coloredStainedSwapStonecutter(
                         List.of(ModBlocks.COLORED_CLEAR_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_GLASS_PANE, ModBlocks.COLORED_VANILLA_GLASS_PANE, ModBlocks.COLORED_TINTED_GLASS_PANE, ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE),
                         List.of(ModBlocks.STAINED_CLEAR_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, STAINED_VANILLA_GLASS_PANE, ModBlocks.STAINED_TINTED_GLASS_PANE, ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE),
                         RecipeCategory.DECORATIONS
                 );
 
-                BlockSwapStonecutterUndyed(List.of(ModBlocks.CLEAR_GLASS, ModBlocks.SCRATCHED_GLASS, Blocks.GLASS), RecipeCategory.BUILDING_BLOCKS);
-                BlockSwapStonecutterUndyed(List.of(ModBlocks.CLEAR_GLASS_PANE, ModBlocks.SCRATCHED_GLASS_PANE, Blocks.GLASS_PANE), RecipeCategory.DECORATIONS);
-                BlockSwapStonecutterUndyed(List.of(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.SCRATCHED_TINTED_GLASS, Blocks.TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
-                BlockSwapStonecutterUndyed(List.of(ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.SCRATCHED_TINTED_GLASS_PANE, ModBlocks.TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
-                BlockSwapStonecutterDyed(List.of(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.COLORED_VANILLA_GLASS), RecipeCategory.BUILDING_BLOCKS);
-                BlockSwapStonecutterDyed(List.of(ModBlocks.COLORED_CLEAR_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_GLASS_PANE, ModBlocks.COLORED_VANILLA_GLASS_PANE), RecipeCategory.DECORATIONS);
-                BlockSwapStonecutterDyed(List.of(ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, STAINED_VANILLA_GLASS_BLOCK), RecipeCategory.BUILDING_BLOCKS);
-                BlockSwapStonecutterDyed(List.of(ModBlocks.STAINED_CLEAR_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, STAINED_VANILLA_GLASS_PANE), RecipeCategory.DECORATIONS);
-                BlockSwapStonecutterDyed(List.of(ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, ModBlocks.COLORED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
-                BlockSwapStonecutterDyed(List.of(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.COLORED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
-                BlockSwapStonecutterDyed(List.of(ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
-                BlockSwapStonecutterDyed(List.of(ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
+                blockSwapStonecutterUndyed(List.of(ModBlocks.CLEAR_GLASS, ModBlocks.SCRATCHED_GLASS, Blocks.GLASS), RecipeCategory.BUILDING_BLOCKS);
+                blockSwapStonecutterUndyed(List.of(ModBlocks.CLEAR_GLASS_PANE, ModBlocks.SCRATCHED_GLASS_PANE, Blocks.GLASS_PANE), RecipeCategory.DECORATIONS);
+                blockSwapStonecutterUndyed(List.of(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.SCRATCHED_TINTED_GLASS, Blocks.TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
+                blockSwapStonecutterUndyed(List.of(ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.SCRATCHED_TINTED_GLASS_PANE, ModBlocks.TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
+                blockSwapStonecutterDyed(List.of(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.COLORED_VANILLA_GLASS), RecipeCategory.BUILDING_BLOCKS);
+                blockSwapStonecutterDyed(List.of(ModBlocks.COLORED_CLEAR_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_GLASS_PANE, ModBlocks.COLORED_VANILLA_GLASS_PANE), RecipeCategory.DECORATIONS);
+                blockSwapStonecutterDyed(List.of(ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, STAINED_VANILLA_GLASS_BLOCK), RecipeCategory.BUILDING_BLOCKS);
+                blockSwapStonecutterDyed(List.of(ModBlocks.STAINED_CLEAR_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, STAINED_VANILLA_GLASS_PANE), RecipeCategory.DECORATIONS);
+                blockSwapStonecutterDyed(List.of(ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS, ModBlocks.COLORED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
+                blockSwapStonecutterDyed(List.of(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.COLORED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
+                blockSwapStonecutterDyed(List.of(ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
+                blockSwapStonecutterDyed(List.of(ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
             }
 
 
-            private void ReDyeCraftingTable(String tag, Map<DyeColor, Block> family, RecipeCategory recipeCategory) {
+            private void reDyeCraftingTable(String tag, Map<DyeColor, Block> family, RecipeCategory recipeCategory) {
                 String format = tag.replace("_block", "").replace("stained_vanilla", "stained");
                 for (DyeColor color : DyeColor.values()) {
                     shaped(recipeCategory, family.get(color), 8)
@@ -343,7 +343,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
-            private void StainedToColoredCraftingTable(String inputTag, Map<DyeColor, Block> inputFamily, Map<DyeColor, Block> outputFamily, RecipeCategory recipeCategory) {
+            private void stainedToColoredCraftingTable(String inputTag, Map<DyeColor, Block> inputFamily, Map<DyeColor, Block> outputFamily, RecipeCategory recipeCategory) {
                 String format = inputTag.replace("_block", "").replace("stained_vanilla", "stained");
                 for (DyeColor color : DyeColor.values()) {
                     String inputID = BuiltInRegistries.BLOCK.getKey(inputFamily.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
@@ -356,7 +356,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
-            private void ColoredToUndyedCraftingTable(String inputTag, Block result, RecipeCategory recipeCategory) {
+            private void coloredToUndyedCraftingTable(String inputTag, Block result, RecipeCategory recipeCategory) {
                 String format = inputTag.replace("_block", "").replace("stained_vanilla", "stained");
                 String resultID = BuiltInRegistries.BLOCK.getKey(result).toString().replaceAll("(minecraft|betterglass):", "");
                 shaped(recipeCategory, result, 8).pattern("GGG").pattern("GWG").pattern("GGG")
@@ -366,7 +366,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, format));
             }
 
-            private void ColorOrStainOneStepCraftingTable(Map<DyeColor, Block> inputFamily, Map<DyeColor, Block> outputFamily, RecipeCategory recipeCategory) {
+            private void colorOrStainOneStepCraftingTable(Map<DyeColor, Block> inputFamily, Map<DyeColor, Block> outputFamily, RecipeCategory recipeCategory) {
                 for (DyeColor color : DyeColor.values()) {
                     String inputID = BuiltInRegistries.BLOCK.getKey(inputFamily.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
                     String resultID = BuiltInRegistries.BLOCK.getKey(outputFamily.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
@@ -378,7 +378,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
-            private void ColorOrStainOneStepCraftingTable(Block inputBlock, Map<DyeColor, Block> outputFamily, RecipeCategory recipeCategory) {
+            private void colorOrStainOneStepCraftingTable(Block inputBlock, Map<DyeColor, Block> outputFamily, RecipeCategory recipeCategory) {
                 for (DyeColor color : DyeColor.values()) {
                     String inputID = BuiltInRegistries.BLOCK.getKey(inputBlock).toString().replaceAll("(minecraft|betterglass):", "");
                     String resultID = BuiltInRegistries.BLOCK.getKey(outputFamily.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
@@ -390,7 +390,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
-            private void ColorOrStainTwoStepsCraftingTable(Block inputBlock, Map<DyeColor, Block> outputFamily, RecipeCategory recipeCategory) {
+            private void colorOrStainTwoStepsCraftingTable(Block inputBlock, Map<DyeColor, Block> outputFamily, RecipeCategory recipeCategory) {
                 for (DyeColor color : DyeColor.values()) {
                     String inputID = BuiltInRegistries.BLOCK.getKey(inputBlock).toString().replaceAll("(minecraft|betterglass):", "");
                     String resultID = BuiltInRegistries.BLOCK.getKey(outputFamily.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
@@ -402,7 +402,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
-            private void BlockToPaneCraftingTable(Block inputBlock, Block outputBlock) {
+            private void blockToPaneCraftingTable(Block inputBlock, Block outputBlock) {
                 String inputID = BuiltInRegistries.BLOCK.getKey(inputBlock).toString().replaceAll("(minecraft|betterglass):", "");
                 String resultID = BuiltInRegistries.BLOCK.getKey(outputBlock).toString().replaceAll("(minecraft|betterglass):", "");
                 shaped(RecipeCategory.DECORATIONS, outputBlock, 16)
@@ -411,7 +411,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
             }
 
-            private void BlockToPaneCraftingTable(Map<DyeColor, Block> inputFamily, Map<DyeColor, Block> outputFamily) {
+            private void blockToPaneCraftingTable(Map<DyeColor, Block> inputFamily, Map<DyeColor, Block> outputFamily) {
                 for (DyeColor color : DyeColor.values()) {
                     String inputID = BuiltInRegistries.BLOCK.getKey(inputFamily.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
                     String resultID = BuiltInRegistries.BLOCK.getKey(outputFamily.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
@@ -422,7 +422,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
-            private void CycleThroughBlocksCraftingTable(Block inputVariant, Block outputVariant, RecipeCategory recipeCategory) {
+            private void cycleThroughBlocksCraftingTable(Block inputVariant, Block outputVariant, RecipeCategory recipeCategory) {
                 String inputID = BuiltInRegistries.BLOCK.getKey(inputVariant).toString().replaceAll("(minecraft|betterglass):", "");
                 String resultID = BuiltInRegistries.BLOCK.getKey(outputVariant).toString().replaceAll("(minecraft|betterglass):", "");
 
@@ -432,27 +432,27 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
             }
 
-            private void CycleThroughBlocksCraftingTableUndyed(List<Block> variants, RecipeCategory recipeCategory) {
+            private void cycleThroughBlocksCraftingTableUndyed(List<Block> variants, RecipeCategory recipeCategory) {
                 for (int i = 0; i < variants.size(); i++) {
                     var inputVariant = variants.get((i - 1 + variants.size()) % variants.size());
                     var outputVariant = variants.get(i);
 
-                    CycleThroughBlocksCraftingTable(inputVariant, outputVariant, recipeCategory);
+                    cycleThroughBlocksCraftingTable(inputVariant, outputVariant, recipeCategory);
                 }
             }
 
-            private void CycleThroughBlocksCraftingTableDyed(List<Map<DyeColor, Block>> variants, RecipeCategory recipeCategory) {
+            private void cycleThroughBlocksCraftingTableDyed(List<Map<DyeColor, Block>> variants, RecipeCategory recipeCategory) {
                 for (int i = 0; i < variants.size(); i++) {
                     var inputVariant = variants.get((i - 1 + variants.size()) % variants.size());
                     var outputVariant = variants.get(i);
 
                     for (DyeColor color : DyeColor.values()) {
-                        CycleThroughBlocksCraftingTable(inputVariant.get(color), outputVariant.get(color), recipeCategory);
+                        cycleThroughBlocksCraftingTable(inputVariant.get(color), outputVariant.get(color), recipeCategory);
                     }
                 }
             }
 
-            private void TintGlass(Block input, Block result, RecipeCategory recipeCategory) {
+            private void tintGlass(Block input, Block result, RecipeCategory recipeCategory) {
                 String inputID = BuiltInRegistries.BLOCK.getKey(input).toString().replaceAll("(minecraft|betterglass):", "");
                 String resultID = BuiltInRegistries.BLOCK.getKey(result).toString().replaceAll("(minecraft|betterglass):", "");
                 shaped(recipeCategory, result, 2)
@@ -462,7 +462,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
             }
 
-            private void TintGlass(Map<DyeColor, Block> input, Map<DyeColor, Block> result, RecipeCategory recipeCategory) {
+            private void tintGlass(Map<DyeColor, Block> input, Map<DyeColor, Block> result, RecipeCategory recipeCategory) {
                 for (DyeColor color : DyeColor.values()) {
                     String inputID = BuiltInRegistries.BLOCK.getKey(input.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
                     String resultID = BuiltInRegistries.BLOCK.getKey(result.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
@@ -474,7 +474,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
-            private void UntintGlass(Block input, Block result, RecipeCategory recipeCategory) {
+            private void untintGlass(Block input, Block result, RecipeCategory recipeCategory) {
                 String inputID = BuiltInRegistries.BLOCK.getKey(input).toString().replaceAll("(minecraft|betterglass):", "");
                 String resultID = BuiltInRegistries.BLOCK.getKey(result).toString().replaceAll("(minecraft|betterglass):", "");
                 shaped(recipeCategory, result, 4)
@@ -484,7 +484,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
             }
 
-            private void UntintGlass(Map<DyeColor, Block> input, Map<DyeColor, Block> result, RecipeCategory recipeCategory) {
+            private void untintGlass(Map<DyeColor, Block> input, Map<DyeColor, Block> result, RecipeCategory recipeCategory) {
                 for (DyeColor color : DyeColor.values()) {
                     String inputID = BuiltInRegistries.BLOCK.getKey(input.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
                     String resultID = BuiltInRegistries.BLOCK.getKey(result.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
@@ -496,7 +496,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
-            private void ColoredStainedSwapStonecutter(List<Map<DyeColor,Block>> colored, List<Map<DyeColor,Block>> stained, RecipeCategory recipeCategory) {
+            private void coloredStainedSwapStonecutter(List<Map<DyeColor,Block>> colored, List<Map<DyeColor,Block>> stained, RecipeCategory recipeCategory) {
                 for (int i = 0; i < colored.size(); i++) {
                     for (DyeColor color : DyeColor.values()) {
                         stonecutterResultFromBase(recipeCategory, colored.get(i).get(color), stained.get(i).get(color));
@@ -505,7 +505,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
-            private void BlockSwapStonecutterUndyed(List<Block> blocks, RecipeCategory recipeCategory) {
+            private void blockSwapStonecutterUndyed(List<Block> blocks, RecipeCategory recipeCategory) {
                 for (int i = 0; i < blocks.size(); i++) {
                     for (int j = 0; j < blocks.size(); j++) {
                         if (i == j) { continue; }
@@ -514,7 +514,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
-            private void BlockSwapStonecutterDyed(List<Map<DyeColor,Block>> blocks, RecipeCategory recipeCategory) {
+            private void blockSwapStonecutterDyed(List<Map<DyeColor,Block>> blocks, RecipeCategory recipeCategory) {
                 for (int i = 0; i < blocks.size(); i++) {
                     for (DyeColor color : DyeColor.values()) {
                         for (int j = 0; j < blocks.size(); j++) {
