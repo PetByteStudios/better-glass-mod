@@ -74,4 +74,7 @@ None
 
 # v1.0.0-pre.1..v1.0.0-pre.2
 - Removed some unnecessary items, not really breaking
+
+# v1.0.0-pre.2..v1.0.0-rc.1
+None
 </details>
