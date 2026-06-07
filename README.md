@@ -1,7 +1,7 @@
 # Better Glass
 Better Glass is a mod for Fabric 26.1.x that adds 361 new Glass Blocks, and way more to come!
 
-It also adds recipes to re-dye and un-dye Vanilla Glass, and Continuity integration!
+It also adds recipes to re-dye and un-dye Vanilla Glass, recipes to remove tint from glass, and Continuity integration!
 
 # Dev Notes & Roadmap
 This is the v1.0.0 Release, further updates are planned, below is a list of temporary things and future plans.
