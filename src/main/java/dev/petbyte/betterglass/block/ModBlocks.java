@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-// import java.util.function.Function;
 
 public class ModBlocks {
     private static BlockBehaviour.Properties glassProperties() {
@@ -170,14 +169,6 @@ public class ModBlocks {
         registerBlockItem("glasscutter", toRegister);
         return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, "glasscutter"), toRegister);
     }
-
-    /*
-    private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
-        Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
-        registerBlockItem(name, toRegister);
-        return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name), toRegister);
-    }
-    */
 
     private static Block registerGlassBlock(String name) {
         Block toRegister = new TransparentBlock(glassProperties().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name))));
