@@ -82,17 +82,17 @@ public class ModTextureProvider implements DataProvider {
                     }
 
                     // PANE TOPS
-                    GenerateStainedGlassPaneTops(colorName, blockType, palette);
+                    generateStainedGlassPaneTops(colorName, blockType, palette);
                 }
             }
-            GenerateConnectingTextures();
+            generateConnectingTextures();
 
             return CompletableFuture.allOf();
         }
         catch (IOException e) { throw new RuntimeException("Texture datagen failed at run(): ", e); }
     }
 
-    private void GenerateStainedGlassPaneTops(String colorName, String blockName, LinkedHashMap<Integer, Integer> palette) {
+    private void generateStainedGlassPaneTops(String colorName, String blockName, LinkedHashMap<Integer, Integer> palette) {
         try {
             BufferedImage template = ImageIO.read(templatesDir.resolve("blocks/glass_pane_top.png").toFile());
             Path outputDir = resourcesDir.resolve("../generated/resourcepacks/base_assets/assets/%s/textures/block".formatted(blockName.equals("vanilla_glass") ? "minecraft" : "betterglass"));
@@ -116,7 +116,7 @@ public class ModTextureProvider implements DataProvider {
         catch (IOException e) { throw new RuntimeException("Texture datagen failed at GenerateStainedGlassPaneTops(): ", e); }
     }
 
-    private void GenerateConnectingTextures() {
+    private void generateConnectingTextures() {
         try {
             // Load connections JSON once
             Type mapType = new TypeToken<Map<String, List<String>>>() {
