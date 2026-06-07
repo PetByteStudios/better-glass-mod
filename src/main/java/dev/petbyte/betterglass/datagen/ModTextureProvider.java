@@ -42,11 +42,10 @@ public class ModTextureProvider implements DataProvider {
                     Path outputDir = resourcesDir.resolve("../generated/resourcepacks/base_assets/assets/%s/textures/block".formatted((blockType.equals("vanilla_glass") || blockType.equals("tinted_glass")) && colorName.equals("undyed") ? "minecraft" : "betterglass"));
                     String outputName = (colorName.equals("undyed") ? "%s.png".formatted(blockType.equals("vanilla_glass") ? "glass" : blockType) : "%s_colored_%s.png".formatted(colorName, blockType));
                     if (blockType.contains("tinted_glass")) {
-                        BufferedImage tintedResult = result;
-                        Graphics2D g2d = tintedResult.createGraphics();
+                        Graphics2D g2d = result.createGraphics();
                         g2d.setColor(new Color(0, 0, 0, 191));
-                        g2d.fillRect(0, 0, tintedResult.getWidth(), tintedResult.getHeight());
-                        saveTexture(tintedResult, outputDir.resolve(outputName));
+                        g2d.fillRect(0, 0, result.getWidth(), result.getHeight());
+                        saveTexture(result, outputDir.resolve(outputName));
                     } else {
                         saveTexture(result, outputDir.resolve(outputName));
                     }
@@ -56,11 +55,10 @@ public class ModTextureProvider implements DataProvider {
                     BufferedImage paneTopResult = applyPalette(paneTopTemplate, palette);
                     outputName = colorName.equals("undyed") ? "%s_pane_top.png".formatted(blockType.equals("vanilla_glass") ? "glass" : blockType) : "%s_colored_%s_pane_top.png".formatted(colorName, blockType);
                     if (blockType.contains("tinted_glass")) {
-                        BufferedImage tintedPaneTopResult = paneTopResult;
-                        Graphics2D g2d = tintedPaneTopResult.createGraphics();
+                        Graphics2D g2d = paneTopResult.createGraphics();
                         g2d.setColor(new Color(0, 0, 0, 191));
-                        g2d.fillRect(0, 0, tintedPaneTopResult.getWidth(), tintedPaneTopResult.getHeight());
-                        saveTexture(tintedPaneTopResult, outputDir.resolve(outputName));
+                        g2d.fillRect(0, 0, paneTopResult.getWidth(), paneTopResult.getHeight());
+                        saveTexture(paneTopResult, outputDir.resolve(outputName));
                     } else {
                         saveTexture(paneTopResult, outputDir.resolve(outputName));
                     }
@@ -72,11 +70,10 @@ public class ModTextureProvider implements DataProvider {
                     if (blockType.equals("vanilla_glass")) { outputDir = outputDir.resolve("../../../minecraft/textures/block"); }
                     result = applyStain(template, palette);
                     if (blockType.contains("tinted_glass")) {
-                        BufferedImage tintedResult = result;
-                        Graphics2D g2d = tintedResult.createGraphics();
+                        Graphics2D g2d = result.createGraphics();
                         g2d.setColor(new Color(0, 0, 0, 191));
-                        g2d.fillRect(0, 0, tintedResult.getWidth(), tintedResult.getHeight());
-                        saveTexture(tintedResult, outputDir.resolve(outputName));
+                        g2d.fillRect(0, 0, result.getWidth(), result.getHeight());
+                        saveTexture(result, outputDir.resolve(outputName));
                     } else {
                         saveTexture(result, outputDir.resolve(outputName));
                     }
@@ -104,11 +101,10 @@ public class ModTextureProvider implements DataProvider {
 
             String outputName = "%s_stained_%s_pane_top.png".formatted(colorName, blockName.equals("vanilla_glass") ? "glass" : blockName);
             if (blockName.contains("tinted_glass")) {
-                BufferedImage tintedResult = result;
-                Graphics2D g2d2 = tintedResult.createGraphics();
+                Graphics2D g2d2 = result.createGraphics();
                 g2d2.setColor(new Color(0, 0, 0, 191));
-                g2d2.fillRect(0, 0, tintedResult.getWidth(), tintedResult.getHeight());
-                saveTexture(tintedResult, outputDir.resolve(outputName));
+                g2d2.fillRect(0, 0, result.getWidth(), result.getHeight());
+                saveTexture(result, outputDir.resolve(outputName));
             } else {
                 saveTexture(result, outputDir.resolve(outputName));
             }
