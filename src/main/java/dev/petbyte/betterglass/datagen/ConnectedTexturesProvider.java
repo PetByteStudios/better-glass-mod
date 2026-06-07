@@ -14,14 +14,14 @@ import java.util.concurrent.CompletableFuture;
 public class ConnectedTexturesProvider implements DataProvider {
     public ConnectedTexturesProvider() { }
 
-    Path resourcesDir = Path.of("../../src/main/resources");
-    Path outputBetterGlassDir = resourcesDir.resolve("../generated/resourcepacks/connecting_textures/assets/betterglass/optifine/ctm/betterglass/");
-    Path outputVanillaDir = resourcesDir.resolve("../generated/resourcepacks/connecting_textures/assets/betterglass/optifine/ctm/minecraft/");
+    final Path resourcesDir = Path.of("../../src/main/resources");
+    final Path outputBetterGlassDir = resourcesDir.resolve("../generated/resourcepacks/connecting_textures/assets/betterglass/optifine/ctm/betterglass/");
+    final Path outputVanillaDir = resourcesDir.resolve("../generated/resourcepacks/connecting_textures/assets/betterglass/optifine/ctm/minecraft/");
 
     Path finalBlockOutput = null;
     Path finalPaneOutput = null;
 
-    public static Map<String, List<int[]>> sidePixels = Map.of(
+    public static final Map<String, List<int[]>> sidePixels = Map.of(
             "top", List.of(new int[]{1, 0}, new int[]{2, 0}, new int[]{3, 0}, new int[]{4, 0},
                     new int[]{5, 0}, new int[]{6, 0}, new int[]{7, 0}, new int[]{8, 0}, new int[]{9, 0},
                     new int[]{10, 0}, new int[]{11, 0}, new int[]{12, 0}, new int[]{13, 0}, new int[]{14, 0}),

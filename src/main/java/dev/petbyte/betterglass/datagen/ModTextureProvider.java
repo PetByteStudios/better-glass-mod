@@ -22,9 +22,9 @@ import java.util.concurrent.CompletableFuture;
 public class ModTextureProvider implements DataProvider {
     public ModTextureProvider() { }
 
-    Path resourcesDir = Path.of("../../src/main/resources");
-    Path templatesDir = resourcesDir.resolve("assets/betterglass/templates");
-    Path templateJson = templatesDir.resolve("palettes/template.json");
+    final Path resourcesDir = Path.of("../../src/main/resources");
+    final Path templatesDir = resourcesDir.resolve("assets/betterglass/templates");
+    final Path templateJson = templatesDir.resolve("palettes/template.json");
 
     @Override
     public @NonNull CompletableFuture<?> run(@NonNull CachedOutput cache) {

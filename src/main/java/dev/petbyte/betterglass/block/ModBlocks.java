@@ -58,15 +58,15 @@ public class ModBlocks {
     public static final Block CLEAR_TINTED_GLASS_PANE = registerTintedGlassPane("clear_tinted_glass_pane");
     public static final Block SCRATCHED_TINTED_GLASS_PANE = registerTintedGlassPane("scratched_tinted_glass_pane");
 
-    public static List<Block> BETTER_GLASS_BLOCKS = new ArrayList<>(List.of(
+    public static final List<Block> BETTER_GLASS_BLOCKS = new ArrayList<>(List.of(
             CLEAR_GLASS, SCRATCHED_GLASS, CLEAR_TINTED_GLASS, SCRATCHED_TINTED_GLASS
     ));
 
-    public static List<Block> BETTER_GLASS_PANES = new ArrayList<>(List.of(
+    public static final List<Block> BETTER_GLASS_PANES = new ArrayList<>(List.of(
             CLEAR_GLASS_PANE, SCRATCHED_GLASS_PANE, CLEAR_TINTED_GLASS_PANE, SCRATCHED_TINTED_GLASS_PANE
     ));
 
-    public static List<Block> BETTER_GLASS_ALL = new ArrayList<>();
+    public static final List<Block> BETTER_GLASS_ALL = new ArrayList<>();
 
     public static final Map<DyeColor, Block> COLORED_CLEAR_GLASS = new LinkedHashMap<>();
     public static final Map<DyeColor, Block> COLORED_CLEAR_GLASS_PANE = new LinkedHashMap<>();

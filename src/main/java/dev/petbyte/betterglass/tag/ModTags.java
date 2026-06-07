@@ -22,7 +22,7 @@ public class ModTags {
         }
     }
 
-    public static List<TagPair> ALL_TAG_PAIRS = new ArrayList<>();
+    public static final List<TagPair> ALL_TAG_PAIRS = new ArrayList<>();
 
     public static final TagPair CLEAR_GLASS_BLOCK = TagPair.create("clear_glass_block");
     public static final TagPair CLEAR_GLASS_PANE = TagPair.create("clear_glass_pane");
