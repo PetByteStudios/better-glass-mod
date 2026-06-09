@@ -45,6 +45,7 @@ public class ModTextureProvider implements DataProvider {
                         Graphics2D g2d = result.createGraphics();
                         g2d.setColor(new Color(0, 0, 0, 127));
                         g2d.fillRect(0, 0, result.getWidth(), result.getHeight());
+                        g2d.dispose();
                         saveTexture(result, outputDir.resolve(outputName));
                     } else {
                         saveTexture(result, outputDir.resolve(outputName));
@@ -58,6 +59,7 @@ public class ModTextureProvider implements DataProvider {
                         Graphics2D g2d = paneTopResult.createGraphics();
                         g2d.setColor(new Color(0, 0, 0, 127));
                         g2d.fillRect(0, 0, paneTopResult.getWidth(), paneTopResult.getHeight());
+                        g2d.dispose();
                         saveTexture(paneTopResult, outputDir.resolve(outputName));
                     } else {
                         saveTexture(paneTopResult, outputDir.resolve(outputName));
@@ -73,6 +75,7 @@ public class ModTextureProvider implements DataProvider {
                         Graphics2D g2d = result.createGraphics();
                         g2d.setColor(new Color(0, 0, 0, 127));
                         g2d.fillRect(0, 0, result.getWidth(), result.getHeight());
+                        g2d.dispose();
                         saveTexture(result, outputDir.resolve(outputName));
                     } else {
                         saveTexture(result, outputDir.resolve(outputName));
@@ -98,12 +101,14 @@ public class ModTextureProvider implements DataProvider {
             Graphics2D g2d = result.createGraphics();
             g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.62890625f));
             g2d.drawImage(applyPalette(template, palette), 0, 0, null);
+            g2d.dispose();
 
             String outputName = "%s_stained_%s_pane_top.png".formatted(colorName, blockName.equals("vanilla_glass") ? "glass" : blockName);
             if (blockName.contains("tinted_glass")) {
                 Graphics2D g2d2 = result.createGraphics();
                 g2d2.setColor(new Color(0, 0, 0, 127));
                 g2d2.fillRect(0, 0, result.getWidth(), result.getHeight());
+                g2d2.dispose();
                 saveTexture(result, outputDir.resolve(outputName));
             } else {
                 saveTexture(result, outputDir.resolve(outputName));
@@ -173,6 +178,7 @@ public class ModTextureProvider implements DataProvider {
                     Graphics2D g2d2 = tile.createGraphics();
                     g2d2.setColor(new Color(0, 0, 0, 127));
                     g2d2.fillRect(0, 0, tile.getWidth(), tile.getHeight());
+                    g2d2.dispose();
                 }
                 saveTexture(tile, outputDir.resolve("%d.png".formatted(tileIndex)));
             }
