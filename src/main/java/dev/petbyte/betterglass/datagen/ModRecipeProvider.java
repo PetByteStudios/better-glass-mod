@@ -288,6 +288,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 tintGlass(ModBlocks.STAINED_SCRATCHED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, RecipeCategory.BUILDING_BLOCKS);
                 tintGlass(ModBlocks.STAINED_SCRATCHED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, RecipeCategory.DECORATIONS);
 
+                untintGlass(Blocks.TINTED_GLASS, Blocks.GLASS, RecipeCategory.BUILDING_BLOCKS);
                 untintGlass(ModBlocks.TINTED_GLASS_PANE, Blocks.GLASS_PANE, RecipeCategory.DECORATIONS);
                 untintGlass(ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);
                 untintGlass(ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.CLEAR_GLASS_PANE, RecipeCategory.DECORATIONS);
