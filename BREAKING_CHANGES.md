@@ -5,23 +5,23 @@ It is always recommended to manually check git diffs if you are deeply dependent
 <details>
   <summary>v1.0.0 Development</summary>
 
-# v1.0.0-beta.1..v1.0.0-beta.2
+### v1.0.0-beta.1..v1.0.0-beta.2
 None
 
-# v1.0.0-beta.2..v1.0.0-beta.3
+### v1.0.0-beta.2..v1.0.0-beta.3
 None
 
-# v1.0.0-beta.3..v1.0.0-beta.4
+### v1.0.0-beta.3..v1.0.0-beta.4
 None
 
-# v1.0.0-beta.4..v1.0.0-beta.5
+### v1.0.0-beta.4..v1.0.0-beta.5
 - Recipes have shifted due to the addition of Colored Vanilla Glass
   - May or may not affect gameplay. Check specifics .
 - `assets/textures/minecraft` and `assets/textures/betterglass` have been moved to a resource pack
   - Should have no major effect on gameplay, still notable
 - Removed glasscutter font's individual png assets
 
-# v1.0.0-beta.5..v1.0.0-beta.6
+### v1.0.0-beta.5..v1.0.0-beta.6
 - Renamed various tags
   - `clear_glass` -> `clear_glass_block`
   - `scratched_glass` -> `scratched_glass_block`
@@ -59,7 +59,7 @@ None
   - `fabric-api`: `*` -> `>=0.144.0`
 - Model Generation now uses `createGlassBlocks()` instead of `createTrivialCube()` for Glass blocks
 
-# v1.0.0-beta.6..v1.0.0-beta.7
+### v1.0.0-beta.6..v1.0.0-beta.7
 - Refactored Recipe Generation
   - This renamed certain criteria.
     - `has_*_stained_vanilla_glass` -> `has_*_stained_glass`
@@ -69,12 +69,15 @@ None
   - Additionally, `/data/betterglass/advancement/recipes/decorations/*_colored_vanilla_glass_pane_from_*_stained_glass_pane_via_crafting_table` had `has_stained_glass` as a criteria. This has been fixed in favor of `has_stained_glass_pane`.
 - Language Files are now part of datagen
 
-# v1.0.0-beta.7..v1.0.0-pre.1
+### v1.0.0-beta.7..v1.0.0-pre.1
 None
 
-# v1.0.0-pre.1..v1.0.0-pre.2
+### v1.0.0-pre.1..v1.0.0-pre.2
 - Removed some unnecessary items, not really breaking
 
-# v1.0.0-pre.2..v1.0.0-rc.1
+### v1.0.0-pre.2..v1.0.0-rc.1
 None
 </details>
+
+### v1.0.0..v1.0.1
+None
