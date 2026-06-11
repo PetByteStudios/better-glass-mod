@@ -34,7 +34,8 @@
 		"fabric-api": ">=0.144.0"
 	},
 	"suggests": {
-		"continuity": "~3.0"
+		"continuity": "~3.0",
+		"jei": "29"
 	},
 	"custom": {
 		"modmenu": {
