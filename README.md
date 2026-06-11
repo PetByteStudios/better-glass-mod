@@ -9,7 +9,7 @@ This is the v1.0.0 Release, further updates are planned, below is a list of temp
 ## Glasscutter
 Currently, the Glasscutter is just a prettier Stonecutter. There is no functional difference.
 
-In a future update, likely v1.2.0, the Glasscutter will gain independent functionality. When this happens, all Crafting Table recipes related to `betterglass` will be deleted (unless I decide against this).
+In a future update, likely v1.3.0, the Glasscutter will gain independent functionality. When this happens, all Crafting Table recipes related to `betterglass` will be deleted (unless I decide against this).
 
 The Glasscutter will be a Work Block all about Glass. It will be used to convert between Blocks and Panes; Clear, Scratched, Vanilla, and other types; Dye and Stain Glass; Tint and Un-Tint Glass; and maybe as a Villager Workstation, too.
 
