@@ -60,6 +60,7 @@ public class ModTextureProvider implements DataProvider {
                         g2d.setColor(new Color(0, 0, 0, 127));
                         g2d.fillRect(0, 0, paneTopResult.getWidth(), paneTopResult.getHeight());
                         g2d.dispose();
+                        if (blockType.equals("tinted_glass") && colorName.equals("undyed")) { outputDir = outputDir.resolve("../../../betterglass/textures/block"); }
                         saveTexture(paneTopResult, outputDir.resolve(outputName));
                     } else {
                         saveTexture(paneTopResult, outputDir.resolve(outputName));
