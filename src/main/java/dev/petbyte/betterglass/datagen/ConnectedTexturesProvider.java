@@ -48,7 +48,7 @@ public class ConnectedTexturesProvider implements DataProvider {
                 for (String colorType : List.of("undyed", "stained", "colored")) {
                     if (colorType.equals("undyed")) {
                         String nameFormat = blockType.equals("vanilla_glass") ? "glass" : blockType;
-                        String namespaceFormat = (blockType.equals("vanilla_glass") || blockType.equals("tinted_glass")) ? "minecraft" : "betterglass";
+                        String namespaceFormat = (blockType.equals("vanilla_glass") || (blockType.equals("tinted_glass"))) ? "minecraft" : "betterglass";
 
                         String blockProperties = """
                                 method=ctm
@@ -63,7 +63,8 @@ public class ConnectedTexturesProvider implements DataProvider {
                                 matchBlocks=%2$s:%1$s_pane
                                 tiles=0-46
                                 connect=block
-                                """.formatted(nameFormat, namespaceFormat);
+                                """.formatted(nameFormat, namespaceFormat)
+                                .replace("matchBlocks=minecraft:tinted_glass_pane", "matchBlocks=betterglass:tinted_glass_pane"); // i swear i can code
 
                         Path output = blockType.equals("vanilla_glass") || blockType.equals("tinted_glass") ? outputVanillaDir : outputBetterGlassDir;
                         finalBlockOutput = output.resolve("%s/%s/block.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), colorType));
