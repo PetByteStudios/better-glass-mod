@@ -42,8 +42,9 @@ public class ModTextureProvider implements DataProvider {
                     Path outputDir = resourcesDir.resolve("../generated/resourcepacks/base_assets/assets/%s/textures/block".formatted((blockType.equals("vanilla_glass") || blockType.equals("tinted_glass")) && colorName.equals("undyed") ? "minecraft" : "betterglass"));
                     String outputName = (colorName.equals("undyed") ? "%s.png".formatted(blockType.equals("vanilla_glass") ? "glass" : blockType) : "%s_colored_%s.png".formatted(colorName, blockType));
                     if (blockType.contains("tinted_glass")) {
+                        if (colorName.equals("undyed")) { result = applyPalette(template, loadPalette(templateJson, templatesDir.resolve("palettes/undyed_tinted.json"))); }
                         Graphics2D g2d = result.createGraphics();
-                        g2d.setColor(new Color(0, 0, 0, 127));
+                        g2d.setColor(new Color(32, 32, 32, 192));
                         g2d.fillRect(0, 0, result.getWidth(), result.getHeight());
                         g2d.dispose();
                         saveTexture(result, outputDir.resolve(outputName));
@@ -56,8 +57,9 @@ public class ModTextureProvider implements DataProvider {
                     BufferedImage paneTopResult = applyPalette(paneTopTemplate, palette);
                     outputName = colorName.equals("undyed") ? "%s_pane_top.png".formatted(blockType.equals("vanilla_glass") ? "glass" : blockType) : "%s_colored_%s_pane_top.png".formatted(colorName, blockType);
                     if (blockType.contains("tinted_glass")) {
+                        if (colorName.equals("undyed")) { paneTopResult = applyPalette(paneTopTemplate, loadPalette(templateJson, templatesDir.resolve("palettes/undyed_tinted.json"))); }
                         Graphics2D g2d = paneTopResult.createGraphics();
-                        g2d.setColor(new Color(0, 0, 0, 127));
+                        g2d.setColor(new Color(32, 32, 32, 192));
                         g2d.fillRect(0, 0, paneTopResult.getWidth(), paneTopResult.getHeight());
                         g2d.dispose();
                         if (blockType.equals("tinted_glass") && colorName.equals("undyed")) { outputDir = outputDir.resolve("../../../betterglass/textures/block"); }
@@ -74,7 +76,7 @@ public class ModTextureProvider implements DataProvider {
                     result = applyStain(template, palette);
                     if (blockType.contains("tinted_glass")) {
                         Graphics2D g2d = result.createGraphics();
-                        g2d.setColor(new Color(0, 0, 0, 127));
+                        g2d.setColor(new Color(32, 32, 32, 192));
                         g2d.fillRect(0, 0, result.getWidth(), result.getHeight());
                         g2d.dispose();
                         saveTexture(result, outputDir.resolve(outputName));
@@ -107,7 +109,7 @@ public class ModTextureProvider implements DataProvider {
             String outputName = "%s_stained_%s_pane_top.png".formatted(colorName, blockName.equals("vanilla_glass") ? "glass" : blockName);
             if (blockName.contains("tinted_glass")) {
                 Graphics2D g2d2 = result.createGraphics();
-                g2d2.setColor(new Color(0, 0, 0, 127));
+                g2d2.setColor(new Color(32, 32, 32, 192));
                 g2d2.fillRect(0, 0, result.getWidth(), result.getHeight());
                 g2d2.dispose();
                 saveTexture(result, outputDir.resolve(outputName));
@@ -160,6 +162,12 @@ public class ModTextureProvider implements DataProvider {
                 // Start with a copy of the base template
                 BufferedImage tile = stained ? applyStain(base, palette) : applyPalette(base, palette);
 
+                if (tinted && outputDir.endsWith("undyed")) {
+                    Graphics2D g2d2 = tile.createGraphics();
+                    tile = applyPalette(base, loadPalette(templateJson, templatesDir.resolve("palettes/undyed_tinted.json")));
+                    g2d2.dispose();
+                }
+
                 // Remove pixels for each connected side
                 for (String side : sides) {
                     List<int[]> pixels = ConnectedTexturesProvider.sidePixels.get(side);
@@ -177,7 +185,7 @@ public class ModTextureProvider implements DataProvider {
 
                 if (tinted) {
                     Graphics2D g2d2 = tile.createGraphics();
-                    g2d2.setColor(new Color(0, 0, 0, 127));
+                    g2d2.setColor(new Color(32, 32, 32, 192));
                     g2d2.fillRect(0, 0, tile.getWidth(), tile.getHeight());
                     g2d2.dispose();
                 }
