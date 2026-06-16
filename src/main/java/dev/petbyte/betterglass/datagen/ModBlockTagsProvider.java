@@ -44,6 +44,8 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
         var tagColoredTintedGlassPane = builder(ModTags.COLORED_TINTED_GLASS_PANE.block());
         var tagStainedTintedGlassBlock = builder(ModTags.STAINED_TINTED_GLASS_BLOCK.block());
         var tagStainedTintedGlassPane = builder(ModTags.STAINED_TINTED_GLASS_PANE.block());
+        var tagAnyColoredTintedGlassBlock = builder(ModTags.ANY_COLORED_TINTED_GLASS_BLOCK.block());
+        var tagAnyColoredTintedGlassPane = builder(ModTags.ANY_COLORED_TINTED_GLASS_PANE.block());
 
         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
             builder(BlockTags.IMPERMEABLE).add(blockKey(block));
@@ -144,12 +146,16 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
         addAll(tagScratchedTintedGlassPane, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS.values().toArray(new Block[0]));
         tagScratchedTintedGlassPane.add(blockKey(ModBlocks.SCRATCHED_TINTED_GLASS));
 
-        addAll(tagColoredTintedGlassBlock, ModBlocks.COLORED_CLEAR_TINTED_GLASS.values().toArray(new Block[0]));
-        addAll(tagColoredTintedGlassBlock, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(tagAnyColoredTintedGlassBlock, ModBlocks.COLORED_CLEAR_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(tagAnyColoredTintedGlassBlock, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(tagAnyColoredTintedGlassBlock, ModBlocks.COLORED_TINTED_GLASS.values().toArray(new Block[0]));
+
         addAll(tagColoredTintedGlassBlock, ModBlocks.COLORED_TINTED_GLASS.values().toArray(new Block[0]));
 
-        addAll(tagColoredTintedGlassPane, ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE.values().toArray(new Block[0]));
-        addAll(tagColoredTintedGlassPane, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE.values().toArray(new Block[0]));
+        addAll(tagAnyColoredTintedGlassPane, ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE.values().toArray(new Block[0]));
+        addAll(tagAnyColoredTintedGlassPane, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE.values().toArray(new Block[0]));
+        addAll(tagAnyColoredTintedGlassPane, ModBlocks.COLORED_TINTED_GLASS_PANE.values().toArray(new Block[0]));
+
         addAll(tagColoredTintedGlassPane, ModBlocks.COLORED_TINTED_GLASS_PANE.values().toArray(new Block[0]));
 
         addAll(tagStainedTintedGlassBlock, ModBlocks.STAINED_CLEAR_TINTED_GLASS.values().toArray(new Block[0]));
