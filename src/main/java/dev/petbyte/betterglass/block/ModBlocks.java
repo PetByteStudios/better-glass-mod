@@ -1,3 +1,10 @@
+// ******************************************************** //
+// This code will be largely rewritten to make use of      //
+// upcoming helper methods & Minecraft 26.2's new features //
+// in Better Glass v1.2.0. I promise to deal with the mess.//
+// (i've never broken a promise, have i? (don't check))    //
+// ******************************************************* //
+
 package dev.petbyte.betterglass.block;
 
 import dev.petbyte.betterglass.BetterGlass;
