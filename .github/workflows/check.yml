@@ -1,13 +1,13 @@
-# Automatically build the project and run any configured tests for every push
+# Automatically check the project and run any configured tests for every push
 # and submitted pull request. This can help catch issues that only occur on
 # certain platforms or Java versions, and provides a first line of defence
 # against bad commits.
 
-name: build
+name: check
 on: [pull_request, push, workflow_dispatch]
 
 jobs:
-  build:
+  check:
     runs-on: ubuntu-24.04
     steps:
       - name: checkout repository
@@ -22,10 +22,5 @@ jobs:
           cache: 'gradle'
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
-      - name: build
-        run: ./gradlew build
-      - name: capture build artifacts
-        uses: actions/upload-artifact@v7
-        with:
-          name: build-artifacts
-          path: build/libs/
+      - name: run checks
+        run: ./gradlew check
