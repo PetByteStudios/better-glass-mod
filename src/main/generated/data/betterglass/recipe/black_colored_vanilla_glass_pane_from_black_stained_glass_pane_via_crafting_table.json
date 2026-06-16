@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "group": "black_colored_vanilla_glass_pane",
   "key": {
     "G": "minecraft:black_stained_glass_pane",

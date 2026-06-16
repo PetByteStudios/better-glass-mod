@@ -1,6 +1,5 @@
 {
   "values": [
-    "betterglass:scratched_tinted_glass",
     "betterglass:white_colored_scratched_tinted_glass",
     "betterglass:light_gray_colored_scratched_tinted_glass",
     "betterglass:gray_colored_scratched_tinted_glass",
@@ -32,6 +31,7 @@
     "betterglass:blue_stained_scratched_tinted_glass",
     "betterglass:purple_stained_scratched_tinted_glass",
     "betterglass:magenta_stained_scratched_tinted_glass",
-    "betterglass:pink_stained_scratched_tinted_glass"
+    "betterglass:pink_stained_scratched_tinted_glass",
+    "betterglass:scratched_tinted_glass"
   ]
 }

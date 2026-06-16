@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "group": "white_stained_tinted_glass_pane",
   "key": {
     "G": "#betterglass:stained_tinted_glass_pane",

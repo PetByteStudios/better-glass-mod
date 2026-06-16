@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "group": "lime_stained_clear_glass_pane",
   "key": {
     "G": "betterglass:lime_stained_clear_glass"

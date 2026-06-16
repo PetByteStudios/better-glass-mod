@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "group": "pink_colored_clear_glass_pane",
   "key": {
     "G": "betterglass:pink_colored_clear_glass"

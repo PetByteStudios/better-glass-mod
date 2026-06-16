@@ -1,6 +1,5 @@
 {
   "values": [
-    "betterglass:clear_glass",
     "betterglass:white_colored_clear_glass",
     "betterglass:light_gray_colored_clear_glass",
     "betterglass:gray_colored_clear_glass",
@@ -32,6 +31,7 @@
     "betterglass:blue_stained_clear_glass",
     "betterglass:purple_stained_clear_glass",
     "betterglass:magenta_stained_clear_glass",
-    "betterglass:pink_stained_clear_glass"
+    "betterglass:pink_stained_clear_glass",
+    "betterglass:clear_glass"
   ]
 }

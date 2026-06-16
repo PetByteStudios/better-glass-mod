@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "group": "yellow_stained_clear_glass_pane",
   "key": {
     "G": "minecraft:yellow_stained_glass_pane"
