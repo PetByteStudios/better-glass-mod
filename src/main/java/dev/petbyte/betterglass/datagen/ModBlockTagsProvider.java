@@ -1,5 +1,6 @@
 package dev.petbyte.betterglass.datagen;
 
+import dev.petbyte.betterglass.BetterGlassUtils;
 import dev.petbyte.betterglass.block.ModBlocks;
 import dev.petbyte.betterglass.tag.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
@@ -17,6 +18,8 @@ import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
+import static dev.petbyte.betterglass.BetterGlassUtils.*;
+
 public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
     public ModBlockTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
         super(output, registryLookupFuture);
@@ -24,10 +27,32 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NonNull Provider registries) {
+        var tagClearGlassBlock = builder(ModTags.CLEAR_GLASS_BLOCK.block());
+        var tagClearGlassPane = builder(ModTags.CLEAR_GLASS_PANE.block());
+        var tagScratchedGlassBlock = builder(ModTags.SCRATCHED_GLASS_BLOCK.block());
+        var tagScratchedGlassPane = builder(ModTags.SCRATCHED_GLASS_PANE.block());
+        var tagColoredGlassBlock = builder(ModTags.COLORED_GLASS_BLOCK.block());
+        var tagColoredGlassPane = builder(ModTags.COLORED_GLASS_PANE.block());
+        var tagStainedGlassBlock = builder(ModTags.STAINED_GLASS_BLOCK.block());
+        var tagStainedGlassPane = builder(ModTags.STAINED_GLASS_PANE.block());
+
+        var tagClearTintedGlassBlock = builder(ModTags.CLEAR_TINTED_GLASS_BLOCK.block());
+        var tagClearTintedGlassPane = builder(ModTags.CLEAR_TINTED_GLASS_PANE.block());
+        var tagScratchedTintedGlassBlock = builder(ModTags.SCRATCHED_TINTED_GLASS_BLOCK.block());
+        var tagScratchedTintedGlassPane = builder(ModTags.SCRATCHED_TINTED_GLASS_PANE.block());
+        var tagColoredTintedGlassBlock = builder(ModTags.COLORED_TINTED_GLASS_BLOCK.block());
+        var tagColoredTintedGlassPane = builder(ModTags.COLORED_TINTED_GLASS_PANE.block());
+        var tagStainedTintedGlassBlock = builder(ModTags.STAINED_TINTED_GLASS_BLOCK.block());
+        var tagStainedTintedGlassPane = builder(ModTags.STAINED_TINTED_GLASS_PANE.block());
+
         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
-            valueLookupBuilder(BlockTags.IMPERMEABLE).add(block);
-            valueLookupBuilder(ConventionalBlockTags.GLASS_BLOCKS).add(block);
-            valueLookupBuilder((block.getName().toString().contains("tinted") ? ConventionalBlockTags.GLASS_BLOCKS_TINTED : ConventionalBlockTags.GLASS_BLOCKS_CHEAP)).add(block);
+            builder(BlockTags.IMPERMEABLE).add(blockKey(block));
+            builder(ConventionalBlockTags.GLASS_BLOCKS).add(blockKey(block));
+            if (blockKey(block).toString().contains("tinted")) {
+                builder(ConventionalBlockTags.GLASS_BLOCKS_TINTED).add(blockKey(block));
+            } else {
+                builder(ConventionalBlockTags.GLASS_BLOCKS_CHEAP).add(blockKey(block));
+            }
         }
 
         for (DyeColor color : DyeColor.values()) {
@@ -40,249 +65,186 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                     ModBlocks.STAINED_SCRATCHED_GLASS.get(color)
             };
 
-            valueLookupBuilder(colorDyedTag).add(dyedBlocks);
-            valueLookupBuilder(ConventionalBlockTags.DYED).add(dyedBlocks);
+            addAll(builder(colorDyedTag), dyedBlocks);
+            addAll(builder(ConventionalBlockTags.DYED), dyedBlocks);
         }
 
-        valueLookupBuilder(ConventionalBlockTags.GLASS_BLOCKS_COLORLESS)
-                .add(ModBlocks.CLEAR_GLASS)
-                .add(ModBlocks.SCRATCHED_GLASS);
+        builder(ConventionalBlockTags.GLASS_BLOCKS_COLORLESS)
+                .add(blockKey(ModBlocks.CLEAR_GLASS))
+                .add(blockKey(ModBlocks.SCRATCHED_GLASS));
 
-        valueLookupBuilder(ConventionalBlockTags.GLASS_PANES_COLORLESS)
-                .add(ModBlocks.CLEAR_GLASS_PANE)
-                .add(ModBlocks.SCRATCHED_GLASS_PANE);
+        builder(ConventionalBlockTags.GLASS_PANES_COLORLESS)
+                .add(blockKey(ModBlocks.CLEAR_GLASS_PANE))
+                .add(blockKey(ModBlocks.SCRATCHED_GLASS_PANE));
 
+        addAll(tagClearGlassBlock, ModBlocks.COLORED_CLEAR_GLASS.values().toArray(new Block[0]));
+        addAll(tagClearGlassBlock, ModBlocks.STAINED_CLEAR_GLASS.values().toArray(new Block[0]));
+        tagClearGlassBlock.add(blockKey(ModBlocks.CLEAR_GLASS));
 
-        valueLookupBuilder(ModTags.CLEAR_GLASS_BLOCK.block())
-                .add(ModBlocks.CLEAR_GLASS)
-                .addAll(ModBlocks.COLORED_CLEAR_GLASS.values())
-                .addAll(ModBlocks.STAINED_CLEAR_GLASS.values());
+        addAll(tagClearGlassPane, ModBlocks.COLORED_CLEAR_GLASS.values().toArray(new Block[0]));
+        addAll(tagClearGlassPane, ModBlocks.STAINED_CLEAR_GLASS.values().toArray(new Block[0]));
+        tagClearGlassPane.add(blockKey(ModBlocks.CLEAR_GLASS));
 
-        valueLookupBuilder(ModTags.CLEAR_GLASS_PANE.block())
-                .add(ModBlocks.CLEAR_GLASS_PANE)
-                .addAll(ModBlocks.COLORED_CLEAR_GLASS_PANE.values())
-                .addAll(ModBlocks.STAINED_CLEAR_GLASS_PANE.values());
+        addAll(tagScratchedGlassBlock, ModBlocks.COLORED_SCRATCHED_GLASS.values().toArray(new Block[0]));
+        addAll(tagScratchedGlassBlock, ModBlocks.STAINED_SCRATCHED_GLASS.values().toArray(new Block[0]));
+        tagScratchedGlassBlock.add(blockKey(ModBlocks.SCRATCHED_GLASS));
 
-        valueLookupBuilder(ModTags.SCRATCHED_GLASS_BLOCK.block())
-                .add(ModBlocks.SCRATCHED_GLASS)
-                .addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values())
-                .addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
+        addAll(tagScratchedGlassPane, ModBlocks.COLORED_SCRATCHED_GLASS.values().toArray(new Block[0]));
+        addAll(tagScratchedGlassPane, ModBlocks.STAINED_SCRATCHED_GLASS.values().toArray(new Block[0]));
+        tagScratchedGlassPane.add(blockKey(ModBlocks.SCRATCHED_GLASS));
 
-        valueLookupBuilder(ModTags.SCRATCHED_GLASS_PANE.block())
-                .addAll(ModBlocks.COLORED_SCRATCHED_GLASS_PANE.values())
-                .addAll(ModBlocks.STAINED_SCRATCHED_GLASS_PANE.values());
+        addAll(tagColoredGlassBlock, ModBlocks.COLORED_CLEAR_GLASS.values().toArray(new Block[0]));
+        addAll(tagColoredGlassBlock, ModBlocks.COLORED_SCRATCHED_GLASS.values().toArray(new Block[0]));
+        addAll(tagColoredGlassBlock, ModBlocks.COLORED_VANILLA_GLASS.values().toArray(new Block[0]));
 
-        valueLookupBuilder(ModTags.COLORED_GLASS_BLOCK.block())
-                .addAll(ModBlocks.COLORED_CLEAR_GLASS.values())
-                .addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values())
-                .addAll(ModBlocks.COLORED_VANILLA_GLASS.values());
+        addAll(tagColoredGlassPane, ModBlocks.COLORED_CLEAR_GLASS_PANE.values().toArray(new Block[0]));
+        addAll(tagColoredGlassPane, ModBlocks.COLORED_SCRATCHED_GLASS_PANE.values().toArray(new Block[0]));
+        addAll(tagColoredGlassPane, ModBlocks.COLORED_VANILLA_GLASS_PANE.values().toArray(new Block[0]));
 
-        valueLookupBuilder(ModTags.COLORED_GLASS_PANE.block())
-                .addAll(ModBlocks.COLORED_CLEAR_GLASS_PANE.values())
-                .addAll(ModBlocks.COLORED_SCRATCHED_GLASS_PANE.values())
-                .addAll(ModBlocks.COLORED_VANILLA_GLASS_PANE.values());
+        addAll(tagStainedGlassBlock, ModBlocks.STAINED_CLEAR_GLASS.values().toArray(new Block[0]));
+        addAll(tagStainedGlassBlock, ModBlocks.STAINED_SCRATCHED_GLASS.values().toArray(new Block[0]));
 
-        valueLookupBuilder(ModTags.STAINED_GLASS_BLOCK.block())
-                .addAll(ModBlocks.STAINED_CLEAR_GLASS.values())
-                .addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
+        addAll(tagStainedGlassPane, ModBlocks.STAINED_CLEAR_GLASS_PANE.values().toArray(new Block[0]));
+        addAll(tagStainedGlassPane, ModBlocks.STAINED_SCRATCHED_GLASS_PANE.values().toArray(new Block[0]));
 
-        valueLookupBuilder(ModTags.STAINED_GLASS_PANE.block())
-                .addAll(ModBlocks.STAINED_CLEAR_GLASS_PANE.values())
-                .addAll(ModBlocks.STAINED_SCRATCHED_GLASS_PANE.values());
+        addAll(builder(ModTags.COLORED_CLEAR_GLASS_BLOCK.block()), ModBlocks.COLORED_CLEAR_GLASS.values().toArray(new Block[0]));
+        addAll(builder(ModTags.COLORED_CLEAR_GLASS_PANE.block()), ModBlocks.COLORED_CLEAR_GLASS_PANE.values().toArray(new Block[0]));
+        addAll(builder(ModTags.STAINED_CLEAR_GLASS_BLOCK.block()), ModBlocks.STAINED_CLEAR_GLASS.values().toArray(new Block[0]));
+        addAll(builder(ModTags.STAINED_CLEAR_GLASS_PANE.block()), ModBlocks.STAINED_CLEAR_GLASS_PANE.values().toArray(new Block[0]));
 
-        valueLookupBuilder(ModTags.COLORED_CLEAR_GLASS_BLOCK.block())
-                .addAll(ModBlocks.COLORED_CLEAR_GLASS.values());
+        addAll(builder(ModTags.COLORED_SCRATCHED_GLASS_BLOCK.block()), ModBlocks.COLORED_SCRATCHED_GLASS.values().toArray(new Block[0]));
+        addAll(builder(ModTags.COLORED_SCRATCHED_GLASS_PANE.block()), ModBlocks.COLORED_SCRATCHED_GLASS_PANE.values().toArray(new Block[0]));
+        addAll(builder(ModTags.STAINED_SCRATCHED_GLASS_BLOCK.block()), ModBlocks.STAINED_SCRATCHED_GLASS.values().toArray(new Block[0]));
+        addAll(builder(ModTags.STAINED_SCRATCHED_GLASS_PANE.block()), ModBlocks.STAINED_SCRATCHED_GLASS_PANE.values().toArray(new Block[0]));
 
-        valueLookupBuilder(ModTags.COLORED_CLEAR_GLASS_PANE.block())
-                .addAll(ModBlocks.COLORED_CLEAR_GLASS_PANE.values());
+        builder(ModTags.STAINED_VANILLA_GLASS_BLOCK.block()).addAll(Blocks.STAINED_GLASS.map(BetterGlassUtils::blockKey));
+        builder(ModTags.STAINED_VANILLA_GLASS_PANE.block()).addAll(Blocks.STAINED_GLASS_PANE.map(BetterGlassUtils::blockKey));
 
-        valueLookupBuilder(ModTags.STAINED_CLEAR_GLASS_BLOCK.block())
-                .addAll(ModBlocks.STAINED_CLEAR_GLASS.values());
+        addAll(builder(ModTags.COLORED_VANILLA_GLASS_BLOCK.block()), ModBlocks.COLORED_VANILLA_GLASS.values().toArray(new Block[0]));
+        addAll(builder(ModTags.COLORED_VANILLA_GLASS_PANE.block()), ModBlocks.COLORED_VANILLA_GLASS_PANE.values().toArray(new Block[0]));
 
-        valueLookupBuilder(ModTags.STAINED_CLEAR_GLASS_PANE.block())
-                .addAll(ModBlocks.STAINED_CLEAR_GLASS_PANE.values());
-
-        valueLookupBuilder(ModTags.COLORED_SCRATCHED_GLASS_BLOCK.block())
-                .addAll(ModBlocks.COLORED_SCRATCHED_GLASS.values());
-
-        valueLookupBuilder(ModTags.COLORED_SCRATCHED_GLASS_PANE.block())
-                .addAll(ModBlocks.COLORED_SCRATCHED_GLASS_PANE.values());
-
-        valueLookupBuilder(ModTags.STAINED_SCRATCHED_GLASS_BLOCK.block())
-                .addAll(ModBlocks.STAINED_SCRATCHED_GLASS.values());
-
-        valueLookupBuilder(ModTags.STAINED_SCRATCHED_GLASS_PANE.block())
-                .addAll(ModBlocks.STAINED_SCRATCHED_GLASS_PANE.values());
-
-        valueLookupBuilder(ModTags.STAINED_VANILLA_GLASS_BLOCK.block()).add(Blocks.WHITE_STAINED_GLASS)
-                .add(Blocks.LIGHT_GRAY_STAINED_GLASS).add(Blocks.GRAY_STAINED_GLASS).add(Blocks.BLACK_STAINED_GLASS)
-                .add(Blocks.BROWN_STAINED_GLASS).add(Blocks.RED_STAINED_GLASS).add(Blocks.YELLOW_STAINED_GLASS)
-                .add(Blocks.ORANGE_STAINED_GLASS).add(Blocks.LIME_STAINED_GLASS).add(Blocks.GREEN_STAINED_GLASS)
-                .add(Blocks.CYAN_STAINED_GLASS).add(Blocks.LIGHT_BLUE_STAINED_GLASS).add(Blocks.BLUE_STAINED_GLASS)
-                .add(Blocks.PURPLE_STAINED_GLASS).add(Blocks.MAGENTA_STAINED_GLASS).add(Blocks.PINK_STAINED_GLASS);
-
-        valueLookupBuilder(ModTags.STAINED_VANILLA_GLASS_PANE.block()).add(Blocks.WHITE_STAINED_GLASS_PANE)
-                .add(Blocks.LIGHT_GRAY_STAINED_GLASS_PANE).add(Blocks.GRAY_STAINED_GLASS_PANE).add(Blocks.BLACK_STAINED_GLASS_PANE)
-                .add(Blocks.BROWN_STAINED_GLASS_PANE).add(Blocks.RED_STAINED_GLASS_PANE).add(Blocks.YELLOW_STAINED_GLASS_PANE)
-                .add(Blocks.ORANGE_STAINED_GLASS_PANE).add(Blocks.LIME_STAINED_GLASS_PANE).add(Blocks.GREEN_STAINED_GLASS_PANE)
-                .add(Blocks.CYAN_STAINED_GLASS_PANE).add(Blocks.LIGHT_BLUE_STAINED_GLASS_PANE).add(Blocks.BLUE_STAINED_GLASS_PANE)
-                .add(Blocks.PURPLE_STAINED_GLASS_PANE).add(Blocks.MAGENTA_STAINED_GLASS_PANE).add(Blocks.PINK_STAINED_GLASS_PANE);
-
-        valueLookupBuilder(ModTags.COLORED_VANILLA_GLASS_BLOCK.block())
-                .addAll(ModBlocks.COLORED_VANILLA_GLASS.values());
-
-        valueLookupBuilder(ModTags.COLORED_VANILLA_GLASS_PANE.block())
-                .addAll(ModBlocks.COLORED_VANILLA_GLASS_PANE.values());
+        addAll(builder(ModTags.COLORED_TINTED_GLASS_BLOCK.block()), ModBlocks.COLORED_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(builder(ModTags.COLORED_TINTED_GLASS_PANE.block()), ModBlocks.COLORED_TINTED_GLASS_PANE.values().toArray(new Block[0]));
 
 
-        valueLookupBuilder(ModTags.COLORED_TINTED_GLASS_BLOCK.block())
-                .addAll(ModBlocks.COLORED_TINTED_GLASS.values());
 
-        valueLookupBuilder(ModTags.COLORED_TINTED_GLASS_PANE.block())
-                .addAll(ModBlocks.COLORED_TINTED_GLASS_PANE.values());
+        addAll(tagClearTintedGlassBlock, ModBlocks.COLORED_CLEAR_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(tagClearTintedGlassBlock, ModBlocks.STAINED_CLEAR_TINTED_GLASS.values().toArray(new Block[0]));
+        tagClearTintedGlassBlock.add(blockKey(ModBlocks.CLEAR_TINTED_GLASS));
 
-        valueLookupBuilder(ModTags.CLEAR_TINTED_GLASS_BLOCK.block())
-                .add(ModBlocks.CLEAR_TINTED_GLASS)
-                .addAll(ModBlocks.COLORED_CLEAR_TINTED_GLASS.values())
-                .addAll(ModBlocks.STAINED_CLEAR_TINTED_GLASS.values());
+        addAll(tagClearTintedGlassPane, ModBlocks.COLORED_CLEAR_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(tagClearTintedGlassPane, ModBlocks.STAINED_CLEAR_TINTED_GLASS.values().toArray(new Block[0]));
+        tagClearTintedGlassPane.add(blockKey(ModBlocks.CLEAR_TINTED_GLASS));
 
-        valueLookupBuilder(ModTags.CLEAR_TINTED_GLASS_PANE.block())
-                .add(ModBlocks.CLEAR_TINTED_GLASS_PANE)
-                .addAll(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE.values())
-                .addAll(ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE.values());
+        addAll(tagScratchedTintedGlassBlock, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(tagScratchedTintedGlassBlock, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS.values().toArray(new Block[0]));
+        tagScratchedTintedGlassBlock.add(blockKey(ModBlocks.SCRATCHED_TINTED_GLASS));
 
-        valueLookupBuilder(ModTags.SCRATCHED_TINTED_GLASS_BLOCK.block())
-                .add(ModBlocks.SCRATCHED_TINTED_GLASS)
-                .addAll(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS.values())
-                .addAll(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS.values());
+        addAll(tagScratchedTintedGlassPane, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(tagScratchedTintedGlassPane, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS.values().toArray(new Block[0]));
+        tagScratchedTintedGlassPane.add(blockKey(ModBlocks.SCRATCHED_TINTED_GLASS));
 
-        valueLookupBuilder(ModTags.SCRATCHED_TINTED_GLASS_PANE.block())
-                .add(ModBlocks.SCRATCHED_TINTED_GLASS_PANE)
-                .addAll(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE.values())
-                .addAll(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE.values());
+        addAll(tagColoredTintedGlassBlock, ModBlocks.COLORED_CLEAR_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(tagColoredTintedGlassBlock, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(tagColoredTintedGlassBlock, ModBlocks.COLORED_TINTED_GLASS.values().toArray(new Block[0]));
 
-        valueLookupBuilder(ModTags.ANY_COLORED_TINTED_GLASS_BLOCK.block())
-                .addAll(ModBlocks.COLORED_TINTED_GLASS.values())
-                .addAll(ModBlocks.COLORED_CLEAR_TINTED_GLASS.values())
-                .addAll(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS.values());
+        addAll(tagColoredTintedGlassPane, ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE.values().toArray(new Block[0]));
+        addAll(tagColoredTintedGlassPane, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE.values().toArray(new Block[0]));
+        addAll(tagColoredTintedGlassPane, ModBlocks.COLORED_TINTED_GLASS_PANE.values().toArray(new Block[0]));
 
-        valueLookupBuilder(ModTags.ANY_COLORED_TINTED_GLASS_PANE.block())
-                .addAll(ModBlocks.COLORED_TINTED_GLASS_PANE.values())
-                .addAll(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE.values())
-                .addAll(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE.values());
+        addAll(tagStainedTintedGlassBlock, ModBlocks.STAINED_CLEAR_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(tagStainedTintedGlassBlock, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS.values().toArray(new Block[0]));
 
-        valueLookupBuilder(ModTags.STAINED_TINTED_GLASS_BLOCK.block())
-                .addAll(ModBlocks.STAINED_TINTED_GLASS.values())
-                .addAll(ModBlocks.STAINED_CLEAR_TINTED_GLASS.values())
-                .addAll(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS.values());
+        addAll(tagStainedTintedGlassPane, ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE.values().toArray(new Block[0]));
+        addAll(tagStainedTintedGlassPane, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE.values().toArray(new Block[0]));
 
-        valueLookupBuilder(ModTags.STAINED_TINTED_GLASS_PANE.block())
-                .addAll(ModBlocks.STAINED_TINTED_GLASS_PANE.values())
-                .addAll(ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE.values())
-                .addAll(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE.values());
+        addAll(builder(ModTags.COLORED_CLEAR_TINTED_GLASS_BLOCK.block()), ModBlocks.COLORED_CLEAR_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(builder(ModTags.COLORED_CLEAR_TINTED_GLASS_PANE.block()), ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE.values().toArray(new Block[0]));
+        addAll(builder(ModTags.STAINED_CLEAR_TINTED_GLASS_BLOCK.block()), ModBlocks.STAINED_CLEAR_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(builder(ModTags.STAINED_CLEAR_TINTED_GLASS_PANE.block()), ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE.values().toArray(new Block[0]));
 
-        valueLookupBuilder(ModTags.COLORED_CLEAR_TINTED_GLASS_BLOCK.block())
-                .addAll(ModBlocks.COLORED_CLEAR_TINTED_GLASS.values());
+        addAll(builder(ModTags.COLORED_SCRATCHED_TINTED_GLASS_BLOCK.block()), ModBlocks.COLORED_SCRATCHED_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(builder(ModTags.COLORED_SCRATCHED_TINTED_GLASS_PANE.block()), ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE.values().toArray(new Block[0]));
+        addAll(builder(ModTags.STAINED_SCRATCHED_TINTED_GLASS_BLOCK.block()), ModBlocks.STAINED_SCRATCHED_TINTED_GLASS.values().toArray(new Block[0]));
+        addAll(builder(ModTags.STAINED_SCRATCHED_TINTED_GLASS_PANE.block()), ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE.values().toArray(new Block[0]));
 
-        valueLookupBuilder(ModTags.COLORED_CLEAR_TINTED_GLASS_PANE.block())
-                .addAll(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE.values());
-
-        valueLookupBuilder(ModTags.STAINED_CLEAR_TINTED_GLASS_BLOCK.block())
-                .addAll(ModBlocks.STAINED_CLEAR_TINTED_GLASS.values());
-
-        valueLookupBuilder(ModTags.STAINED_CLEAR_TINTED_GLASS_PANE.block())
-                .addAll(ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE.values());
-
-        valueLookupBuilder(ModTags.COLORED_SCRATCHED_TINTED_GLASS_BLOCK.block())
-                .addAll(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS.values());
-
-        valueLookupBuilder(ModTags.COLORED_SCRATCHED_TINTED_GLASS_PANE.block())
-                .addAll(ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE.values());
-
-        valueLookupBuilder(ModTags.STAINED_SCRATCHED_TINTED_GLASS_BLOCK.block())
-                .addAll(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS.values());
-
-        valueLookupBuilder(ModTags.STAINED_SCRATCHED_TINTED_GLASS_PANE.block())
-                .addAll(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE.values());
-
-
-        valueLookupBuilder(ModTags.CLEAR_GLASS_ALL.block())
+        builder(ModTags.CLEAR_GLASS_ALL.block())
                 .addTag(ModTags.CLEAR_GLASS_BLOCK.block())
                 .addTag(ModTags.CLEAR_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.SCRATCHED_GLASS_ALL.block())
+        builder(ModTags.SCRATCHED_GLASS_ALL.block())
                 .addTag(ModTags.SCRATCHED_GLASS_BLOCK.block())
                 .addTag(ModTags.SCRATCHED_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.COLORED_GLASS_ALL.block())
+        builder(ModTags.COLORED_GLASS_ALL.block())
                 .addTag(ModTags.COLORED_GLASS_BLOCK.block())
                 .addTag(ModTags.COLORED_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.STAINED_GLASS_ALL.block())
+        builder(ModTags.STAINED_GLASS_ALL.block())
                 .addTag(ModTags.STAINED_GLASS_BLOCK.block())
                 .addTag(ModTags.STAINED_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.COLORED_CLEAR_GLASS_ALL.block())
+        builder(ModTags.COLORED_CLEAR_GLASS_ALL.block())
                 .addTag(ModTags.COLORED_CLEAR_GLASS_BLOCK.block())
                 .addTag(ModTags.COLORED_CLEAR_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.STAINED_CLEAR_GLASS_ALL.block())
+        builder(ModTags.STAINED_CLEAR_GLASS_ALL.block())
                 .addTag(ModTags.STAINED_CLEAR_GLASS_BLOCK.block())
                 .addTag(ModTags.STAINED_CLEAR_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.COLORED_SCRATCHED_GLASS_ALL.block())
+        builder(ModTags.COLORED_SCRATCHED_GLASS_ALL.block())
                 .addTag(ModTags.COLORED_SCRATCHED_GLASS_BLOCK.block())
                 .addTag(ModTags.COLORED_SCRATCHED_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.STAINED_SCRATCHED_GLASS_ALL.block())
+        builder(ModTags.STAINED_SCRATCHED_GLASS_ALL.block())
                 .addTag(ModTags.STAINED_SCRATCHED_GLASS_BLOCK.block())
                 .addTag(ModTags.STAINED_SCRATCHED_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.STAINED_VANILLA_GLASS_ALL.block())
+        builder(ModTags.STAINED_VANILLA_GLASS_ALL.block())
                 .addTag(ModTags.STAINED_VANILLA_GLASS_BLOCK.block())
                 .addTag(ModTags.STAINED_VANILLA_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.COLORED_VANILLA_GLASS_ALL.block())
+        builder(ModTags.COLORED_VANILLA_GLASS_ALL.block())
                 .addTag(ModTags.COLORED_VANILLA_GLASS_BLOCK.block())
                 .addTag(ModTags.COLORED_VANILLA_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.COLORED_TINTED_GLASS_ALL.block())
+        builder(ModTags.COLORED_TINTED_GLASS_ALL.block())
                 .addTag(ModTags.COLORED_TINTED_GLASS_BLOCK.block())
                 .addTag(ModTags.COLORED_TINTED_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.CLEAR_TINTED_GLASS_ALL.block())
+        builder(ModTags.CLEAR_TINTED_GLASS_ALL.block())
                 .addTag(ModTags.CLEAR_TINTED_GLASS_BLOCK.block())
                 .addTag(ModTags.CLEAR_TINTED_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.SCRATCHED_TINTED_GLASS_ALL.block())
+        builder(ModTags.SCRATCHED_TINTED_GLASS_ALL.block())
                 .addTag(ModTags.SCRATCHED_TINTED_GLASS_BLOCK.block())
                 .addTag(ModTags.SCRATCHED_TINTED_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.ANY_COLORED_TINTED_GLASS_ALL.block())
+        builder(ModTags.ANY_COLORED_TINTED_GLASS_ALL.block())
                 .addTag(ModTags.ANY_COLORED_TINTED_GLASS_BLOCK.block())
                 .addTag(ModTags.ANY_COLORED_TINTED_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.STAINED_TINTED_GLASS_ALL.block())
+        builder(ModTags.STAINED_TINTED_GLASS_ALL.block())
                 .addTag(ModTags.STAINED_TINTED_GLASS_BLOCK.block())
                 .addTag(ModTags.STAINED_TINTED_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.COLORED_CLEAR_TINTED_GLASS_ALL.block())
+        builder(ModTags.COLORED_CLEAR_TINTED_GLASS_ALL.block())
                 .addTag(ModTags.COLORED_CLEAR_TINTED_GLASS_BLOCK.block())
                 .addTag(ModTags.COLORED_CLEAR_TINTED_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.STAINED_CLEAR_TINTED_GLASS_ALL.block())
+        builder(ModTags.STAINED_CLEAR_TINTED_GLASS_ALL.block())
                 .addTag(ModTags.STAINED_CLEAR_TINTED_GLASS_BLOCK.block())
                 .addTag(ModTags.STAINED_CLEAR_TINTED_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.COLORED_SCRATCHED_TINTED_GLASS_ALL.block())
+        builder(ModTags.COLORED_SCRATCHED_TINTED_GLASS_ALL.block())
                 .addTag(ModTags.COLORED_SCRATCHED_TINTED_GLASS_BLOCK.block())
                 .addTag(ModTags.COLORED_SCRATCHED_TINTED_GLASS_PANE.block());
 
-        valueLookupBuilder(ModTags.STAINED_SCRATCHED_TINTED_GLASS_ALL.block())
+        builder(ModTags.STAINED_SCRATCHED_TINTED_GLASS_ALL.block())
                 .addTag(ModTags.STAINED_SCRATCHED_TINTED_GLASS_BLOCK.block())
                 .addTag(ModTags.STAINED_SCRATCHED_TINTED_GLASS_PANE.block());
 
 
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.GLASSCUTTER);
+        builder(BlockTags.MINEABLE_WITH_PICKAXE).add(blockKey(ModBlocks.GLASSCUTTER));
     }
 }
