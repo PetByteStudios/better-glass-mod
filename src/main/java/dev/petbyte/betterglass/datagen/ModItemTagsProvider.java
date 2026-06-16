@@ -16,16 +16,24 @@ import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider{
+import static dev.petbyte.betterglass.BetterGlassUtils.*;
+
+public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
     public ModItemTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture, ModBlockTagsProvider modBlockTagsProvider) {
         super(output, registryLookupFuture, modBlockTagsProvider);
     }
 
     @Override
     protected void addTags(HolderLookup.@NonNull Provider registries) {
+        var conventionalTagGlassBlocksColorless = builder(ConventionalItemTags.GLASS_BLOCKS_COLORLESS);
+
         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
-            valueLookupBuilder(ConventionalItemTags.GLASS_BLOCKS).add(block.asItem());
-            valueLookupBuilder((block.getName().toString().contains("tinted") ? ConventionalItemTags.GLASS_BLOCKS_TINTED : ConventionalItemTags.GLASS_BLOCKS_CHEAP)).add(block.asItem());
+            builder(ConventionalItemTags.GLASS_BLOCKS).add(itemKey(block.asItem()));
+            if (blockKey(block).toString().contains("tinted")) {
+                builder(ConventionalItemTags.GLASS_BLOCKS_TINTED).add(itemKey(block.asItem()));
+            } else {
+                builder(ConventionalItemTags.GLASS_BLOCKS_CHEAP).add(itemKey(block.asItem()));
+            }
         }
         for (DyeColor color : DyeColor.values()) {
             TagKey<Item> colorDyedTag = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "dyed/" + color.getName()));
@@ -37,12 +45,11 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider{
                     ModBlocks.STAINED_SCRATCHED_GLASS.get(color).asItem()
             };
 
-            valueLookupBuilder(colorDyedTag).add(dyedBlocks);
-            valueLookupBuilder(ConventionalItemTags.DYED).add(dyedBlocks);
+            addAll(builder(colorDyedTag), dyedBlocks);
+            addAll(builder(ConventionalItemTags.DYED), dyedBlocks);
         }
-        valueLookupBuilder(ConventionalItemTags.GLASS_BLOCKS_COLORLESS)
-                .add(ModBlocks.CLEAR_GLASS.asItem())
-                .add(ModBlocks.SCRATCHED_GLASS.asItem());
+        conventionalTagGlassBlocksColorless.add(itemKey(ModBlocks.CLEAR_GLASS.asItem()));
+        conventionalTagGlassBlocksColorless.add(itemKey(ModBlocks.SCRATCHED_GLASS.asItem()));
 
         copy(ModTags.CLEAR_GLASS_ALL.block(), ModTags.CLEAR_GLASS_ALL.item());
         copy(ModTags.CLEAR_GLASS_BLOCK.block(), ModTags.CLEAR_GLASS_BLOCK.item());
