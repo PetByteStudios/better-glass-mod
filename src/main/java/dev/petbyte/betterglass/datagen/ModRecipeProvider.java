@@ -60,7 +60,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             Map.entry(DyeColor.GREEN, Blocks.STAINED_GLASS.green()),
             Map.entry(DyeColor.CYAN, Blocks.STAINED_GLASS.cyan()),
             Map.entry(DyeColor.LIGHT_BLUE, Blocks.STAINED_GLASS.lightBlue()),
-            Map.entry(DyeColor.BLUE, Blocks.STAINED_GLASS.black()),
+            Map.entry(DyeColor.BLUE, Blocks.STAINED_GLASS.blue()),
             Map.entry(DyeColor.PURPLE, Blocks.STAINED_GLASS.purple()),
             Map.entry(DyeColor.MAGENTA, Blocks.STAINED_GLASS.magenta()),
             Map.entry(DyeColor.PINK, Blocks.STAINED_GLASS.pink())
