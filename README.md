@@ -11,6 +11,8 @@
 ![Supports](https://img.shields.io/modrinth/game-versions/EvcABx9Z?color=80C754&label=supports)
 ![Environment](https://img.shields.io/badge/environment-Client%20%2B%20Server-yellow)
 
+<small><sup>^ blame github for not showing the modloader badge properly</sup></small>
+
 ![License](https://img.shields.io/badge/license-MIT%20%28with%20exceptions%29-blue)
 <details>
     <summary>Repository Stats (often broken lol)</summary>
