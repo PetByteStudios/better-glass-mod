@@ -43,21 +43,43 @@ It also adds recipes to re-dye and un-dye Vanilla Glass, recipes to remove tint 
 - Recipes for un-tinting Glass
 
 # Dev Notes & Roadmap
-This is not the final release. Further updates are planned, below is a list of temporary things and future plans.
+Please note that this roadmap is non-binding and has no specific time frame. This all could be added by next week, or September 2098. It'll happen when it happens.
 
-## Glasscutter
-Currently, the Glasscutter is just a prettier Stonecutter. There is no functional difference.
+### 1.2.0
+- Advancements
+- Backend updates/rewrite
+- QoL (Culling fix, Resource Pack changes)
 
-In a future update, likely v1.3.0, the Glasscutter will gain independent functionality. When this happens, all Crafting Table recipes related to `betterglass` will be deleted (unless I decide against this).
+### 1.3.0
+- Glasscutter
+    <details>
+        <summary>Read More</summary>
+    Currently, the Glasscutter is just a prettier Stonecutter. There is no functional difference.
+    
+    In a future update, likely v1.3.0, the Glasscutter will gain independent functionality. When this happens, all Crafting Table recipes related to `betterglass` will be deleted (unless I decide against this).
+    
+    The Glasscutter will be a Work Block all about Glass. It will be used to convert between Blocks and Panes; Clear, Scratched, Vanilla, and other types; Dye and Stain Glass; Tint and Un-Tint Glass; and maybe as a Villager Workstation, too.
+    </details>
+- New Glass Variants
+- Split Connecting and Non-Connecting Glass
+    <details>
+        <summary>Read More</summary>
+    As of v1.0.0, all Glass Blocks (`minecraft:` or `betterglass:`) automatically connect.
+    
+    In a future version, all glass blocks will have separate Connecting and Non-Connecting variants. This will likely be done using a blockstate that can be modified with a new tool.
+    </details>
+- Pattern Station
+    <details>
+        <summary>Read More</summary>
+    Currently, patterns are added in the Crafting Table, and specific patterns can be chosen for free in the Stonecutter.
 
-The Glasscutter will be a Work Block all about Glass. It will be used to convert between Blocks and Panes; Clear, Scratched, Vanilla, and other types; Dye and Stain Glass; Tint and Un-Tint Glass; and maybe as a Villager Workstation, too.
+    This is purely temporary and will be changed with a new station.
+    </details>
 
-## Connecting and Non-Connecting Glass
-As of v1.0.0, all Glass Blocks (`minecraft:` or `betterglass:`) automatically connect.
-
-In a future version, all glass blocks will have separate Connecting and Non-Connecting variants. This will likely be done using a blockstate that can be modified with a new tool.
-
-## More Glass Types
-Of course. A mod all about Glass won't just stop at 300-something Glass Blocks.
-
-More to come.
+### 1.4.0
+- Pane Upgrades
+    <details>
+        <summary>Read More</summary>
+    A Pane-Model rework to better fix culling and allow panes to be shifted within a block (front, center, back, corner, etc.) will be added.
+    </details>
+- New Glass Variants
