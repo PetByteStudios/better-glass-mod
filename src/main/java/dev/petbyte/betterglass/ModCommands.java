@@ -70,40 +70,40 @@ public class ModCommands {
                     false);
                     return 1;
                 }))
-                        .then(Commands.literal("info").executes(context -> {
-                            context.getSource().sendSuccess(() ->
-                                            Component.literal("")
-                                                    .append(Component.literal("å ").withStyle(ChatFormatting.BOLD, ChatFormatting.OBFUSCATED, ChatFormatting.DARK_PURPLE))
-                                                    .append(Component.literal("Extra Info for Better Glass...").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_PURPLE))
-                                                    .append(Component.literal(" å").withStyle(ChatFormatting.BOLD, ChatFormatting.OBFUSCATED, ChatFormatting.DARK_PURPLE))
-                                                    .append(Component.literal("\nVersion: ").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA))
-                                                    .append(Component.literal(BetterGlass.MOD_VERSION).withStyle(ChatFormatting.ITALIC))
-                                                    .append(Component.literal("\nGit Hash: ").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA))
-                                                    .append(Component.literal(BetterGlass.COMMIT_HASH).withStyle(ChatFormatting.ITALIC))
-                                                    .append(Component.literal("\nWebsite: ").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA))
-                                                    .append(Component.literal("petbyte.dev").withStyle(ChatFormatting.ITALIC))
-                                                    .append(Component.literal("\nAuthor: ").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA))
-                                                    .append(Component.literal("joelfrom08").withStyle(ChatFormatting.ITALIC))
-                                                    .append(Component.literal("\n© 2026 PetByte 🧡").withStyle(ChatFormatting.GOLD)),
-                                    false);
-                            return 1;
-                        }))
-                        .then(Commands.literal("faq").executes(context -> {
-                            context.getSource().sendSuccess(() ->
-                                            Component.literal("").append(Component.literal("==  ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                    .append("Better Glass FAQ")
-                                                    .append(Component.literal("\nAm I forced to use your textures for Vanilla Glass? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
-                                                    .append(Component.literal("Currently, yes, but a toggle to switch back to Vanilla textures will be added in v1.2.0."))
-                                                    .append(Component.literal("\nMy Connected Textures don't work, why? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
-                                                    .append(Component.literal("Did you make sure to install the \"Continuity\" mod and enable the provided \"Better Glass: Connecting Textures\" resource pack? If yes, and it doesn't work, report the issue on the "))
-                                                    .append(Component.literal("GitHub repo").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_BLUE))
-                                                    .append(Component.literal("\nHow am I supposed to deal with hundreds of different blocks and thousands of recipes!? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
-                                                    .append(Component.literal("I recognize there are a lot of blocks and recipes, it is definitely quite overwhelming. But I have good news for you. Currently planned for v1.3.0 are two workstations to make crafting easier. Additionally, you can use the \"JEI\" mod for a comprehensive overview or run "))
-                                                    .append(Component.literal("/bgwiki recipes").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
-                                                    .append(Component.literal(" for a simplified list of recipes.")),
-                                    false);
-                            return 1;
-                        }))
+                .then(Commands.literal("info").executes(context -> {
+                    context.getSource().sendSuccess(() ->
+                                    Component.literal("")
+                                            .append(Component.literal("å ").withStyle(ChatFormatting.BOLD, ChatFormatting.OBFUSCATED, ChatFormatting.DARK_PURPLE))
+                                            .append(Component.literal("Extra Info for Better Glass...").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_PURPLE))
+                                            .append(Component.literal(" å").withStyle(ChatFormatting.BOLD, ChatFormatting.OBFUSCATED, ChatFormatting.DARK_PURPLE))
+                                            .append(Component.literal("\nVersion: ").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA))
+                                            .append(Component.literal(BetterGlass.MOD_VERSION).withStyle(ChatFormatting.ITALIC))
+                                            .append(Component.literal("\nGit Hash: ").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA))
+                                            .append(Component.literal(BetterGlass.COMMIT_HASH).withStyle(ChatFormatting.ITALIC))
+                                            .append(Component.literal("\nWebsite: ").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA))
+                                            .append(Component.literal("petbyte.dev").withStyle(ChatFormatting.ITALIC))
+                                            .append(Component.literal("\nAuthor: ").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA))
+                                            .append(Component.literal("joelfrom08").withStyle(ChatFormatting.ITALIC))
+                                            .append(Component.literal("\n© 2026 PetByte 🧡").withStyle(ChatFormatting.GOLD)),
+                            false);
+                    return 1;
+                }))
+                .then(Commands.literal("faq").executes(context -> {
+                    context.getSource().sendSuccess(() ->
+                                    Component.literal("").append(Component.literal("==  ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
+                                            .append("Better Glass FAQ")
+                                            .append(Component.literal("\nAm I forced to use your textures for Vanilla Glass? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
+                                            .append("Currently, yes, but a toggle to switch back to Vanilla textures will be added in v1.2.0.")
+                                            .append(Component.literal("\nMy Connected Textures don't work, why? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
+                                            .append("Did you make sure to install the \"Continuity\" mod and enable the provided \"Better Glass: Connecting Textures\" resource pack? If yes, and it doesn't work, report the issue on the ")
+                                            .append(Component.literal("GitHub repo").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_BLUE))
+                                            .append(Component.literal("\nHow am I supposed to deal with hundreds of different blocks and thousands of recipes!? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
+                                            .append("I recognize there are a lot of blocks and recipes, it is definitely quite overwhelming. But I have good news for you. Currently planned for v1.3.0 are two workstations to make crafting easier. Additionally, you can use the \"JEI\" mod for a comprehensive overview or run ")
+                                            .append(Component.literal("/bgwiki recipes").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                            .append(" for a simplified list of recipes."),
+                            false);
+                    return 1;
+                }))
         ));
     }
 }
