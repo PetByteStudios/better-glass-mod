@@ -12,8 +12,8 @@ public class ModCommands {
         CommandRegistrationCallback.EVENT.register((dispatcher, _, _) -> {
             dispatcher.register(Commands.literal("bgwiki")
                     .executes(context -> {
-                        context.getSource().sendSuccess(() -> Component.literal("    Welcome to Better Glass (%s)!\n".formatted(BetterGlass.MOD_VERSION))
-                                .withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD)
+                        context.getSource().sendSuccess(() -> (Component.literal("")).append(Component.literal("    Welcome to Better Glass (%s)!\n".formatted(BetterGlass.MOD_VERSION))
+                                .withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
                                 .append(Component.literal("This command is a small wiki on Better Glass. Run any of the below commands to read more!\n"))
                                 .append(Component.literal("    ")).append(Component.literal("/bgwiki recipes").withStyle(ChatFormatting.BOLD, ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)).append(Component.literal(" — Recipes\n").withStyle(ChatFormatting.ITALIC))
                                 .append(Component.literal("    ")).append(Component.literal("/bgwiki types").withStyle(ChatFormatting.BOLD, ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)).append(Component.literal(" — Glass Types\n").withStyle(ChatFormatting.ITALIC))
@@ -32,7 +32,7 @@ public class ModCommands {
                         return 1;
                     }))
                     .then(Commands.literal("types").executes(context -> {
-                        context.getSource().sendSuccess(() -> Component.literal("****").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD).append(Component.literal("Better Glass features various Glass Types, here's an explainer!\n").withStyle(ChatFormatting.RESET))
+                        context.getSource().sendSuccess(() -> (Component.literal("")).append(Component.literal("****").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD)).append(Component.literal("Better Glass features various Glass Types, here's an explainer!\n").withStyle(ChatFormatting.RESET))
                                 .append("\n\n")
                                 .append("    ").append(Component.literal("Coloration: ").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE))
                                 .append(Component.literal("There are two types of Coloration for Glass. Those are Stained (the entire block has a stain on it); and Colored (only opaque pixels are colored).\n").withStyle(ChatFormatting.ITALIC))
@@ -47,7 +47,7 @@ public class ModCommands {
                         return 1;
                     }))
                     .then(Commands.literal("roadmap").executes(context -> {
-                        context.getSource().sendSuccess(() -> Component.literal("****").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD)
+                        context.getSource().sendSuccess(() -> (Component.literal("")).append(Component.literal("****").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
                                 .append(Component.literal("Better Glass has a Roadmap for the future. This roadmap has no particular timeframe and is non-binding. These changes may never occur, occur in a different order, or only release in the 22nd century.").withStyle(ChatFormatting.RESET))
                                 .append("\n\n")
                                 .append(Component.literal("v1.2.0: ").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE))
@@ -60,7 +60,7 @@ public class ModCommands {
                         return 1;
                     }))
                     .then(Commands.literal("info").executes(context -> {
-                        context.getSource().sendSuccess(() -> Component.literal("å").withStyle(ChatFormatting.BOLD, ChatFormatting.OBFUSCATED, ChatFormatting.DARK_PURPLE)
+                        context.getSource().sendSuccess(() -> (Component.literal("")).append(Component.literal("å").withStyle(ChatFormatting.BOLD, ChatFormatting.OBFUSCATED, ChatFormatting.DARK_PURPLE))
                                 .append(Component.literal("Extra Info for Better Glass..").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_PURPLE))
                                 .append(Component.literal("å\n").withStyle(ChatFormatting.BOLD, ChatFormatting.OBFUSCATED, ChatFormatting.DARK_PURPLE))
                                 .append(Component.literal("Version: ").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA)).append(Component.literal(BetterGlass.MOD_VERSION).withStyle(ChatFormatting.ITALIC))
