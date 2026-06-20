@@ -37,9 +37,10 @@ dependencies {
 processResources {
 	def version = project.version
 	inputs.property "version", version
+	inputs.property "commit_hash", commitHash
 
 	filesMatching("fabric.mod.json") {
-		expand "version": version
+		expand "version": version, "commit_hash": commitHash
 	}
 }
 
