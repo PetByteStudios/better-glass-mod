@@ -16,26 +16,26 @@ public class ModCommands {
                                     .append(Component.literal("Welcome to Better Glass (v%s)!".formatted(BetterGlass.MOD_VERSION)).withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
                                     .append(Component.literal("\n\n")).append(Component.literal("This command is a small wiki on Better Glass. Run any of the below commands to read more!"))
                                     .append(Component.literal("\n")).append(Component.literal("    "))
-                                    .append(Component.literal("/bgwiki recipes").withStyle(ChatFormatting.BOLD, ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                    .append(Component.literal("/bgwiki recipes").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                     .append(Component.literal(" — Recipes").withStyle(ChatFormatting.ITALIC))
                                     .append(Component.literal("\n")).append(Component.literal("    "))
-                                    .append(Component.literal("/bgwiki types").withStyle(ChatFormatting.BOLD, ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                    .append(Component.literal("/bgwiki types").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                     .append(Component.literal(" — Recipes").withStyle(ChatFormatting.ITALIC))
                                     .append(Component.literal("\n")).append(Component.literal("    "))
-                                    .append(Component.literal("/bgwiki roadmap").withStyle(ChatFormatting.BOLD, ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                    .append(Component.literal("/bgwiki roadmap").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                     .append(Component.literal(" — Roadmap").withStyle(ChatFormatting.ITALIC))
                                     .append(Component.literal("\n")).append(Component.literal("    "))
-                                    .append(Component.literal("/bgwiki info").withStyle(ChatFormatting.BOLD, ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                    .append(Component.literal("/bgwiki info").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                     .append(Component.literal(" — Extra Information").withStyle(ChatFormatting.ITALIC))
                                     .append(Component.literal("\n")).append(Component.literal("    "))
-                                    .append(Component.literal("/bgwiki faq").withStyle(ChatFormatting.BOLD, ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                    .append(Component.literal("/bgwiki faq").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                     .append(Component.literal(" — FAQ").withStyle(ChatFormatting.ITALIC)),
                             false);
                     return 1;
                 })
                 .then(Commands.literal("recipes").executes(context -> {
                     context.getSource().sendSuccess(() -> Component.literal("""
-                    This command shows you recipes for Better Glass, it is meant as a small tool. However, I do recommend a Recipe Viewer, such as JEI, for more details.
+                    This command shows you recipes for Better Glass, it is meant as a small tool. However, I do recommend a Recipe Viewer, such as "JEI", for more details.
                     §l§4tset
                     TBD.
                     """), false);
@@ -96,10 +96,10 @@ public class ModCommands {
                                                     .append(Component.literal("Currently, yes, but a toggle to switch back to Vanilla textures will be added in v1.2.0."))
                                                     .append(Component.literal("\nMy Connected Textures don't work, why? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
                                                     .append(Component.literal("Did you make sure to install the \"Continuity\" mod and enable the provided \"Better Glass: Connecting Textures\" resource pack? If yes, and it doesn't work, report the issue on the "))
-                                                    .append(Component.literal("GitHub repo").withStyle(ChatFormatting.BOLD, ChatFormatting.UNDERLINE, ChatFormatting.DARK_BLUE))
+                                                    .append(Component.literal("GitHub repo").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_BLUE))
                                                     .append(Component.literal("\nHow am I supposed to deal with hundreds of different blocks and thousands of recipes!? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
                                                     .append(Component.literal("I recognize there are a lot of blocks and recipes, it is definitely quite overwhelming. But I have good news for you. Currently planned for v1.3.0 are two workstations to make crafting easier. Additionally, you can use the \"JEI\" mod for a comprehensive overview or run "))
-                                                    .append(Component.literal("/bgwiki recipes").withStyle(ChatFormatting.BOLD, ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                    .append(Component.literal("/bgwiki recipes").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                     .append(Component.literal(" for a simplified list of recipes.")),
                                     false);
                             return 1;
