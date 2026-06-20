@@ -44,7 +44,7 @@ public class ConnectedTexturesProvider implements DataProvider {
     @Override
     public @NonNull CompletableFuture<?> run(@NonNull CachedOutput cache) {
         try {
-            for (String blockType : List.of("clear_glass", "scratched_glass", "vanilla_glass", "clear_tinted_glass", "scratched_tinted_glass", "tinted_glass")) {
+            for (String blockType : ModTextureProvider.blockTypes) {
                 for (String colorType : List.of("undyed", "stained", "colored")) {
                     if (colorType.equals("undyed")) {
                         String nameFormat = blockType.equals("vanilla_glass") ? "glass" : blockType;

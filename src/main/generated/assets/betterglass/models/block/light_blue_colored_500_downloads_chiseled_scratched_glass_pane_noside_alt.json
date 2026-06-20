@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/template_glass_pane_noside_alt",
+  "textures": {
+    "pane": {
+      "force_translucent": true,
+      "sprite": "betterglass:block/light_blue_colored_500_downloads_chiseled_scratched_glass"
+    }
+  }
+}

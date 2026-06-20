@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "betterglass:block/yellow_colored_500_downloads_chiseled_glass"
+  }
+}
