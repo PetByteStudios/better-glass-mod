@@ -30,5 +30,6 @@ public class BetterGlass implements ModInitializer {
 		BetterGlass.LOGGER.info("Booting up %s %s".formatted(BetterGlass.MOD_ID, MOD_VERSION));
 		ModCreativeModeTabs.registerModCreativeModeTabs();
 		ModBlocks.registerModBlocks();
+		ModCommands.registerModCommands();
 	}
 }
