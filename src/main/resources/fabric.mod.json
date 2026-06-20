@@ -45,6 +45,7 @@
 				"modmenu.curseforge": "https://www.curseforge.com/minecraft/mc-mods/petbyte-better-glass",
 				"modmenu.twitch": "https://twitch.tv/joelfrom08"
 			}
-		}
+		},
+		"betterglass:commit_hash": "${commit_hash}"
 	}
 }

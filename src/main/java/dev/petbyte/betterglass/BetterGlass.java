@@ -18,6 +18,13 @@ public class BetterGlass implements ModInitializer {
 			.getVersion()
 			.getFriendlyString();
 
+	public static final String COMMIT_HASH = FabricLoader.getInstance()
+			.getModContainer(MOD_ID)
+			.orElseThrow()
+			.getMetadata()
+			.getCustomValue("betterglass:commit_hash")
+			.getAsString();
+
 	@Override
 	public void onInitialize() {
 		BetterGlass.LOGGER.info("Booting up %s %s".formatted(BetterGlass.MOD_ID, MOD_VERSION));
