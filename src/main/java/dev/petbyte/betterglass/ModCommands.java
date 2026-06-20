@@ -34,13 +34,31 @@ public class ModCommands {
                     return 1;
                 })
                 .then(Commands.literal("recipes").executes(context -> {
-                    context.getSource().sendSuccess(() -> Component.literal("""
-                    This command shows you recipes for Better Glass, it is meant as a small tool. However, I do recommend a Recipe Viewer, such as "JEI", for more details.
-                    §l§4tset
-                    TBD.
-                    """), false);
+                    context.getSource().sendSuccess(() ->
+                            Component.literal("")
+                                    .append(Component.literal("==  ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
+                                    .append(Component.literal("Better Glass Recipes").withStyle(ChatFormatting.BOLD))
+                                    .append(Component.literal("\nThis command shows you recipes for Better Glass, it is meant as a small tool. However, I do recommend a Recipe Viewer, such as \"JEI\", for more details."))
+                                    .append(Component.literal("\nClick any of the recipes below."))
+                                    .append(Component.literal("\n"))
+                                    .append(Component.literal("Re-Dye").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                            false);
                     return 1;
-                }))
+                })
+                    .then(Commands.literal("redye").executes(context -> {
+                        context.getSource().sendSuccess(() ->
+                            Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD)
+                                    .append(Component.literal("Re-Dye Recipe").withStyle(ChatFormatting.BOLD))
+                                    .append(Component.literal("\nYou can re-dye Glass using the following recipe:"))
+                                    .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass"))
+                                    .append(Component.literal("\nGDG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  (same type, any colors)"))
+                                    .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  D = A Dye"))
+                                    .append(Component.literal("\n  "))
+                                    .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                false);
+                        return 1;
+                    }))
+                )
                 .then(Commands.literal("types").executes(context -> {
                     context.getSource().sendSuccess(() ->
                                 Component.literal("")
