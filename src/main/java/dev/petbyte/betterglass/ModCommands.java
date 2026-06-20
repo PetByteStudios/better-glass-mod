@@ -20,7 +20,7 @@ public class ModCommands {
                                     .append(Component.literal(" — Recipes").withStyle(ChatFormatting.ITALIC))
                                     .append(Component.literal("\n")).append(Component.literal("    "))
                                     .append(Component.literal("/bgwiki types").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
-                                    .append(Component.literal(" — Recipes").withStyle(ChatFormatting.ITALIC))
+                                    .append(Component.literal(" — Glass Types").withStyle(ChatFormatting.ITALIC))
                                     .append(Component.literal("\n")).append(Component.literal("    "))
                                     .append(Component.literal("/bgwiki roadmap").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                     .append(Component.literal(" — Roadmap").withStyle(ChatFormatting.ITALIC))
