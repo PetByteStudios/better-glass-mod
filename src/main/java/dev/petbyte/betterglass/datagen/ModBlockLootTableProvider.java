@@ -26,7 +26,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(ModBlocks.GLASSCUTTER);
     }
 
-    private boolean isTinted(Block block) {
+    public static boolean isTinted(Block block) {
         return ModBlocks.CLEAR_TINTED_GLASS == block
                 || ModBlocks.SCRATCHED_TINTED_GLASS == block
                 || ModBlocks.CLEAR_TINTED_GLASS_PANE == block

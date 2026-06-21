@@ -16,7 +16,8 @@ import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
-import static dev.petbyte.betterglass.BetterGlassUtils.*;
+import static dev.petbyte.betterglass.BetterGlassUtils.addAll;
+import static dev.petbyte.betterglass.BetterGlassUtils.itemKey;
 
 public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
     public ModItemTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture, ModBlockTagsProvider modBlockTagsProvider) {
@@ -30,7 +31,7 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
             builder(ConventionalItemTags.GLASS_BLOCKS).add(itemKey(block.asItem()));
             if (ModBlocks.BETTER_GLASS_CHISELED_ALL.contains(block)) { continue; }
-            if (blockKey(block).toString().contains("tinted")) {
+            if (ModBlockLootTableProvider.isTinted(block)) {
                 builder(ConventionalItemTags.GLASS_BLOCKS_TINTED).add(itemKey(block.asItem()));
             } else {
                 builder(ConventionalItemTags.GLASS_BLOCKS_CHEAP).add(itemKey(block.asItem()));
