@@ -50,6 +50,7 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
             builder(BlockTags.IMPERMEABLE).add(blockKey(block));
             builder(ConventionalBlockTags.GLASS_BLOCKS).add(blockKey(block));
+            if (ModBlocks.BETTER_GLASS_CHISELED_ALL.contains(block)) { continue; }
             if (blockKey(block).toString().contains("tinted")) {
                 builder(ConventionalBlockTags.GLASS_BLOCKS_TINTED).add(blockKey(block));
             } else {

@@ -29,6 +29,7 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
 
         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
             builder(ConventionalItemTags.GLASS_BLOCKS).add(itemKey(block.asItem()));
+            if (ModBlocks.BETTER_GLASS_CHISELED_ALL.contains(block)) { continue; }
             if (blockKey(block).toString().contains("tinted")) {
                 builder(ConventionalItemTags.GLASS_BLOCKS_TINTED).add(itemKey(block.asItem()));
             } else {
