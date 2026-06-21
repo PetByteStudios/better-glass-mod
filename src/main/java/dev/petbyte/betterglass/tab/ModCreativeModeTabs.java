@@ -18,10 +18,21 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModBlocks.CLEAR_GLASS))
                     .title(Component.translatable("creativemodetab.betterglass.betterglass"))
                     .displayItems((_, output) -> {
-                        for (Block block : ModBlocks.BETTER_GLASS_ALL) {
+                        for (Block block : ModBlocks.BETTER_GLASS_NORMAL_ALL) {
                             output.accept(block);
                         }
                         output.accept(ModBlocks.GLASSCUTTER);
+                    }).build());
+
+    @SuppressWarnings("unused")
+    public static final CreativeModeTab BETTER_GLASS_CHISELED_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+            Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, "better_glass_chiseled"), FabricCreativeModeTab.builder()
+                    .icon(() -> new ItemStack(ModBlocks.ALL_CHISELED_GLASS.getFirst()))
+                    .title(Component.translatable("creativemodetab.betterglass.betterglass_chiseled"))
+                    .displayItems((_, output) -> {
+                        for (Block block : ModBlocks.BETTER_GLASS_CHISELED_ALL) {
+                            output.accept(block);
+                        }
                     }).build());
 
     public static void registerModCreativeModeTabs() {
