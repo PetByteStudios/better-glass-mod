@@ -41,23 +41,75 @@ public class ModCommands {
                                     .append(Component.literal("\nThis command shows you recipes for Better Glass, it is meant as a small tool. However, I do recommend a Recipe Viewer, such as \"JEI\", for more details."))
                                     .append(Component.literal("\nClick any of the recipes below."))
                                     .append(Component.literal("\n"))
-                                    .append(Component.literal("Re-Dye").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                    .append(Component.literal("Re-Dye").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                    .append(Component.literal(" "))
+                                    .append(Component.literal("Un-Dye").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                    .append(Component.literal(" "))
+                                    .append(Component.literal("Dye (One Step)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                    .append(Component.literal(" "))
+                                    .append(Component.literal("Dye (Two Steps)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                             false);
                     return 1;
                 })
-                    .then(Commands.literal("redye").executes(context -> {
-                        context.getSource().sendSuccess(() ->
-                            Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD)
-                                    .append(Component.literal("Re-Dye Recipe").withStyle(ChatFormatting.BOLD))
-                                    .append(Component.literal("\nYou can re-dye Glass using the following recipe:"))
-                                    .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass"))
-                                    .append(Component.literal("\nGDG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  (same type, any colors)"))
-                                    .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  D = A Dye"))
-                                    .append(Component.literal("\n  "))
-                                    .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
-                                false);
-                        return 1;
-                    }))
+                        .then(Commands.literal("redye").executes(context -> {
+                            context.getSource().sendSuccess(() ->
+                                            Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD)
+                                                    .append(Component.literal("Re-Dye Recipe").withStyle(ChatFormatting.BOLD))
+                                                    .append(Component.literal("\nYou can re-dye Glass using the following recipe:"))
+                                                    .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass"))
+                                                    .append(Component.literal("\nGDG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  (same type, any colors)"))
+                                                    .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  D = A Dye"))
+                                                    .append(Component.literal("\n  "))
+                                                    .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                    false);
+                            return 1;
+                        }))
+                        .then(Commands.literal("undye").executes(context -> {
+                            context.getSource().sendSuccess(() ->
+                                            Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD)
+                                                    .append(Component.literal("Un-Dye Recipe").withStyle(ChatFormatting.BOLD))
+                                                    .append(Component.literal("\nYou can un-dye Glass using the following recipe:"))
+                                                    .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Colored/Stained Glass"))
+                                                    .append(Component.literal("\nGWG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  (same type, any colors)"))
+                                                    .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  W = Water Bucket"))
+                                                    .append(Component.literal("\nThis recipe does one step, from Stained to Colored, and Colored to Undyed."))
+                                                    .append(Component.literal("\n  "))
+                                                    .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                    false);
+                            return 1;
+                        }))
+                        .then(Commands.literal("dyeonce").executes(context -> {
+                            context.getSource().sendSuccess(() ->
+                                            Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD)
+                                                    .append(Component.literal("Dye (One Step) Recipe").withStyle(ChatFormatting.BOLD))
+                                                    .append(Component.literal("\nYou can dye Glass once using the following recipe:"))
+                                                    .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Colored/Stained Glass"))
+                                                    .append(Component.literal("\nGDG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  (same type and color; or undyed)"))
+                                                    .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  D = A Dye"))
+                                                    .append(Component.literal("\nThis recipe does one step, from Undyed to Colored, or Colored to Stained."))
+                                                    .append(Component.literal("\nTo go straight from Undyed to Stained, check "))
+                                                    .append(Component.literal("Dye (Two Steps)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                    .append(Component.literal(".\n  "))
+                                                    .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                    false);
+                            return 1;
+                        }))
+                        .then(Commands.literal("dyetwice").executes(context -> {
+                            context.getSource().sendSuccess(() ->
+                                            Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD)
+                                                    .append(Component.literal("Dye (Two Steps) Recipe").withStyle(ChatFormatting.BOLD))
+                                                    .append(Component.literal("\nYou can stain Glass using the following recipe:"))
+                                                    .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Undyed Glass (same type)"))
+                                                    .append(Component.literal("\nGDG").withStyle(ChatFormatting.BOLD))
+                                                    .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  D = A Dye"))
+                                                    .append(Component.literal("\nThis recipe does two steps, from Undyed to Stained."))
+                                                    .append(Component.literal("\nTo go from Undyed to Colored or Colored to Stained, check "))
+                                                    .append(Component.literal("Dye (One Step)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                    .append(Component.literal(".\n  "))
+                                                    .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                    false);
+                            return 1;
+                        }))
                 )
                 .then(Commands.literal("types").executes(context -> {
                     context.getSource().sendSuccess(() ->
