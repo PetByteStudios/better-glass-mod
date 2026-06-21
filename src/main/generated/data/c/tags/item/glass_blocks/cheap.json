@@ -83,10 +83,10 @@
     "betterglass:magenta_colored_vanilla_glass",
     "betterglass:pink_colored_vanilla_glass",
     "betterglass:checkerboard_patterned_glass",
-    "betterglass:null_patterned_glass",
     "betterglass:checkerboard_patterned_clear_glass",
-    "betterglass:null_patterned_clear_glass",
     "betterglass:checkerboard_patterned_scratched_glass",
+    "betterglass:null_patterned_glass",
+    "betterglass:null_patterned_clear_glass",
     "betterglass:null_patterned_scratched_glass"
   ]
 }

@@ -99,10 +99,10 @@
     "betterglass:magenta_stained_tinted_glass",
     "betterglass:pink_stained_tinted_glass",
     "betterglass:checkerboard_patterned_tinted_glass",
-    "betterglass:null_patterned_tinted_glass",
     "betterglass:checkerboard_patterned_clear_tinted_glass",
-    "betterglass:null_patterned_clear_tinted_glass",
     "betterglass:checkerboard_patterned_scratched_tinted_glass",
+    "betterglass:null_patterned_tinted_glass",
+    "betterglass:null_patterned_clear_tinted_glass",
     "betterglass:null_patterned_scratched_tinted_glass"
   ]
 }
