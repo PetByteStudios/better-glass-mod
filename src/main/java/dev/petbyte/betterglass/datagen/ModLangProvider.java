@@ -53,6 +53,7 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("container.betterglass.glasscutter.easter_egg.spacing","   ");
         translationBuilder.add("container.betterglass.glasscutter.easter_egg.text", "(aka. fancy stonecutter. soz)");
         translationBuilder.add("creativemodetab.betterglass.betterglass", "Better Glass");
+        translationBuilder.add("creativemodetab.betterglass.betterglass_patterned", "Better Glass (Patterned)");
         translationBuilder.add("creativemodetab.betterglass.betterglass_chiseled", "Better Glass (Chiseled)");
         translationBuilder.add("resourcePack.betterglass.connecting_textures.name", "Better Glass: Connecting Textures");
         translationBuilder.add("resourcePack.betterglass.connecting_textures.description", "Req. Continuity. Glass Pane Culling Fix compatible");

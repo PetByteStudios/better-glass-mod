@@ -786,6 +786,7 @@
   "container.betterglass.glasscutter.easter_egg.text": "(aka. fancy stonecutter. soz)",
   "creativemodetab.betterglass.betterglass": "Better Glass",
   "creativemodetab.betterglass.betterglass_chiseled": "Better Glass (Chiseled)",
+  "creativemodetab.betterglass.betterglass_patterned": "Better Glass (Patterned)",
   "resourcePack.betterglass.base_assets.description": "The base textures for Better Glass",
   "resourcePack.betterglass.base_assets.name": "Better Glass: Base Assets",
   "resourcePack.betterglass.connecting_textures.description": "Req. Continuity. Glass Pane Culling Fix compatible",
