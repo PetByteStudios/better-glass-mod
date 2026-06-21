@@ -47,7 +47,15 @@ public class ModCommands {
                                     .append(Component.literal(" "))
                                     .append(Component.literal("Dye (One Step)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                     .append(Component.literal(" "))
-                                    .append(Component.literal("Dye (Two Steps)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                    .append(Component.literal("Dye (Two Steps)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                    .append(Component.literal("\n"))
+                                    .append(Component.literal("Panes").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                    .append(Component.literal(" "))
+                                    .append(Component.literal("Cycle Types").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                    .append(Component.literal(" "))
+                                    .append(Component.literal("Tint").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                    .append(Component.literal(" "))
+                                    .append(Component.literal("Un-tint").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                             false);
                     return 1;
                 })
@@ -110,6 +118,63 @@ public class ModCommands {
                                                     .append(Component.literal("\nTo go from Undyed to Colored, or Colored to Stained, check "))
                                                     .append(Component.literal("Dye (One Step)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                     .append(Component.literal(".\n  "))
+                                                    .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                    false);
+                            return 1;
+                        }))
+                        .then(Commands.literal("panes").executes(context -> {
+                            context.getSource().sendSuccess(() ->
+                                            Component.literal("")
+                                                    .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
+                                                    .append(Component.literal("Panes Recipe").withStyle(ChatFormatting.BOLD))
+                                                    .append(Component.literal("\nYou can craft Glass Panes using the following recipe:"))
+                                                    .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass (must be the same type)"))
+                                                    .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD))
+                                                    .append(Component.literal("\nThis recipe results in an output of 16."))
+                                                    .append(Component.literal("\n  "))
+                                                    .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                    false);
+                            return 1;
+                        }))
+                        .then(Commands.literal("cycle").executes(context -> {
+                            context.getSource().sendSuccess(() ->
+                                            Component.literal("")
+                                                    .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
+                                                    .append(Component.literal("Cycle through Types Recipe").withStyle(ChatFormatting.BOLD))
+                                                    .append(Component.literal("\nYou can cycle through types using the following recipe:"))
+                                                    .append(Component.literal("\nGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass (must be the same type)"))
+                                                    .append(Component.literal("\nGG").withStyle(ChatFormatting.BOLD))
+                                                    .append(Component.literal("\nThis recipe cycles through Clear -> Scratched -> Vanilla -> ..."))
+                                                    .append(Component.literal("\n  "))
+                                                    .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                    false);
+                            return 1;
+                        }))
+                        .then(Commands.literal("tint").executes(context -> {
+                            context.getSource().sendSuccess(() ->
+                                            Component.literal("")
+                                                    .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
+                                                    .append(Component.literal("Tinting Glass Recipe").withStyle(ChatFormatting.BOLD))
+                                                    .append(Component.literal("\nYou can craft Tinted Glass using the following recipe:"))
+                                                    .append(Component.literal("\n A ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  A = Amethyst Shard"))
+                                                    .append(Component.literal("\nAGA").withStyle(ChatFormatting.BOLD))
+                                                    .append(Component.literal("\n A ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass (must be the same type & color)"))
+                                                    .append(Component.literal("\nThis recipe results in an output of 2."))
+                                                    .append(Component.literal("\n  "))
+                                                    .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                    false);
+                            return 1;
+                        }))
+                        .then(Commands.literal("untint").executes(context -> {
+                            context.getSource().sendSuccess(() ->
+                                            Component.literal("")
+                                                    .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
+                                                    .append(Component.literal("Un-tinting Glass Recipe").withStyle(ChatFormatting.BOLD))
+                                                    .append(Component.literal("\nYou can un-tint Tinted Glass using the following recipe:"))
+                                                    .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass (must be the same type & color)"))
+                                                    .append(Component.literal("\nGHG").withStyle(ChatFormatting.BOLD))
+                                                    .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  H = Honeycomb"))
+                                                    .append(Component.literal("\n  "))
                                                     .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                     false);
                             return 1;
