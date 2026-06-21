@@ -114,7 +114,109 @@ public class ModBlocks {
     public static final Map<DyeColor, Block> STAINED_SCRATCHED_TINTED_GLASS = new LinkedHashMap<>();
     public static final Map<DyeColor, Block> STAINED_SCRATCHED_TINTED_GLASS_PANE = new LinkedHashMap<>();
 
+    public static final List<String> CHISEL_MOTIFS = new ArrayList<>(List.of(
+            "500_downloads"
+    ));
+
+    public static final List<Block> ALL_CHISELED_GLASS = new ArrayList<>();
+    public static final List<Block> ALL_CHISELED_GLASS_PANE = new ArrayList<>();
+    public static final Map<DyeColor, Block> ALL_COLORED_CHISELED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_COLORED_CHISELED_GLASS_PANE = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_STAINED_CHISELED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_STAINED_CHISELED_GLASS_PANE = new LinkedHashMap<>();
+    public static final List<Block> ALL_CHISELED_CLEAR_GLASS = new ArrayList<>();
+    public static final List<Block> ALL_CHISELED_CLEAR_GLASS_PANE = new ArrayList<>();
+    public static final Map<DyeColor, Block> ALL_COLORED_CHISELED_CLEAR_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_COLORED_CHISELED_CLEAR_GLASS_PANE = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_STAINED_CHISELED_CLEAR_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_STAINED_CHISELED_CLEAR_GLASS_PANE = new LinkedHashMap<>();
+    public static final List<Block> ALL_CHISELED_SCRATCHED_GLASS = new ArrayList<>();
+    public static final List<Block> ALL_CHISELED_SCRATCHED_GLASS_PANE = new ArrayList<>();
+    public static final Map<DyeColor, Block> ALL_COLORED_CHISELED_SCRATCHED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_COLORED_CHISELED_SCRATCHED_GLASS_PANE = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_STAINED_CHISELED_SCRATCHED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_STAINED_CHISELED_SCRATCHED_GLASS_PANE = new LinkedHashMap<>();
+
+
+
+    public static final List<Block> ALL_CHISELED_TINTED_GLASS = new ArrayList<>();
+    public static final List<Block> ALL_CHISELED_TINTED_GLASS_PANE = new ArrayList<>();
+    public static final Map<DyeColor, Block> ALL_COLORED_CHISELED_TINTED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_COLORED_CHISELED_TINTED_GLASS_PANE = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_STAINED_CHISELED_TINTED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_STAINED_CHISELED_TINTED_GLASS_PANE = new LinkedHashMap<>();
+    public static final List<Block> ALL_CHISELED_CLEAR_TINTED_GLASS = new ArrayList<>();
+    public static final List<Block> ALL_CHISELED_CLEAR_TINTED_GLASS_PANE = new ArrayList<>();
+    public static final Map<DyeColor, Block> ALL_COLORED_CHISELED_CLEAR_TINTED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_COLORED_CHISELED_CLEAR_TINTED_GLASS_PANE = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_STAINED_CHISELED_CLEAR_TINTED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_STAINED_CHISELED_CLEAR_TINTED_GLASS_PANE = new LinkedHashMap<>();
+    public static final List<Block> ALL_CHISELED_SCRATCHED_TINTED_GLASS = new ArrayList<>();
+    public static final List<Block> ALL_CHISELED_SCRATCHED_TINTED_GLASS_PANE = new ArrayList<>();
+    public static final Map<DyeColor, Block> ALL_COLORED_CHISELED_SCRATCHED_TINTED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_COLORED_CHISELED_SCRATCHED_TINTED_GLASS_PANE = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_STAINED_CHISELED_SCRATCHED_TINTED_GLASS = new LinkedHashMap<>();
+    public static final Map<DyeColor, Block> ALL_STAINED_CHISELED_SCRATCHED_TINTED_GLASS_PANE = new LinkedHashMap<>();
+
     static {
+        for (String motif : CHISEL_MOTIFS) {
+            ALL_CHISELED_GLASS.add(registerGlassBlock("%s_chiseled_glass".formatted(motif), MapColor.NONE));
+            ALL_CHISELED_GLASS_PANE.add(registerIronBarsBlock("%s_chiseled_glass_pane".formatted(motif), MapColor.NONE));
+            for (DyeColor color : DYE_ORDER) {
+                ALL_COLORED_CHISELED_GLASS.put(color, registerGlassBlock("%s_colored_%s_chiseled_glass".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_COLORED_CHISELED_GLASS_PANE.put(color, registerIronBarsBlock("%s_colored_%s_chiseled_glass_pane".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_STAINED_CHISELED_GLASS.put(color, registerGlassBlock("%s_stained_%s_chiseled_glass".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_STAINED_CHISELED_GLASS_PANE.put(color, registerIronBarsBlock("%s_stained_%s_chiseled_glass_pane".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+            }
+
+            ALL_CHISELED_CLEAR_GLASS.add(registerGlassBlock("%s_chiseled_clear_glass".formatted(motif), MapColor.NONE));
+            ALL_CHISELED_CLEAR_GLASS_PANE.add(registerIronBarsBlock("%s_chiseled_clear_glass_pane".formatted(motif), MapColor.NONE));
+            for (DyeColor color : DYE_ORDER) {
+                ALL_COLORED_CHISELED_CLEAR_GLASS.put(color, registerGlassBlock("%s_colored_%s_chiseled_clear_glass".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_COLORED_CHISELED_CLEAR_GLASS_PANE.put(color, registerIronBarsBlock("%s_colored_%s_chiseled_clear_glass_pane".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_STAINED_CHISELED_CLEAR_GLASS.put(color, registerGlassBlock("%s_stained_%s_chiseled_clear_glass".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_STAINED_CHISELED_CLEAR_GLASS_PANE.put(color, registerIronBarsBlock("%s_stained_%s_chiseled_clear_glass_pane".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+            }
+
+            ALL_CHISELED_SCRATCHED_GLASS.add(registerGlassBlock("%s_chiseled_scratched_glass".formatted(motif), MapColor.NONE));
+            ALL_CHISELED_SCRATCHED_GLASS_PANE.add(registerIronBarsBlock("%s_chiseled_scratched_glass_pane".formatted(motif), MapColor.NONE));
+            for (DyeColor color : DYE_ORDER) {
+                ALL_COLORED_CHISELED_SCRATCHED_GLASS.put(color, registerGlassBlock("%s_colored_%s_chiseled_scratched_glass".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_COLORED_CHISELED_SCRATCHED_GLASS_PANE.put(color, registerIronBarsBlock("%s_colored_%s_chiseled_scratched_glass_pane".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_STAINED_CHISELED_SCRATCHED_GLASS.put(color, registerGlassBlock("%s_stained_%s_chiseled_scratched_glass".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_STAINED_CHISELED_SCRATCHED_GLASS_PANE.put(color, registerIronBarsBlock("%s_stained_%s_chiseled_scratched_glass_pane".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+            }
+
+
+
+            ALL_CHISELED_TINTED_GLASS.add(registerGlassBlock("%s_chiseled_tinted_glass".formatted(motif), MapColor.NONE));
+            ALL_CHISELED_TINTED_GLASS_PANE.add(registerIronBarsBlock("%s_chiseled_tinted_glass_pane".formatted(motif), MapColor.NONE));
+            for (DyeColor color : DYE_ORDER) {
+                ALL_COLORED_CHISELED_TINTED_GLASS.put(color, registerGlassBlock("%s_colored_%s_chiseled_tinted_glass".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_COLORED_CHISELED_TINTED_GLASS_PANE.put(color, registerIronBarsBlock("%s_colored_%s_chiseled_tinted_glass_pane".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_STAINED_CHISELED_TINTED_GLASS.put(color, registerGlassBlock("%s_stained_%s_chiseled_tinted_glass".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_STAINED_CHISELED_TINTED_GLASS_PANE.put(color, registerIronBarsBlock("%s_stained_%s_chiseled_tinted_glass_pane".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+            }
+
+            ALL_CHISELED_CLEAR_TINTED_GLASS.add(registerGlassBlock("%s_chiseled_clear_tinted_glass".formatted(motif), MapColor.NONE));
+            ALL_CHISELED_CLEAR_TINTED_GLASS_PANE.add(registerIronBarsBlock("%s_chiseled_clear_tinted_glass_pane".formatted(motif), MapColor.NONE));
+            for (DyeColor color : DYE_ORDER) {
+                ALL_COLORED_CHISELED_CLEAR_TINTED_GLASS.put(color, registerGlassBlock("%s_colored_%s_chiseled_clear_tinted_glass".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_COLORED_CHISELED_CLEAR_TINTED_GLASS_PANE.put(color, registerIronBarsBlock("%s_colored_%s_chiseled_clear_tinted_glass_pane".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_STAINED_CHISELED_CLEAR_TINTED_GLASS.put(color, registerGlassBlock("%s_stained_%s_chiseled_clear_tinted_glass".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_STAINED_CHISELED_CLEAR_TINTED_GLASS_PANE.put(color, registerIronBarsBlock("%s_stained_%s_chiseled_clear_tinted_glass_pane".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+            }
+
+            ALL_CHISELED_SCRATCHED_TINTED_GLASS.add(registerGlassBlock("%s_chiseled_scratched_tinted_glass".formatted(motif), MapColor.NONE));
+            ALL_CHISELED_SCRATCHED_TINTED_GLASS_PANE.add(registerIronBarsBlock("%s_chiseled_scratched_tinted_glass_pane".formatted(motif), MapColor.NONE));
+            for (DyeColor color : DYE_ORDER) {
+                ALL_COLORED_CHISELED_SCRATCHED_TINTED_GLASS.put(color, registerGlassBlock("%s_colored_%s_chiseled_scratched_tinted_glass".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_COLORED_CHISELED_SCRATCHED_TINTED_GLASS_PANE.put(color, registerIronBarsBlock("%s_colored_%s_chiseled_scratched_tinted_glass_pane".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_STAINED_CHISELED_SCRATCHED_TINTED_GLASS.put(color, registerGlassBlock("%s_stained_%s_chiseled_scratched_tinted_glass".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+                ALL_STAINED_CHISELED_SCRATCHED_TINTED_GLASS_PANE.put(color, registerIronBarsBlock("%s_stained_%s_chiseled_scratched_tinted_glass_pane".formatted(color.getName(), motif), DYE_COLOR_TO_MAP_COLOR.get(color)));
+            }
+        }
+
         for (DyeColor color : DYE_ORDER) {
             COLORED_CLEAR_GLASS.put(color, registerGlassBlock(color.getName() + "_colored_clear_glass", DYE_COLOR_TO_MAP_COLOR.get(color)));
             COLORED_CLEAR_GLASS_PANE.put(color, registerIronBarsBlock(color.getName() + "_colored_clear_glass_pane", DYE_COLOR_TO_MAP_COLOR.get(color)));
@@ -172,10 +274,50 @@ public class ModBlocks {
         BETTER_GLASS_PANES.addAll(COLORED_TINTED_GLASS_PANE.values());
         BETTER_GLASS_PANES.addAll(STAINED_TINTED_GLASS_PANE.values());
 
+
+        BETTER_GLASS_BLOCKS.addAll(ALL_CHISELED_GLASS);
+        BETTER_GLASS_BLOCKS.addAll(ALL_COLORED_CHISELED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(ALL_STAINED_CHISELED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(ALL_CHISELED_CLEAR_GLASS);
+        BETTER_GLASS_BLOCKS.addAll(ALL_COLORED_CHISELED_CLEAR_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(ALL_STAINED_CHISELED_CLEAR_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(ALL_CHISELED_SCRATCHED_GLASS);
+        BETTER_GLASS_BLOCKS.addAll(ALL_COLORED_CHISELED_SCRATCHED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(ALL_STAINED_CHISELED_SCRATCHED_GLASS.values());
+
+        BETTER_GLASS_PANES.addAll(ALL_CHISELED_GLASS_PANE);
+        BETTER_GLASS_PANES.addAll(ALL_COLORED_CHISELED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(ALL_STAINED_CHISELED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(ALL_CHISELED_CLEAR_GLASS_PANE);
+        BETTER_GLASS_PANES.addAll(ALL_COLORED_CHISELED_CLEAR_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(ALL_STAINED_CHISELED_CLEAR_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(ALL_CHISELED_SCRATCHED_GLASS_PANE);
+        BETTER_GLASS_PANES.addAll(ALL_COLORED_CHISELED_SCRATCHED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(ALL_STAINED_CHISELED_SCRATCHED_GLASS_PANE.values());
+
+
+        BETTER_GLASS_BLOCKS.addAll(ALL_CHISELED_TINTED_GLASS);
+        BETTER_GLASS_BLOCKS.addAll(ALL_COLORED_CHISELED_TINTED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(ALL_STAINED_CHISELED_TINTED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(ALL_CHISELED_CLEAR_TINTED_GLASS);
+        BETTER_GLASS_BLOCKS.addAll(ALL_COLORED_CHISELED_CLEAR_TINTED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(ALL_STAINED_CHISELED_CLEAR_TINTED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(ALL_CHISELED_SCRATCHED_TINTED_GLASS);
+        BETTER_GLASS_BLOCKS.addAll(ALL_COLORED_CHISELED_SCRATCHED_TINTED_GLASS.values());
+        BETTER_GLASS_BLOCKS.addAll(ALL_STAINED_CHISELED_SCRATCHED_TINTED_GLASS.values());
+
+        BETTER_GLASS_PANES.addAll(ALL_CHISELED_TINTED_GLASS_PANE);
+        BETTER_GLASS_PANES.addAll(ALL_COLORED_CHISELED_TINTED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(ALL_STAINED_CHISELED_TINTED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(ALL_CHISELED_CLEAR_TINTED_GLASS_PANE);
+        BETTER_GLASS_PANES.addAll(ALL_COLORED_CHISELED_CLEAR_TINTED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(ALL_STAINED_CHISELED_CLEAR_TINTED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(ALL_CHISELED_SCRATCHED_TINTED_GLASS_PANE);
+        BETTER_GLASS_PANES.addAll(ALL_COLORED_CHISELED_SCRATCHED_TINTED_GLASS_PANE.values());
+        BETTER_GLASS_PANES.addAll(ALL_STAINED_CHISELED_SCRATCHED_TINTED_GLASS_PANE.values());
+
+
         BETTER_GLASS_PANES.add(TINTED_GLASS_PANE); // dumb hack but idc
-
-
-
 
         BETTER_GLASS_ALL.addAll(BETTER_GLASS_BLOCKS);
         BETTER_GLASS_ALL.addAll(BETTER_GLASS_PANES);

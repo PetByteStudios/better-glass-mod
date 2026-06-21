@@ -26,6 +26,11 @@ public class ModTextureProvider implements DataProvider {
     final Path templatesDir = resourcesDir.resolve("assets/betterglass/templates");
     final Path templateJson = templatesDir.resolve("palettes/template.json");
 
+    public static final List<String> blockTypes = List.of(
+            "clear_glass", "scratched_glass", "vanilla_glass", "clear_tinted_glass", "scratched_tinted_glass", "tinted_glass",
+            "500_downloads_chiseled_clear_glass", "500_downloads_chiseled_scratched_glass", "500_downloads_chiseled_glass", "500_downloads_chiseled_clear_tinted_glass", "500_downloads_chiseled_scratched_tinted_glass", "500_downloads_chiseled_tinted_glass"
+    );
+
     @Override
     public @NonNull CompletableFuture<?> run(@NonNull CachedOutput cache) {
         try {
@@ -35,7 +40,7 @@ public class ModTextureProvider implements DataProvider {
                 Path paletteJson = templatesDir.resolve("palettes/%s.json".formatted(colorName));
                 LinkedHashMap<Integer, Integer> palette = loadPalette(templateJson, paletteJson);
 
-                for (String blockType : List.of("clear_glass", "scratched_glass", "vanilla_glass", "clear_tinted_glass", "scratched_tinted_glass", "tinted_glass")) {
+                for (String blockType : blockTypes) {
                     // BLOCKS
                     BufferedImage template = ImageIO.read(templatesDir.resolve("blocks/%s.png".formatted(blockType)).toFile());
                     BufferedImage result = applyPalette(template, palette);
@@ -135,7 +140,7 @@ public class ModTextureProvider implements DataProvider {
                 Path paletteJson = templatesDir.resolve("palettes/%s.json".formatted(colorName));
                 LinkedHashMap<Integer, Integer> palette = loadPalette(templateJson, paletteJson);
 
-                for (String blockType : List.of("clear_glass", "scratched_glass", "vanilla_glass", "clear_tinted_glass", "scratched_tinted_glass", "tinted_glass")) {
+                for (String blockType : blockTypes) {
                     BufferedImage template = ImageIO.read(templatesDir.resolve("blocks/%s.png".formatted(blockType)).toFile());
 
                     Path ctmDir = resourcesDir.resolve("../generated/resourcepacks/connecting_textures/assets/betterglass/optifine/ctm/betterglass/%s".formatted(blockType.equals("vanilla_glass") ? "glass" : blockType));
