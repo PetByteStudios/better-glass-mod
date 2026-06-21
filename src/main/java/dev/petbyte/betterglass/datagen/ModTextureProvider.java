@@ -40,7 +40,40 @@ public class ModTextureProvider implements DataProvider {
 
     public static final Map<String, String> PATTERN_TO_PALETTE = Map.ofEntries(
             Map.entry("checkerboard", "custom"),
-            Map.entry("null", "custom")
+            Map.entry("null", "custom"),
+
+            Map.entry("agender", "green"),
+            Map.entry("androgyne", "cyan"),
+            Map.entry("aroace", "orange"),
+            Map.entry("aromantic", "green"),
+            Map.entry("asexual", "purple"),
+            Map.entry("asexual_new", "yellow"),
+            Map.entry("bigender", "custom"),
+            Map.entry("bisexual", "custom"),
+            Map.entry("demiboy", "light_gray"),
+            Map.entry("demigender", "light_gray"),
+            Map.entry("demigirl", "light_gray"),
+            Map.entry("demiromantic", "white"),
+            Map.entry("demisexual", "white"),
+            Map.entry("genderfluid", "custom"),
+            Map.entry("genderqueer", "custom"),
+            Map.entry("intersex", "yellow"),
+            Map.entry("lesbian", "custom"),
+            Map.entry("mlm", "custom"),
+            Map.entry("neutrois", "white"),
+            Map.entry("nonbinary", "yellow"),
+            Map.entry("omnisexual", "pink"),
+            Map.entry("pansexual", "custom"),
+            Map.entry("philadelphia_pride", "custom"),
+            Map.entry("polyamory", "custom"),
+            Map.entry("polyamory_new", "custom"),
+            Map.entry("polygender", "black"),
+            Map.entry("polysexual", "pink"),
+            Map.entry("progress", "custom"),
+            Map.entry("rainbow", "custom"),
+            Map.entry("transfem", "custom"),
+            Map.entry("transgender", "custom"),
+            Map.entry("transmasc", "custom")
     );
 
     @Override

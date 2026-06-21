@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "betterglass:block/neutrois_patterned_clear_glass"
+  }
+}

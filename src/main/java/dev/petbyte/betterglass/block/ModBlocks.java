@@ -170,12 +170,50 @@ public class ModBlocks {
     public static final List<Block> BETTER_GLASS_CHISELED_ALL = new ArrayList<>();
 
     public static final List<String> PATTERN_MOTIFS = new ArrayList<>(List.of(
-            "checkerboard", "null"
+    /*Normal*/        "checkerboard", "null",
+    /*Pride A-Z*/     "agender", "androgyne", "aroace", "aromantic", "asexual", "asexual_new", "bigender", "bisexual",
+                      "demiboy", "demigender", "demigirl", "demiromantic", "demisexual", "genderfluid", "genderqueer",
+                      "intersex", "mlm", "lesbian", "neutrois", "nonbinary", "omnisexual", "pansexual", "philadelphia_pride",
+                      "polyamory", "polyamory_new", "polygender", "polysexual", "progress", "rainbow", "transfem", "transgender",
+                      "transmasc"
     ));
 
     private static final Map<String, MapColor> PATTERN_TO_MAP_COLOR = Map.ofEntries(
             Map.entry("checkerboard", MapColor.SNOW),
-            Map.entry("null", MapColor.COLOR_MAGENTA)
+            Map.entry("null", MapColor.COLOR_MAGENTA),
+
+            Map.entry("agender", MapColor.GRASS),
+            Map.entry("androgyne", MapColor.DIAMOND),
+            Map.entry("aroace", MapColor.COLOR_ORANGE),
+            Map.entry("aromantic", MapColor.PLANT),
+            Map.entry("asexual", MapColor.COLOR_PURPLE),
+            Map.entry("asexual_new", MapColor.GOLD),
+            Map.entry("bigender", MapColor.COLOR_PINK),
+            Map.entry("bisexual", MapColor.COLOR_PURPLE),
+            Map.entry("demiboy", MapColor.DIAMOND),
+            Map.entry("demigender", MapColor.GOLD),
+            Map.entry("demigirl", MapColor.CRIMSON_STEM),
+            Map.entry("demiromantic", MapColor.PLANT),
+            Map.entry("demisexual", MapColor.COLOR_PURPLE),
+            Map.entry("genderfluid", MapColor.COLOR_MAGENTA),
+            Map.entry("genderqueer", MapColor.TERRACOTTA_MAGENTA),
+            Map.entry("intersex", MapColor.COLOR_YELLOW),
+            Map.entry("lesbian", MapColor.COLOR_ORANGE),
+            Map.entry("mlm", MapColor.LAPIS),
+            Map.entry("neutrois", MapColor.GRASS),
+            Map.entry("nonbinary", MapColor.COLOR_PURPLE),
+            Map.entry("omnisexual", MapColor.WARPED_HYPHAE),
+            Map.entry("pansexual", MapColor.COLOR_PINK),
+            Map.entry("philadelphia_pride", MapColor.TERRACOTTA_GRAY),
+            Map.entry("polyamory", MapColor.COLOR_RED),
+            Map.entry("polyamory_new", MapColor.COLOR_RED),
+            Map.entry("polygender", MapColor.TERRACOTTA_PINK),
+            Map.entry("polysexual", MapColor.COLOR_LIGHT_GREEN),
+            Map.entry("progress", MapColor.DIAMOND),
+            Map.entry("rainbow", MapColor.FIRE),
+            Map.entry("transfem", MapColor.COLOR_PINK),
+            Map.entry("transgender", MapColor.SNOW),
+            Map.entry("transmasc", MapColor.DIAMOND)
     );
 
     public static final Map<String, Block> PATTERNED_GLASS_BLOCKS =  new LinkedHashMap<>();

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "betterglass:block/bisexual_patterned_tinted_glass"
+  }
+}
