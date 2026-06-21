@@ -58,7 +58,7 @@ public class ModCommands {
                                                     .append(Component.literal("Re-Dye Recipe").withStyle(ChatFormatting.BOLD))
                                                     .append(Component.literal("\nYou can re-dye Glass using the following recipe:"))
                                                     .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass"))
-                                                    .append(Component.literal("\nGDG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  (same type, any colors)"))
+                                                    .append(Component.literal("\nGDG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  (same type, any color (must all be Stained or Colored, no mixing))"))
                                                     .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  D = A Dye"))
                                                     .append(Component.literal("\n  "))
                                                     .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
@@ -72,7 +72,7 @@ public class ModCommands {
                                                     .append(Component.literal("Un-Dye Recipe").withStyle(ChatFormatting.BOLD))
                                                     .append(Component.literal("\nYou can un-dye Glass using the following recipe:"))
                                                     .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Colored/Stained Glass"))
-                                                    .append(Component.literal("\nGWG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  (same type, any colors)"))
+                                                    .append(Component.literal("\nGWG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  (Same Glass Type. Stained -> Colored needs the same color, Colored -> Undyed can mix colors.)"))
                                                     .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  W = Water Bucket"))
                                                     .append(Component.literal("\nThis recipe does one step, from Stained to Colored, and Colored to Undyed."))
                                                     .append(Component.literal("\n  "))
