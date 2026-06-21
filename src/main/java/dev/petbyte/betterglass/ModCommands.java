@@ -37,7 +37,7 @@ public class ModCommands {
                     context.getSource().sendSuccess(() ->
                             Component.literal("")
                                     .append(Component.literal("==  ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                    .append(Component.literal("Better Glass Recipes").withStyle(ChatFormatting.BOLD))
+                                    .append(Component.literal("Better Glass: Recipes").withStyle(ChatFormatting.BOLD))
                                     .append(Component.literal("\nThis command shows you recipes for Better Glass, it is meant as a small tool. However, I do recommend a Recipe Viewer, such as \"JEI\", for more details."))
                                     .append(Component.literal("\nClick any of the recipes below."))
                                     .append(Component.literal("\n"))
@@ -53,7 +53,8 @@ public class ModCommands {
                 })
                         .then(Commands.literal("redye").executes(context -> {
                             context.getSource().sendSuccess(() ->
-                                            Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD)
+                                            Component.literal("")
+                                                    .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
                                                     .append(Component.literal("Re-Dye Recipe").withStyle(ChatFormatting.BOLD))
                                                     .append(Component.literal("\nYou can re-dye Glass using the following recipe:"))
                                                     .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass"))
@@ -66,7 +67,8 @@ public class ModCommands {
                         }))
                         .then(Commands.literal("undye").executes(context -> {
                             context.getSource().sendSuccess(() ->
-                                            Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD)
+                                            Component.literal("")
+                                                    .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
                                                     .append(Component.literal("Un-Dye Recipe").withStyle(ChatFormatting.BOLD))
                                                     .append(Component.literal("\nYou can un-dye Glass using the following recipe:"))
                                                     .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Colored/Stained Glass"))
@@ -80,7 +82,8 @@ public class ModCommands {
                         }))
                         .then(Commands.literal("dyeonce").executes(context -> {
                             context.getSource().sendSuccess(() ->
-                                            Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD)
+                                            Component.literal("")
+                                                    .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
                                                     .append(Component.literal("Dye (One Step) Recipe").withStyle(ChatFormatting.BOLD))
                                                     .append(Component.literal("\nYou can dye Glass once using the following recipe:"))
                                                     .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Colored/Stained Glass"))
@@ -96,14 +99,15 @@ public class ModCommands {
                         }))
                         .then(Commands.literal("dyetwice").executes(context -> {
                             context.getSource().sendSuccess(() ->
-                                            Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD)
+                                            Component.literal("")
+                                                    .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
                                                     .append(Component.literal("Dye (Two Steps) Recipe").withStyle(ChatFormatting.BOLD))
                                                     .append(Component.literal("\nYou can stain Glass using the following recipe:"))
                                                     .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Undyed Glass (same type)"))
                                                     .append(Component.literal("\nGDG").withStyle(ChatFormatting.BOLD))
                                                     .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  D = A Dye"))
                                                     .append(Component.literal("\nThis recipe does two steps, from Undyed to Stained."))
-                                                    .append(Component.literal("\nTo go from Undyed to Colored or Colored to Stained, check "))
+                                                    .append(Component.literal("\nTo go from Undyed to Colored, or Colored to Stained, check "))
                                                     .append(Component.literal("Dye (One Step)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                     .append(Component.literal(".\n  "))
                                                     .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
@@ -115,6 +119,8 @@ public class ModCommands {
                     context.getSource().sendSuccess(() ->
                                 Component.literal("")
                                         .append(Component.literal("==  ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
+                                        .append(Component.literal("Better Glass: Glass Types").withStyle(ChatFormatting.BOLD))
+                                        .append("\n")
                                         .append("Better Glass features various Glass Types, here's an explainer!")
                                         .append(Component.literal("\nColoration: ").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE))
                                         .append(Component.literal("There are two types of Coloration for Glass. Those are Stained (the entire block has a stain on it); and Colored (only opaque pixels are colored).").withStyle(ChatFormatting.ITALIC))
@@ -129,7 +135,9 @@ public class ModCommands {
                 }))
                 .then(Commands.literal("roadmap").executes(context -> {
                     context.getSource().sendSuccess(() ->
-                                    Component.literal("").append(Component.literal("==  ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
+                                Component.literal("").append(Component.literal("==  ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
+                                        .append(Component.literal("Better Glass: Roadmap").withStyle(ChatFormatting.BOLD))
+                                        .append("\n")
                                         .append("Better Glass has a Roadmap for the future. This roadmap has no particular timeframe and is non-binding. These changes may never occur, occur in a different order, or only release in the 22nd century.")
                                         .append(Component.literal("\nv1.2.0: ").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE))
                                         .append(Component.literal("Tech rewrite, Advancements, QoL (Culling fix & Resource Pack changes)"))
@@ -161,7 +169,7 @@ public class ModCommands {
                 .then(Commands.literal("faq").executes(context -> {
                     context.getSource().sendSuccess(() ->
                                     Component.literal("").append(Component.literal("==  ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                            .append("Better Glass FAQ")
+                                            .append(Component.literal("Better Glass: FAQ").withStyle(ChatFormatting.BOLD))
                                             .append(Component.literal("\nAm I forced to use your textures for Vanilla Glass? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
                                             .append("Currently, yes, but a toggle to switch back to Vanilla textures will be added in v1.2.0.")
                                             .append(Component.literal("\nMy Connected Textures don't work, why? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
