@@ -1,0 +1,16 @@
+{
+  "values": [
+    "betterglass:checkerboard_patterned_glass",
+    "betterglass:checkerboard_patterned_clear_glass",
+    "betterglass:checkerboard_patterned_scratched_glass",
+    "betterglass:checkerboard_patterned_tinted_glass",
+    "betterglass:checkerboard_patterned_clear_tinted_glass",
+    "betterglass:checkerboard_patterned_scratched_tinted_glass",
+    "betterglass:null_patterned_glass",
+    "betterglass:null_patterned_clear_glass",
+    "betterglass:null_patterned_scratched_glass",
+    "betterglass:null_patterned_tinted_glass",
+    "betterglass:null_patterned_clear_tinted_glass",
+    "betterglass:null_patterned_scratched_tinted_glass"
+  ]
+}

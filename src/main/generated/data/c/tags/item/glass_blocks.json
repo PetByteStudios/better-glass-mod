@@ -377,6 +377,18 @@
     "betterglass:blue_stained_500_downloads_chiseled_scratched_tinted_glass",
     "betterglass:purple_stained_500_downloads_chiseled_scratched_tinted_glass",
     "betterglass:magenta_stained_500_downloads_chiseled_scratched_tinted_glass",
-    "betterglass:pink_stained_500_downloads_chiseled_scratched_tinted_glass"
+    "betterglass:pink_stained_500_downloads_chiseled_scratched_tinted_glass",
+    "betterglass:checkerboard_patterned_glass",
+    "betterglass:null_patterned_glass",
+    "betterglass:checkerboard_patterned_clear_glass",
+    "betterglass:null_patterned_clear_glass",
+    "betterglass:checkerboard_patterned_scratched_glass",
+    "betterglass:null_patterned_scratched_glass",
+    "betterglass:checkerboard_patterned_tinted_glass",
+    "betterglass:null_patterned_tinted_glass",
+    "betterglass:checkerboard_patterned_clear_tinted_glass",
+    "betterglass:null_patterned_clear_tinted_glass",
+    "betterglass:checkerboard_patterned_scratched_tinted_glass",
+    "betterglass:null_patterned_scratched_tinted_glass"
   ]
 }

@@ -253,6 +253,28 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .addTag(ModTags.STAINED_SCRATCHED_TINTED_GLASS_PANE.block());
 
 
+        for (String motif : ModBlocks.PATTERN_MOTIFS) {
+            builder(ModTags.ANY_PATTERNED_GLASS_BLOCK.block())
+                    .add(blockKey(ModBlocks.PATTERNED_GLASS_BLOCKS.get(motif)))
+                    .add(blockKey(ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS.get(motif)))
+                    .add(blockKey(ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS.get(motif)))
+                    .add(blockKey(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS.get(motif)))
+                    .add(blockKey(ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS.get(motif)))
+                    .add(blockKey(ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS.get(motif)));
+
+            builder(ModTags.ANY_PATTERNED_GLASS_PANE.block())
+                    .add(blockKey(ModBlocks.PATTERNED_GLASS_PANES.get(motif)))
+                    .add(blockKey(ModBlocks.PATTERNED_CLEAR_GLASS_PANES.get(motif)))
+                    .add(blockKey(ModBlocks.PATTERNED_SCRATCHED_GLASS_PANES.get(motif)))
+                    .add(blockKey(ModBlocks.PATTERNED_TINTED_GLASS_PANES.get(motif)))
+                    .add(blockKey(ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_PANES.get(motif)))
+                    .add(blockKey(ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_PANES.get(motif)));
+        }
+        builder(ModTags.ANY_PATTERNED_GLASS_ALL.block())
+                .addTag(ModTags.ANY_PATTERNED_GLASS_BLOCK.block())
+                .addTag(ModTags.ANY_PATTERNED_GLASS_PANE.block());
+
+
         builder(BlockTags.MINEABLE_WITH_PICKAXE).add(blockKey(ModBlocks.GLASSCUTTER));
     }
 }

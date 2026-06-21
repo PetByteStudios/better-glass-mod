@@ -61,6 +61,12 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
                 || ModBlocks.ALL_COLORED_CHISELED_SCRATCHED_TINTED_GLASS.containsValue(block)
                 || ModBlocks.ALL_COLORED_CHISELED_SCRATCHED_TINTED_GLASS_PANE.containsValue(block)
                 || ModBlocks.ALL_STAINED_CHISELED_SCRATCHED_TINTED_GLASS.containsValue(block)
-                || ModBlocks.ALL_STAINED_CHISELED_SCRATCHED_TINTED_GLASS_PANE.containsValue(block);
+                || ModBlocks.ALL_STAINED_CHISELED_SCRATCHED_TINTED_GLASS_PANE.containsValue(block)
+                || ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS.containsValue(block)
+                || ModBlocks.PATTERNED_TINTED_GLASS_PANES.containsValue(block)
+                || ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS.containsValue(block)
+                || ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_PANES.containsValue(block)
+                || ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS.containsValue(block)
+                || ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_PANES.containsValue(block);
     }
 }

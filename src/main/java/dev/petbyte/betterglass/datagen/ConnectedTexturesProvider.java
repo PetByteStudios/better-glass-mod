@@ -1,5 +1,6 @@
 package dev.petbyte.betterglass.datagen;
 
+import dev.petbyte.betterglass.block.ModBlocks;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import org.jspecify.annotations.NonNull;
@@ -45,6 +46,9 @@ public class ConnectedTexturesProvider implements DataProvider {
     public @NonNull CompletableFuture<?> run(@NonNull CachedOutput cache) {
         try {
             for (String blockType : ModTextureProvider.blockTypes) {
+                if (!blockType.contains("chiseled")) {
+                    GeneratePropertiesForPatterns(blockType);
+                }
                 for (String colorType : List.of("undyed", "stained", "colored")) {
                     if (colorType.equals("undyed")) {
                         String nameFormat = blockType.equals("vanilla_glass") ? "glass" : blockType;
@@ -117,8 +121,41 @@ public class ConnectedTexturesProvider implements DataProvider {
         }
     }
 
+    private void GeneratePropertiesForPatterns(String blockType) {
+        for (String motif : ModBlocks.PATTERN_MOTIFS) {
+            String nameFormat = blockType.equals("vanilla_glass") ? "glass" : blockType;
+
+            String blockProperties = """
+                                method=ctm
+                                matchTiles=betterglass:%1$s_patterned_%2$s
+                                matchBlocks=betterglass:%1$s_patterned_%2$s
+                                tiles=0-46
+                                connect=block
+                                """.formatted(motif, nameFormat);
+            String paneProperties = """
+                                method=ctm
+                                matchTiles=betterglass:%1$s_patterned_%2$s
+                                matchBlocks=betterglass:%1$s_patterned_%2$s_pane
+                                tiles=0-46
+                                connect=block
+                                """.formatted(motif, nameFormat);
+
+            try {
+                Path output = outputBetterGlassDir;
+                finalBlockOutput = output.resolve("%s/patterned/%s/block.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), motif));
+                finalPaneOutput = output.resolve("%s/patterned/%s/pane.properties".formatted((blockType.equals("vanilla_glass") ? "glass" : blockType), motif));
+                Files.createDirectories(finalBlockOutput.getParent());
+                Files.createDirectories(finalPaneOutput.getParent());
+                Files.writeString(finalBlockOutput, blockProperties);
+                Files.writeString(finalPaneOutput, paneProperties);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
     @Override
     public @NonNull String getName() {
-        return "ConnectedTextures";
+        return "Connected Textures";
     }
 }

@@ -21,8 +21,20 @@ public class ModLangProvider extends FabricLanguageProvider {
     @Override
     public void generateTranslations(HolderLookup.@NonNull Provider registryLookup, @NonNull TranslationBuilder translationBuilder) {
         for (Block block : ModBlocks.BETTER_GLASS_ALL) {
+            if (ModBlocks.BETTER_GLASS_PATTERNED_ALL.contains(block)) {
+                continue;
+            }
             String blockID = BuiltInRegistries.BLOCK.getKey(block).toString().replaceAll("(minecraft|betterglass):|vanilla_", "");
             String translation = capitalizeWords(blockID);
+            translationBuilder.add(block.getDescriptionId(), translation);
+        }
+
+        for (Block block : ModBlocks.BETTER_GLASS_PATTERNED_ALL) {
+            String blockID = BuiltInRegistries.BLOCK.getKey(block).toString().replace("betterglass:", "");
+            String[] parts = blockID.split("_patterned_", 2);
+            String patternName = capitalizeWords(parts[0]);
+            String rest = capitalizeWords(parts[1]);
+            String translation = "Patterned %s (%s)".formatted(rest, patternName);
             translationBuilder.add(block.getDescriptionId(), translation);
         }
 
@@ -46,5 +58,11 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("resourcePack.betterglass.connecting_textures.description", "Req. Continuity. Glass Pane Culling Fix compatible");
         translationBuilder.add("resourcePack.betterglass.base_assets.name", "Better Glass: Base Assets");
         translationBuilder.add("resourcePack.betterglass.base_assets.description", "The base textures for Better Glass");
+    }
+
+    private static String capitalizeWords(String id) {
+        return Arrays.stream(id.split("_"))
+                .map(word -> Character.toUpperCase(word.charAt(0)) + word.substring(1))
+                .collect(Collectors.joining(" "));
     }
 }
