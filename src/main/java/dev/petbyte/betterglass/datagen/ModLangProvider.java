@@ -22,18 +22,15 @@ public class ModLangProvider extends FabricLanguageProvider {
     public void generateTranslations(HolderLookup.@NonNull Provider registryLookup, @NonNull TranslationBuilder translationBuilder) {
         for (Block block : ModBlocks.BETTER_GLASS_ALL) {
             String blockID = BuiltInRegistries.BLOCK.getKey(block).toString().replaceAll("(minecraft|betterglass):|vanilla_", "");
-            String translation = Arrays.stream(blockID.split("_"))
-                    .map(word -> Character.toUpperCase(word.charAt(0)) + word.substring(1))
-                    .collect(Collectors.joining(" "));
+            String translation = capitalizeWords(blockID);
             translationBuilder.add(block.getDescriptionId(), translation);
         }
 
         for (ModTags.TagPair tagPair : ModTags.ALL_TAG_PAIRS) {
             String blockTagID = tagPair.block().getTranslationKey();
             String itemTagID = tagPair.item().getTranslationKey();
-            String translation = Arrays.stream(blockTagID.replaceAll("(tag.(block|item).betterglass.)", "").split("_"))
-                    .map(word -> Character.toUpperCase(word.charAt(0)) + word.substring(1))
-                    .collect(Collectors.joining(" ")).replace("All", "(All)");
+            String translation = capitalizeWords(blockTagID.replaceAll("(tag.(block|item).betterglass.)", ""))
+                    .replace("All", "(All)");
 
             translationBuilder.add(blockTagID, translation);
             translationBuilder.add(itemTagID, translation);
