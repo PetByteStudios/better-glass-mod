@@ -26,7 +26,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(ModBlocks.GLASSCUTTER);
     }
 
-    private boolean isTinted(Block block) {
+    public static boolean isTinted(Block block) {
         return ModBlocks.CLEAR_TINTED_GLASS == block
                 || ModBlocks.SCRATCHED_TINTED_GLASS == block
                 || ModBlocks.CLEAR_TINTED_GLASS_PANE == block
@@ -43,6 +43,24 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
                 || ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE.containsValue(block)
                 || ModBlocks.STAINED_SCRATCHED_TINTED_GLASS.containsValue(block)
                 || ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE.containsValue(block)
-                || ModBlocks.TINTED_GLASS_PANE == block;
+                || ModBlocks.TINTED_GLASS_PANE == block
+                || ModBlocks.ALL_CHISELED_TINTED_GLASS.contains(block)
+                || ModBlocks.ALL_CHISELED_TINTED_GLASS_PANE.contains(block)
+                || ModBlocks.ALL_COLORED_CHISELED_TINTED_GLASS.containsValue(block)
+                || ModBlocks.ALL_COLORED_CHISELED_TINTED_GLASS_PANE.containsValue(block)
+                || ModBlocks.ALL_STAINED_CHISELED_TINTED_GLASS.containsValue(block)
+                || ModBlocks.ALL_STAINED_CHISELED_TINTED_GLASS_PANE.containsValue(block)
+                || ModBlocks.ALL_CHISELED_CLEAR_TINTED_GLASS.contains(block)
+                || ModBlocks.ALL_CHISELED_CLEAR_TINTED_GLASS_PANE.contains(block)
+                || ModBlocks.ALL_COLORED_CHISELED_CLEAR_TINTED_GLASS.containsValue(block)
+                || ModBlocks.ALL_COLORED_CHISELED_CLEAR_TINTED_GLASS_PANE.containsValue(block)
+                || ModBlocks.ALL_STAINED_CHISELED_CLEAR_TINTED_GLASS.containsValue(block)
+                || ModBlocks.ALL_STAINED_CHISELED_CLEAR_TINTED_GLASS_PANE.containsValue(block)
+                || ModBlocks.ALL_CHISELED_SCRATCHED_TINTED_GLASS.contains(block)
+                || ModBlocks.ALL_CHISELED_SCRATCHED_TINTED_GLASS_PANE.contains(block)
+                || ModBlocks.ALL_COLORED_CHISELED_SCRATCHED_TINTED_GLASS.containsValue(block)
+                || ModBlocks.ALL_COLORED_CHISELED_SCRATCHED_TINTED_GLASS_PANE.containsValue(block)
+                || ModBlocks.ALL_STAINED_CHISELED_SCRATCHED_TINTED_GLASS.containsValue(block)
+                || ModBlocks.ALL_STAINED_CHISELED_SCRATCHED_TINTED_GLASS_PANE.containsValue(block);
     }
 }

@@ -25,9 +25,14 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NonNull Provider registries) {
         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
+            if (ModBlocks.BETTER_GLASS_CHISELED_ALL.contains(block)) { continue; }
             valueLookupBuilder(BlockTags.IMPERMEABLE).add(block);
             valueLookupBuilder(ConventionalBlockTags.GLASS_BLOCKS).add(block);
-            valueLookupBuilder((block.getName().toString().contains("tinted") ? ConventionalBlockTags.GLASS_BLOCKS_TINTED : ConventionalBlockTags.GLASS_BLOCKS_CHEAP)).add(block);
+            if (ModBlockLootTableProvider.isTinted(block)) {
+                valueLookupBuilder(ConventionalBlockTags.GLASS_BLOCKS_TINTED).add(block);
+            } else {
+               valueLookupBuilder(ConventionalBlockTags.GLASS_BLOCKS_CHEAP).add(block);
+            }
         }
 
         for (DyeColor color : DyeColor.values()) {
