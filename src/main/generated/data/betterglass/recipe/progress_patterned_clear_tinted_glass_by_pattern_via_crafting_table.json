@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "progress_patterned_clear_tinted_glass",
+  "ingredients": [
+    "betterglass:clear_tinted_glass",
+    "betterglass:progress_pattern"
+  ],
+  "result": {
+    "id": "betterglass:progress_patterned_clear_tinted_glass"
+  }
+}

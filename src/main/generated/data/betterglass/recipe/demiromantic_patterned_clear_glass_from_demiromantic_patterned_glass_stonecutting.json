@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:demiromantic_patterned_glass",
+  "result": {
+    "id": "betterglass:demiromantic_patterned_clear_glass"
+  }
+}

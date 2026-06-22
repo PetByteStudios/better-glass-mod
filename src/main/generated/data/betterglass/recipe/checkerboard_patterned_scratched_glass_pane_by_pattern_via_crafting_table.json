@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "checkerboard_patterned_scratched_glass_pane",
+  "ingredients": [
+    "betterglass:scratched_glass_pane",
+    "betterglass:checkerboard_pattern"
+  ],
+  "result": {
+    "id": "betterglass:checkerboard_patterned_scratched_glass_pane"
+  }
+}

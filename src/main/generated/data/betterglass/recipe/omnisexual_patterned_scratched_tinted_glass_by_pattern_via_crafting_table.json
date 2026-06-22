@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "omnisexual_patterned_scratched_tinted_glass",
+  "ingredients": [
+    "betterglass:scratched_tinted_glass",
+    "betterglass:omnisexual_pattern"
+  ],
+  "result": {
+    "id": "betterglass:omnisexual_patterned_scratched_tinted_glass"
+  }
+}

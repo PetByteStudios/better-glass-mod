@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_omnisexual_patterned_scratched_tinted_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:omnisexual_patterned_scratched_tinted_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:omnisexual_patterned_clear_tinted_glass_from_omnisexual_patterned_scratched_tinted_glass_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_omnisexual_patterned_scratched_tinted_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:omnisexual_patterned_clear_tinted_glass_from_omnisexual_patterned_scratched_tinted_glass_stonecutting"
+    ]
+  }
+}

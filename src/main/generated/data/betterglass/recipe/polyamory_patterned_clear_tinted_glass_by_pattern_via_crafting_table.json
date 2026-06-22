@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "polyamory_patterned_clear_tinted_glass",
+  "ingredients": [
+    "betterglass:clear_tinted_glass",
+    "betterglass:polyamory_pattern"
+  ],
+  "result": {
+    "id": "betterglass:polyamory_patterned_clear_tinted_glass"
+  }
+}

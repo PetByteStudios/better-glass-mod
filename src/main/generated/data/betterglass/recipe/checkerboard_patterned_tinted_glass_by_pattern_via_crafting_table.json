@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "checkerboard_patterned_tinted_glass",
+  "ingredients": [
+    "minecraft:tinted_glass",
+    "betterglass:checkerboard_pattern"
+  ],
+  "result": {
+    "id": "betterglass:checkerboard_patterned_tinted_glass"
+  }
+}

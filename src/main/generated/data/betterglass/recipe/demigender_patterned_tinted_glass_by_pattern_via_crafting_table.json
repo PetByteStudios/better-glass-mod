@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "demigender_patterned_tinted_glass",
+  "ingredients": [
+    "minecraft:tinted_glass",
+    "betterglass:demigender_pattern"
+  ],
+  "result": {
+    "id": "betterglass:demigender_patterned_tinted_glass"
+  }
+}

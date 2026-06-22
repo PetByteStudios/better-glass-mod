@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "demiboy_patterned_clear_tinted_glass",
+  "ingredients": [
+    "betterglass:clear_tinted_glass",
+    "betterglass:demiboy_pattern"
+  ],
+  "result": {
+    "id": "betterglass:demiboy_patterned_clear_tinted_glass"
+  }
+}

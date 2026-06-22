@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "rainbow_patterned_glass",
+  "ingredients": [
+    "minecraft:glass",
+    "betterglass:rainbow_pattern"
+  ],
+  "result": {
+    "id": "betterglass:rainbow_patterned_glass"
+  }
+}

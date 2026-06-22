@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "polysexual_patterned_clear_tinted_glass_pane",
+  "ingredients": [
+    "betterglass:clear_tinted_glass_pane",
+    "betterglass:polysexual_pattern"
+  ],
+  "result": {
+    "id": "betterglass:polysexual_patterned_clear_tinted_glass_pane"
+  }
+}

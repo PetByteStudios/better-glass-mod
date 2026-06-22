@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "transmasc_patterned_tinted_glass_pane",
+  "key": {
+    "G": "betterglass:transmasc_patterned_tinted_glass"
+  },
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "result": {
+    "count": 16,
+    "id": "betterglass:transmasc_patterned_tinted_glass_pane"
+  }
+}

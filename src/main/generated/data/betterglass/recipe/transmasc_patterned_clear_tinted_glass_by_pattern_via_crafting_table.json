@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "transmasc_patterned_clear_tinted_glass",
+  "ingredients": [
+    "betterglass:clear_tinted_glass",
+    "betterglass:transmasc_pattern"
+  ],
+  "result": {
+    "id": "betterglass:transmasc_patterned_clear_tinted_glass"
+  }
+}

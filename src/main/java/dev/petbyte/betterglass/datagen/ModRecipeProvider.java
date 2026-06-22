@@ -1,15 +1,19 @@
 package dev.petbyte.betterglass.datagen;
 
+import dev.petbyte.betterglass.BetterGlass;
 import dev.petbyte.betterglass.block.ModBlocks;
+import dev.petbyte.betterglass.item.ModItems;
 import dev.petbyte.betterglass.tag.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -308,6 +312,44 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 untintGlass(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
                 untintGlass(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
 
+                System.out.println("patternize");
+                patternizeGlass(List.of(Blocks.GLASS, ModBlocks.CLEAR_GLASS, ModBlocks.SCRATCHED_GLASS,
+                        Blocks.TINTED_GLASS, ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.SCRATCHED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
+                patternizeGlass(List.of(Blocks.GLASS_PANE, ModBlocks.CLEAR_GLASS_PANE, ModBlocks.SCRATCHED_GLASS_PANE,
+                        ModBlocks.TINTED_GLASS_PANE, ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.SCRATCHED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
+
+                System.out.println("blocktopane");
+                blockToPaneCraftingTable(ModBlocks.BETTER_GLASS_PATTERNED_BLOCKS, ModBlocks.BETTER_GLASS_PATTERNED_PANES);
+
+                System.out.println("cyclecraft");
+                cycleThroughBlocksCraftingTablePatterned(List.of(ModBlocks.PATTERNED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS), RecipeCategory.BUILDING_BLOCKS);
+                cycleThroughBlocksCraftingTablePatterned(List.of(ModBlocks.PATTERNED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_GLASS_PANES), RecipeCategory.DECORATIONS);
+                cycleThroughBlocksCraftingTablePatterned(List.of(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS), RecipeCategory.BUILDING_BLOCKS);
+                cycleThroughBlocksCraftingTablePatterned(List.of(ModBlocks.PATTERNED_TINTED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_PANES), RecipeCategory.DECORATIONS);
+
+                System.out.println("tint");
+                tintGlass(List.of(ModBlocks.PATTERNED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS),
+                        List.of(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS),
+                        RecipeCategory.BUILDING_BLOCKS);
+                tintGlass(List.of(ModBlocks.PATTERNED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_GLASS_PANES),
+                        List.of(ModBlocks.PATTERNED_TINTED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_PANES),
+                        RecipeCategory.DECORATIONS);
+
+                System.out.println("untint");
+                untintGlass(List.of(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS),
+                        List.of(ModBlocks.PATTERNED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS),
+                        RecipeCategory.BUILDING_BLOCKS);
+                untintGlass(List.of(ModBlocks.PATTERNED_TINTED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_PANES),
+                        List.of(ModBlocks.PATTERNED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_GLASS_PANES),
+                        RecipeCategory.DECORATIONS);
+
+                System.out.println("stonecutter");
+                blockSwapStonecutterPatterned(List.of(ModBlocks.PATTERNED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS), RecipeCategory.BUILDING_BLOCKS);
+                blockSwapStonecutterPatterned(List.of(ModBlocks.PATTERNED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_GLASS_PANES), RecipeCategory.DECORATIONS);
+                blockSwapStonecutterPatterned(List.of(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS), RecipeCategory.BUILDING_BLOCKS);
+                blockSwapStonecutterPatterned(List.of(ModBlocks.PATTERNED_TINTED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_PANES), RecipeCategory.DECORATIONS);
+
+
                 coloredStainedSwapStonecutter(
                         List.of(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.COLORED_VANILLA_GLASS, ModBlocks.COLORED_TINTED_GLASS, ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS),
                         List.of(ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, STAINED_VANILLA_GLASS_BLOCK, ModBlocks.STAINED_TINTED_GLASS, ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS),
@@ -424,6 +466,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
+            private void blockToPaneCraftingTable(List<Block> inputBlocks, List<Block> outputBlocks) {
+                for (int i = 0; i < inputBlocks.size(); i++) {
+                    String inputID = BuiltInRegistries.BLOCK.getKey(inputBlocks.get(i)).toString().replace("betterglass:", "");
+                    String resultID = BuiltInRegistries.BLOCK.getKey(outputBlocks.get(i)).toString().replace("betterglass:", "");
+                    shaped(RecipeCategory.DECORATIONS, outputBlocks.get(i), 16)
+                            .pattern("GGG").pattern("GGG").define('G', inputBlocks.get(i))
+                            .unlockedBy("has_%s".formatted(inputID), has(inputBlocks.get(i))).group(resultID)
+                            .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
+                }
+            }
+
             private void cycleThroughBlocksCraftingTable(Block inputVariant, Block outputVariant, RecipeCategory recipeCategory) {
                 String inputID = BuiltInRegistries.BLOCK.getKey(inputVariant).toString().replaceAll("(minecraft|betterglass):", "");
                 String resultID = BuiltInRegistries.BLOCK.getKey(outputVariant).toString().replaceAll("(minecraft|betterglass):", "");
@@ -454,6 +507,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
+            private void cycleThroughBlocksCraftingTablePatterned(List<Map<String, Block>> variants, RecipeCategory recipeCategory) {
+                for (int i = 0; i < variants.size(); i++) {
+                    var inputVariant = variants.get((i - 1 + variants.size()) % variants.size());
+                    var outputVariant = variants.get(i);
+
+                    for (String motif : ModBlocks.PATTERN_MOTIFS) {
+                        cycleThroughBlocksCraftingTable(inputVariant.get(motif), outputVariant.get(motif), recipeCategory);
+                    }
+                }
+            }
+
             private void tintGlass(Block input, Block result, RecipeCategory recipeCategory) {
                 String inputID = BuiltInRegistries.BLOCK.getKey(input).toString().replaceAll("(minecraft|betterglass):", "");
                 String resultID = BuiltInRegistries.BLOCK.getKey(result).toString().replaceAll("(minecraft|betterglass):", "");
@@ -476,6 +540,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
+            private void tintGlass(List<Map<String, Block>> input, List<Map<String, Block>> result, RecipeCategory recipeCategory) {
+                for (int i = 0; i < input.size(); i++) {
+                    for (String motif : ModBlocks.PATTERN_MOTIFS) {
+                        String inputID = BuiltInRegistries.BLOCK.getKey(input.get(i).get(motif)).toString().replace("betterglass:", "");
+                        String resultID = BuiltInRegistries.BLOCK.getKey(result.get(i).get(motif)).toString().replace("betterglass:", "");
+                        shaped(recipeCategory, result.get(i).get(motif), 2)
+                                .pattern(" A ").pattern("AGA").pattern(" A ").define('A', Items.AMETHYST_SHARD)
+                                .define('G', input.get(i).get(motif)).unlockedBy("has_%s".formatted(inputID), has(input.get(i).get(motif)))
+                                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD)).group(resultID)
+                                .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
+                    }
+                }
+            }
+
             private void untintGlass(Block input, Block result, RecipeCategory recipeCategory) {
                 String inputID = BuiltInRegistries.BLOCK.getKey(input).toString().replaceAll("(minecraft|betterglass):", "");
                 String resultID = BuiltInRegistries.BLOCK.getKey(result).toString().replaceAll("(minecraft|betterglass):", "");
@@ -495,6 +573,35 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                             .define('G', input.get(color)).unlockedBy("has_%s".formatted(inputID), has(input.get(color)))
                             .unlockedBy("has_honeycomb", has(Items.HONEYCOMB)).group(resultID)
                             .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
+                }
+            }
+
+            private void untintGlass(List<Map<String, Block>> input, List<Map<String, Block>> result, RecipeCategory recipeCategory) {
+                for (int i = 0; i < input.size(); i++) {
+                    for (String motif : ModBlocks.PATTERN_MOTIFS) {
+                        String inputID = BuiltInRegistries.BLOCK.getKey(input.get(i).get(motif)).toString().replace("betterglass:", "");
+                        String resultID = BuiltInRegistries.BLOCK.getKey(result.get(i).get(motif)).toString().replace("betterglass:", "");
+                        shaped(recipeCategory, result.get(i).get(motif), 2)
+                                .pattern(" G ").pattern("GHG").pattern(" G ").define('H', Items.HONEYCOMB)
+                                .define('G', input.get(i).get(motif)).unlockedBy("has_%s".formatted(inputID), has(input.get(i).get(motif)))
+                                .unlockedBy("has_honeycomb", has(Items.HONEYCOMB)).group(resultID)
+                                .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
+                    }
+                }
+            }
+
+            private void patternizeGlass(List<Block> inputs, RecipeCategory recipeCategory) {
+                for (Block input : inputs) {
+                    for (String pattern : ModBlocks.PATTERN_MOTIFS) {
+                        Item patternItem = ModItems.PATTERNS.get(pattern);
+                        String inputID = BuiltInRegistries.BLOCK.getKey(input).toString().replaceAll("(minecraft|betterglass):", "");
+                        Block result = BuiltInRegistries.BLOCK.get(Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID,
+                                "%s_patterned_%s".formatted(pattern, inputID))).map(Holder.Reference::value).orElseThrow();
+                        String resultID = BuiltInRegistries.BLOCK.getKey(result).toString().replace("betterglass:", "");
+                        shapeless(recipeCategory, result, 1).requires(input).requires(patternItem)
+                                .unlockedBy("has_%s".formatted(patternItem), has(patternItem)).unlockedBy("has_%s".formatted(resultID), has(result))
+                                .group(resultID).save(output, "%s_by_pattern_via_crafting_table".formatted(resultID));
+                    }
                 }
             }
 
@@ -522,6 +629,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         for (int j = 0; j < blocks.size(); j++) {
                             if (i == j) { continue; }
                             stonecutterResultFromBase(recipeCategory, blocks.get(i).get(color), blocks.get(j).get(color));
+                        }
+                    }
+                }
+            }
+
+            private void blockSwapStonecutterPatterned(List<Map<String, Block>> blocks, RecipeCategory recipeCategory) {
+                for (int i = 0; i < blocks.size(); i++) {
+                    for (int j = 0; j < blocks.size(); j++) {
+                        if (i == j) { continue; }
+                        for (String motif : ModBlocks.PATTERN_MOTIFS) {
+                            stonecutterResultFromBase(recipeCategory, blocks.get(i).get(motif), blocks.get(j).get(motif));
                         }
                     }
                 }

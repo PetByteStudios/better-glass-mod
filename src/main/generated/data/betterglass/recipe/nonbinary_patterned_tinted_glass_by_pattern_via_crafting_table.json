@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "nonbinary_patterned_tinted_glass",
+  "ingredients": [
+    "minecraft:tinted_glass",
+    "betterglass:nonbinary_pattern"
+  ],
+  "result": {
+    "id": "betterglass:nonbinary_patterned_tinted_glass"
+  }
+}

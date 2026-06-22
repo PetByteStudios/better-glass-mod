@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bisexual_patterned_scratched_glass",
+  "key": {
+    "G": "betterglass:bisexual_patterned_scratched_tinted_glass",
+    "H": "minecraft:honeycomb"
+  },
+  "pattern": [
+    " G ",
+    "GHG",
+    " G "
+  ],
+  "result": {
+    "count": 2,
+    "id": "betterglass:bisexual_patterned_scratched_glass"
+  }
+}

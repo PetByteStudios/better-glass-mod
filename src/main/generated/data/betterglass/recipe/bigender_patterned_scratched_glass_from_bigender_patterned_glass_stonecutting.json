@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:bigender_patterned_glass",
+  "result": {
+    "id": "betterglass:bigender_patterned_scratched_glass"
+  }
+}

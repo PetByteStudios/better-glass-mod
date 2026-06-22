@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "demigirl_patterned_scratched_tinted_glass",
+  "ingredients": [
+    "betterglass:scratched_tinted_glass",
+    "betterglass:demigirl_pattern"
+  ],
+  "result": {
+    "id": "betterglass:demigirl_patterned_scratched_tinted_glass"
+  }
+}

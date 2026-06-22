@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "nonbinary_patterned_clear_tinted_glass_pane",
+  "ingredients": [
+    "betterglass:clear_tinted_glass_pane",
+    "betterglass:nonbinary_pattern"
+  ],
+  "result": {
+    "id": "betterglass:nonbinary_patterned_clear_tinted_glass_pane"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "genderfluid_patterned_clear_glass",
+  "ingredients": [
+    "betterglass:clear_glass",
+    "betterglass:genderfluid_pattern"
+  ],
+  "result": {
+    "id": "betterglass:genderfluid_patterned_clear_glass"
+  }
+}

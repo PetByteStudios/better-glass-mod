@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "demigender_patterned_clear_glass",
+  "key": {
+    "G": "betterglass:demigender_patterned_clear_tinted_glass",
+    "H": "minecraft:honeycomb"
+  },
+  "pattern": [
+    " G ",
+    "GHG",
+    " G "
+  ],
+  "result": {
+    "count": 2,
+    "id": "betterglass:demigender_patterned_clear_glass"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "mlm_patterned_tinted_glass",
+  "ingredients": [
+    "minecraft:tinted_glass",
+    "betterglass:mlm_pattern"
+  ],
+  "result": {
+    "id": "betterglass:mlm_patterned_tinted_glass"
+  }
+}

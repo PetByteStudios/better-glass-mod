@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "mlm_patterned_scratched_glass",
+  "ingredients": [
+    "betterglass:scratched_glass",
+    "betterglass:mlm_pattern"
+  ],
+  "result": {
+    "id": "betterglass:mlm_patterned_scratched_glass"
+  }
+}

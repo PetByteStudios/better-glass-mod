@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "genderfluid_patterned_tinted_glass",
+  "key": {
+    "A": "minecraft:amethyst_shard",
+    "G": "betterglass:genderfluid_patterned_glass"
+  },
+  "pattern": [
+    " A ",
+    "AGA",
+    " A "
+  ],
+  "result": {
+    "count": 2,
+    "id": "betterglass:genderfluid_patterned_tinted_glass"
+  }
+}

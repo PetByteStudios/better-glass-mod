@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "intersex_patterned_scratched_glass_pane",
+  "ingredients": [
+    "betterglass:scratched_glass_pane",
+    "betterglass:intersex_pattern"
+  ],
+  "result": {
+    "id": "betterglass:intersex_patterned_scratched_glass_pane"
+  }
+}

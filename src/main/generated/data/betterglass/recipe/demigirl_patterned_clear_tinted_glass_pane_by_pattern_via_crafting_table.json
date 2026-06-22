@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "demigirl_patterned_clear_tinted_glass_pane",
+  "ingredients": [
+    "betterglass:clear_tinted_glass_pane",
+    "betterglass:demigirl_pattern"
+  ],
+  "result": {
+    "id": "betterglass:demigirl_patterned_clear_tinted_glass_pane"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "asexual_patterned_glass_pane",
+  "ingredients": [
+    "minecraft:glass_pane",
+    "betterglass:asexual_pattern"
+  ],
+  "result": {
+    "id": "betterglass:asexual_patterned_glass_pane"
+  }
+}

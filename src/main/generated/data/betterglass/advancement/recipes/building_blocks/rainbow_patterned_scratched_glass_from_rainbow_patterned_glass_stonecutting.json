@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rainbow_patterned_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:rainbow_patterned_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:rainbow_patterned_scratched_glass_from_rainbow_patterned_glass_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rainbow_patterned_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:rainbow_patterned_scratched_glass_from_rainbow_patterned_glass_stonecutting"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "demiromantic_patterned_clear_glass",
+  "ingredients": [
+    "betterglass:clear_glass",
+    "betterglass:demiromantic_pattern"
+  ],
+  "result": {
+    "id": "betterglass:demiromantic_patterned_clear_glass"
+  }
+}

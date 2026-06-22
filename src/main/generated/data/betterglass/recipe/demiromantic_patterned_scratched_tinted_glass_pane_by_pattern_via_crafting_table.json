@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "demiromantic_patterned_scratched_tinted_glass_pane",
+  "ingredients": [
+    "betterglass:scratched_tinted_glass_pane",
+    "betterglass:demiromantic_pattern"
+  ],
+  "result": {
+    "id": "betterglass:demiromantic_patterned_scratched_tinted_glass_pane"
+  }
+}

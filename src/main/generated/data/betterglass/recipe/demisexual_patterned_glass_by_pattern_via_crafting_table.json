@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "demisexual_patterned_glass",
+  "ingredients": [
+    "minecraft:glass",
+    "betterglass:demisexual_pattern"
+  ],
+  "result": {
+    "id": "betterglass:demisexual_patterned_glass"
+  }
+}

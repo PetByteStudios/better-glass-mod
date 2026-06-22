@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "bigender_patterned_scratched_tinted_glass",
+  "ingredients": [
+    "betterglass:scratched_tinted_glass",
+    "betterglass:bigender_pattern"
+  ],
+  "result": {
+    "id": "betterglass:bigender_patterned_scratched_tinted_glass"
+  }
+}

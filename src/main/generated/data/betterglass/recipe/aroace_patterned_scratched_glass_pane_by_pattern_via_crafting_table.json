@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "aroace_patterned_scratched_glass_pane",
+  "ingredients": [
+    "betterglass:scratched_glass_pane",
+    "betterglass:aroace_pattern"
+  ],
+  "result": {
+    "id": "betterglass:aroace_patterned_scratched_glass_pane"
+  }
+}

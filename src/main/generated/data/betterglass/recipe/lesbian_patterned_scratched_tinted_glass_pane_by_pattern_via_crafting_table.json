@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "lesbian_patterned_scratched_tinted_glass_pane",
+  "ingredients": [
+    "betterglass:scratched_tinted_glass_pane",
+    "betterglass:lesbian_pattern"
+  ],
+  "result": {
+    "id": "betterglass:lesbian_patterned_scratched_tinted_glass_pane"
+  }
+}

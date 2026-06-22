@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "polyamory_patterned_scratched_glass_pane",
+  "ingredients": [
+    "betterglass:scratched_glass_pane",
+    "betterglass:polyamory_pattern"
+  ],
+  "result": {
+    "id": "betterglass:polyamory_patterned_scratched_glass_pane"
+  }
+}

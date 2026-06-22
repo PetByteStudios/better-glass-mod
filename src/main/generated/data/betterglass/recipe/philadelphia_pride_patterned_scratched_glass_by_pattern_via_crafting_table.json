@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "philadelphia_pride_patterned_scratched_glass",
+  "ingredients": [
+    "betterglass:scratched_glass",
+    "betterglass:philadelphia_pride_pattern"
+  ],
+  "result": {
+    "id": "betterglass:philadelphia_pride_patterned_scratched_glass"
+  }
+}

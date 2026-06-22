@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "androgyne_patterned_glass",
+  "ingredients": [
+    "minecraft:glass",
+    "betterglass:androgyne_pattern"
+  ],
+  "result": {
+    "id": "betterglass:androgyne_patterned_glass"
+  }
+}

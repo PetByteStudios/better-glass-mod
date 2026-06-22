@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "lesbian_patterned_clear_glass_pane",
+  "key": {
+    "G": "betterglass:lesbian_patterned_clear_glass"
+  },
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "result": {
+    "count": 16,
+    "id": "betterglass:lesbian_patterned_clear_glass_pane"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:polyamory_patterned_scratched_tinted_glass",
+  "result": {
+    "id": "betterglass:polyamory_patterned_tinted_glass"
+  }
+}

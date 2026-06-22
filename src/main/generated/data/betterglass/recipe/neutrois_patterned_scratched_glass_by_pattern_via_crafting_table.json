@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "neutrois_patterned_scratched_glass",
+  "ingredients": [
+    "betterglass:scratched_glass",
+    "betterglass:neutrois_pattern"
+  ],
+  "result": {
+    "id": "betterglass:neutrois_patterned_scratched_glass"
+  }
+}

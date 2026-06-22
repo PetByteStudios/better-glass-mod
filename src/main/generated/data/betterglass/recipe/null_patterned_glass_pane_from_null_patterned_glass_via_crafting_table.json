@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "null_patterned_glass_pane",
+  "key": {
+    "G": "betterglass:null_patterned_glass"
+  },
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "result": {
+    "count": 16,
+    "id": "betterglass:null_patterned_glass_pane"
+  }
+}

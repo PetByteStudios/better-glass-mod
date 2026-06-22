@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "androgyne_patterned_tinted_glass_pane",
+  "key": {
+    "G": "betterglass:androgyne_patterned_scratched_tinted_glass_pane"
+  },
+  "pattern": [
+    "GG",
+    "GG"
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:androgyne_patterned_tinted_glass_pane"
+  }
+}

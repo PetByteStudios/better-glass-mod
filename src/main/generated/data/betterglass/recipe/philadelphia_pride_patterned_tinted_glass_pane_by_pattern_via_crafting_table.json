@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "philadelphia_pride_patterned_tinted_glass_pane",
+  "ingredients": [
+    "betterglass:tinted_glass_pane",
+    "betterglass:philadelphia_pride_pattern"
+  ],
+  "result": {
+    "id": "betterglass:philadelphia_pride_patterned_tinted_glass_pane"
+  }
+}

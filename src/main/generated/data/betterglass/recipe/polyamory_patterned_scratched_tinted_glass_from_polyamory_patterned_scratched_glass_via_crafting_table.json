@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "polyamory_patterned_scratched_tinted_glass",
+  "key": {
+    "A": "minecraft:amethyst_shard",
+    "G": "betterglass:polyamory_patterned_scratched_glass"
+  },
+  "pattern": [
+    " A ",
+    "AGA",
+    " A "
+  ],
+  "result": {
+    "count": 2,
+    "id": "betterglass:polyamory_patterned_scratched_tinted_glass"
+  }
+}

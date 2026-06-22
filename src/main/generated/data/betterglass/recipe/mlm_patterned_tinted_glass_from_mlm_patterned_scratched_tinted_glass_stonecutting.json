@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:mlm_patterned_scratched_tinted_glass",
+  "result": {
+    "id": "betterglass:mlm_patterned_tinted_glass"
+  }
+}

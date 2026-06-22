@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "lesbian_patterned_tinted_glass",
+  "ingredients": [
+    "minecraft:tinted_glass",
+    "betterglass:lesbian_pattern"
+  ],
+  "result": {
+    "id": "betterglass:lesbian_patterned_tinted_glass"
+  }
+}

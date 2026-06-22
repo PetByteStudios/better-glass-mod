@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:mlm_patterned_glass_pane",
+  "result": {
+    "id": "betterglass:mlm_patterned_clear_glass_pane"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_honeycomb": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:honeycomb"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:transmasc_patterned_glass_from_transmasc_patterned_tinted_glass_via_crafting_table"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_transmasc_patterned_tinted_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:transmasc_patterned_tinted_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_transmasc_patterned_tinted_glass",
+      "has_honeycomb"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:transmasc_patterned_glass_from_transmasc_patterned_tinted_glass_via_crafting_table"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:aroace_patterned_glass_pane",
+  "result": {
+    "id": "betterglass:aroace_patterned_scratched_glass_pane"
+  }
+}
