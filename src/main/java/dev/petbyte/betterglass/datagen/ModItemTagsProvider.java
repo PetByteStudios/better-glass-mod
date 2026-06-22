@@ -29,6 +29,7 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider{
             if (ModBlockLootTableProvider.isTinted(block)) {
                 valueLookupBuilder(ConventionalItemTags.GLASS_BLOCKS_TINTED).add(block.asItem());
             } else {
+                if (ModBlocks.BETTER_GLASS_PATTERNED_ALL.contains(block)) { continue; }
                 valueLookupBuilder(ConventionalItemTags.GLASS_BLOCKS_CHEAP).add(block.asItem());
             }
         }
