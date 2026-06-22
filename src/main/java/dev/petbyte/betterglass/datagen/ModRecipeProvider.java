@@ -1,15 +1,19 @@
 package dev.petbyte.betterglass.datagen;
 
+import dev.petbyte.betterglass.BetterGlass;
 import dev.petbyte.betterglass.block.ModBlocks;
+import dev.petbyte.betterglass.item.ModItems;
 import dev.petbyte.betterglass.tag.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -307,6 +311,38 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 untintGlass(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
                 untintGlass(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
 
+                patternizeGlass(List.of(Blocks.GLASS, ModBlocks.CLEAR_GLASS, ModBlocks.SCRATCHED_GLASS,
+                        Blocks.TINTED_GLASS, ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.SCRATCHED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
+                patternizeGlass(List.of(Blocks.GLASS_PANE, ModBlocks.CLEAR_GLASS_PANE, ModBlocks.SCRATCHED_GLASS_PANE,
+                        ModBlocks.TINTED_GLASS_PANE, ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.SCRATCHED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
+
+                blockToPaneCraftingTable(ModBlocks.BETTER_GLASS_PATTERNED_BLOCKS, ModBlocks.BETTER_GLASS_PATTERNED_PANES);
+
+                cycleThroughBlocksCraftingTablePatterned(List.of(ModBlocks.PATTERNED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS), RecipeCategory.BUILDING_BLOCKS);
+                cycleThroughBlocksCraftingTablePatterned(List.of(ModBlocks.PATTERNED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_GLASS_PANES), RecipeCategory.DECORATIONS);
+                cycleThroughBlocksCraftingTablePatterned(List.of(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS), RecipeCategory.BUILDING_BLOCKS);
+                cycleThroughBlocksCraftingTablePatterned(List.of(ModBlocks.PATTERNED_TINTED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_PANES), RecipeCategory.DECORATIONS);
+
+                tintGlass(List.of(ModBlocks.PATTERNED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS),
+                        List.of(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS),
+                        RecipeCategory.BUILDING_BLOCKS);
+                tintGlass(List.of(ModBlocks.PATTERNED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_GLASS_PANES),
+                        List.of(ModBlocks.PATTERNED_TINTED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_PANES),
+                        RecipeCategory.DECORATIONS);
+
+                untintGlass(List.of(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS),
+                        List.of(ModBlocks.PATTERNED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS),
+                        RecipeCategory.BUILDING_BLOCKS);
+                untintGlass(List.of(ModBlocks.PATTERNED_TINTED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_PANES),
+                        List.of(ModBlocks.PATTERNED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_GLASS_PANES),
+                        RecipeCategory.DECORATIONS);
+
+                blockSwapStonecutterPatterned(List.of(ModBlocks.PATTERNED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS), RecipeCategory.BUILDING_BLOCKS);
+                blockSwapStonecutterPatterned(List.of(ModBlocks.PATTERNED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_GLASS_PANES), RecipeCategory.DECORATIONS);
+                blockSwapStonecutterPatterned(List.of(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS), RecipeCategory.BUILDING_BLOCKS);
+                blockSwapStonecutterPatterned(List.of(ModBlocks.PATTERNED_TINTED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_PANES), RecipeCategory.DECORATIONS);
+
+
                 coloredStainedSwapStonecutter(
                         List.of(ModBlocks.COLORED_CLEAR_GLASS, ModBlocks.COLORED_SCRATCHED_GLASS, ModBlocks.COLORED_VANILLA_GLASS, ModBlocks.COLORED_TINTED_GLASS, ModBlocks.COLORED_CLEAR_TINTED_GLASS, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS),
                         List.of(ModBlocks.STAINED_CLEAR_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, STAINED_VANILLA_GLASS_BLOCK, ModBlocks.STAINED_TINTED_GLASS, ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS),
@@ -330,6 +366,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 blockSwapStonecutterDyed(List.of(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.COLORED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
                 blockSwapStonecutterDyed(List.of(ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
                 blockSwapStonecutterDyed(List.of(ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
+
+                addPatternRecipes();
             }
 
 
@@ -423,6 +461,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
+            private void blockToPaneCraftingTable(List<Block> inputBlocks, List<Block> outputBlocks) {
+                for (int i = 0; i < inputBlocks.size(); i++) {
+                    String inputID = BuiltInRegistries.BLOCK.getKey(inputBlocks.get(i)).toString().replace("betterglass:", "");
+                    String resultID = BuiltInRegistries.BLOCK.getKey(outputBlocks.get(i)).toString().replace("betterglass:", "");
+                    shaped(RecipeCategory.DECORATIONS, outputBlocks.get(i), 16)
+                            .pattern("GGG").pattern("GGG").define('G', inputBlocks.get(i))
+                            .unlockedBy("has_%s".formatted(inputID), has(inputBlocks.get(i))).group(resultID)
+                            .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
+                }
+            }
+
             private void cycleThroughBlocksCraftingTable(Block inputVariant, Block outputVariant, RecipeCategory recipeCategory) {
                 String inputID = BuiltInRegistries.BLOCK.getKey(inputVariant).toString().replaceAll("(minecraft|betterglass):", "");
                 String resultID = BuiltInRegistries.BLOCK.getKey(outputVariant).toString().replaceAll("(minecraft|betterglass):", "");
@@ -453,6 +502,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
+            private void cycleThroughBlocksCraftingTablePatterned(List<Map<String, Block>> variants, RecipeCategory recipeCategory) {
+                for (int i = 0; i < variants.size(); i++) {
+                    var inputVariant = variants.get((i - 1 + variants.size()) % variants.size());
+                    var outputVariant = variants.get(i);
+
+                    for (String motif : ModBlocks.PATTERN_MOTIFS) {
+                        cycleThroughBlocksCraftingTable(inputVariant.get(motif), outputVariant.get(motif), recipeCategory);
+                    }
+                }
+            }
+
             private void tintGlass(Block input, Block result, RecipeCategory recipeCategory) {
                 String inputID = BuiltInRegistries.BLOCK.getKey(input).toString().replaceAll("(minecraft|betterglass):", "");
                 String resultID = BuiltInRegistries.BLOCK.getKey(result).toString().replaceAll("(minecraft|betterglass):", "");
@@ -475,6 +535,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
+            private void tintGlass(List<Map<String, Block>> input, List<Map<String, Block>> result, RecipeCategory recipeCategory) {
+                for (int i = 0; i < input.size(); i++) {
+                    for (String motif : ModBlocks.PATTERN_MOTIFS) {
+                        String inputID = BuiltInRegistries.BLOCK.getKey(input.get(i).get(motif)).toString().replace("betterglass:", "");
+                        String resultID = BuiltInRegistries.BLOCK.getKey(result.get(i).get(motif)).toString().replace("betterglass:", "");
+                        shaped(recipeCategory, result.get(i).get(motif), 2)
+                                .pattern(" A ").pattern("AGA").pattern(" A ").define('A', Items.AMETHYST_SHARD)
+                                .define('G', input.get(i).get(motif)).unlockedBy("has_%s".formatted(inputID), has(input.get(i).get(motif)))
+                                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD)).group(resultID)
+                                .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
+                    }
+                }
+            }
+
             private void untintGlass(Block input, Block result, RecipeCategory recipeCategory) {
                 String inputID = BuiltInRegistries.BLOCK.getKey(input).toString().replaceAll("(minecraft|betterglass):", "");
                 String resultID = BuiltInRegistries.BLOCK.getKey(result).toString().replaceAll("(minecraft|betterglass):", "");
@@ -494,6 +568,36 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                             .define('G', input.get(color)).unlockedBy("has_%s".formatted(inputID), has(input.get(color)))
                             .unlockedBy("has_honeycomb", has(Items.HONEYCOMB)).group(resultID)
                             .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
+                }
+            }
+
+            private void untintGlass(List<Map<String, Block>> input, List<Map<String, Block>> result, RecipeCategory recipeCategory) {
+                for (int i = 0; i < input.size(); i++) {
+                    for (String motif : ModBlocks.PATTERN_MOTIFS) {
+                        String inputID = BuiltInRegistries.BLOCK.getKey(input.get(i).get(motif)).toString().replace("betterglass:", "");
+                        String resultID = BuiltInRegistries.BLOCK.getKey(result.get(i).get(motif)).toString().replace("betterglass:", "");
+                        shaped(recipeCategory, result.get(i).get(motif), 2)
+                                .pattern(" G ").pattern("GHG").pattern(" G ").define('H', Items.HONEYCOMB)
+                                .define('G', input.get(i).get(motif)).unlockedBy("has_%s".formatted(inputID), has(input.get(i).get(motif)))
+                                .unlockedBy("has_honeycomb", has(Items.HONEYCOMB)).group(resultID)
+                                .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
+                    }
+                }
+            }
+
+            private void patternizeGlass(List<Block> inputs, RecipeCategory recipeCategory) {
+                for (Block input : inputs) {
+                    for (String pattern : ModBlocks.PATTERN_MOTIFS) {
+                        Item patternItem = ModItems.PATTERNS.get(pattern);
+                        String inputID = BuiltInRegistries.BLOCK.getKey(input).toString().replaceAll("(minecraft|betterglass):", "");
+                        Block result = BuiltInRegistries.BLOCK.get(Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID,
+                                "%s_patterned_%s".formatted(pattern, inputID))).map(Holder.Reference::value).orElseThrow();
+                        String resultID = BuiltInRegistries.BLOCK.getKey(result).toString().replace("betterglass:", "");
+                        shaped(recipeCategory, result, 4).pattern(" G ").pattern("GPG").pattern(" G ")
+                                .define('G', input).define('P', patternItem)
+                                .unlockedBy("has_%s".formatted(patternItem), has(patternItem)).unlockedBy("has_%s".formatted(resultID), has(result))
+                                .group(resultID).save(output, "%s_by_pattern_via_crafting_table".formatted(resultID));
+                    }
                 }
             }
 
@@ -524,6 +628,373 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         }
                     }
                 }
+            }
+
+            private void blockSwapStonecutterPatterned(List<Map<String, Block>> blocks, RecipeCategory recipeCategory) {
+                for (int i = 0; i < blocks.size(); i++) {
+                    for (int j = 0; j < blocks.size(); j++) {
+                        if (i == j) { continue; }
+                        for (String motif : ModBlocks.PATTERN_MOTIFS) {
+                            stonecutterResultFromBase(recipeCategory, blocks.get(i).get(motif), blocks.get(j).get(motif));
+                        }
+                    }
+                }
+            }
+
+            private void addPatternRecipes() {
+                RecipeCategory recipeCategory = RecipeCategory.TOOLS;
+                Item EMPTY_PATTERN = ModItems.EMPTY_PATTERN;
+                // EMPTY
+                shapeless(recipeCategory, EMPTY_PATTERN, 4).unlockedBy("has_paper", has(Items.PAPER))
+                        .requires(Items.PAPER).requires(Items.FEATHER).requires(ConventionalItemTags.GLASS_BLOCKS)
+                        .unlockedBy("has_any_glass", has(ConventionalItemTags.GLASS_BLOCKS))
+                        .save(output);
+
+                // NON-PRIDE
+                shaped(recipeCategory, ModItems.PATTERNS.get("checkerboard"), 1)
+                        .pattern("PBW").pattern(" WB").define('P', EMPTY_PATTERN)
+                        .define('B', Items.BLACK_DYE).define('W', Items.WHITE_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("null"), 1)
+                        .pattern("PBM").pattern(" MB").define('P', EMPTY_PATTERN)
+                        .define('B', Items.BLACK_DYE).define('M', Items.MAGENTA_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                // PRIDE
+                shaped(recipeCategory, ModItems.PATTERNS.get("agender"), 1)
+                        .pattern("PBL").pattern(" W ").define('P', EMPTY_PATTERN)
+                        .define('B', Items.BLACK_DYE).define('L', Items.LIME_DYE)
+                        .define('W', Items.WHITE_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("androgyne"), 1)
+                        .pattern("PDU").pattern(" C ").define('P', EMPTY_PATTERN)
+                        .define('D', Items.PINK_DYE).define('U', Items.PURPLE_DYE)
+                        .define('C', Items.CYAN_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("aroace"), 1)
+                        .pattern("POY").pattern("WLB").define('P', EMPTY_PATTERN)
+                        .define('O', Items.ORANGE_DYE).define('Y', Items.YELLOW_DYE)
+                        .define('W', Items.WHITE_DYE).define('L', Items.LIGHT_BLUE_DYE)
+                        .define('B', Items.BLUE_DYE).group("aroace_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("aromantic"), 1)
+                        .pattern("PGL").pattern("WIB").define('P', EMPTY_PATTERN)
+                        .define('G', Items.GREEN_DYE).define('L', Items.LIME_DYE)
+                        .define('W', Items.WHITE_DYE).define('I', Items.LIGHT_GRAY_DYE)
+                        .define('B', Items.BLACK_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("asexual"), 1)
+                        .pattern("PBL").pattern(" WU").define('P', EMPTY_PATTERN)
+                        .define('B', Items.BLACK_DYE).define('L', Items.LIGHT_GRAY_DYE)
+                        .define('W', Items.WHITE_DYE).define('U', Items.PURPLE_DYE)
+                        .group("asexual_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("asexual_new"), 1)
+                        .pattern("PBL").pattern("WYM").define('P', EMPTY_PATTERN)
+                        .define('B', Items.BLACK_DYE).define('L', Items.LIGHT_GRAY_DYE)
+                        .define('W', Items.WHITE_DYE).define('Y', Items.YELLOW_DYE)
+                        .define('M', Items.MAGENTA_DYE).group("asexual_new_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("bigender"), 1)
+                        .pattern("PIW").pattern(" LB").define('P', EMPTY_PATTERN)
+                        .define('I', Items.PINK_DYE).define('W', Items.WHITE_DYE)
+                        .define('L', Items.LIGHT_BLUE_DYE).define('B', Items.BLUE_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("bisexual"), 1)
+                        .pattern("PIM").pattern(" B ").define('P', EMPTY_PATTERN)
+                        .define('I', Items.PINK_DYE).define('M', Items.MAGENTA_DYE)
+                        .define('B', Items.BLUE_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("demiboy"), 1)
+                        .pattern("PGL").pattern(" B ").define('P', EMPTY_PATTERN)
+                        .define('G', Items.GRAY_DYE).define('L', Items.LIGHT_GRAY_DYE)
+                        .define('B', Items.LIGHT_BLUE_DYE).group("demiboy_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("demigender"), 1)
+                        .pattern("PGL").pattern(" Y ").define('P', EMPTY_PATTERN)
+                        .define('G', Items.GRAY_DYE).define('L', Items.LIGHT_GRAY_DYE)
+                        .define('Y', Items.YELLOW_DYE).group("demigender_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("demigirl"), 1)
+                        .pattern("PGL").pattern(" I ").define('P', EMPTY_PATTERN)
+                        .define('G', Items.GRAY_DYE).define('L', Items.LIGHT_GRAY_DYE)
+                        .define('I', Items.PINK_DYE).group("demigirl_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("demiromantic"), 1)
+                        .pattern("PW").pattern("BG").pattern(" L").define('P', EMPTY_PATTERN)
+                        .define('W', Items.WHITE_DYE).define('B', Items.BLACK_DYE)
+                        .define('G', Items.GREEN_DYE).define('L', Items.LIGHT_GRAY_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("demisexual"), 1)
+                        .pattern("PW").pattern("BU").pattern(" L").define('P', EMPTY_PATTERN)
+                        .define('W', Items.WHITE_DYE).define('B', Items.BLACK_DYE)
+                        .define('U', Items.PURPLE_DYE).define('L', Items.LIGHT_GRAY_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("genderfluid"), 1)
+                        .pattern("PIW").pattern("UBE").define('P', EMPTY_PATTERN)
+                        .define('I', Items.PINK_DYE).define('W', Items.WHITE_DYE)
+                        .define('U', Items.PURPLE_DYE).define('B', Items.BLACK_DYE)
+                        .define('E', Items.BLUE_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("genderqueer"), 1)
+                        .pattern("PU").pattern(" W").pattern(" G").define('P', EMPTY_PATTERN)
+                        .define('U', Items.PURPLE_DYE).define('W', Items.WHITE_DYE)
+                        .define('G', Items.GREEN_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("intersex"), 1)
+                        .pattern("PYU").define('P', EMPTY_PATTERN)
+                        .define('Y', Items.YELLOW_DYE).define('U', Items.PURPLE_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("lesbian"), 1)
+                        .pattern("POW").pattern(" I ").define('P', EMPTY_PATTERN)
+                        .define('O', Items.ORANGE_DYE).define('W', Items.WHITE_DYE)
+                        .define('I', Items.PINK_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("mlm"), 1)
+                        .pattern("PGW").pattern(" B ").define('P', EMPTY_PATTERN)
+                        .define('G', Items.GREEN_DYE).define('W', Items.WHITE_DYE)
+                        .define('B', Items.BLUE_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("neutrois"), 1)
+                        .pattern("PW").pattern(" G").pattern(" B").define('P', EMPTY_PATTERN)
+                        .define('W', Items.WHITE_DYE).define('G', Items.GREEN_DYE)
+                        .define('B', Items.BLACK_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("nonbinary"), 1)
+                        .pattern("PYW").pattern(" UB").define('P', EMPTY_PATTERN)
+                        .define('Y', Items.YELLOW_DYE).define('W', Items.WHITE_DYE)
+                        .define('U', Items.PURPLE_DYE).define('B', Items.BLACK_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("omnisexual"), 1)
+                        .pattern("PI").pattern(" B").pattern(" L").define('P', EMPTY_PATTERN)
+                        .define('I', Items.PINK_DYE).define('B', Items.BLACK_DYE)
+                        .define('L', Items.BLUE_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("pansexual"), 1)
+                        .pattern("PI").pattern(" Y").pattern(" C").define('P', EMPTY_PATTERN)
+                        .define('I', Items.PINK_DYE).define('Y', Items.YELLOW_DYE)
+                        .define('C', Items.CYAN_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("philadelphia_pride"), 1)
+                        .pattern("PBR").pattern("EOY").pattern("GLU").define('P', EMPTY_PATTERN)
+                        .define('B', Items.BLACK_DYE).define('R', Items.BROWN_DYE)
+                        .define('E', Items.RED_DYE).define('O', Items.ORANGE_DYE)
+                        .define('Y', Items.YELLOW_DYE).define('G', Items.GREEN_DYE)
+                        .define('L', Items.BLUE_DYE).define('U', Items.PURPLE_DYE)
+                        .group("philadelphia_pride_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("philadelphia_pride"), 1)
+                        .pattern("PBR").define('P', ModItems.PATTERNS.get("rainbow"))
+                        .define('B', Items.BLACK_DYE).define('R', Items.BROWN_DYE)
+                        .group("philadelphia_pride_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "philadelphia_pride_pattern_from_rainbow_pattern_extended_dyes");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("polyamory"), 1)
+                        .pattern("PBR").pattern(" YL").define('P', EMPTY_PATTERN)
+                        .define('B', Items.BLUE_DYE).define('R', Items.RED_DYE)
+                        .define('Y', Items.YELLOW_DYE).define('L', Items.BLACK_DYE)
+                        .group("polyamory_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("polyamory_new"), 1)
+                        .pattern("PWY").pattern("CIU").define('P', EMPTY_PATTERN)
+                        .define('W', Items.WHITE_DYE).define('Y', Items.YELLOW_DYE)
+                        .define('C', Items.CYAN_DYE).define('I', Items.PINK_DYE)
+                        .define('U', Items.PURPLE_DYE).group("polyamory_new_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("polygender"), 1)
+                        .pattern("PBL").pattern("IYU").define('P', EMPTY_PATTERN)
+                        .define('B', Items.BLACK_DYE).define('L', Items.LIGHT_GRAY_DYE)
+                        .define('I', Items.PINK_DYE).define('Y', Items.YELLOW_DYE)
+                        .define('U', Items.LIGHT_BLUE_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("polysexual"), 1)
+                        .pattern("PIG").pattern(" B ").define('P', EMPTY_PATTERN)
+                        .define('I', Items.PINK_DYE).define('G', Items.GREEN_DYE)
+                        .define('B', Items.BLUE_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PBR").pattern("WIL").define('P', ModItems.PATTERNS.get("rainbow"))
+                        .define('B', Items.BLACK_DYE).define('R', Items.BROWN_DYE)
+                        .define('W', Items.WHITE_DYE).define('I', Items.PINK_DYE)
+                        .define('L', Items.LIGHT_BLUE_DYE).group("progress_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_rainbow_pattern_extended_dyes");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PBR").pattern(" T ").define('P', ModItems.PATTERNS.get("rainbow"))
+                        .define('B', Items.BLACK_DYE).define('R', Items.BROWN_DYE)
+                        .define('T', ModItems.PATTERNS.get("transfem")).group("progress_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_rainbow_pattern_extended_transfem");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PBR").pattern(" T ").define('P', ModItems.PATTERNS.get("rainbow"))
+                        .define('B', Items.BLACK_DYE).define('R', Items.BROWN_DYE)
+                        .define('T', ModItems.PATTERNS.get("transgender")).group("progress_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_rainbow_pattern_extended_transgender");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PBR").pattern(" T ").define('P', ModItems.PATTERNS.get("rainbow"))
+                        .define('B', Items.BLACK_DYE).define('R', Items.BROWN_DYE)
+                        .define('T', ModItems.PATTERNS.get("transmasc")).group("progress_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_rainbow_pattern_extended_transmasc");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PWI").pattern(" L ").define('P', ModItems.PATTERNS.get("philadelphia_pride"))
+                        .define('W', Items.WHITE_DYE).define('I', Items.PINK_DYE)
+                        .define('L', Items.LIGHT_BLUE_DYE).group("progress_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_dyes");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PT").define('P', ModItems.PATTERNS.get("philadelphia_pride"))
+                        .define('T', ModItems.PATTERNS.get("transfem"))
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_transfem");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PT").define('P', ModItems.PATTERNS.get("philadelphia_pride"))
+                        .define('T', ModItems.PATTERNS.get("transgender"))
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_transgender");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PT").define('P', ModItems.PATTERNS.get("philadelphia_pride"))
+                        .define('T', ModItems.PATTERNS.get("transmasc"))
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_transmasc");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("rainbow"), 1)
+                        .pattern("PRO").pattern("YGB").pattern(" U ").define('P', EMPTY_PATTERN)
+                        .define('R', Items.RED_DYE).define('O', Items.ORANGE_DYE)
+                        .define('Y', Items.YELLOW_DYE).define('G', Items.GREEN_DYE)
+                        .define('B', Items.BLUE_DYE).define('U', Items.PURPLE_DYE)
+                        .group("rainbow_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("transfem"), 1)
+                        .pattern("PLL").pattern(" II").define('P', EMPTY_PATTERN)
+                        .define('L', Items.LIGHT_BLUE_DYE).define('I', Items.PINK_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("transgender"), 1)
+                        .pattern("PLI").pattern("WIL").define('P', EMPTY_PATTERN)
+                        .define('L', Items.LIGHT_BLUE_DYE).define('I', Items.PINK_DYE)
+                        .define('W', Items.WHITE_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("transmasc"), 1)
+                        .pattern("PII").pattern(" LL").define('P', EMPTY_PATTERN)
+                        .define('L', Items.LIGHT_BLUE_DYE).define('I', Items.PINK_DYE)
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                // PRIDE CONVERSIONS
+                shapeless(recipeCategory, ModItems.PATTERNS.get("aroace"), 1)
+                        .requires(ModItems.PATTERNS.get("aromantic")).requires(ModItems.PATTERNS.get("asexual"))
+                        .unlockedBy("has_aromantic_pattern", has(ModItems.PATTERNS.get("aromantic")))
+                        .unlockedBy("has_asexual_pattern", has(ModItems.PATTERNS.get("asexual")))
+                        .group("aroace_pattern")
+                        .save(output, "aroace_pattern_from_aromantic_pattern_and_asexual_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("aroace"), 1)
+                        .requires(ModItems.PATTERNS.get("aromantic")).requires(ModItems.PATTERNS.get("asexual_new"))
+                        .unlockedBy("has_aromantic_pattern", has(ModItems.PATTERNS.get("aromantic")))
+                        .unlockedBy("has_asexual_new_pattern", has(ModItems.PATTERNS.get("asexual_new")))
+                        .group("aroace_pattern")
+                        .save(output, "aroace_pattern_from_aromantic_pattern_and_asexual_new_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("asexual"), 1)
+                        .requires(ModItems.PATTERNS.get("asexual_new"))
+                        .unlockedBy("has_asexual_new_pattern", has(ModItems.PATTERNS.get("asexual_new")))
+                        .group("asexual_pattern")
+                        .save(output, "asexual_pattern_from_asexual_new_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("asexual_new"), 1)
+                        .requires(ModItems.PATTERNS.get("asexual"))
+                        .unlockedBy("has_asexual_pattern", has(ModItems.PATTERNS.get("asexual")))
+                        .group("asexual_new_pattern")
+                        .save(output, "asexual_new_pattern_from_asexual_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("demiboy"), 1)
+                        .requires(ModItems.PATTERNS.get("demigender"))
+                        .requires(Items.LIGHT_BLUE_DYE)
+                        .unlockedBy("has_demigender_pattern", has(ModItems.PATTERNS.get("demigender")))
+                        .group("demiboy_pattern")
+                        .save(output, "demiboy_pattern_from_demigender_pattern_and_dye");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("demigender"), 1)
+                        .requires(ModItems.PATTERNS.get("demigirl"))
+                        .requires(Items.YELLOW_DYE)
+                        .unlockedBy("has_demigirl_pattern", has(ModItems.PATTERNS.get("demigirl")))
+                        .group("demigender_pattern")
+                        .save(output, "demigender_pattern_from_demigirl_pattern_and_dye");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("demigirl"), 1)
+                        .requires(ModItems.PATTERNS.get("demiboy"))
+                        .requires(Items.PINK_DYE)
+                        .unlockedBy("has_demiboy_pattern", has(ModItems.PATTERNS.get("demiboy")))
+                        .group("demigirl_pattern")
+                        .save(output, "demigirl_pattern_from_demiboy_pattern_and_dye");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("polyamory"), 1)
+                        .requires(ModItems.PATTERNS.get("polyamory_new"))
+                        .unlockedBy("has_polyamory_new_pattern", has(ModItems.PATTERNS.get("polyamory_new")))
+                        .group("polyamory_pattern")
+                        .save(output, "polyamory_pattern_from_polyamory_new_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("polyamory_new"), 1)
+                        .requires(ModItems.PATTERNS.get("polyamory"))
+                        .unlockedBy("has_polyamory_pattern", has(ModItems.PATTERNS.get("polyamory")))
+                        .group("polyamory_new_pattern")
+                        .save(output, "polyamory_new_pattern_from_polyamory_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("transfem"), 1)
+                        .requires(ModItems.PATTERNS.get("transmasc"))
+                        .unlockedBy("has_transmasc_pattern", has(ModItems.PATTERNS.get("transmasc")))
+                        .group("transfem_pattern")
+                        .save(output, "transfem_pattern_from_transmasc_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("transgender"), 1)
+                        .requires(ModItems.PATTERNS.get("transfem"))
+                        .requires(Items.WHITE_DYE)
+                        .unlockedBy("has_transfem_pattern", has(ModItems.PATTERNS.get("transfem")))
+                        .group("transgender_pattern")
+                        .save(output, "transgender_pattern_from_transfem_pattern_and_dye");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("transgender"), 1)
+                        .requires(ModItems.PATTERNS.get("transmasc"))
+                        .requires(Items.WHITE_DYE)
+                        .unlockedBy("has_transmasc_pattern", has(ModItems.PATTERNS.get("transmasc")))
+                        .group("transgender_pattern")
+                        .save(output, "transgender_pattern_from_transmasc_pattern_and_dye");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("transmasc"), 1)
+                        .requires(ModItems.PATTERNS.get("transgender"))
+                        .unlockedBy("has_transgender_pattern", has(ModItems.PATTERNS.get("transgender")))
+                        .group("transmasc_pattern")
+                        .save(output, "transmasc_pattern_from_transgender_pattern");
             }
         };
     }

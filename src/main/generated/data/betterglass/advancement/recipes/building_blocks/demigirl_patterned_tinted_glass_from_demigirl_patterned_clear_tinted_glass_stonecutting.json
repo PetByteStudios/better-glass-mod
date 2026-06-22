@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_demigirl_patterned_clear_tinted_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:demigirl_patterned_clear_tinted_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:demigirl_patterned_tinted_glass_from_demigirl_patterned_clear_tinted_glass_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_demigirl_patterned_clear_tinted_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:demigirl_patterned_tinted_glass_from_demigirl_patterned_clear_tinted_glass_stonecutting"
+    ]
+  }
+}

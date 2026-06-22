@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "polyamory_patterned_scratched_tinted_glass_pane",
+  "key": {
+    "G": "betterglass:polyamory_patterned_scratched_tinted_glass"
+  },
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "result": {
+    "count": 16,
+    "id": "betterglass:polyamory_patterned_scratched_tinted_glass_pane"
+  }
+}

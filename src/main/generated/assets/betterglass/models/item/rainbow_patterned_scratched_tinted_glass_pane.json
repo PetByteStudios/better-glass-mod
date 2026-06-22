@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "betterglass:block/rainbow_patterned_scratched_tinted_glass"
+  }
+}

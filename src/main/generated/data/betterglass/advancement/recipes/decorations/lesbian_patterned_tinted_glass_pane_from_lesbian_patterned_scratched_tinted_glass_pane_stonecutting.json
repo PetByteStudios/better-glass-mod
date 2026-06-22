@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lesbian_patterned_scratched_tinted_glass_pane": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:lesbian_patterned_scratched_tinted_glass_pane"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:lesbian_patterned_tinted_glass_pane_from_lesbian_patterned_scratched_tinted_glass_pane_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lesbian_patterned_scratched_tinted_glass_pane"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:lesbian_patterned_tinted_glass_pane_from_lesbian_patterned_scratched_tinted_glass_pane_stonecutting"
+    ]
+  }
+}

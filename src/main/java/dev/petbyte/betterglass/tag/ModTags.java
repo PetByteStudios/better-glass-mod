@@ -85,4 +85,8 @@ public class ModTags {
     public static final TagPair STAINED_SCRATCHED_TINTED_GLASS_BLOCK = TagPair.create("stained_scratched_tinted_glass_block");
     public static final TagPair STAINED_SCRATCHED_TINTED_GLASS_PANE = TagPair.create("stained_scratched_tinted_glass_pane");
     public static final TagPair STAINED_SCRATCHED_TINTED_GLASS_ALL = TagPair.create("stained_scratched_tinted_glass_all");
+
+    public static final TagPair ANY_PATTERNED_GLASS_BLOCK = TagPair.create("any_patterned_glass_block");
+    public static final TagPair ANY_PATTERNED_GLASS_PANE = TagPair.create("any_patterned_glass_pane");
+    public static final TagPair ANY_PATTERNED_GLASS_ALL = TagPair.create("any_patterned_glass_all");
 }

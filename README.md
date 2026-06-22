@@ -55,25 +55,25 @@ Please note that this roadmap is non-binding and has no specific time frame. Thi
     <details>
         <summary>Read More</summary>
     Currently, the Glasscutter is just a prettier Stonecutter. There is no functional difference.
-
-  In a future update, likely v1.3.0, the Glasscutter will gain independent functionality. When this happens, all Crafting Table recipes related to `betterglass` will be deleted (unless I decide against this).
-
-  The Glasscutter will be a Work Block all about Glass. It will be used to convert between Blocks and Panes; Clear, Scratched, Vanilla, and other types; Dye and Stain Glass; Tint and Un-Tint Glass; and maybe as a Villager Workstation, too.
+    
+    In a future update, likely v1.3.0, the Glasscutter will gain independent functionality. When this happens, all Crafting Table recipes related to `betterglass` will be deleted (unless I decide against this).
+    
+    The Glasscutter will be a Work Block all about Glass. It will be used to convert between Blocks and Panes; Clear, Scratched, Vanilla, and other types; Dye and Stain Glass; Tint and Un-Tint Glass; and maybe as a Villager Workstation, too.
     </details>
 - New Glass Variants
 - Split Connecting and Non-Connecting Glass
     <details>
         <summary>Read More</summary>
     As of v1.0.0, all Glass Blocks (`minecraft:` or `betterglass:`) automatically connect.
-
-  In a future version, all glass blocks will have separate Connecting and Non-Connecting variants. This will likely be done using a blockstate that can be modified with a new tool.
+    
+    In a future version, all glass blocks will have separate Connecting and Non-Connecting variants. This will likely be done using a blockstate that can be modified with a new tool.
     </details>
 - Pattern Station
     <details>
         <summary>Read More</summary>
     Currently, patterns are added in the Crafting Table, and specific patterns can be chosen for free in the Stonecutter.
 
-  This is purely temporary and will be changed with a new station.
+    This is purely temporary and will be changed with a new station.
     </details>
 
 ### 1.4.0

@@ -1,11 +1,13 @@
 package dev.petbyte.betterglass.datagen;
 
 import dev.petbyte.betterglass.block.ModBlocks;
+import dev.petbyte.betterglass.item.ModItems;
 import dev.petbyte.betterglass.tag.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import org.jspecify.annotations.NonNull;
 
@@ -21,8 +23,26 @@ public class ModLangProvider extends FabricLanguageProvider {
     @Override
     public void generateTranslations(HolderLookup.@NonNull Provider registryLookup, @NonNull TranslationBuilder translationBuilder) {
         for (Block block : ModBlocks.BETTER_GLASS_ALL) {
+            if (ModBlocks.BETTER_GLASS_PATTERNED_ALL.contains(block)) {
+                continue;
+            }
             String blockID = BuiltInRegistries.BLOCK.getKey(block).toString().replaceAll("(minecraft|betterglass):|vanilla_", "");
             String translation = capitalizeWords(blockID);
+            translationBuilder.add(block.getDescriptionId(), translation);
+        }
+
+        for (Item item : ModItems.ALL_ITEMS) {
+            String itemID = BuiltInRegistries.ITEM.getKey(item).toString().replace("betterglass:", "");
+            String translation = capitalizeWords(itemID);
+            translationBuilder.add(item.getDescriptionId(), translation);
+        }
+
+        for (Block block : ModBlocks.BETTER_GLASS_PATTERNED_ALL) {
+            String blockID = BuiltInRegistries.BLOCK.getKey(block).toString().replace("betterglass:", "");
+            String[] parts = blockID.split("_patterned_", 2);
+            String patternName = capitalizeWords(parts[0]);
+            String rest = capitalizeWords(parts[1]);
+            String translation = "Patterned %s (%s)".formatted(rest, patternName);
             translationBuilder.add(block.getDescriptionId(), translation);
         }
 
@@ -41,6 +61,7 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("container.betterglass.glasscutter.easter_egg.spacing","   ");
         translationBuilder.add("container.betterglass.glasscutter.easter_egg.text", "(aka. fancy stonecutter. soz)");
         translationBuilder.add("creativemodetab.betterglass.betterglass", "Better Glass");
+        translationBuilder.add("creativemodetab.betterglass.betterglass_patterned", "Better Glass (Patterned)");
         translationBuilder.add("creativemodetab.betterglass.betterglass_chiseled", "Better Glass (Chiseled)");
         translationBuilder.add("resourcePack.betterglass.connecting_textures.name", "Better Glass: Connecting Textures");
         translationBuilder.add("resourcePack.betterglass.connecting_textures.description", "Req. Continuity. Glass Pane Culling Fix compatible");

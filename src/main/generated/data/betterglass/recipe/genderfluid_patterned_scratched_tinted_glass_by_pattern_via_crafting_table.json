@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "genderfluid_patterned_scratched_tinted_glass",
+  "key": {
+    "G": "betterglass:scratched_tinted_glass",
+    "P": "betterglass:genderfluid_pattern"
+  },
+  "pattern": [
+    " G ",
+    "GPG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:genderfluid_patterned_scratched_tinted_glass"
+  }
+}

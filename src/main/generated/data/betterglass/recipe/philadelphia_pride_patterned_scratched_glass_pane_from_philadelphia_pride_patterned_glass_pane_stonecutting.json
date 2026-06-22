@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:philadelphia_pride_patterned_glass_pane",
+  "result": {
+    "id": "betterglass:philadelphia_pride_patterned_scratched_glass_pane"
+  }
+}

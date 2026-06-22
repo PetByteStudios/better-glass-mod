@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:transgender_pattern_from_transfem_pattern_and_dye"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_transfem_pattern": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:transfem_pattern"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_transfem_pattern"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:transgender_pattern_from_transfem_pattern_and_dye"
+    ]
+  }
+}

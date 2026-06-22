@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "asexual_pattern",
+  "ingredients": [
+    "betterglass:asexual_new_pattern"
+  ],
+  "result": {
+    "id": "betterglass:asexual_pattern"
+  }
+}

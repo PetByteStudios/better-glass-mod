@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "asexual_new_patterned_clear_glass",
+  "key": {
+    "G": "betterglass:asexual_new_patterned_glass"
+  },
+  "pattern": [
+    "GG",
+    "GG"
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:asexual_new_patterned_clear_glass"
+  }
+}

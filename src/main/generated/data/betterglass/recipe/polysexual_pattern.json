@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "minecraft:blue_dye",
+    "G": "minecraft:green_dye",
+    "I": "minecraft:pink_dye",
+    "P": "betterglass:empty_pattern"
+  },
+  "pattern": [
+    "PIG",
+    " B "
+  ],
+  "result": {
+    "id": "betterglass:polysexual_pattern"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "progress_pattern",
+  "key": {
+    "I": "minecraft:pink_dye",
+    "L": "minecraft:light_blue_dye",
+    "P": "betterglass:philadelphia_pride_pattern",
+    "W": "minecraft:white_dye"
+  },
+  "pattern": [
+    "PWI",
+    " L "
+  ],
+  "result": {
+    "id": "betterglass:progress_pattern"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_aromantic_patterned_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:aromantic_patterned_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:aromantic_patterned_clear_glass_from_aromantic_patterned_glass_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_aromantic_patterned_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:aromantic_patterned_clear_glass_from_aromantic_patterned_glass_stonecutting"
+    ]
+  }
+}

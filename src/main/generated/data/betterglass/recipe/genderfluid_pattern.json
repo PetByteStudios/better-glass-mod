@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "minecraft:black_dye",
+    "E": "minecraft:blue_dye",
+    "I": "minecraft:pink_dye",
+    "P": "betterglass:empty_pattern",
+    "U": "minecraft:purple_dye",
+    "W": "minecraft:white_dye"
+  },
+  "pattern": [
+    "PIW",
+    "UBE"
+  ],
+  "result": {
+    "id": "betterglass:genderfluid_pattern"
+  }
+}

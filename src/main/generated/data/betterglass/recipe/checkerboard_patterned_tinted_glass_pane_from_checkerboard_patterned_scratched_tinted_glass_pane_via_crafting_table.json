@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "checkerboard_patterned_tinted_glass_pane",
+  "key": {
+    "G": "betterglass:checkerboard_patterned_scratched_tinted_glass_pane"
+  },
+  "pattern": [
+    "GG",
+    "GG"
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:checkerboard_patterned_tinted_glass_pane"
+  }
+}

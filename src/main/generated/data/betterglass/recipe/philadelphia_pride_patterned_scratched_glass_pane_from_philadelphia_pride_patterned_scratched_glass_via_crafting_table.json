@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "philadelphia_pride_patterned_scratched_glass_pane",
+  "key": {
+    "G": "betterglass:philadelphia_pride_patterned_scratched_glass"
+  },
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "result": {
+    "count": 16,
+    "id": "betterglass:philadelphia_pride_patterned_scratched_glass_pane"
+  }
+}

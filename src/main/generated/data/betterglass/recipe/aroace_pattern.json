@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "aroace_pattern",
+  "key": {
+    "B": "minecraft:blue_dye",
+    "L": "minecraft:light_blue_dye",
+    "O": "minecraft:orange_dye",
+    "P": "betterglass:empty_pattern",
+    "W": "minecraft:white_dye",
+    "Y": "minecraft:yellow_dye"
+  },
+  "pattern": [
+    "POY",
+    "WLB"
+  ],
+  "result": {
+    "id": "betterglass:aroace_pattern"
+  }
+}

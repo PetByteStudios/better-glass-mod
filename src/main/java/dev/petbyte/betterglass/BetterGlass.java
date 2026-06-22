@@ -1,6 +1,7 @@
 package dev.petbyte.betterglass;
 
 import dev.petbyte.betterglass.block.ModBlocks;
+import dev.petbyte.betterglass.item.ModItems;
 import dev.petbyte.betterglass.tab.ModCreativeModeTabs;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
@@ -30,6 +31,7 @@ public class BetterGlass implements ModInitializer {
 		BetterGlass.LOGGER.info("Booting up %s %s".formatted(BetterGlass.MOD_ID, MOD_VERSION));
 		ModCreativeModeTabs.registerModCreativeModeTabs();
 		ModBlocks.registerModBlocks();
+		ModItems.registerModItems();
 		ModCommands.registerModCommands();
 	}
 }

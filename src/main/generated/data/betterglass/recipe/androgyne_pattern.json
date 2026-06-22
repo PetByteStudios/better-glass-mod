@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": "minecraft:cyan_dye",
+    "D": "minecraft:pink_dye",
+    "P": "betterglass:empty_pattern",
+    "U": "minecraft:purple_dye"
+  },
+  "pattern": [
+    "PDU",
+    " C "
+  ],
+  "result": {
+    "id": "betterglass:androgyne_pattern"
+  }
+}

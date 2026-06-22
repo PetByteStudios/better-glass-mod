@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "polyamory_pattern",
+  "key": {
+    "B": "minecraft:blue_dye",
+    "L": "minecraft:black_dye",
+    "P": "betterglass:empty_pattern",
+    "R": "minecraft:red_dye",
+    "Y": "minecraft:yellow_dye"
+  },
+  "pattern": [
+    "PBR",
+    " YL"
+  ],
+  "result": {
+    "id": "betterglass:polyamory_pattern"
+  }
+}

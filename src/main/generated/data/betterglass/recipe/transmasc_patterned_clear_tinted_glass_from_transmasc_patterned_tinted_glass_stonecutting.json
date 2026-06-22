@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:transmasc_patterned_tinted_glass",
+  "result": {
+    "id": "betterglass:transmasc_patterned_clear_tinted_glass"
+  }
+}

@@ -1,10 +1,13 @@
 package dev.petbyte.betterglass.datagen;
 
 import dev.petbyte.betterglass.block.ModBlocks;
+import dev.petbyte.betterglass.item.ModItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.world.item.Item;
 import org.jspecify.annotations.NonNull;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -24,5 +27,9 @@ public class ModModelProvider extends FabricModelProvider {
 
 
     @Override
-    public void generateItemModels(@NonNull ItemModelGenerators itemModelGenerators) { }
+    public void generateItemModels(@NonNull ItemModelGenerators itemModelGenerators) {
+        for (Item item : ModItems.ALL_ITEMS) {
+            itemModelGenerators.generateFlatItem(item, ModelTemplates.FLAT_ITEM);
+        }
+    }
 }

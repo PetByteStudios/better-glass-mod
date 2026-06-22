@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "minecraft:black_dye",
+    "L": "minecraft:light_gray_dye",
+    "P": "betterglass:empty_pattern",
+    "U": "minecraft:purple_dye",
+    "W": "minecraft:white_dye"
+  },
+  "pattern": [
+    "PW",
+    "BU",
+    " L"
+  ],
+  "result": {
+    "id": "betterglass:demisexual_pattern"
+  }
+}

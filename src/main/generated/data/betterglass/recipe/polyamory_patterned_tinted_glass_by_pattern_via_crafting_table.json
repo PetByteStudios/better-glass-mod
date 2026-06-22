@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "polyamory_patterned_tinted_glass",
+  "key": {
+    "G": "minecraft:tinted_glass",
+    "P": "betterglass:polyamory_pattern"
+  },
+  "pattern": [
+    " G ",
+    "GPG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:polyamory_patterned_tinted_glass"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:transmasc_patterned_clear_glass_pane",
+  "result": {
+    "id": "betterglass:transmasc_patterned_scratched_glass_pane"
+  }
+}

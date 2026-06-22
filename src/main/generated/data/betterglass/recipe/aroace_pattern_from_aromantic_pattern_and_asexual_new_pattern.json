@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "aroace_pattern",
+  "ingredients": [
+    "betterglass:aromantic_pattern",
+    "betterglass:asexual_new_pattern"
+  ],
+  "result": {
+    "id": "betterglass:aroace_pattern"
+  }
+}

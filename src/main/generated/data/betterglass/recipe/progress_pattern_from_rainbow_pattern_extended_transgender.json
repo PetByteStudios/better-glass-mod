@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "progress_pattern",
+  "key": {
+    "B": "minecraft:black_dye",
+    "P": "betterglass:rainbow_pattern",
+    "R": "minecraft:brown_dye",
+    "T": "betterglass:transgender_pattern"
+  },
+  "pattern": [
+    "PBR",
+    " T "
+  ],
+  "result": {
+    "id": "betterglass:progress_pattern"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "polysexual_patterned_clear_glass_pane",
+  "key": {
+    "G": "betterglass:polysexual_patterned_clear_tinted_glass_pane",
+    "H": "minecraft:honeycomb"
+  },
+  "pattern": [
+    " G ",
+    "GHG",
+    " G "
+  ],
+  "result": {
+    "count": 2,
+    "id": "betterglass:polysexual_patterned_clear_glass_pane"
+  }
+}

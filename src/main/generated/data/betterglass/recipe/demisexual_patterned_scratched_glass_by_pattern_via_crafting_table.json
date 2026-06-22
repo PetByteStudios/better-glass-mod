@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "demisexual_patterned_scratched_glass",
+  "key": {
+    "G": "betterglass:scratched_glass",
+    "P": "betterglass:demisexual_pattern"
+  },
+  "pattern": [
+    " G ",
+    "GPG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:demisexual_patterned_scratched_glass"
+  }
+}

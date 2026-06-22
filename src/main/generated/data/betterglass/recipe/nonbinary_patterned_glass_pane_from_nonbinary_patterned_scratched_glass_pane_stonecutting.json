@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterglass:nonbinary_patterned_scratched_glass_pane",
+  "result": {
+    "id": "betterglass:nonbinary_patterned_glass_pane"
+  }
+}

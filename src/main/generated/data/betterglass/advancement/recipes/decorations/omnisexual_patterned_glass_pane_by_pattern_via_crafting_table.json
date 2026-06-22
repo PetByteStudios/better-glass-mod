@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_betterglass:omnisexual_pattern": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:omnisexual_pattern"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_omnisexual_patterned_glass_pane": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:omnisexual_patterned_glass_pane"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:omnisexual_patterned_glass_pane_by_pattern_via_crafting_table"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_betterglass:omnisexual_pattern",
+      "has_omnisexual_patterned_glass_pane"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:omnisexual_patterned_glass_pane_by_pattern_via_crafting_table"
+    ]
+  }
+}

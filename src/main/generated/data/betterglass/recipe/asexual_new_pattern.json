@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "asexual_new_pattern",
+  "key": {
+    "B": "minecraft:black_dye",
+    "L": "minecraft:light_gray_dye",
+    "M": "minecraft:magenta_dye",
+    "P": "betterglass:empty_pattern",
+    "W": "minecraft:white_dye",
+    "Y": "minecraft:yellow_dye"
+  },
+  "pattern": [
+    "PBL",
+    "WYM"
+  ],
+  "result": {
+    "id": "betterglass:asexual_new_pattern"
+  }
+}

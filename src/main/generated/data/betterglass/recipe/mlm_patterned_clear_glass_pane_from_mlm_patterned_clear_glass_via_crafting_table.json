@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "mlm_patterned_clear_glass_pane",
+  "key": {
+    "G": "betterglass:mlm_patterned_clear_glass"
+  },
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "result": {
+    "count": 16,
+    "id": "betterglass:mlm_patterned_clear_glass_pane"
+  }
+}

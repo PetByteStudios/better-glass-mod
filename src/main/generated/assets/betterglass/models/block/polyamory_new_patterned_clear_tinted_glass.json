@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": {
+      "force_translucent": true,
+      "sprite": "betterglass:block/polyamory_new_patterned_clear_tinted_glass"
+    }
+  }
+}

@@ -162,6 +162,70 @@ public class ModBlocks {
     public static final List<Block> BETTER_GLASS_CHISELED_PANES = new ArrayList<>();
     public static final List<Block> BETTER_GLASS_CHISELED_ALL = new ArrayList<>();
 
+    public static final List<String> PATTERN_MOTIFS = new ArrayList<>(List.of(
+    /*Normal*/        "checkerboard", "null",
+    /*Pride A-Z*/     "agender", "androgyne", "aroace", "aromantic", "asexual", "asexual_new", "bigender", "bisexual",
+                      "demiboy", "demigender", "demigirl", "demiromantic", "demisexual", "genderfluid", "genderqueer",
+                      "intersex", "mlm", "lesbian", "neutrois", "nonbinary", "omnisexual", "pansexual", "philadelphia_pride",
+                      "polyamory", "polyamory_new", "polygender", "polysexual", "progress", "rainbow", "transfem", "transgender",
+                      "transmasc"
+    ));
+
+    private static final Map<String, MapColor> PATTERN_TO_MAP_COLOR = Map.ofEntries(
+            Map.entry("checkerboard", MapColor.SNOW),
+            Map.entry("null", MapColor.COLOR_MAGENTA),
+
+            Map.entry("agender", MapColor.GRASS),
+            Map.entry("androgyne", MapColor.DIAMOND),
+            Map.entry("aroace", MapColor.COLOR_ORANGE),
+            Map.entry("aromantic", MapColor.PLANT),
+            Map.entry("asexual", MapColor.COLOR_PURPLE),
+            Map.entry("asexual_new", MapColor.GOLD),
+            Map.entry("bigender", MapColor.COLOR_PINK),
+            Map.entry("bisexual", MapColor.COLOR_PURPLE),
+            Map.entry("demiboy", MapColor.DIAMOND),
+            Map.entry("demigender", MapColor.GOLD),
+            Map.entry("demigirl", MapColor.CRIMSON_STEM),
+            Map.entry("demiromantic", MapColor.PLANT),
+            Map.entry("demisexual", MapColor.COLOR_PURPLE),
+            Map.entry("genderfluid", MapColor.COLOR_MAGENTA),
+            Map.entry("genderqueer", MapColor.TERRACOTTA_MAGENTA),
+            Map.entry("intersex", MapColor.COLOR_YELLOW),
+            Map.entry("lesbian", MapColor.COLOR_ORANGE),
+            Map.entry("mlm", MapColor.LAPIS),
+            Map.entry("neutrois", MapColor.GRASS),
+            Map.entry("nonbinary", MapColor.COLOR_PURPLE),
+            Map.entry("omnisexual", MapColor.WARPED_HYPHAE),
+            Map.entry("pansexual", MapColor.COLOR_PINK),
+            Map.entry("philadelphia_pride", MapColor.TERRACOTTA_GRAY),
+            Map.entry("polyamory", MapColor.COLOR_RED),
+            Map.entry("polyamory_new", MapColor.COLOR_RED),
+            Map.entry("polygender", MapColor.TERRACOTTA_PINK),
+            Map.entry("polysexual", MapColor.COLOR_LIGHT_GREEN),
+            Map.entry("progress", MapColor.DIAMOND),
+            Map.entry("rainbow", MapColor.FIRE),
+            Map.entry("transfem", MapColor.COLOR_PINK),
+            Map.entry("transgender", MapColor.SNOW),
+            Map.entry("transmasc", MapColor.DIAMOND)
+    );
+
+    public static final Map<String, Block> PATTERNED_GLASS_BLOCKS =  new LinkedHashMap<>();
+    public static final Map<String, Block> PATTERNED_GLASS_PANES =  new LinkedHashMap<>();
+    public static final Map<String, Block> PATTERNED_CLEAR_GLASS_BLOCKS =  new LinkedHashMap<>();
+    public static final Map<String, Block> PATTERNED_CLEAR_GLASS_PANES =  new LinkedHashMap<>();
+    public static final Map<String, Block> PATTERNED_SCRATCHED_GLASS_BLOCKS =  new LinkedHashMap<>();
+    public static final Map<String, Block> PATTERNED_SCRATCHED_GLASS_PANES =  new LinkedHashMap<>();
+    public static final Map<String, Block> PATTERNED_TINTED_GLASS_BLOCKS =  new LinkedHashMap<>();
+    public static final Map<String, Block> PATTERNED_TINTED_GLASS_PANES =  new LinkedHashMap<>();
+    public static final Map<String, Block> PATTERNED_CLEAR_TINTED_GLASS_BLOCKS =  new LinkedHashMap<>();
+    public static final Map<String, Block> PATTERNED_CLEAR_TINTED_GLASS_PANES =  new LinkedHashMap<>();
+    public static final Map<String, Block> PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS =  new LinkedHashMap<>();
+    public static final Map<String, Block> PATTERNED_SCRATCHED_TINTED_GLASS_PANES =  new LinkedHashMap<>();
+
+    public static final List<Block> BETTER_GLASS_PATTERNED_BLOCKS = new ArrayList<>();
+    public static final List<Block> BETTER_GLASS_PATTERNED_PANES = new ArrayList<>();
+    public static final List<Block> BETTER_GLASS_PATTERNED_ALL = new ArrayList<>();
+
     public static final List<Block> BETTER_GLASS_BLOCKS = new ArrayList<>();
     public static final List<Block> BETTER_GLASS_PANES = new ArrayList<>();
     public static final List<Block> BETTER_GLASS_ALL = new ArrayList<>();
@@ -253,6 +317,36 @@ public class ModBlocks {
             STAINED_SCRATCHED_TINTED_GLASS_PANE.put(color, registerTintedGlassPane(color.getName() + "_stained_scratched_tinted_glass_pane", DYE_COLOR_TO_MAP_COLOR.get(color)));
         }
 
+        for (String motif : PATTERN_MOTIFS) {
+            PATTERNED_GLASS_BLOCKS.put(motif, registerGlassBlock("%s_patterned_glass".formatted(motif), PATTERN_TO_MAP_COLOR.get(motif)));
+            PATTERNED_GLASS_PANES.put(motif, registerIronBarsBlock("%s_patterned_glass_pane".formatted(motif), PATTERN_TO_MAP_COLOR.get(motif)));
+            PATTERNED_CLEAR_GLASS_BLOCKS.put(motif, registerGlassBlock("%s_patterned_clear_glass".formatted(motif), PATTERN_TO_MAP_COLOR.get(motif)));
+            PATTERNED_CLEAR_GLASS_PANES.put(motif, registerIronBarsBlock("%s_patterned_clear_glass_pane".formatted(motif), PATTERN_TO_MAP_COLOR.get(motif)));
+            PATTERNED_SCRATCHED_GLASS_BLOCKS.put(motif, registerGlassBlock("%s_patterned_scratched_glass".formatted(motif), PATTERN_TO_MAP_COLOR.get(motif)));
+            PATTERNED_SCRATCHED_GLASS_PANES.put(motif, registerIronBarsBlock("%s_patterned_scratched_glass_pane".formatted(motif), PATTERN_TO_MAP_COLOR.get(motif)));
+
+            PATTERNED_TINTED_GLASS_BLOCKS.put(motif, registerTintedGlassBlock("%s_patterned_tinted_glass".formatted(motif), PATTERN_TO_MAP_COLOR.get(motif)));
+            PATTERNED_TINTED_GLASS_PANES.put(motif, registerTintedGlassPane("%s_patterned_tinted_glass_pane".formatted(motif), PATTERN_TO_MAP_COLOR.get(motif)));
+            PATTERNED_CLEAR_TINTED_GLASS_BLOCKS.put(motif, registerTintedGlassBlock("%s_patterned_clear_tinted_glass".formatted(motif), PATTERN_TO_MAP_COLOR.get(motif)));
+            PATTERNED_CLEAR_TINTED_GLASS_PANES.put(motif, registerTintedGlassPane("%s_patterned_clear_tinted_glass_pane".formatted(motif), PATTERN_TO_MAP_COLOR.get(motif)));
+            PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS.put(motif, registerTintedGlassBlock("%s_patterned_scratched_tinted_glass".formatted(motif), PATTERN_TO_MAP_COLOR.get(motif)));
+            PATTERNED_SCRATCHED_TINTED_GLASS_PANES.put(motif, registerTintedGlassPane("%s_patterned_scratched_tinted_glass_pane".formatted(motif), PATTERN_TO_MAP_COLOR.get(motif)));
+
+            BETTER_GLASS_PATTERNED_BLOCKS.add(PATTERNED_GLASS_BLOCKS.get(motif));
+            BETTER_GLASS_PATTERNED_PANES.add(PATTERNED_GLASS_PANES.get(motif));
+            BETTER_GLASS_PATTERNED_BLOCKS.add(PATTERNED_CLEAR_GLASS_BLOCKS.get(motif));
+            BETTER_GLASS_PATTERNED_PANES.add(PATTERNED_CLEAR_GLASS_PANES.get(motif));
+            BETTER_GLASS_PATTERNED_BLOCKS.add(PATTERNED_SCRATCHED_GLASS_BLOCKS.get(motif));
+            BETTER_GLASS_PATTERNED_PANES.add(PATTERNED_SCRATCHED_GLASS_PANES.get(motif));
+
+            BETTER_GLASS_PATTERNED_BLOCKS.add(PATTERNED_TINTED_GLASS_BLOCKS.get(motif));
+            BETTER_GLASS_PATTERNED_PANES.add(PATTERNED_TINTED_GLASS_PANES.get(motif));
+            BETTER_GLASS_PATTERNED_BLOCKS.add(PATTERNED_CLEAR_TINTED_GLASS_BLOCKS.get(motif));
+            BETTER_GLASS_PATTERNED_PANES.add(PATTERNED_CLEAR_TINTED_GLASS_PANES.get(motif));
+            BETTER_GLASS_PATTERNED_BLOCKS.add(PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS.get(motif));
+            BETTER_GLASS_PATTERNED_PANES.add(PATTERNED_SCRATCHED_TINTED_GLASS_PANES.get(motif));
+        }
+
         BETTER_GLASS_NORMAL_BLOCKS.addAll(COLORED_CLEAR_GLASS.values());
         BETTER_GLASS_NORMAL_BLOCKS.addAll(STAINED_CLEAR_GLASS.values());
         BETTER_GLASS_NORMAL_BLOCKS.addAll(COLORED_SCRATCHED_GLASS.values());
@@ -330,11 +424,17 @@ public class ModBlocks {
         BETTER_GLASS_CHISELED_ALL.addAll(BETTER_GLASS_CHISELED_BLOCKS);
         BETTER_GLASS_CHISELED_ALL.addAll(BETTER_GLASS_CHISELED_PANES);
 
+        BETTER_GLASS_PATTERNED_ALL.addAll(BETTER_GLASS_PATTERNED_BLOCKS);
+        BETTER_GLASS_PATTERNED_ALL.addAll(BETTER_GLASS_PATTERNED_PANES);
+
         BETTER_GLASS_BLOCKS.addAll(BETTER_GLASS_NORMAL_BLOCKS);
         BETTER_GLASS_PANES.addAll(BETTER_GLASS_NORMAL_PANES);
 
         BETTER_GLASS_BLOCKS.addAll(BETTER_GLASS_CHISELED_BLOCKS);
         BETTER_GLASS_PANES.addAll(BETTER_GLASS_CHISELED_PANES);
+
+        BETTER_GLASS_BLOCKS.addAll(BETTER_GLASS_PATTERNED_BLOCKS);
+        BETTER_GLASS_PANES.addAll(BETTER_GLASS_PATTERNED_PANES);
 
         BETTER_GLASS_PANES.add(TINTED_GLASS_PANE); // dumb hack but idc
 

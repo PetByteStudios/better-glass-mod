@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_empty_pattern": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:empty_pattern"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:progress_pattern_from_philadelphia_pride_pattern_extended_transmasc"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_empty_pattern"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:progress_pattern_from_philadelphia_pride_pattern_extended_transmasc"
+    ]
+  }
+}

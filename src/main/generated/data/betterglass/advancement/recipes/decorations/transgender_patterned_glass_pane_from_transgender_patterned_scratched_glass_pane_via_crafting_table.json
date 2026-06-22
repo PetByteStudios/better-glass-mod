@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:transgender_patterned_glass_pane_from_transgender_patterned_scratched_glass_pane_via_crafting_table"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_transgender_patterned_scratched_glass_pane": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:transgender_patterned_scratched_glass_pane"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_transgender_patterned_scratched_glass_pane"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:transgender_patterned_glass_pane_from_transgender_patterned_scratched_glass_pane_via_crafting_table"
+    ]
+  }
+}

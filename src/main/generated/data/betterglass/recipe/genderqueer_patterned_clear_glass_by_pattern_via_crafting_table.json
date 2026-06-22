@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "genderqueer_patterned_clear_glass",
+  "key": {
+    "G": "betterglass:clear_glass",
+    "P": "betterglass:genderqueer_pattern"
+  },
+  "pattern": [
+    " G ",
+    "GPG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:genderqueer_patterned_clear_glass"
+  }
+}

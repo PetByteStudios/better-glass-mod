@@ -288,6 +288,28 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .addTag(ModTags.STAINED_SCRATCHED_TINTED_GLASS_PANE.block());
 
 
+        for (String motif : ModBlocks.PATTERN_MOTIFS) {
+            valueLookupBuilder(ModTags.ANY_PATTERNED_GLASS_BLOCK.block())
+                    .add(ModBlocks.PATTERNED_GLASS_BLOCKS.get(motif))
+                    .add(ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS.get(motif))
+                    .add(ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS.get(motif))
+                    .add(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS.get(motif))
+                    .add(ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS.get(motif))
+                    .add(ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS.get(motif));
+
+            valueLookupBuilder(ModTags.ANY_PATTERNED_GLASS_PANE.block())
+                    .add(ModBlocks.PATTERNED_GLASS_PANES.get(motif))
+                    .add(ModBlocks.PATTERNED_CLEAR_GLASS_PANES.get(motif))
+                    .add(ModBlocks.PATTERNED_SCRATCHED_GLASS_PANES.get(motif))
+                    .add(ModBlocks.PATTERNED_TINTED_GLASS_PANES.get(motif))
+                    .add(ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_PANES.get(motif))
+                    .add(ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_PANES.get(motif));
+        }
+        valueLookupBuilder(ModTags.ANY_PATTERNED_GLASS_ALL.block())
+                .addTag(ModTags.ANY_PATTERNED_GLASS_BLOCK.block())
+                .addTag(ModTags.ANY_PATTERNED_GLASS_PANE.block());
+
+
         valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.GLASSCUTTER);
     }
 }

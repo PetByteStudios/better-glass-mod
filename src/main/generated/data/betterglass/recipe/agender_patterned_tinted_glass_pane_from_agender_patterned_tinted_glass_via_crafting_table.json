@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "agender_patterned_tinted_glass_pane",
+  "key": {
+    "G": "betterglass:agender_patterned_tinted_glass"
+  },
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "result": {
+    "count": 16,
+    "id": "betterglass:agender_patterned_tinted_glass_pane"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_asexual_patterned_clear_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:asexual_patterned_clear_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:asexual_patterned_glass_from_asexual_patterned_clear_glass_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_asexual_patterned_clear_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:asexual_patterned_glass_from_asexual_patterned_clear_glass_stonecutting"
+    ]
+  }
+}

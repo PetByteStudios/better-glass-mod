@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_amethyst_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:amethyst_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bisexual_patterned_scratched_glass_pane": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:bisexual_patterned_scratched_glass_pane"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:bisexual_patterned_scratched_tinted_glass_pane_from_bisexual_patterned_scratched_glass_pane_via_crafting_table"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bisexual_patterned_scratched_glass_pane",
+      "has_amethyst_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:bisexual_patterned_scratched_tinted_glass_pane_from_bisexual_patterned_scratched_glass_pane_via_crafting_table"
+    ]
+  }
+}

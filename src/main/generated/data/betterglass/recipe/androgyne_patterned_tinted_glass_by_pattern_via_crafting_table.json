@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "androgyne_patterned_tinted_glass",
+  "key": {
+    "G": "minecraft:tinted_glass",
+    "P": "betterglass:androgyne_pattern"
+  },
+  "pattern": [
+    " G ",
+    "GPG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:androgyne_patterned_tinted_glass"
+  }
+}

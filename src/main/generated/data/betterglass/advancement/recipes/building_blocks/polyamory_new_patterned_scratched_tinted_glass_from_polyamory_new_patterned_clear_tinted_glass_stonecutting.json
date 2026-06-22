@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polyamory_new_patterned_clear_tinted_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:polyamory_new_patterned_clear_tinted_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:polyamory_new_patterned_scratched_tinted_glass_from_polyamory_new_patterned_clear_tinted_glass_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polyamory_new_patterned_clear_tinted_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:polyamory_new_patterned_scratched_tinted_glass_from_polyamory_new_patterned_clear_tinted_glass_stonecutting"
+    ]
+  }
+}

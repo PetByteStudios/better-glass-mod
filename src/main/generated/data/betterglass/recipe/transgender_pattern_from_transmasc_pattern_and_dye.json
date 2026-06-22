@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "transgender_pattern",
+  "ingredients": [
+    "betterglass:transmasc_pattern",
+    "minecraft:white_dye"
+  ],
+  "result": {
+    "id": "betterglass:transgender_pattern"
+  }
+}

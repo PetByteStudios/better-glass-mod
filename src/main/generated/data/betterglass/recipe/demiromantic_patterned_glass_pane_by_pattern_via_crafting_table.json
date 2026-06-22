@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "demiromantic_patterned_glass_pane",
+  "key": {
+    "G": "minecraft:glass_pane",
+    "P": "betterglass:demiromantic_pattern"
+  },
+  "pattern": [
+    " G ",
+    "GPG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterglass:demiromantic_patterned_glass_pane"
+  }
+}
