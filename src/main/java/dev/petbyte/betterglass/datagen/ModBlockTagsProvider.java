@@ -55,6 +55,7 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
             if (ModBlockLootTableProvider.isTinted(block)) {
                 builder(ConventionalBlockTags.GLASS_BLOCKS_TINTED).add(blockKey(block));
             } else {
+                if (ModBlocks.BETTER_GLASS_PATTERNED_ALL.contains(block)) { continue; }
                 builder(ConventionalBlockTags.GLASS_BLOCKS_CHEAP).add(blockKey(block));
             }
         }

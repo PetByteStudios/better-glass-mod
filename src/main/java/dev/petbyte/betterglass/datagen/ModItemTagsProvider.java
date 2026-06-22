@@ -34,6 +34,7 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
             if (ModBlockLootTableProvider.isTinted(block)) {
                 builder(ConventionalItemTags.GLASS_BLOCKS_TINTED).add(itemKey(block.asItem()));
             } else {
+                if (ModBlocks.BETTER_GLASS_PATTERNED_ALL.contains(block)) { continue; }
                 builder(ConventionalItemTags.GLASS_BLOCKS_CHEAP).add(itemKey(block.asItem()));
             }
         }
