@@ -3,7 +3,8 @@
   "category": "equipment",
   "group": "transgender_pattern",
   "ingredients": [
-    "betterglass:transfem_pattern"
+    "betterglass:transfem_pattern",
+    "minecraft:white_dye"
   ],
   "result": {
     "id": "betterglass:transgender_pattern"

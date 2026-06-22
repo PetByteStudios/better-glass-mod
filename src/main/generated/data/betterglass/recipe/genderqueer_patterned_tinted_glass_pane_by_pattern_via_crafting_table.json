@@ -1,11 +1,17 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "group": "genderqueer_patterned_tinted_glass_pane",
-  "ingredients": [
-    "betterglass:tinted_glass_pane",
-    "betterglass:genderqueer_pattern"
+  "key": {
+    "G": "betterglass:tinted_glass_pane",
+    "P": "betterglass:genderqueer_pattern"
+  },
+  "pattern": [
+    " G ",
+    "GPG",
+    " G "
   ],
   "result": {
+    "count": 4,
     "id": "betterglass:genderqueer_patterned_tinted_glass_pane"
   }
 }

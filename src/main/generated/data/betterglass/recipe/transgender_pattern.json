@@ -9,7 +9,7 @@
   },
   "pattern": [
     "PLI",
-    " W "
+    "WIL"
   ],
   "result": {
     "id": "betterglass:transgender_pattern"

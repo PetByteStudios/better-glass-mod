@@ -594,7 +594,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         Block result = BuiltInRegistries.BLOCK.get(Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID,
                                 "%s_patterned_%s".formatted(pattern, inputID))).map(Holder.Reference::value).orElseThrow();
                         String resultID = BuiltInRegistries.BLOCK.getKey(result).toString().replace("betterglass:", "");
-                        shapeless(recipeCategory, result, 1).requires(input).requires(patternItem)
+                        shaped(recipeCategory, result, 4).pattern(" G ").pattern("GPG").pattern(" G ")
+                                .define('G', input).define('P', patternItem)
                                 .unlockedBy("has_%s".formatted(patternItem), has(patternItem)).unlockedBy("has_%s".formatted(resultID), has(result))
                                 .group(resultID).save(output, "%s_by_pattern_via_crafting_table".formatted(resultID));
                     }
@@ -645,7 +646,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 RecipeCategory recipeCategory = RecipeCategory.TOOLS;
                 Item EMPTY_PATTERN = ModItems.EMPTY_PATTERN;
                 // EMPTY
-                shapeless(recipeCategory, EMPTY_PATTERN, 1).unlockedBy("has_paper", has(Items.PAPER))
+                shapeless(recipeCategory, EMPTY_PATTERN, 4).unlockedBy("has_paper", has(Items.PAPER))
                         .requires(Items.PAPER).requires(Items.FEATHER).requires(ConventionalItemTags.GLASS_BLOCKS)
                         .unlockedBy("has_any_glass", has(ConventionalItemTags.GLASS_BLOCKS))
                         .save(output);
@@ -900,7 +901,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
 
                 shaped(recipeCategory, ModItems.PATTERNS.get("transgender"), 1)
-                        .pattern("PLI").pattern(" W ").define('P', EMPTY_PATTERN)
+                        .pattern("PLI").pattern("WIL").define('P', EMPTY_PATTERN)
                         .define('L', Items.DYE.lightBlue()).define('I', Items.DYE.pink())
                         .define('W', Items.DYE.white())
                         .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
@@ -939,21 +940,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 shapeless(recipeCategory, ModItems.PATTERNS.get("demiboy"), 1)
                         .requires(ModItems.PATTERNS.get("demigender"))
+                        .requires(Items.DYE.lightBlue())
                         .unlockedBy("has_demigender_pattern", has(ModItems.PATTERNS.get("demigender")))
                         .group("demiboy_pattern")
-                        .save(output, "demiboy_pattern_from_demigender_pattern");
+                        .save(output, "demiboy_pattern_from_demigender_pattern_and_dye");
 
                 shapeless(recipeCategory, ModItems.PATTERNS.get("demigender"), 1)
                         .requires(ModItems.PATTERNS.get("demigirl"))
+                        .requires(Items.DYE.yellow())
                         .unlockedBy("has_demigirl_pattern", has(ModItems.PATTERNS.get("demigirl")))
                         .group("demigender_pattern")
-                        .save(output, "demigender_pattern_from_demigirl_pattern");
+                        .save(output, "demigender_pattern_from_demigirl_pattern_and_dye");
 
                 shapeless(recipeCategory, ModItems.PATTERNS.get("demigirl"), 1)
                         .requires(ModItems.PATTERNS.get("demiboy"))
+                        .requires(Items.DYE.pink())
                         .unlockedBy("has_demiboy_pattern", has(ModItems.PATTERNS.get("demiboy")))
                         .group("demigirl_pattern")
-                        .save(output, "demigirl_pattern_from_demiboy_pattern");
+                        .save(output, "demigirl_pattern_from_demiboy_pattern_and_dye");
 
                 shapeless(recipeCategory, ModItems.PATTERNS.get("polyamory"), 1)
                         .requires(ModItems.PATTERNS.get("polyamory_new"))
@@ -967,24 +971,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .group("polyamory_new_pattern")
                         .save(output, "polyamory_new_pattern_from_polyamory_pattern");
 
-                shapeless(recipeCategory, ModItems.PATTERNS.get("rainbow"), 1)
-                        .requires(ModItems.PATTERNS.get("progress"))
-                        .unlockedBy("has_progress_pattern", has(ModItems.PATTERNS.get("progress")))
-                        .group("rainbow_pattern")
-                        .save(output, "rainbow_pattern_from_progress_pattern");
-
-                shapeless(recipeCategory, ModItems.PATTERNS.get("philadelphia_pride"), 1)
-                        .requires(ModItems.PATTERNS.get("rainbow"))
-                        .unlockedBy("has_rainbow_pattern", has(ModItems.PATTERNS.get("rainbow")))
-                        .group("philadelphia_pride_pattern")
-                        .save(output, "philadelphia_pride_pattern_from_rainbow_pattern");
-
-                shapeless(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
-                        .requires(ModItems.PATTERNS.get("philadelphia_pride"))
-                        .unlockedBy("has_philadelphia_pride_pattern", has(ModItems.PATTERNS.get("philadelphia_pride")))
-                        .group("progress_pattern")
-                        .save(output, "progress_pattern_from_philadelphia_pride_pattern");
-
                 shapeless(recipeCategory, ModItems.PATTERNS.get("transfem"), 1)
                         .requires(ModItems.PATTERNS.get("transmasc"))
                         .unlockedBy("has_transmasc_pattern", has(ModItems.PATTERNS.get("transmasc")))
@@ -993,9 +979,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 shapeless(recipeCategory, ModItems.PATTERNS.get("transgender"), 1)
                         .requires(ModItems.PATTERNS.get("transfem"))
+                        .requires(Items.DYE.white())
                         .unlockedBy("has_transfem_pattern", has(ModItems.PATTERNS.get("transfem")))
                         .group("transgender_pattern")
-                        .save(output, "transgender_pattern_from_transfem_pattern");
+                        .save(output, "transgender_pattern_from_transfem_pattern_and_dye");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("transgender"), 1)
+                        .requires(ModItems.PATTERNS.get("transmasc"))
+                        .requires(Items.DYE.white())
+                        .unlockedBy("has_transmasc_pattern", has(ModItems.PATTERNS.get("transmasc")))
+                        .group("transgender_pattern")
+                        .save(output, "transgender_pattern_from_transmasc_pattern_and_dye");
 
                 shapeless(recipeCategory, ModItems.PATTERNS.get("transmasc"), 1)
                         .requires(ModItems.PATTERNS.get("transgender"))

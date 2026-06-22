@@ -1,11 +1,17 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "group": "pansexual_patterned_tinted_glass_pane",
-  "ingredients": [
-    "betterglass:tinted_glass_pane",
-    "betterglass:pansexual_pattern"
+  "key": {
+    "G": "betterglass:tinted_glass_pane",
+    "P": "betterglass:pansexual_pattern"
+  },
+  "pattern": [
+    " G ",
+    "GPG",
+    " G "
   ],
   "result": {
+    "count": 4,
     "id": "betterglass:pansexual_patterned_tinted_glass_pane"
   }
 }

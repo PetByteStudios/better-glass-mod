@@ -3,7 +3,8 @@
   "category": "equipment",
   "group": "demigirl_pattern",
   "ingredients": [
-    "betterglass:demiboy_pattern"
+    "betterglass:demiboy_pattern",
+    "minecraft:pink_dye"
   ],
   "result": {
     "id": "betterglass:demigirl_pattern"

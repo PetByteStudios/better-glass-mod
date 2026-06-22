@@ -1,12 +1,18 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "building",
   "group": "nonbinary_patterned_tinted_glass",
-  "ingredients": [
-    "minecraft:tinted_glass",
-    "betterglass:nonbinary_pattern"
+  "key": {
+    "G": "minecraft:tinted_glass",
+    "P": "betterglass:nonbinary_pattern"
+  },
+  "pattern": [
+    " G ",
+    "GPG",
+    " G "
   ],
   "result": {
+    "count": 4,
     "id": "betterglass:nonbinary_patterned_tinted_glass"
   }
 }
