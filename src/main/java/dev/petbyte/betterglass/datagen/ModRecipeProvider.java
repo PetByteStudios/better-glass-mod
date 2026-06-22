@@ -312,22 +312,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 untintGlass(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_GLASS, RecipeCategory.BUILDING_BLOCKS);
                 untintGlass(ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_GLASS_PANE, RecipeCategory.DECORATIONS);
 
-                System.out.println("patternize");
                 patternizeGlass(List.of(Blocks.GLASS, ModBlocks.CLEAR_GLASS, ModBlocks.SCRATCHED_GLASS,
                         Blocks.TINTED_GLASS, ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.SCRATCHED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
                 patternizeGlass(List.of(Blocks.GLASS_PANE, ModBlocks.CLEAR_GLASS_PANE, ModBlocks.SCRATCHED_GLASS_PANE,
                         ModBlocks.TINTED_GLASS_PANE, ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.SCRATCHED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
 
-                System.out.println("blocktopane");
                 blockToPaneCraftingTable(ModBlocks.BETTER_GLASS_PATTERNED_BLOCKS, ModBlocks.BETTER_GLASS_PATTERNED_PANES);
 
-                System.out.println("cyclecraft");
                 cycleThroughBlocksCraftingTablePatterned(List.of(ModBlocks.PATTERNED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS), RecipeCategory.BUILDING_BLOCKS);
                 cycleThroughBlocksCraftingTablePatterned(List.of(ModBlocks.PATTERNED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_GLASS_PANES), RecipeCategory.DECORATIONS);
                 cycleThroughBlocksCraftingTablePatterned(List.of(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS), RecipeCategory.BUILDING_BLOCKS);
                 cycleThroughBlocksCraftingTablePatterned(List.of(ModBlocks.PATTERNED_TINTED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_PANES), RecipeCategory.DECORATIONS);
 
-                System.out.println("tint");
                 tintGlass(List.of(ModBlocks.PATTERNED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS),
                         List.of(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS),
                         RecipeCategory.BUILDING_BLOCKS);
@@ -335,7 +331,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         List.of(ModBlocks.PATTERNED_TINTED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_PANES),
                         RecipeCategory.DECORATIONS);
 
-                System.out.println("untint");
                 untintGlass(List.of(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS),
                         List.of(ModBlocks.PATTERNED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS),
                         RecipeCategory.BUILDING_BLOCKS);
@@ -343,7 +338,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         List.of(ModBlocks.PATTERNED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_GLASS_PANES),
                         RecipeCategory.DECORATIONS);
 
-                System.out.println("stonecutter");
                 blockSwapStonecutterPatterned(List.of(ModBlocks.PATTERNED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_GLASS_BLOCKS), RecipeCategory.BUILDING_BLOCKS);
                 blockSwapStonecutterPatterned(List.of(ModBlocks.PATTERNED_GLASS_PANES, ModBlocks.PATTERNED_CLEAR_GLASS_PANES, ModBlocks.PATTERNED_SCRATCHED_GLASS_PANES), RecipeCategory.DECORATIONS);
                 blockSwapStonecutterPatterned(List.of(ModBlocks.PATTERNED_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_CLEAR_TINTED_GLASS_BLOCKS, ModBlocks.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCKS), RecipeCategory.BUILDING_BLOCKS);
