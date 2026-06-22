@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polyamory_new_pattern": {
+      "conditions": {
+        "items": [
+          {
+            "items": "betterglass:polyamory_new_pattern"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterglass:polyamory_pattern_from_polyamory_new_pattern"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polyamory_new_pattern"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterglass:polyamory_pattern_from_polyamory_new_pattern"
+    ]
+  }
+}

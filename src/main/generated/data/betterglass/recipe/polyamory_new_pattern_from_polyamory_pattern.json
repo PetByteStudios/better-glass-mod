@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "polyamory_new_pattern",
+  "ingredients": [
+    "betterglass:polyamory_pattern"
+  ],
+  "result": {
+    "id": "betterglass:polyamory_new_pattern"
+  }
+}

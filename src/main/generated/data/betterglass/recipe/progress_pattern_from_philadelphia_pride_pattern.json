@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "progress_pattern",
+  "ingredients": [
+    "betterglass:philadelphia_pride_pattern"
+  ],
+  "result": {
+    "id": "betterglass:progress_pattern"
+  }
+}

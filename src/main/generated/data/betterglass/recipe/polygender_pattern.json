@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "minecraft:black_dye",
+    "I": "minecraft:pink_dye",
+    "L": "minecraft:light_gray_dye",
+    "P": "betterglass:empty_pattern",
+    "U": "minecraft:light_blue_dye",
+    "Y": "minecraft:yellow_dye"
+  },
+  "pattern": [
+    "PBL",
+    "IYU"
+  ],
+  "result": {
+    "id": "betterglass:polygender_pattern"
+  }
+}

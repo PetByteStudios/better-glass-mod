@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "P": "betterglass:empty_pattern",
+    "U": "minecraft:purple_dye",
+    "Y": "minecraft:yellow_dye"
+  },
+  "pattern": [
+    "PYU"
+  ],
+  "result": {
+    "id": "betterglass:intersex_pattern"
+  }
+}

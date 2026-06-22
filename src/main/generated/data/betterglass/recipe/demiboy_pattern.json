@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "demiboy_pattern",
+  "key": {
+    "B": "minecraft:light_blue_dye",
+    "G": "minecraft:gray_dye",
+    "L": "minecraft:light_gray_dye",
+    "P": "betterglass:empty_pattern"
+  },
+  "pattern": [
+    "PGL",
+    " B "
+  ],
+  "result": {
+    "id": "betterglass:demiboy_pattern"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "demiboy_pattern",
+  "ingredients": [
+    "betterglass:demigender_pattern"
+  ],
+  "result": {
+    "id": "betterglass:demiboy_pattern"
+  }
+}

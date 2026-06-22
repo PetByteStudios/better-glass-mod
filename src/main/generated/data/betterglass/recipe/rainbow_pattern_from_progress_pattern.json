@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "rainbow_pattern",
+  "ingredients": [
+    "betterglass:progress_pattern"
+  ],
+  "result": {
+    "id": "betterglass:rainbow_pattern"
+  }
+}

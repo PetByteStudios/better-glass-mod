@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "demigirl_pattern",
+  "key": {
+    "G": "minecraft:gray_dye",
+    "I": "minecraft:pink_dye",
+    "L": "minecraft:light_gray_dye",
+    "P": "betterglass:empty_pattern"
+  },
+  "pattern": [
+    "PGL",
+    " I "
+  ],
+  "result": {
+    "id": "betterglass:demigirl_pattern"
+  }
+}

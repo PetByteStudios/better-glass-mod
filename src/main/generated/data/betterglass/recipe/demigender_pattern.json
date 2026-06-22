@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "demigender_pattern",
+  "key": {
+    "G": "minecraft:gray_dye",
+    "L": "minecraft:light_gray_dye",
+    "P": "betterglass:empty_pattern",
+    "Y": "minecraft:yellow_dye"
+  },
+  "pattern": [
+    "PGL",
+    " Y "
+  ],
+  "result": {
+    "id": "betterglass:demigender_pattern"
+  }
+}

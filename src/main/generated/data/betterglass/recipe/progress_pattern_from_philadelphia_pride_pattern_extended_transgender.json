@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "P": "betterglass:philadelphia_pride_pattern",
+    "T": "betterglass:transgender_pattern"
+  },
+  "pattern": [
+    "PT"
+  ],
+  "result": {
+    "id": "betterglass:progress_pattern"
+  }
+}

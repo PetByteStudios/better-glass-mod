@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "minecraft:paper",
+    "minecraft:feather",
+    "#c:glass_blocks"
+  ],
+  "result": {
+    "id": "betterglass:empty_pattern"
+  }
+}

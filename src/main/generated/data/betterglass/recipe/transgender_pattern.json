@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": "minecraft:pink_dye",
+    "L": "minecraft:light_blue_dye",
+    "P": "betterglass:empty_pattern",
+    "W": "minecraft:white_dye"
+  },
+  "pattern": [
+    "PLI",
+    " W "
+  ],
+  "result": {
+    "id": "betterglass:transgender_pattern"
+  }
+}

@@ -367,6 +367,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 blockSwapStonecutterDyed(List.of(ModBlocks.COLORED_CLEAR_TINTED_GLASS_PANE, ModBlocks.COLORED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.COLORED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
                 blockSwapStonecutterDyed(List.of(ModBlocks.STAINED_CLEAR_TINTED_GLASS, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS, ModBlocks.STAINED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
                 blockSwapStonecutterDyed(List.of(ModBlocks.STAINED_CLEAR_TINTED_GLASS_PANE, ModBlocks.STAINED_SCRATCHED_TINTED_GLASS_PANE, ModBlocks.STAINED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
+
+                addPatternRecipes();
             }
 
 
@@ -637,6 +639,369 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         }
                     }
                 }
+            }
+
+            private void addPatternRecipes() {
+                RecipeCategory recipeCategory = RecipeCategory.TOOLS;
+                Item EMPTY_PATTERN = ModItems.EMPTY_PATTERN;
+                // EMPTY
+                shapeless(recipeCategory, EMPTY_PATTERN, 1).unlockedBy("has_paper", has(Items.PAPER))
+                        .requires(Items.PAPER).requires(Items.FEATHER).requires(ConventionalItemTags.GLASS_BLOCKS)
+                        .unlockedBy("has_any_glass", has(ConventionalItemTags.GLASS_BLOCKS))
+                        .save(output);
+
+                // NON-PRIDE
+                shaped(recipeCategory, ModItems.PATTERNS.get("checkerboard"), 1)
+                        .pattern("PBW").pattern(" WB").define('P', EMPTY_PATTERN)
+                        .define('B', Items.DYE.black()).define('W', Items.DYE.white())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("null"), 1)
+                        .pattern("PBM").pattern(" MB").define('P', EMPTY_PATTERN)
+                        .define('B', Items.DYE.black()).define('M', Items.DYE.magenta())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                // PRIDE
+                shaped(recipeCategory, ModItems.PATTERNS.get("agender"), 1)
+                        .pattern("PBL").pattern(" W ").define('P', EMPTY_PATTERN)
+                        .define('B', Items.DYE.black()).define('L', Items.DYE.lime())
+                        .define('W', Items.DYE.white())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("androgyne"), 1)
+                        .pattern("PDU").pattern(" C ").define('P', EMPTY_PATTERN)
+                        .define('D', Items.DYE.pink()).define('U', Items.DYE.purple())
+                        .define('C', Items.DYE.cyan())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("aroace"), 1)
+                        .pattern("POY").pattern("WLB").define('P', EMPTY_PATTERN)
+                        .define('O', Items.DYE.orange()).define('Y', Items.DYE.yellow())
+                        .define('W', Items.DYE.white()).define('L', Items.DYE.lightBlue())
+                        .define('B', Items.DYE.blue()).group("aroace_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("aromantic"), 1)
+                        .pattern("PGL").pattern("WIB").define('P', EMPTY_PATTERN)
+                        .define('G', Items.DYE.green()).define('L', Items.DYE.lime())
+                        .define('W', Items.DYE.white()).define('I', Items.DYE.lightGray())
+                        .define('B', Items.DYE.black())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("asexual"), 1)
+                        .pattern("PBL").pattern(" WU").define('P', EMPTY_PATTERN)
+                        .define('B', Items.DYE.black()).define('L', Items.DYE.lightGray())
+                        .define('W', Items.DYE.white()).define('U', Items.DYE.purple())
+                        .group("asexual_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("asexual_new"), 1)
+                        .pattern("PBL").pattern("WYM").define('P', EMPTY_PATTERN)
+                        .define('B', Items.DYE.black()).define('L', Items.DYE.lightGray())
+                        .define('W', Items.DYE.white()).define('Y', Items.DYE.yellow())
+                        .define('M', Items.DYE.magenta()).group("asexual_new_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("bigender"), 1)
+                        .pattern("PIW").pattern(" LB").define('P', EMPTY_PATTERN)
+                        .define('I', Items.DYE.pink()).define('W', Items.DYE.white())
+                        .define('L', Items.DYE.lightBlue()).define('B', Items.DYE.blue())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("bisexual"), 1)
+                        .pattern("PIM").pattern(" B ").define('P', EMPTY_PATTERN)
+                        .define('I', Items.DYE.pink()).define('M', Items.DYE.magenta())
+                        .define('B', Items.DYE.blue())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("demiboy"), 1)
+                        .pattern("PGL").pattern(" B ").define('P', EMPTY_PATTERN)
+                        .define('G', Items.DYE.gray()).define('L', Items.DYE.lightGray())
+                        .define('B', Items.DYE.lightBlue()).group("demiboy_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("demigender"), 1)
+                        .pattern("PGL").pattern(" Y ").define('P', EMPTY_PATTERN)
+                        .define('G', Items.DYE.gray()).define('L', Items.DYE.lightGray())
+                        .define('Y', Items.DYE.yellow()).group("demigender_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("demigirl"), 1)
+                        .pattern("PGL").pattern(" I ").define('P', EMPTY_PATTERN)
+                        .define('G', Items.DYE.gray()).define('L', Items.DYE.lightGray())
+                        .define('I', Items.DYE.pink()).group("demigirl_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("demiromantic"), 1)
+                        .pattern("PW").pattern("BG").pattern(" L").define('P', EMPTY_PATTERN)
+                        .define('W', Items.DYE.white()).define('B', Items.DYE.black())
+                        .define('G', Items.DYE.green()).define('L', Items.DYE.lightGray())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("demisexual"), 1)
+                        .pattern("PW").pattern("BU").pattern(" L").define('P', EMPTY_PATTERN)
+                        .define('W', Items.DYE.white()).define('B', Items.DYE.black())
+                        .define('U', Items.DYE.purple()).define('L', Items.DYE.lightGray())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("genderfluid"), 1)
+                        .pattern("PIW").pattern("UBE").define('P', EMPTY_PATTERN)
+                        .define('I', Items.DYE.pink()).define('W', Items.DYE.white())
+                        .define('U', Items.DYE.purple()).define('B', Items.DYE.black())
+                        .define('E', Items.DYE.blue())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("genderqueer"), 1)
+                        .pattern("PU").pattern(" W").pattern(" G").define('P', EMPTY_PATTERN)
+                        .define('U', Items.DYE.purple()).define('W', Items.DYE.white())
+                        .define('G', Items.DYE.green())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("intersex"), 1)
+                        .pattern("PYU").define('P', EMPTY_PATTERN)
+                        .define('Y', Items.DYE.yellow()).define('U', Items.DYE.purple())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("lesbian"), 1)
+                        .pattern("POW").pattern(" I ").define('P', EMPTY_PATTERN)
+                        .define('O', Items.DYE.orange()).define('W', Items.DYE.white())
+                        .define('I', Items.DYE.pink())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("mlm"), 1)
+                        .pattern("PGW").pattern(" B ").define('P', EMPTY_PATTERN)
+                        .define('G', Items.DYE.green()).define('W', Items.DYE.white())
+                        .define('B', Items.DYE.blue())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("neutrois"), 1)
+                        .pattern("PW").pattern(" G").pattern(" B").define('P', EMPTY_PATTERN)
+                        .define('W', Items.DYE.white()).define('G', Items.DYE.green())
+                        .define('B', Items.DYE.black())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("nonbinary"), 1)
+                        .pattern("PYW").pattern(" UB").define('P', EMPTY_PATTERN)
+                        .define('Y', Items.DYE.yellow()).define('W', Items.DYE.white())
+                        .define('U', Items.DYE.purple()).define('B', Items.DYE.black())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("omnisexual"), 1)
+                        .pattern("PI").pattern(" B").pattern(" L").define('P', EMPTY_PATTERN)
+                        .define('I', Items.DYE.pink()).define('B', Items.DYE.black())
+                        .define('L', Items.DYE.blue())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("pansexual"), 1)
+                        .pattern("PI").pattern(" Y").pattern(" C").define('P', EMPTY_PATTERN)
+                        .define('I', Items.DYE.pink()).define('Y', Items.DYE.yellow())
+                        .define('C', Items.DYE.cyan())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("philadelphia_pride"), 1)
+                        .pattern("PBR").pattern("EOY").pattern("GLU").define('P', EMPTY_PATTERN)
+                        .define('B', Items.DYE.black()).define('R', Items.DYE.brown())
+                        .define('E', Items.DYE.red()).define('O', Items.DYE.orange())
+                        .define('Y', Items.DYE.yellow()).define('G', Items.DYE.green())
+                        .define('L', Items.DYE.blue()).define('U', Items.DYE.purple())
+                        .group("philadelphia_pride_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("philadelphia_pride"), 1)
+                        .pattern("PBR").define('P', ModItems.PATTERNS.get("rainbow"))
+                        .define('B', Items.DYE.black()).define('R', Items.DYE.brown())
+                        .group("philadelphia_pride_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "philadelphia_pride_pattern_from_rainbow_pattern_extended_dyes");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("polyamory"), 1)
+                        .pattern("PBR").pattern(" YL").define('P', EMPTY_PATTERN)
+                        .define('B', Items.DYE.blue()).define('R', Items.DYE.red())
+                        .define('Y', Items.DYE.yellow()).define('L', Items.DYE.black())
+                        .group("polyamory_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("polyamory_new"), 1)
+                        .pattern("PWY").pattern("CIU").define('P', EMPTY_PATTERN)
+                        .define('W', Items.DYE.white()).define('Y', Items.DYE.yellow())
+                        .define('C', Items.DYE.cyan()).define('I', Items.DYE.pink())
+                        .define('U', Items.DYE.purple()).group("polyamory_new_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("polygender"), 1)
+                        .pattern("PBL").pattern("IYU").define('P', EMPTY_PATTERN)
+                        .define('B', Items.DYE.black()).define('L', Items.DYE.lightGray())
+                        .define('I', Items.DYE.pink()).define('Y', Items.DYE.yellow())
+                        .define('U', Items.DYE.lightBlue())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("polysexual"), 1)
+                        .pattern("PIG").pattern(" B ").define('P', EMPTY_PATTERN)
+                        .define('I', Items.DYE.pink()).define('G', Items.DYE.green())
+                        .define('B', Items.DYE.blue())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PBR").pattern("WIL").define('P', ModItems.PATTERNS.get("rainbow"))
+                        .define('B', Items.DYE.black()).define('R', Items.DYE.brown())
+                        .define('W', Items.DYE.white()).define('I', Items.DYE.pink())
+                        .define('L', Items.DYE.lightBlue()).group("progress_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_rainbow_pattern_extended_dyes");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PBR").pattern(" T ").define('P', ModItems.PATTERNS.get("rainbow"))
+                        .define('B', Items.DYE.black()).define('R', Items.DYE.brown())
+                        .define('T', ModItems.PATTERNS.get("transfem")).group("progress_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_rainbow_pattern_extended_transfem");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PBR").pattern(" T ").define('P', ModItems.PATTERNS.get("rainbow"))
+                        .define('B', Items.DYE.black()).define('R', Items.DYE.brown())
+                        .define('T', ModItems.PATTERNS.get("transgender")).group("progress_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_rainbow_pattern_extended_transgender");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PBR").pattern(" T ").define('P', ModItems.PATTERNS.get("rainbow"))
+                        .define('B', Items.DYE.black()).define('R', Items.DYE.brown())
+                        .define('T', ModItems.PATTERNS.get("transmasc")).group("progress_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_rainbow_pattern_extended_transmasc");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PWI").pattern(" L ").define('P', ModItems.PATTERNS.get("philadelphia_pride"))
+                        .define('W', Items.DYE.white()).define('I', Items.DYE.pink())
+                        .define('L', Items.DYE.lightBlue()).group("progress_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_dyes");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PT").define('P', ModItems.PATTERNS.get("philadelphia_pride"))
+                        .define('T', ModItems.PATTERNS.get("transfem"))
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_transfem");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PT").define('P', ModItems.PATTERNS.get("philadelphia_pride"))
+                        .define('T', ModItems.PATTERNS.get("transgender"))
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_transgender");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .pattern("PT").define('P', ModItems.PATTERNS.get("philadelphia_pride"))
+                        .define('T', ModItems.PATTERNS.get("transmasc"))
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_transmasc");
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("rainbow"), 1)
+                        .pattern("PRO").pattern("YGB").pattern(" U ").define('P', EMPTY_PATTERN)
+                        .define('R', Items.DYE.red()).define('O', Items.DYE.orange())
+                        .define('Y', Items.DYE.yellow()).define('G', Items.DYE.green())
+                        .define('B', Items.DYE.blue()).define('U', Items.DYE.purple())
+                        .group("rainbow_pattern")
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("transfem"), 1)
+                        .pattern("PLL").pattern(" II").define('P', EMPTY_PATTERN)
+                        .define('L', Items.DYE.lightBlue()).define('I', Items.DYE.pink())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("transgender"), 1)
+                        .pattern("PLI").pattern(" W ").define('P', EMPTY_PATTERN)
+                        .define('L', Items.DYE.lightBlue()).define('I', Items.DYE.pink())
+                        .define('W', Items.DYE.white())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                shaped(recipeCategory, ModItems.PATTERNS.get("transmasc"), 1)
+                        .pattern("PII").pattern(" LL").define('P', EMPTY_PATTERN)
+                        .define('L', Items.DYE.lightBlue()).define('I', Items.DYE.pink())
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+
+                // PRIDE CONVERSIONS
+                shapeless(recipeCategory, ModItems.PATTERNS.get("aroace"), 1)
+                        .requires(ModItems.PATTERNS.get("aromantic")).requires(ModItems.PATTERNS.get("asexual"))
+                        .unlockedBy("has_aromantic_pattern", has(ModItems.PATTERNS.get("aromantic")))
+                        .unlockedBy("has_asexual_pattern", has(ModItems.PATTERNS.get("asexual")))
+                        .group("aroace_pattern")
+                        .save(output, "aroace_pattern_from_aromantic_pattern_and_asexual_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("aroace"), 1)
+                        .requires(ModItems.PATTERNS.get("aromantic")).requires(ModItems.PATTERNS.get("asexual_new"))
+                        .unlockedBy("has_aromantic_pattern", has(ModItems.PATTERNS.get("aromantic")))
+                        .unlockedBy("has_asexual_new_pattern", has(ModItems.PATTERNS.get("asexual_new")))
+                        .group("aroace_pattern")
+                        .save(output, "aroace_pattern_from_aromantic_pattern_and_asexual_new_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("asexual"), 1)
+                        .requires(ModItems.PATTERNS.get("asexual_new"))
+                        .unlockedBy("has_asexual_new_pattern", has(ModItems.PATTERNS.get("asexual_new")))
+                        .group("asexual_pattern")
+                        .save(output, "asexual_pattern_from_asexual_new_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("asexual_new"), 1)
+                        .requires(ModItems.PATTERNS.get("asexual"))
+                        .unlockedBy("has_asexual_pattern", has(ModItems.PATTERNS.get("asexual")))
+                        .group("asexual_new_pattern")
+                        .save(output, "asexual_new_pattern_from_asexual_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("demiboy"), 1)
+                        .requires(ModItems.PATTERNS.get("demigender"))
+                        .unlockedBy("has_demigender_pattern", has(ModItems.PATTERNS.get("demigender")))
+                        .group("demiboy_pattern")
+                        .save(output, "demiboy_pattern_from_demigender_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("demigender"), 1)
+                        .requires(ModItems.PATTERNS.get("demigirl"))
+                        .unlockedBy("has_demigirl_pattern", has(ModItems.PATTERNS.get("demigirl")))
+                        .group("demigender_pattern")
+                        .save(output, "demigender_pattern_from_demigirl_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("demigirl"), 1)
+                        .requires(ModItems.PATTERNS.get("demiboy"))
+                        .unlockedBy("has_demiboy_pattern", has(ModItems.PATTERNS.get("demiboy")))
+                        .group("demigirl_pattern")
+                        .save(output, "demigirl_pattern_from_demiboy_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("polyamory"), 1)
+                        .requires(ModItems.PATTERNS.get("polyamory_new"))
+                        .unlockedBy("has_polyamory_new_pattern", has(ModItems.PATTERNS.get("polyamory_new")))
+                        .group("polyamory_pattern")
+                        .save(output, "polyamory_pattern_from_polyamory_new_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("polyamory_new"), 1)
+                        .requires(ModItems.PATTERNS.get("polyamory"))
+                        .unlockedBy("has_polyamory_pattern", has(ModItems.PATTERNS.get("polyamory")))
+                        .group("polyamory_new_pattern")
+                        .save(output, "polyamory_new_pattern_from_polyamory_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("rainbow"), 1)
+                        .requires(ModItems.PATTERNS.get("progress"))
+                        .unlockedBy("has_progress_pattern", has(ModItems.PATTERNS.get("progress")))
+                        .group("rainbow_pattern")
+                        .save(output, "rainbow_pattern_from_progress_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("philadelphia_pride"), 1)
+                        .requires(ModItems.PATTERNS.get("rainbow"))
+                        .unlockedBy("has_rainbow_pattern", has(ModItems.PATTERNS.get("rainbow")))
+                        .group("philadelphia_pride_pattern")
+                        .save(output, "philadelphia_pride_pattern_from_rainbow_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
+                        .requires(ModItems.PATTERNS.get("philadelphia_pride"))
+                        .unlockedBy("has_philadelphia_pride_pattern", has(ModItems.PATTERNS.get("philadelphia_pride")))
+                        .group("progress_pattern")
+                        .save(output, "progress_pattern_from_philadelphia_pride_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("transfem"), 1)
+                        .requires(ModItems.PATTERNS.get("transmasc"))
+                        .unlockedBy("has_transmasc_pattern", has(ModItems.PATTERNS.get("transmasc")))
+                        .group("transfem_pattern")
+                        .save(output, "transfem_pattern_from_transmasc_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("transgender"), 1)
+                        .requires(ModItems.PATTERNS.get("transfem"))
+                        .unlockedBy("has_transfem_pattern", has(ModItems.PATTERNS.get("transfem")))
+                        .group("transgender_pattern")
+                        .save(output, "transgender_pattern_from_transfem_pattern");
+
+                shapeless(recipeCategory, ModItems.PATTERNS.get("transmasc"), 1)
+                        .requires(ModItems.PATTERNS.get("transgender"))
+                        .unlockedBy("has_transgender_pattern", has(ModItems.PATTERNS.get("transgender")))
+                        .group("transmasc_pattern")
+                        .save(output, "transmasc_pattern_from_transgender_pattern");
             }
         };
     }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "minecraft:black_dye",
+    "P": "betterglass:empty_pattern",
+    "W": "minecraft:white_dye"
+  },
+  "pattern": [
+    "PBW",
+    " WB"
+  ],
+  "result": {
+    "id": "betterglass:checkerboard_pattern"
+  }
+}

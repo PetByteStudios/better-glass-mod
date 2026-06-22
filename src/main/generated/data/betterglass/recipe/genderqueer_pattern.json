@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": "minecraft:green_dye",
+    "P": "betterglass:empty_pattern",
+    "U": "minecraft:purple_dye",
+    "W": "minecraft:white_dye"
+  },
+  "pattern": [
+    "PU",
+    " W",
+    " G"
+  ],
+  "result": {
+    "id": "betterglass:genderqueer_pattern"
+  }
+}

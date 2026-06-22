@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "minecraft:black_dye",
+    "I": "minecraft:pink_dye",
+    "L": "minecraft:blue_dye",
+    "P": "betterglass:empty_pattern"
+  },
+  "pattern": [
+    "PI",
+    " B",
+    " L"
+  ],
+  "result": {
+    "id": "betterglass:omnisexual_pattern"
+  }
+}

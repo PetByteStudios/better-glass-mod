@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "transgender_pattern",
+  "ingredients": [
+    "betterglass:transfem_pattern"
+  ],
+  "result": {
+    "id": "betterglass:transgender_pattern"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "rainbow_pattern",
+  "key": {
+    "B": "minecraft:blue_dye",
+    "G": "minecraft:green_dye",
+    "O": "minecraft:orange_dye",
+    "P": "betterglass:empty_pattern",
+    "R": "minecraft:red_dye",
+    "U": "minecraft:purple_dye",
+    "Y": "minecraft:yellow_dye"
+  },
+  "pattern": [
+    "PRO",
+    "YGB",
+    " U "
+  ],
+  "result": {
+    "id": "betterglass:rainbow_pattern"
+  }
+}
