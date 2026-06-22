@@ -1,11 +1,13 @@
 package dev.petbyte.betterglass.datagen;
 
 import dev.petbyte.betterglass.block.ModBlocks;
+import dev.petbyte.betterglass.item.ModItems;
 import dev.petbyte.betterglass.tag.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import org.jspecify.annotations.NonNull;
 
@@ -27,6 +29,12 @@ public class ModLangProvider extends FabricLanguageProvider {
             String blockID = BuiltInRegistries.BLOCK.getKey(block).toString().replaceAll("(minecraft|betterglass):|vanilla_", "");
             String translation = capitalizeWords(blockID);
             translationBuilder.add(block.getDescriptionId(), translation);
+        }
+
+        for (Item item : ModItems.ALL_ITEMS) {
+            String itemID = BuiltInRegistries.ITEM.getKey(item).toString().replace("betterglass:", "");
+            String translation = capitalizeWords(itemID);
+            translationBuilder.add(item.getDescriptionId(), translation);
         }
 
         for (Block block : ModBlocks.BETTER_GLASS_PATTERNED_ALL) {

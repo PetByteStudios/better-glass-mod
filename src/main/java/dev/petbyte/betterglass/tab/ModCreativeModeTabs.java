@@ -2,6 +2,7 @@ package dev.petbyte.betterglass.tab;
 
 import dev.petbyte.betterglass.BetterGlass;
 import dev.petbyte.betterglass.block.ModBlocks;
+import dev.petbyte.betterglass.item.ModItems;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -30,6 +31,10 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModBlocks.PATTERNED_GLASS_BLOCKS.get("null")))
                     .title(Component.translatable("creativemodetab.betterglass.betterglass_patterned"))
                     .displayItems((_, output) -> {
+                        output.accept(ModItems.EMPTY_PATTERN);
+                        for (String motif : ModBlocks.PATTERN_MOTIFS) {
+                            output.accept(ModItems.PATTERNS.get(motif));
+                        }
                         for (Block block : ModBlocks.BETTER_GLASS_PATTERNED_ALL) {
                             output.accept(block);
                         }
