@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "demigender_pattern",
+  "ingredients": [
+    "betterglass:demiboy_pattern",
+    "minecraft:yellow_dye"
+  ],
+  "result": {
+    "id": "betterglass:demigender_pattern"
+  }
+}
