@@ -32,15 +32,17 @@
 [![Badges](https://img.shields.io/badge/did%20i%20add-enough%20badges%20yet%3F-white)](#)
 
 # Better Glass
-Better Glass is a Fabric mod that adds 361 new Glass Blocks, and way more to come!
+Better Glass is a Fabric mod that adds 1,138 new Glass Blocks, and way more to come!
 
 It also adds recipes to re-dye and un-dye Vanilla Glass, recipes to remove tint from glass, and Continuity integration!
 
 # Current Features
-- 361 new Glass blocks (Clear, Scratched; both in Stained and Colored variants, those yet again in tinted variants, and those all yet again in panes (it's so many))
+- 1,138 new Glass blocks (Clear, Scratched; both in Stained and Colored variants, those yet again in tinted variants, and those all yet again in panes; plus Patterns and Chiseled Glass(it's so many))
 - Continuity Connected Glass integration
 - Recipes for un-dyeing and re-dyeing any Glass
 - Recipes for un-tinting Glass
+- Stained Glass with Patterns such as Pride flags
+- An in-game wiki/help command
 
 # Dev Notes & Roadmap
 Please note that this roadmap is non-binding and has no specific time frame. This all could be added by next week, or September 2098. It'll happen when it happens.
