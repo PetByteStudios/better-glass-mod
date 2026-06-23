@@ -173,7 +173,7 @@ public class ModBlocks {
     /*Normal*/        "checkerboard", "null",
     /*Pride A-Z*/     "agender", "androgyne", "aroace", "aromantic", "asexual", "asexual_new", "bigender", "bisexual",
                       "demiboy", "demigender", "demigirl", "demiromantic", "demisexual", "genderfluid", "genderqueer",
-                      "intersex", "mlm", "lesbian", "neutrois", "nonbinary", "omnisexual", "pansexual", "philadelphia_pride",
+                      "intersex", "lesbian", "mlm", "neutrois", "nonbinary", "omnisexual", "pansexual", "philadelphia_pride",
                       "polyamory", "polyamory_new", "polygender", "polysexual", "progress", "rainbow", "transfem", "transgender",
                       "transmasc"
     ));
