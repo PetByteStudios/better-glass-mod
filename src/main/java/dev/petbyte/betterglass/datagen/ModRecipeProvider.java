@@ -1013,10 +1013,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .save(output, "transgender_pattern_from_transmasc_pattern_and_dye");
 
                 shapeless(recipeCategory, ModItems.PATTERNS.get("transmasc"), 1)
-                        .requires(ModItems.PATTERNS.get("transgender"))
-                        .unlockedBy("has_transgender_pattern", has(ModItems.PATTERNS.get("transgender")))
-                        .group("transmasc_pattern")
-                        .save(output, "transmasc_pattern_from_transgender_pattern");
+                        .requires(ModItems.PATTERNS.get("transfem"))
+                        .unlockedBy("has_transfem_pattern", has(ModItems.PATTERNS.get("transfem")))
+                        .group("transfem_pattern")
+                        .save(output, "transmasc_pattern_from_transfem_pattern");
             }
         };
     }

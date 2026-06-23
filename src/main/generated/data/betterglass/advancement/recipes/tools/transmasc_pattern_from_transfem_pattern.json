@@ -3,15 +3,15 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:transmasc_pattern_from_transgender_pattern"
+        "recipe": "betterglass:transmasc_pattern_from_transfem_pattern"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_transgender_pattern": {
+    "has_transfem_pattern": {
       "conditions": {
         "items": [
           {
-            "items": "betterglass:transgender_pattern"
+            "items": "betterglass:transfem_pattern"
           }
         ]
       },
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_transgender_pattern"
+      "has_transfem_pattern"
     ]
   ],
   "rewards": {
     "recipes": [
-      "betterglass:transmasc_pattern_from_transgender_pattern"
+      "betterglass:transmasc_pattern_from_transfem_pattern"
     ]
   }
 }
