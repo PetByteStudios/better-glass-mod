@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "demigirl_pattern",
+  "ingredients": [
+    "betterglass:demigender_pattern",
+    "minecraft:pink_dye"
+  ],
+  "result": {
+    "id": "betterglass:demigirl_pattern"
+  }
+}

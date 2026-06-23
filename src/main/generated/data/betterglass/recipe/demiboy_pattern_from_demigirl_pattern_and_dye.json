@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "demiboy_pattern",
+  "ingredients": [
+    "betterglass:demigirl_pattern",
+    "minecraft:light_blue_dye"
+  ],
+  "result": {
+    "id": "betterglass:demiboy_pattern"
+  }
+}
