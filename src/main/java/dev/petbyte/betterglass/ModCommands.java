@@ -3,7 +3,11 @@ package dev.petbyte.betterglass;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.Commands;
+import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+
+import java.net.URI;
 
 public class ModCommands {
     public static void registerModCommands() {
@@ -16,19 +20,19 @@ public class ModCommands {
                                                             .append(Component.literal("Welcome to Better Glass (v%s)!".formatted(BetterGlass.MOD_VERSION)).withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
                                                             .append(Component.literal("\n\n")).append(Component.literal("This command is a small wiki on Better Glass. Run any of the below commands to read more!"))
                                                             .append(Component.literal("\n")).append(Component.literal("    "))
-                                                            .append(Component.literal("/bgwiki recipes").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                            .append(Component.literal("/bgwiki recipes").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                             .append(Component.literal(" — Recipes").withStyle(ChatFormatting.ITALIC))
                                                             .append(Component.literal("\n")).append(Component.literal("    "))
-                                                            .append(Component.literal("/bgwiki types").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                            .append(Component.literal("/bgwiki types").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki types"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                             .append(Component.literal(" — Glass Types").withStyle(ChatFormatting.ITALIC))
                                                             .append(Component.literal("\n")).append(Component.literal("    "))
-                                                            .append(Component.literal("/bgwiki roadmap").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                            .append(Component.literal("/bgwiki roadmap").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki roadmap"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                             .append(Component.literal(" — Roadmap").withStyle(ChatFormatting.ITALIC))
                                                             .append(Component.literal("\n")).append(Component.literal("    "))
-                                                            .append(Component.literal("/bgwiki info").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                            .append(Component.literal("/bgwiki info").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki info"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                             .append(Component.literal(" — Extra Information").withStyle(ChatFormatting.ITALIC))
                                                             .append(Component.literal("\n")).append(Component.literal("    "))
-                                                            .append(Component.literal("/bgwiki faq").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                            .append(Component.literal("/bgwiki faq").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki faq"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                             .append(Component.literal(" — FAQ").withStyle(ChatFormatting.ITALIC)),
                                             false);
                                     return 1;
@@ -41,25 +45,26 @@ public class ModCommands {
                                                                             .append(Component.literal("\nThis command shows you recipes for Better Glass, it is meant as a small tool. However, I do recommend a Recipe Viewer, such as \"JEI\", for more details."))
                                                                             .append(Component.literal("\nClick any of the recipes below."))
                                                                             .append(Component.literal("\n"))
-                                                                            .append(Component.literal("Re-Dye").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                                            .append(Component.literal("Re-Dye").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes redye"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                                             .append(Component.literal(" "))
-                                                                            .append(Component.literal("Un-Dye").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                                            .append(Component.literal("Un-Dye").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes undye"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                                             .append(Component.literal(" "))
-                                                                            .append(Component.literal("Dye (One Step)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                                            .append(Component.literal("Dye (One Step)").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes dyeonce"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                                             .append(Component.literal(" "))
-                                                                            .append(Component.literal("Dye (Two Steps)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                                            .append(Component.literal("Dye (Two Steps)").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes dyetwice"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                                             .append(Component.literal("\n"))
-                                                                            .append(Component.literal("Panes").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                                            .append(Component.literal("Panes").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes panes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                                             .append(Component.literal(" "))
-                                                                            .append(Component.literal("Cycle Types").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                                            .append(Component.literal("Cycle Types").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes cycle"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                                             .append(Component.literal(" "))
-                                                                            .append(Component.literal("Tint").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                                            .append(Component.literal("Tint").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes tint"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                                             .append(Component.literal(" "))
-                                                                            .append(Component.literal("Un-tint").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                                            .append(Component.literal("Un-tint").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes untint"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                                             .append(Component.literal(" "))
-                                                                            .append(Component.literal("Stonecutter").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                                            .append(Component.literal("Stonecutter").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes stonecutter"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                                             .append("\n\n    ").append(Component.literal("For info on patterns, check ")
-                                                                            .append(Component.literal("Patterns").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))).append("."),
+                                                                            .append(Component.literal("Patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)))
+                                                                            .append("."),
                                                             false);
                                                     return 1;
                                                 })
@@ -73,7 +78,7 @@ public class ModCommands {
                                                                             .append(Component.literal("\nGDG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  (same type, any color (must all be Stained or Colored, no mixing))"))
                                                                             .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  D = A Dye"))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -88,7 +93,7 @@ public class ModCommands {
                                                                             .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  W = Water Bucket"))
                                                                             .append(Component.literal("\nThis recipe does one step, from Stained to Colored, and Colored to Undyed."))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -105,7 +110,7 @@ public class ModCommands {
                                                                             .append(Component.literal("\nTo go straight from Undyed to Stained, check "))
                                                                             .append(Component.literal("Dye (Two Steps)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                                             .append(Component.literal(".\n  "))
-                                                                            .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -122,7 +127,7 @@ public class ModCommands {
                                                                             .append(Component.literal("\nTo go from Undyed to Colored, or Colored to Stained, check "))
                                                                             .append(Component.literal("Dye (One Step)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                                             .append(Component.literal(".\n  "))
-                                                                            .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -136,7 +141,7 @@ public class ModCommands {
                                                                             .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD))
                                                                             .append(Component.literal("\nThis recipe results in an output of 16."))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -150,7 +155,7 @@ public class ModCommands {
                                                                             .append(Component.literal("\nGG").withStyle(ChatFormatting.BOLD))
                                                                             .append(Component.literal("\nThis recipe cycles through Clear -> Scratched -> Vanilla -> ..."))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -165,7 +170,7 @@ public class ModCommands {
                                                                             .append(Component.literal("\n A ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass (must be the same type & color)"))
                                                                             .append(Component.literal("\nThis recipe results in an output of 2."))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -179,7 +184,7 @@ public class ModCommands {
                                                                             .append(Component.literal("\nGHG").withStyle(ChatFormatting.BOLD))
                                                                             .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  H = Honeycomb"))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -191,7 +196,7 @@ public class ModCommands {
                                                                             .append(Component.literal("\nBy inputting any Glass Block or Pane, you can easily change the Glass Type."))
                                                                             .append(Component.literal("\nBy inputting any Colored or Stained Glass Block or Pane, you can switch between Coloration type at no extra cost."))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -206,7 +211,7 @@ public class ModCommands {
                                                                             .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P = Any Pattern"))
                                                                             .append(Component.literal("\nFor recipes of patterns, run /bgwiki recipes patterns [pattern name]."))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                             false);
                                                     return 1;
                                                 })
@@ -219,7 +224,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEBW").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\n WB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/W = Black/White Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -232,7 +237,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEBP").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\n PB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/P = Black/Pink Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -245,7 +250,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEBL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\n W ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/L/W = Black/Lime/White Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -258,7 +263,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEPU").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\n C ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/U/C = Pink/Purple/Cyan Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -272,7 +277,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nWLB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  O/Y/W/L/B = Orange/Yellow/White/Light Blue/Blue Dye"))
                                                                                         .append(Component.literal("\nThe Aroace Pattern can also be crafted by combining an Aromantic Pattern with an Asexual or Asexual New Pattern."))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -285,7 +290,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEGL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\nWIB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G/L/W/I/B = Green/Lime/White/Light Gray/Black Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -299,7 +304,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\n WP").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/L/W/P = Black/Light Gray/White/Purple Dye"))
                                                                                         .append(Component.literal("\nThe Asexual Pattern can also be crafted by putting an Asexual New Pattern into the crafting grid."))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -313,7 +318,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nWYP").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/L/W/Y/P = Black/Light Gray/White/Yellow/Pink Dye"))
                                                                                         .append(Component.literal("\nThe Asexual New Pattern can also be crafted by putting an Asexual Pattern into the crafting grid."))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -326,7 +331,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEPW").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\n LB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/W/L/B = Pink/White/Light Blue/Blue Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -339,7 +344,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEPU").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\n B ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/U/B = Pink/Purple/Blue Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -353,7 +358,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\n B ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G/L/B = Gray/Light Gray/Light Blue Dye"))
                                                                                         .append(Component.literal("\nThe Demiboy Pattern can also be crafted by putting a Demigender or Demigirl Pattern into the crafting grid alongside Light Blue Dye."))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -367,7 +372,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\n Y ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G/L/Y = Gray/Light Gray/Yellow Dye"))
                                                                                         .append(Component.literal("\nThe Demigender Pattern can also be crafted by putting a Demiboy or Demigirl Pattern into the crafting grid alongside Yellow Dye."))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -381,7 +386,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\n P ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G/L/P = Gray/Light Gray/Pink Dye"))
                                                                                         .append(Component.literal("\nThe Demigirl Pattern can also be crafted by putting a Demiboy or Demigender Pattern into the crafting grid alongside Pink Dye."))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -395,7 +400,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nBG ").withStyle(ChatFormatting.BOLD))
                                                                                         .append(Component.literal("\n L ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  W/B/G/L = White/Black/Green/Light Gray Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -409,7 +414,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nBP ").withStyle(ChatFormatting.BOLD))
                                                                                         .append(Component.literal("\n L ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  W/B/P/L = White/Black/Purple/Light Gray Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -422,7 +427,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEPW").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\nUBL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/W/U/B/L = Pink/White/Purple/Black/Blue Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -436,7 +441,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\n W ").withStyle(ChatFormatting.BOLD))
                                                                                         .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/W/G = Purple/White/Green Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -449,7 +454,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEYP").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\n   ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  Y/P = Yellow/Purple Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -462,7 +467,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEOW").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\n P ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  O/W/P = Orange/White/Pink Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -475,7 +480,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEGW").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\n B ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G/W/B = Green/White/Blue Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -489,7 +494,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD))
                                                                                         .append(Component.literal("\n B ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  W/G/B = White/Green/Black Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -502,7 +507,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEYW").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\n PB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  Y/W/P/B = Yellow/White/Purple/Black Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -516,7 +521,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\n B ").withStyle(ChatFormatting.BOLD))
                                                                                         .append(Component.literal("\n U ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/B/U = Pink/Black/Blue Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -530,7 +535,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\n Y ").withStyle(ChatFormatting.BOLD))
                                                                                         .append(Component.literal("\n C ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/Y/C = Pink/Yellow/Cyan Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -547,7 +552,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nPBR").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P = Rainbow Pattern"))
                                                                                         .append(Component.literal("\n   ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/R = Black/Brown Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -561,7 +566,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\n YL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/R/Y/L = Blue/Red/Yellow/Black Dye"))
                                                                                         .append(Component.literal("\nThe Polyamory Pattern can also be crafted by putting an Polyamory New Pattern into the crafting grid."))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -575,7 +580,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nCPU").withStyle(ChatFormatting.BOLD)).append(Component.literal("  W/Y/C/P/U = White/Yellow/Cyan/Pink/Purple Dye"))
                                                                                         .append(Component.literal("\nThe Polyamory New Pattern can also be crafted by putting an Polyamory Pattern into the crafting grid."))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -588,7 +593,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEBL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\nPYI").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/L/P/Y/I = Black/Light Gray/Pink/Yellow/Light Blue Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -601,7 +606,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nEPG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
                                                                                         .append(Component.literal("\n B ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/G/B = Pink/Green/Blue Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -623,7 +628,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nPT ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P = Philadelphia Pattern"))
                                                                                         .append(Component.literal("\n   ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  T = Transfem/-gender/-masc Pattern"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -637,7 +642,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nYGB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  R/O/Y = Red/Orange/Yellow Dye"))
                                                                                         .append(Component.literal("\n U ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G/B/P = Green/Blue/Purple Dye"))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -651,7 +656,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\n PP").withStyle(ChatFormatting.BOLD)).append(Component.literal("  L/P = Light Blue/Pink Dye"))
                                                                                         .append(Component.literal("\nThe Transfem Pattern can also be crafted by putting a Transmasc Pattern into the crafting grid."))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -665,7 +670,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\nWPL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  L/P/W = Light Blue/Pink/White Dye"))
                                                                                         .append(Component.literal("\nThe Transfem Pattern can also be crafted by putting a Transfem or Transmasc Pattern into the crafting grid alongside a White Dye."))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -679,7 +684,7 @@ public class ModCommands {
                                                                                         .append(Component.literal("\n LL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  L/P = Light Blue/Pink Dye"))
                                                                                         .append(Component.literal("\nThe Transmasc Pattern can also be crafted by putting a Transfem Pattern into the crafting grid."))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
+                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -745,10 +750,10 @@ public class ModCommands {
                                                             .append("Currently, yes, but a toggle to switch back to Vanilla textures will be added in v1.2.0.")
                                                             .append(Component.literal("\nMy Connected Textures don't work, why? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
                                                             .append("Did you make sure to install the \"Continuity\" mod and enable the provided \"Better Glass: Connecting Textures\" resource pack? If yes, and it doesn't work, report the issue on the ")
-                                                            .append(Component.literal("GitHub repo").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_BLUE))
+                                                            .append(Component.literal("GitHub repo").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.OpenUrl(URI.create("https://github.com/PetByteStudios/better-glass-mod")))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_BLUE))
                                                             .append(Component.literal("\nHow am I supposed to deal with hundreds of different blocks and thousands of recipes!? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
                                                             .append("I recognize there are a lot of blocks and recipes, it is definitely quite overwhelming. But I have good news for you. Currently planned for v1.3.0 are two workstations to make crafting easier. Additionally, you can use the \"JEI\" mod for a comprehensive overview or run ")
-                                                            .append(Component.literal("/bgwiki recipes").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
+                                                            .append(Component.literal("/bgwiki recipes").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_RED))
                                                             .append(" for a simplified list of recipes.")
                                                             .append(Component.literal("\nHow many Glass blocks are there? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
                                                             .append("As of v1.1.0, if you sum up all Glass Types, Patterns, Colors, and Stains for normal and tinted blocks and panes, you'll receive ")
