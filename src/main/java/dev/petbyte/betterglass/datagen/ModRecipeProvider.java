@@ -946,14 +946,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 shapeless(recipeCategory, ModItems.PATTERNS.get("demiboy"), 1)
                         .requires(ModItems.PATTERNS.get("demigirl"))
-                        .requires(Items.DYE.lightBlue())
+                        .requires(Items.LIGHT_BLUE_DYE)
                         .unlockedBy("has_demigirl_pattern", has(ModItems.PATTERNS.get("demigirl")))
                         .group("demiboy_pattern")
                         .save(output, "demiboy_pattern_from_demigirl_pattern_and_dye");
 
                 shapeless(recipeCategory, ModItems.PATTERNS.get("demigender"), 1)
                         .requires(ModItems.PATTERNS.get("demiboy"))
-                        .requires(Items.DYE.yellow())
+                        .requires(Items.YELLOW_DYE)
                         .unlockedBy("has_demiboy_pattern", has(ModItems.PATTERNS.get("demiboy")))
                         .group("demigender_pattern")
                         .save(output, "demigender_pattern_from_demiboy_pattern_and_dye");
@@ -974,7 +974,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 shapeless(recipeCategory, ModItems.PATTERNS.get("demigirl"), 1)
                         .requires(ModItems.PATTERNS.get("demigender"))
-                        .requires(Items.DYE.pink())
+                        .requires(Items.PINK_DYE)
                         .unlockedBy("has_demigender_pattern", has(ModItems.PATTERNS.get("demigender")))
                         .group("demigirl_pattern")
                         .save(output, "demigirl_pattern_from_demigender_pattern_and_dye");
