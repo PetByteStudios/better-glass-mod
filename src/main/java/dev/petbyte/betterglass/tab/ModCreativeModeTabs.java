@@ -19,9 +19,12 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModBlocks.CLEAR_GLASS))
                     .title(Component.translatable("creativemodetab.betterglass.betterglass"))
                     .displayItems((_, output) -> {
-                        output.accept(ModBlocks.TINTED_GLASS_PANE);
                         for (Block block : ModBlocks.BETTER_GLASS_NORMAL_ALL) {
+                            if (block == ModBlocks.TINTED_GLASS_PANE) { continue; }
                             output.accept(block);
+                            if (block == ModBlocks.SCRATCHED_GLASS_PANE) {
+                                output.accept(ModBlocks.TINTED_GLASS_PANE);
+                            }
                         }
                         output.accept(ModBlocks.GLASSCUTTER);
                     }).build());
