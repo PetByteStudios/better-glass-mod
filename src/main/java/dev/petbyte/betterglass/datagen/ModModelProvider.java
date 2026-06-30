@@ -20,7 +20,7 @@ public class ModModelProvider extends FabricModelProvider {
         for (int i = 0; i < ModBlocks.BETTER_GLASS_BLOCKS.size(); i++) {
             blockModelGenerators.createGlassBlocks(
                     ModBlocks.BETTER_GLASS_BLOCKS.get(i),
-                    ModBlocks.BETTER_GLASS_PANES.get(i)
+                    ModBlocks.BETTER_GLASS_PANES.get(i+1) // dumb hack but idc
             );
         }
     }
