@@ -109,7 +109,7 @@ public class ModCommands {
                                                                             .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  D = A Dye"))
                                                                             .append(Component.literal("\nThis recipe does one step, from Undyed to Colored, or Colored to Stained, and results in an output of 4."))
                                                                             .append(Component.literal("\nTo go straight from Undyed to Stained, check "))
-                                                                            .append(Component.literal("Dye (Two Steps)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.literal("Dye (Two Steps)").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes dyetwice"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal(".\n  "))
                                                                             .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                             false);
@@ -126,7 +126,7 @@ public class ModCommands {
                                                                             .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  D = A Dye"))
                                                                             .append(Component.literal("\nThis recipe does two steps, from Undyed to Stained and results in an output of 8."))
                                                                             .append(Component.literal("\nTo go from Undyed to Colored, or Colored to Stained, check "))
-                                                                            .append(Component.literal("Dye (One Step)").withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.literal("Dye (One Step)").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes dyeonce"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal(".\n  "))
                                                                             .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                             false);
