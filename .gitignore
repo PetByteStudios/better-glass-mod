@@ -39,5 +39,6 @@ replay_*.log
 *.hprof
 *.jfr
 
-# priv
+# priv & testing
 /assets/
+/src/main/resources/assets/betterglass/lang/
