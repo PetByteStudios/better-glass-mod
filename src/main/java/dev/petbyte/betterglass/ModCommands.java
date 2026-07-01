@@ -212,7 +212,7 @@ public class ModCommands {
                                                                             .append(Component.literal("\nGPG").withStyle(ChatFormatting.BOLD))
                                                                             .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P = Any Pattern"))
                                                                             .append(Component.literal("\nThis recipe results in an output of 4."))
-                                                                            .append(Component.literal("\nFor recipes of patterns, chcek below:\n"))
+                                                                            .append(Component.literal("\nFor recipes of patterns, check below:\n"))
                                                                             .append(Component.literal("Empty").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns empty"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
                                                                             .append(Component.literal("Checkerboard").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns checkerboard"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
