@@ -81,3 +81,42 @@ None
 
 ### v1.0.0..v1.0.1
 None
+
+<details>
+  <summary>v1.1.0 Development</summary>
+
+### v1.0.1..v1.1.0-beta.1
+None
+
+### v1.1.0-beta.1..v1.1.0-beta.2
+- Removed Chiseled Glass from tags
+  - `c/block/glass_blocks`
+  - `c/block/glass_blocks/cheap`
+  - `c/block/glass_blocks/tinted`
+  - `c/item/glass_blocks`
+  - `c/item/glass_blocks/cheap`
+  - `c/item/glass_blocks/tinted`
+  - `minecraft/block/impermeable`
+- Chiseled Tinted Glass no longer needs Silk Touch to drop
+
+### v1.1.0-beta.2..v1.1.0-pre.1
+- Moved `transmasc_pattern_from_transgender_pattern` to `transmasc_pattern_from_transfem_pattern`
+- Removed Patterned Glass from `c/block/glass_blocks/cheap` and `c/item/glass_blocks/cheap` tags
+
+### v1.1.0-pre.1..v1.1.0-rc.1
+- Moved certain "custom" tops to palettes
+  - `checkerboard`: `special_checkerboard`
+  - `null`: `special_null`
+  - `bigender`: `special_bigender`
+  - `bisexual`: `special_bisexual`
+  - `genderfluid`: `special_genderfluid`
+  - `genderqueer`: `special_genderqueer`
+  - `lesbian`: `special_lesbian`
+  - `mlm`: `special_mlm`
+  - `pansexual`: `special_pansexual`
+  - `polyamory`: `special_polyamory`
+  - `polyamory_new`: `special_polyamory_new`
+</details>
+
+### v1.0.1..v1.1.0
+None
