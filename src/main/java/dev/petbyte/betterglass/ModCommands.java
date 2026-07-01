@@ -293,7 +293,7 @@ public class ModCommands {
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
                                                                                         .append(Component.literal("Pattern Recipes: Empty").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Empty Pattern using Paper, a Feather, and a Glass Block, no speficic shape."))
+                                                                                        .append(Component.literal("\nYou can craft a Empty Pattern using Paper, a Feather, and a Glass Block, no specific shape."))
                                                                                         .append(Component.literal("\nThis recipe results in an output of 4."))
                                                                                         .append(Component.literal("\n  "))
                                                                                         .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
