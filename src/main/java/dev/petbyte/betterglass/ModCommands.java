@@ -5,11 +5,25 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 
 import java.net.URI;
 
 public class ModCommands {
+    private static Component dyeIngredientList(String... colorKeys) {
+        MutableComponent colors = Component.literal("");
+        for (int i = 0; i < colorKeys.length; i++) {
+            colors.append(Component.translatable(colorKeys[i]));
+            if (i < colorKeys.length - 1) {
+                colors.append(Component.literal("/"));
+            }
+        }
+        colors.append(Component.literal(" "))
+                .append(Component.translatable("betterglass.dye"));
+        return colors;
+    }
+
     public static void registerModCommands() {
         BetterGlass.LOGGER.info("Registering Mod Commands for %s".formatted(BetterGlass.MOD_ID));
 
@@ -17,23 +31,13 @@ public class ModCommands {
                 dispatcher.register(Commands.literal("bgwiki").executes(context -> {
                                     context.getSource().sendSuccess(() ->
                                                     Component.literal("    ")
-                                                            .append(Component.literal("Welcome to Better Glass (v%s)!".formatted(BetterGlass.MOD_VERSION)).withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                            .append(Component.literal("\n\n")).append(Component.literal("This command is a small wiki on Better Glass. Run any of the below commands to read more!"))
-                                                            .append(Component.literal("\n")).append(Component.literal("    "))
-                                                            .append(Component.literal("/bgwiki recipes").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
-                                                            .append(Component.literal(" — Recipes").withStyle(ChatFormatting.ITALIC))
-                                                            .append(Component.literal("\n")).append(Component.literal("    "))
-                                                            .append(Component.literal("/bgwiki types").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki types"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
-                                                            .append(Component.literal(" — Glass Types").withStyle(ChatFormatting.ITALIC))
-                                                            .append(Component.literal("\n")).append(Component.literal("    "))
-                                                            .append(Component.literal("/bgwiki roadmap").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki roadmap"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
-                                                            .append(Component.literal(" — Roadmap").withStyle(ChatFormatting.ITALIC))
-                                                            .append(Component.literal("\n")).append(Component.literal("    "))
-                                                            .append(Component.literal("/bgwiki info").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki info"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
-                                                            .append(Component.literal(" — Extra Information").withStyle(ChatFormatting.ITALIC))
-                                                            .append(Component.literal("\n")).append(Component.literal("    "))
-                                                            .append(Component.literal("/bgwiki faq").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki faq"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
-                                                            .append(Component.literal(" — FAQ").withStyle(ChatFormatting.ITALIC)),
+                                                            .append(Component.translatable("commands.betterglass.bgwiki.root.welcome", BetterGlass.MOD_VERSION).withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
+                                                            .append(Component.literal("\n\n")).append(Component.translatable("commands.betterglass.bgwiki.root.introduction"))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline_four_spaced", Component.translatable("commands.betterglass.generic.em_dash_separated", Component.literal("/bgwiki recipes").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED), Component.translatable("commands.betterglass.bgwiki.recipes").withStyle(ChatFormatting.ITALIC))))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline_four_spaced", Component.translatable("commands.betterglass.generic.em_dash_separated", Component.literal("/bgwiki types").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki types"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED), Component.translatable("commands.betterglass.bgwiki.types").withStyle(ChatFormatting.ITALIC))))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline_four_spaced", Component.translatable("commands.betterglass.generic.em_dash_separated", Component.literal("/bgwiki roadmap").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki roadmap"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED), Component.translatable("commands.betterglass.bgwiki.roadmap").withStyle(ChatFormatting.ITALIC))))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline_four_spaced", Component.translatable("commands.betterglass.generic.em_dash_separated", Component.literal("/bgwiki info").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki info"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED), Component.translatable("commands.betterglass.bgwiki.info").withStyle(ChatFormatting.ITALIC))))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline_four_spaced", Component.translatable("commands.betterglass.generic.em_dash_separated", Component.literal("/bgwiki faq").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki faq"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED), Component.translatable("commands.betterglass.bgwiki.faq").withStyle(ChatFormatting.ITALIC)))),
                                             false);
                                     return 1;
                                 })
@@ -41,29 +45,29 @@ public class ModCommands {
                                                     context.getSource().sendSuccess(() ->
                                                                     Component.literal("")
                                                                             .append(Component.literal("==  ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                            .append(Component.literal("Better Glass: Recipes").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nThis command shows you recipes for Better Glass, it is meant as a small tool. However, I do recommend a Recipe Viewer, such as \"JEI\", for more details."))
-                                                                            .append(Component.literal("\nClick any of the recipes below."))
+                                                                            .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("betterglass.modname"), Component.translatable("commands.betterglass.bgwiki.recipes")).withStyle(ChatFormatting.BOLD))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.introduction")))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.click_below")))
                                                                             .append(Component.literal("\n"))
-                                                                            .append(Component.literal("Re-Dye").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes redye"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.redye").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes redye"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Un-Dye").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes undye"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.undye").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes undye"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Dye (One Step)").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes dyeonce"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.dye_once").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes dyeonce"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Dye (Two Steps)").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes dyetwice"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.dye_twice").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes dyetwice"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("\n"))
-                                                                            .append(Component.literal("Panes").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes panes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.panes").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes panes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Cycle Types").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes cycle"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.cycle_types").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes cycle"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Tint").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes tint"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.tint").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes tint"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Un-tint").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes untint"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.untint").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes untint"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Stonecutter").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes stonecutter"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
-                                                                            .append("\n\n    ").append(Component.literal("For info on patterns, check ")
-                                                                            .append(Component.literal("Patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.stonecutter").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes stonecutter"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append("\n\n    ").append(Component.translatable("commands.betterglass.bgwiki.recipes.check_info_on_patterns")
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)))
                                                                             .append("."),
                                                             false);
                                                     return 1;
@@ -72,14 +76,19 @@ public class ModCommands {
                                                     context.getSource().sendSuccess(() ->
                                                                     Component.literal("")
                                                                             .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                            .append(Component.literal("Re-Dye Recipe (Crafting Table)").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nYou can re-dye Glass using the following recipe:"))
-                                                                            .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass"))
-                                                                            .append(Component.literal("\nGDG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  (same type, any color (must all be Stained or Colored, no mixing))"))
-                                                                            .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  D = A Dye"))
-                                                                            .append(Component.literal("\nThis recipe results in an output of 8."))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.specific_recipe", Component.translatable("commands.betterglass.bgwiki.recipes.redye"), Component.translatable("block.minecraft.crafting_table")).withStyle(ChatFormatting.BOLD))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.generic", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.redye"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GGG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("G"),
+                                                                                            Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GDG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass.info.same_type_any_color_same_coloration")))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GGG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("D"),
+                                                                                            Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_dye"))))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.results_output", 8)))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -87,14 +96,19 @@ public class ModCommands {
                                                     context.getSource().sendSuccess(() ->
                                                                     Component.literal("")
                                                                             .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                            .append(Component.literal("Un-Dye Recipe (Crafting Table)").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nYou can un-dye Glass using the following recipe:"))
-                                                                            .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Colored/Stained Glass"))
-                                                                            .append(Component.literal("\nGWG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  (Same Glass Type. Stained -> Colored needs the same color, Colored -> Undyed can mix colors.)"))
-                                                                            .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  W = Water Bucket"))
-                                                                            .append(Component.literal("\nThis recipe does one step, from Stained to Colored, and Colored to Undyed, and results in an output of 4."))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.specific_recipe", Component.translatable("commands.betterglass.bgwiki.recipes.undye"), Component.translatable("block.minecraft.crafting_table")).withStyle(ChatFormatting.BOLD))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.generic", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.undye"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GGG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("G"),
+                                                                                            Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass.colored_or_stained"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GWG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass.info.same_type_any_color_stained_mixed_color_colored")))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GGG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("W"),
+                                                                                            Component.translatable("item.minecraft.water_bucket"))))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.undye.info.output", 4)))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -102,16 +116,21 @@ public class ModCommands {
                                                     context.getSource().sendSuccess(() ->
                                                                     Component.literal("")
                                                                             .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                            .append(Component.literal("Dye (One Step) Recipe (Crafting Table)").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nYou can dye Glass once using the following recipe:"))
-                                                                            .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Colored/Stained Glass"))
-                                                                            .append(Component.literal("\nGDG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  (same type and color; or undyed)"))
-                                                                            .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  D = A Dye"))
-                                                                            .append(Component.literal("\nThis recipe does one step, from Undyed to Colored, or Colored to Stained, and results in an output of 4."))
-                                                                            .append(Component.literal("\nTo go straight from Undyed to Stained, check "))
-                                                                            .append(Component.literal("Dye (Two Steps)").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes dyetwice"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
-                                                                            .append(Component.literal(".\n  "))
-                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.specific_recipe", Component.translatable("commands.betterglass.bgwiki.recipes.dye_once"), Component.translatable("block.minecraft.crafting_table")).withStyle(ChatFormatting.BOLD))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.generic", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.dye_once"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" G ").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("G"),
+                                                                                            Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass.colored_or_stained"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GDG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass.info.same_type_same_color_or_undyed")))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" G ").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("D"),
+                                                                                            Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_dye"))))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.dye_once.info.output", 4)))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.dye_once.info.dye_twice",
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.dye_twice").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes dyetwice"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))))
+                                                                            .append(Component.literal("\n  "))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -119,16 +138,21 @@ public class ModCommands {
                                                     context.getSource().sendSuccess(() ->
                                                                     Component.literal("")
                                                                             .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                            .append(Component.literal("Dye (Two Steps) Recipe (Crafting Table)").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nYou can stain Glass using the following recipe:"))
-                                                                            .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Undyed Glass (same type)"))
-                                                                            .append(Component.literal("\nGDG").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  D = A Dye"))
-                                                                            .append(Component.literal("\nThis recipe does two steps, from Undyed to Stained and results in an output of 8."))
-                                                                            .append(Component.literal("\nTo go from Undyed to Colored, or Colored to Stained, check "))
-                                                                            .append(Component.literal("Dye (One Step)").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes dyeonce"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
-                                                                            .append(Component.literal(".\n  "))
-                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.specific_recipe", Component.translatable("commands.betterglass.bgwiki.recipes.dye_twice"), Component.translatable("block.minecraft.crafting_table")).withStyle(ChatFormatting.BOLD))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.generic", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.dye_twice"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GGG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("G"),
+                                                                                            Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass.undyed.same_type"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GDG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass.info.same_type_any_color_same_coloration")))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GGG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                                            Component.literal("D"), Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_dye"))))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.dye_twice.info.output", 8)))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.dye_twice.info.dye_once",
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.dye_once").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes dyeonce"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))))
+                                                                            .append(Component.literal("\n  "))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -136,13 +160,15 @@ public class ModCommands {
                                                     context.getSource().sendSuccess(() ->
                                                                     Component.literal("")
                                                                             .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                            .append(Component.literal("Panes Recipe (Crafting Table)").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nYou can craft Glass Panes using the following recipe:"))
-                                                                            .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass (must be the same type)"))
-                                                                            .append(Component.literal("\nGGG").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nThis recipe results in an output of 16."))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.specific_recipe", Component.translatable("commands.betterglass.bgwiki.recipes.panes"), Component.translatable("block.minecraft.crafting_table")).withStyle(ChatFormatting.BOLD))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.generic", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.panes"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GGG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("G"),
+                                                                                            Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass.identical"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe.no_legend", Component.literal("GGG").withStyle(ChatFormatting.BOLD)))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.results_output", 16)))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -150,13 +176,15 @@ public class ModCommands {
                                                     context.getSource().sendSuccess(() ->
                                                                     Component.literal("")
                                                                             .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                            .append(Component.literal("Cycle through Types Recipe (Inventory/Crafting Table)").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nYou can cycle through types using the following recipe:"))
-                                                                            .append(Component.literal("\nGG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass (must be the same type)"))
-                                                                            .append(Component.literal("\nGG").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nThis recipe cycles through Clear -> Scratched -> Vanilla -> ..., and results in an output of 4."))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.specific_recipe", Component.translatable("commands.betterglass.bgwiki.recipes.cycle_types"), Component.translatable("block.minecraft.crafting_table")).withStyle(ChatFormatting.BOLD))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.generic", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.cycle_types"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("G"),
+                                                            Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass.identical"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe.no_legend", Component.literal("GG").withStyle(ChatFormatting.BOLD)))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.cycle_types.info.output", 4)))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -164,14 +192,18 @@ public class ModCommands {
                                                     context.getSource().sendSuccess(() ->
                                                                     Component.literal("")
                                                                             .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                            .append(Component.literal("Tinting Glass Recipe (Crafting Table)").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nYou can craft Tinted Glass using the following recipe:"))
-                                                                            .append(Component.literal("\n A ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  A = Amethyst Shard"))
-                                                                            .append(Component.literal("\nAGA").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\n A ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass (must be the same type & color)"))
-                                                                            .append(Component.literal("\nThis recipe results in an output of 2."))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.specific_recipe", Component.translatable("commands.betterglass.bgwiki.recipes.tint"), Component.translatable("block.minecraft.crafting_table")).withStyle(ChatFormatting.BOLD))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.generic", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.tint"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" A ").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("A"),
+                                                                                            Component.translatable("item.minecraft.amethyst_shard"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe.no_legend", Component.literal("AGA").withStyle(ChatFormatting.BOLD)))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" A ").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("G"),
+                                                                                            Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass"))))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.results_output", 2)))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -179,14 +211,18 @@ public class ModCommands {
                                                     context.getSource().sendSuccess(() ->
                                                                     Component.literal("")
                                                                             .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                            .append(Component.literal("Un-tinting Glass Recipe (Crafting Table)").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nYou can un-tint Tinted Glass using the following recipe:"))
-                                                                            .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass (must be the same type & color)"))
-                                                                            .append(Component.literal("\nGHG").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  H = Honeycomb"))
-                                                                            .append(Component.literal("\nThis recipe results in an output of 4."))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.specific_recipe", Component.translatable("commands.betterglass.bgwiki.recipes.untint"), Component.translatable("block.minecraft.crafting_table")).withStyle(ChatFormatting.BOLD))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.generic", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.untint"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" G ").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("G"),
+                                                                                            Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass.identical"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe.no_legend", Component.literal("GHG").withStyle(ChatFormatting.BOLD)))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" G ").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("H"),
+                                                                                            Component.translatable("item.minecraft.honeycomb"))))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.results_output", 4)))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -194,11 +230,11 @@ public class ModCommands {
                                                     context.getSource().sendSuccess(() ->
                                                                     Component.literal("")
                                                                             .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                            .append(Component.literal("Stonecutter/Glasscutter recipes").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nBy inputting any Glass Block or Pane, you can easily change the Glass Type."))
-                                                                            .append(Component.literal("\nBy inputting any Colored or Stained Glass Block or Pane, you can switch between Coloration type at no extra cost."))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.station_recipes", Component.translatable("commands.betterglass.bgwiki.recipes.stonecutter")).withStyle(ChatFormatting.BOLD))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.stonecutter.info.one")))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.stonecutter.info.two")))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                             false);
                                                     return 1;
                                                 }))
@@ -206,85 +242,88 @@ public class ModCommands {
                                                     context.getSource().sendSuccess(() ->
                                                                     Component.literal("")
                                                                             .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                            .append(Component.literal("Pattern recipes").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\nYou can put a pattern on a Glass using the following recipe:"))
-                                                                            .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G = Any Glass (must be the same type; not stained/colored)"))
-                                                                            .append(Component.literal("\nGPG").withStyle(ChatFormatting.BOLD))
-                                                                            .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P = Any Pattern"))
-                                                                            .append(Component.literal("\nThis recipe results in an output of 4."))
-                                                                            .append(Component.literal("\nFor recipes of patterns, check below:\n"))
-                                                                            .append(Component.literal("Empty").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns empty"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.specific_recipe", Component.translatable("commands.betterglass.bgwiki.recipes.pattern"), Component.translatable("block.minecraft.crafting_table")).withStyle(ChatFormatting.BOLD))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.generic", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.patterns"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" G ").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("G"),
+                                                                                            Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass.undyed.same_type"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe.no_legend", Component.literal("GPG").withStyle(ChatFormatting.BOLD)))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" G ").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("P"),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_pattern"))))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.results_output", 4)))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline_surrounded", Component.translatable("commands.betterglass.bgwiki.recipes.check_pattern_recipes")))
+                                                                            .append(Component.translatable("betterglass.pattern.empty").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns empty"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Checkerboard").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns checkerboard"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.checkerboard").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns checkerboard"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Null").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns null"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.null").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns null"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Agender").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns agender"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.agender").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns agender"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Androgyne").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns androgyne"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.androgyne").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns androgyne"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Aroace").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns aroace"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.aroace").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns aroace"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Aromantic").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns aromantic"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.aromantic").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns aromantic"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Asexual").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns asexual"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.asexual").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns asexual"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Asexual New").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns asexual_new"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.asexual_new").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns asexual_new"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Bigender").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns bigender"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.bigender").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns bigender"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Bisexual").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns bisexual"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.bisexual").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns bisexual"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Demiboy").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns demiboy"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.demiboy").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns demiboy"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Demigender").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns demigender"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.demigender").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns demigender"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Demigirl").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns demigirl"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.demigirl").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns demigirl"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Demiromantic").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns demiromantic"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.demiromantic").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns demiromantic"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Demisexual").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns demisexual"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.demisexual").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns demisexual"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Genderfluid").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns genderfluid"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.genderfluid").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns genderfluid"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Genderqueer").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns genderqueer"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.genderqueer").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns genderqueer"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Intersex").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns intersex"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.intersex").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns intersex"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Lesbian").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns lesbian"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.lesbian").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns lesbian"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Mlm").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns mlm"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.mlm").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns mlm"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Neutrois").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns neutrois"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.neutrois").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns neutrois"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Nonbinary").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns nonbinary"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.nonbinary").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns nonbinary"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Omnisexual").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns omnisexual"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.omnisexual").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns omnisexual"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Pansexual").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns pansexual"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.pansexual").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns pansexual"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Philadelphia Pride").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns philadelphia_pride"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.philadelphia_pride").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns philadelphia_pride"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Polyamory").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns polyamory"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.polyamory").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns polyamory"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Polyamory New").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns polyamory_new"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.polyamory_new").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns polyamory_new"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Polygender").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns polygender"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.polygender").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns polygender"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Polysexual").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns polysexual"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.polysexual").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns polysexual"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Progress").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns progress"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.progress").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns progress"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Rainbow").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns rainbow"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.rainbow").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns rainbow"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Transfem").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns transfem"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.transfem").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns transfem"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Transgender").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns transgender"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                            .append(Component.translatable("betterglass.pattern.transgender").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns transgender"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
-                                                                            .append(Component.literal("Transmasc").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns transmasc"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
-                                                                            .append(Component.literal("  "))
+                                                                            .append(Component.translatable("betterglass.pattern.transmasc").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns transmasc"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("\n  "))
-                                                                            .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                             false);
                                                     return 1;
                                                 })
@@ -292,554 +331,843 @@ public class ModCommands {
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Empty").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Empty Pattern using Paper, a Feather, and a Glass Block, no specific shape."))
-                                                                                        .append(Component.literal("\nThis recipe results in an output of 4."))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.empty")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.patterns.empty.crafted_from")))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.results_output", 4)))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("checkerboard").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("B/W"),
+                                                                        dyeIngredientList("betterglass.color.black", "betterglass.color.white")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Checkerboard").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Checkerboard Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEBW").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n WB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/W = Black/White Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.checkerboard")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.checkerboard_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EBW").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" WB").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("null").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("B/P"),
+                                                                        dyeIngredientList("betterglass.color.black", "betterglass.color.pink")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Null").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Null Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEBP").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n PB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/P = Black/Pink Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.null")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.null_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EBP").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" PB").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("agender").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("B/L/W"),
+                                                                        dyeIngredientList("betterglass.color.black", "betterglass.color.lime", "betterglass.color.white")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Agender").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Agender Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEBL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n W ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/L/W = Black/Lime/White Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.agender")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.an", Component.translatable("item.betterglass.agender_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EBL").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" W ").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("androgyne").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("P/U/C"),
+                                                                        dyeIngredientList("betterglass.color.pink", "betterglass.color.purple", "betterglass.color.cyan")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Androgyne").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Androgyne Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEPU").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n C ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/U/C = Pink/Purple/Cyan Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.androgyne")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.an", Component.translatable("item.betterglass.androgyne_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EPU").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" C ").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("aroace").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("O/Y/W/L/B"),
+                                                                        dyeIngredientList("betterglass.color.orange", "betterglass.color.yellow", "betterglass.color.white", "betterglass.color.light_blue", "betterglass.color.blue")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Aroace").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Aroace Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEOY").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\nWLB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  O/Y/W/L/B = Orange/Yellow/White/Light Blue/Blue Dye"))
-                                                                                        .append(Component.literal("\nThe Aroace Pattern can also be crafted by combining an Aromantic Pattern with an Asexual or Asexual New Pattern."))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.aroace")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.an", Component.translatable("item.betterglass.aroace_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EOY").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("WLB").withStyle(ChatFormatting.BOLD), ingredientLegend))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.patterns.aroace.also_crafted_from")))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("aromantic").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("G/L/W/I/B"),
+                                                                        dyeIngredientList("betterglass.color.green", "betterglass.color.lime", "betterglass.color.white", "betterglass.color.light_gray", "betterglass.color.black")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Aromantic").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Aromantic Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEGL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\nWIB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G/L/W/I/B = Green/Lime/White/Light Gray/Black Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.aromantic")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.an", Component.translatable("item.betterglass.aromantic_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EGL").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("WIB").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("asexual").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("B/L/W/P"),
+                                                                        dyeIngredientList("betterglass.color.black", "betterglass.color.light_gray", "betterglass.color.white", "betterglass.color.purple")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Asexual").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Asexual Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEBL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n WP").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/L/W/P = Black/Light Gray/White/Purple Dye"))
-                                                                                        .append(Component.literal("\nThe Asexual Pattern can also be crafted by putting an Asexual New Pattern into the crafting grid."))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.asexual")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.an", Component.translatable("item.betterglass.asexual_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EBL").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" WP").withStyle(ChatFormatting.BOLD), ingredientLegend))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.patterns.info.simple_conversion.an",
+                                                                                                Component.translatable("item.betterglass.asexual_pattern"), Component.translatable("item.betterglass.asexual_new_pattern"))))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("asexual_new").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("B/L/W/Y/P"),
+                                                                        dyeIngredientList("betterglass.color.black", "betterglass.color.light_gray", "betterglass.color.white", "betterglass.color.yellow", "betterglass.color.pink")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Asexual New").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Asexual New Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEBL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\nWYP").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/L/W/Y/P = Black/Light Gray/White/Yellow/Pink Dye"))
-                                                                                        .append(Component.literal("\nThe Asexual New Pattern can also be crafted by putting an Asexual Pattern into the crafting grid."))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.asexual_new")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.an", Component.translatable("item.betterglass.asexual_new_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EBL").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("WYP").withStyle(ChatFormatting.BOLD), ingredientLegend))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.patterns.info.simple_conversion.an",
+                                                                                                Component.translatable("item.betterglass.asexual_new_pattern"), Component.translatable("item.betterglass.asexual_pattern"))))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("bigender").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("P/W/L/B"),
+                                                                        dyeIngredientList("betterglass.color.pink", "betterglass.color.white", "betterglass.color.light_blue", "betterglass.color.blue")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Bigender").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Bigender Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEPW").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n LB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/W/L/B = Pink/White/Light Blue/Blue Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.bigender")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.bigender_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EPW").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" LB").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("bisexual").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("P/U/B"),
+                                                                        dyeIngredientList("betterglass.color.pink", "betterglass.color.purple", "betterglass.color.blue")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Bisexual").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Bisexual Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEPU").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n B ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/U/B = Pink/Purple/Blue Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.bisexual")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.bisexual_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EPU").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" B ").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("demiboy").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("G/L/B"),
+                                                                        dyeIngredientList("betterglass.color.green", "betterglass.color.light_gray", "betterglass.color.light_blue")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Demiboy").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Demiboy Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEGL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n B ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G/L/B = Gray/Light Gray/Light Blue Dye"))
-                                                                                        .append(Component.literal("\nThe Demiboy Pattern can also be crafted by putting a Demigender or Demigirl Pattern into the crafting grid alongside Light Blue Dye."))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.demiboy")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.demiboy_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EGL").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" B ").withStyle(ChatFormatting.BOLD), ingredientLegend))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.patterns.info.and_conversion.or.a",
+                                                                                                Component.translatable("item.betterglass.demiboy_pattern"), Component.translatable("item.betterglass.demigender_pattern"),
+                                                                                                Component.translatable("item.betterglass.demigirl_pattern"), Component.translatable("item.minecraft.light_blue_dye"))))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("demigender").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("G/L/Y"),
+                                                                        dyeIngredientList("betterglass.color.green", "betterglass.color.light_gray", "betterglass.color.yellow")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Demigender").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Demigender Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEGL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n Y ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G/L/Y = Gray/Light Gray/Yellow Dye"))
-                                                                                        .append(Component.literal("\nThe Demigender Pattern can also be crafted by putting a Demiboy or Demigirl Pattern into the crafting grid alongside Yellow Dye."))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.demigender")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.demigender_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EGL").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" Y ").withStyle(ChatFormatting.BOLD), ingredientLegend))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.patterns.info.and_conversion.or.a",
+                                                                                                Component.translatable("item.betterglass.demigender_pattern"), Component.translatable("item.betterglass.demiboy_pattern"),
+                                                                                                Component.translatable("item.betterglass.demigirl_pattern"), Component.translatable("item.minecraft.yellow_dye"))))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("demigirl").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("G/L/P"),
+                                                                        dyeIngredientList("betterglass.color.green", "betterglass.color.light_gray", "betterglass.color.pink")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Demigirl").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Demigirl Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEGL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n P ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G/L/P = Gray/Light Gray/Pink Dye"))
-                                                                                        .append(Component.literal("\nThe Demigirl Pattern can also be crafted by putting a Demiboy or Demigender Pattern into the crafting grid alongside Pink Dye."))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.demigirl")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.demigirl_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EGL").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" P ").withStyle(ChatFormatting.BOLD), ingredientLegend))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.patterns.info.and_conversion.or.a",
+                                                                                                Component.translatable("item.betterglass.demigirl_pattern"), Component.translatable("item.betterglass.demiboy_pattern"),
+                                                                                                Component.translatable("item.betterglass.demigender_pattern"), Component.translatable("item.minecraft.pink_dye"))))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("demiromantic").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("W/B/G/L"),
+                                                                        dyeIngredientList("betterglass.color.white", "betterglass.color.black", "betterglass.color.green", "betterglass.color.light_gray")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Demiromantic").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Demiromantic Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEW ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\nBG ").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\n L ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  W/B/G/L = White/Black/Green/Light Gray Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.demiromantic")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.demiromantic_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EW ").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe.no_legend", Component.literal("BG ").withStyle(ChatFormatting.BOLD)))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" L ").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("demisexual").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("W/B/P/L"),
+                                                                        dyeIngredientList("betterglass.color.white", "betterglass.color.black", "betterglass.color.purple", "betterglass.color.light_gray")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Demisexual").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Demisexual Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEW ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\nBP ").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\n L ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  W/B/P/L = White/Black/Purple/Light Gray Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.demisexual")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.demisexual_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EW ").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe.no_legend", Component.literal("BP ").withStyle(ChatFormatting.BOLD)))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" L ").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("genderfluid").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("P/W/U/B/L"),
+                                                                        dyeIngredientList("betterglass.color.pink", "betterglass.color.white", "betterglass.color.purple", "betterglass.color.black", "betterglass.color.blue")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Genderfluid").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Genderfluid Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEPW").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\nUBL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/W/U/B/L = Pink/White/Purple/Black/Blue Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.genderfluid")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.genderfluid_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EPW").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("UBL").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("genderqueer").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("P/W/G"),
+                                                                        dyeIngredientList("betterglass.color.purple", "betterglass.color.white", "betterglass.color.green")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Genderqueer").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Genderqueer Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEP ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n W ").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/W/G = Purple/White/Green Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.genderqueer")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.genderqueer_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EP ").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe.no_legend", Component.literal(" W ").withStyle(ChatFormatting.BOLD)))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" G ").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("intersex").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("Y/P"),
+                                                                        dyeIngredientList("betterglass.color.yellow", "betterglass.color.purple")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Intersex").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Intersex Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEYP").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n   ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  Y/P = Yellow/Purple Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.intersex")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.an", Component.translatable("item.betterglass.intersex_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EYP").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("   ").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("lesbian").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("O/W/P"),
+                                                                        dyeIngredientList("betterglass.color.orange", "betterglass.color.white", "betterglass.color.pink")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Lesbian").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Lesbian Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEOW").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n P ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  O/W/P = Orange/White/Pink Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.lesbian")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.lesbian_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EOW").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" P ").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("mlm").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("G/W/B"),
+                                                                        dyeIngredientList("betterglass.color.green", "betterglass.color.white", "betterglass.color.blue")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Mlm").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Mlm Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEGW").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n B ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G/W/B = Green/White/Blue Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.mlm")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.mlm_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EGW").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" B ").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("neutrois").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("W/G/B"),
+                                                                        dyeIngredientList("betterglass.color.white", "betterglass.color.green", "betterglass.color.black")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Neutrois").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Neutrois Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEW ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n G ").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\n B ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  W/G/B = White/Green/Black Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.neutrois")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.neutrois_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EW ").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe.no_legend", Component.literal(" G ").withStyle(ChatFormatting.BOLD)))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" B ").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("nonbinary").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("Y/W/P/B"),
+                                                                        dyeIngredientList("betterglass.color.yellow", "betterglass.color.white", "betterglass.color.purple", "betterglass.color.black")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Nonbinary").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Nonbinary Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEYW").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n PB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  Y/W/P/B = Yellow/White/Purple/Black Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.nonbinary")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.nonbinary_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EYW").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" PB").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("omnisexual").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("P/B/U"),
+                                                                        dyeIngredientList("betterglass.color.pink", "betterglass.color.black", "betterglass.color.blue")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Omnisexual").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Omnisexual Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEP ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n B ").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\n U ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/B/U = Pink/Black/Blue Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.omnisexual")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.an", Component.translatable("item.betterglass.omnisexual_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EP ").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe.no_legend", Component.literal(" B ").withStyle(ChatFormatting.BOLD)))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" U ").withStyle(ChatFormatting.BOLD), ingredientLegend))
+
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("pansexual").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("P/Y/C"),
+                                                                        dyeIngredientList("betterglass.color.pink", "betterglass.color.yellow", "betterglass.color.cyan")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Pansexual").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Pansexual Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEP ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n Y ").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\n C ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/Y/C = Pink/Yellow/Cyan Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.pansexual")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.pansexual_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EP ").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe.no_legend", Component.literal(" Y ").withStyle(ChatFormatting.BOLD)))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" C ").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("philadelphia_pride").executes(context -> {
+                                                                Component ingredientLegendOne = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("B/R/D/O"),
+                                                                        dyeIngredientList("betterglass.color.black", "betterglass.color.brown", "betterglass.color.red", "betterglass.color.orange")
+                                                                );
+                                                                Component ingredientLegendTwo = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("Y/G/L/U"),
+                                                                        dyeIngredientList("betterglass.color.yellow", "betterglass.color.green", "betterglass.color.blue", "betterglass.color.purple")
+                                                                );
+                                                                Component ingredientLegendThree = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("B/R"),
+                                                                        dyeIngredientList("betterglass.color.black", "betterglass.color.brown")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Philadelphia Pride").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Philadelphia Pride Pattern using the following recipes:"))
-                                                                                        .append(Component.literal("\nEBR").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\nDOY").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/R/D/O = Black/Brown/Red/Orange Dye"))
-                                                                                        .append(Component.literal("\nGLU").withStyle(ChatFormatting.BOLD)).append(Component.literal("  Y/G/L/U = Yellow/Green/Blue/Purple Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.philadelphia_pride")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.plural.a", Component.translatable("item.betterglass.philadelphia_pride_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EBR").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("DOY").withStyle(ChatFormatting.BOLD), ingredientLegendOne))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GLU").withStyle(ChatFormatting.BOLD), ingredientLegendTwo))
                                                                                         .append(Component.literal("\n"))
-                                                                                        .append(Component.literal("\nPBR").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P = Rainbow Pattern"))
-                                                                                        .append(Component.literal("\n   ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/R = Black/Brown Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("PBR").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("P"),
+                                                                                                        Component.translatable("item.betterglass.rainbow_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("   ").withStyle(ChatFormatting.BOLD), ingredientLegendThree))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("polyamory").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("B/R/Y/L"),
+                                                                        dyeIngredientList("betterglass.color.blue", "betterglass.color.red", "betterglass.color.yellow", "betterglass.color.black")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Polyamory").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Polyamory Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEBR").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n YL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/R/Y/L = Blue/Red/Yellow/Black Dye"))
-                                                                                        .append(Component.literal("\nThe Polyamory Pattern can also be crafted by putting an Polyamory New Pattern into the crafting grid."))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.polyamory")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.polyamory_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EBR").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" YL").withStyle(ChatFormatting.BOLD), ingredientLegend))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.patterns.info.simple_conversion.a",
+                                                                                                Component.translatable("item.betterglass.polyamory_pattern"), Component.translatable("item.betterglass.polyamory_new_pattern"))))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("polyamory_new").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("W/Y/C/P/U"),
+                                                                        dyeIngredientList("betterglass.color.white", "betterglass.color.yellow", "betterglass.color.cyan", "betterglass.color.pink", "betterglass.color.purple")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Polyamory New").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Polyamory New Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEWY").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\nCPU").withStyle(ChatFormatting.BOLD)).append(Component.literal("  W/Y/C/P/U = White/Yellow/Cyan/Pink/Purple Dye"))
-                                                                                        .append(Component.literal("\nThe Polyamory New Pattern can also be crafted by putting an Polyamory Pattern into the crafting grid."))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.polyamory_new")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.polyamory_new_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EWY").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("CPU").withStyle(ChatFormatting.BOLD), ingredientLegend))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.patterns.info.simple_conversion.a",
+                                                                                                Component.translatable("item.betterglass.polyamory_new_pattern"), Component.translatable("item.betterglass.polyamory_pattern"))))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("polygender").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("B/L/P/Y/I"),
+                                                                        dyeIngredientList("betterglass.color.black", "betterglass.color.light_gray", "betterglass.color.pink", "betterglass.color.yellow", "betterglass.color.light_blue")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Polygender").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Polygender Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEBL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\nPYI").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/L/P/Y/I = Black/Light Gray/Pink/Yellow/Light Blue Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.polygender")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.polygender_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EBL").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("PYI").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("polysexual").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("P/G/B"),
+                                                                        dyeIngredientList("betterglass.color.pink", "betterglass.color.green", "betterglass.color.blue")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Polysexual").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Polysexual Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEPG").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n B ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P/G/B = Pink/Green/Blue Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.polysexual")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.polysexual_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EPG").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" B ").withStyle(ChatFormatting.BOLD), ingredientLegend))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("progress").executes(context -> {
+                                                                Component ingredientLegendOne = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("B/R/W/P/I"),
+                                                                        dyeIngredientList("betterglass.color.black", "betterglass.color.brown", "betterglass.color.white", "betterglass.color.pink", "betterglass.color.light_blue")
+                                                                );
+                                                                Component ingredientLegendTwo = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("B/R"),
+                                                                        dyeIngredientList("betterglass.color.black", "betterglass.color.brown")
+                                                                );
+                                                                Component ingredientLegendThree = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("W/I/L"),
+                                                                        dyeIngredientList("betterglass.color.white", "betterglass.color.pink", "betterglass.color.light_blue")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Progress").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Progress Pattern using the following recipes:"))
-                                                                                        .append(Component.literal("\nPBR").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P = Rainbow Pattern"))
-                                                                                        .append(Component.literal("\nWIL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/R/W/P/I = Black/Brown/White/Pink/Light Blue Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.progress")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.plural.a", Component.translatable("item.betterglass.progress_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("PBR").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("P"),
+                                                                                                        Component.translatable("item.betterglass.rainbow_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("WIL").withStyle(ChatFormatting.BOLD), ingredientLegendOne))
                                                                                         .append(Component.literal("\n"))
-                                                                                        .append(Component.literal("\nPBR").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P = Rainbow Pattern; T = Transfem/-gender/-masc Pattern"))
-                                                                                        .append(Component.literal("\n T ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  B/R = Black/Brown Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("PBR").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.two_patterns",
+                                                                                                        Component.literal("P"), Component.translatable("item.betterglass.rainbow_pattern"),
+                                                                                                        Component.literal("T"), Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.transfem_transgender_transmasc_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" T ").withStyle(ChatFormatting.BOLD), ingredientLegendTwo))
                                                                                         .append(Component.literal("\n"))
-                                                                                        .append(Component.literal("\nPWI").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P = Philadelphia Pattern"))
-                                                                                        .append(Component.literal("\n L ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  W/I/L = White/Pink/Light Blue Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("PWI").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("P"),
+                                                                                                        Component.translatable("item.betterglass.philadelphia_pride_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" L ").withStyle(ChatFormatting.BOLD), ingredientLegendThree))
                                                                                         .append(Component.literal("\n"))
-                                                                                        .append(Component.literal("\nPT ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  P = Philadelphia Pattern"))
-                                                                                        .append(Component.literal("\n   ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  T = Transfem/-gender/-masc Pattern"))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("PT ").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("P"),
+                                                                                                        Component.translatable("item.betterglass.philadelphia_pride_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("   ").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("T"),
+                                                                                                        Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.transfem_transgender_transmasc_pattern"))))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("rainbow").executes(context -> {
+                                                                Component ingredientLegendOne = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("R/O/Y"),
+                                                                        dyeIngredientList("betterglass.color.red", "betterglass.color.orange", "betterglass.color.yellow")
+                                                                );
+                                                                Component ingredientLegendTwo = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("G/B/P"),
+                                                                        dyeIngredientList("betterglass.color.green", "betterglass.color.blue", "betterglass.color.purple")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Rainbow").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Rainbow Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nERO").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\nYGB").withStyle(ChatFormatting.BOLD)).append(Component.literal("  R/O/Y = Red/Orange/Yellow Dye"))
-                                                                                        .append(Component.literal("\n U ").withStyle(ChatFormatting.BOLD)).append(Component.literal("  G/B/P = Green/Blue/Purple Dye"))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.rainbow")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.rainbow_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("ERO").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("YGB").withStyle(ChatFormatting.BOLD), ingredientLegendOne))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" U ").withStyle(ChatFormatting.BOLD), ingredientLegendTwo))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("transfem").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("L/P"),
+                                                                        dyeIngredientList("betterglass.color.light_blue", "betterglass.color.pink")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Transfem").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Transfem Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nELL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n PP").withStyle(ChatFormatting.BOLD)).append(Component.literal("  L/P = Light Blue/Pink Dye"))
-                                                                                        .append(Component.literal("\nThe Transfem Pattern can also be crafted by putting a Transmasc Pattern into the crafting grid."))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.transfem")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.transfem_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("ELL").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" PP").withStyle(ChatFormatting.BOLD), ingredientLegend))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.patterns.info.simple_conversion.a",
+                                                                                                Component.translatable("item.betterglass.transfem_pattern"), Component.translatable("item.betterglass.transmasc_pattern"))))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("transgender").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("L/P/W"),
+                                                                        dyeIngredientList("betterglass.color.light_blue", "betterglass.color.pink", "betterglass.color.white")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Transgender").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Transgender Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nELP").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\nWPL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  L/P/W = Light Blue/Pink/White Dye"))
-                                                                                        .append(Component.literal("\nThe Transfem Pattern can also be crafted by putting a Transfem or Transmasc Pattern into the crafting grid alongside a White Dye."))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.transgender")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.transgender_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("ELP").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("WPL").withStyle(ChatFormatting.BOLD), ingredientLegend))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.patterns.info.and_conversion.or.a",
+                                                                                                Component.translatable("item.betterglass.transgender_pattern"), Component.translatable("item.betterglass.transfem_pattern"),
+                                                                                                Component.translatable("item.betterglass.transmasc_pattern"), Component.translatable("item.minecraft.white_dye"))))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
                                                             .then(Commands.literal("transmasc").executes(context -> {
+                                                                Component ingredientLegend = Component.translatable(
+                                                                        "commands.betterglass.bgwiki.recipes.recipe.ingredient_legend",
+                                                                        Component.literal("P/L"),
+                                                                        dyeIngredientList("betterglass.color.pink", "betterglass.color.pink")
+                                                                );
                                                                 context.getSource().sendSuccess(() ->
                                                                                 Component.literal("")
                                                                                         .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                                                        .append(Component.literal("Pattern Recipes: Transmasc").withStyle(ChatFormatting.BOLD))
-                                                                                        .append(Component.literal("\nYou can craft a Transmasc Pattern using the following recipe:"))
-                                                                                        .append(Component.literal("\nEPP").withStyle(ChatFormatting.BOLD)).append(Component.literal("  E = Empty Pattern"))
-                                                                                        .append(Component.literal("\n LL").withStyle(ChatFormatting.BOLD)).append(Component.literal("  L/P = Light Blue/Pink Dye"))
-                                                                                        .append(Component.literal("\nThe Transmasc Pattern can also be crafted by putting a Transfem Pattern into the crafting grid."))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("commands.betterglass.bgwiki.recipes.pattern_group"), Component.translatable("betterglass.pattern.transmasc")).withStyle(ChatFormatting.BOLD))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.item.a", Component.translatable("item.betterglass.transmasc_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("EPP").withStyle(ChatFormatting.BOLD),
+                                                                                                Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("E"),
+                                                                                                        Component.translatable("item.betterglass.empty_pattern"))))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal(" LL").withStyle(ChatFormatting.BOLD), ingredientLegend))
+                                                                                        .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.patterns.info.simple_conversion.a",
+                                                                                                Component.translatable("item.betterglass.transmasc_pattern"), Component.translatable("item.betterglass.transfem_pattern"))))
                                                                                         .append(Component.literal("\n  "))
-                                                                                        .append(Component.literal("Back to root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                                         .append(Component.literal("  "))
-                                                                                        .append(Component.literal("Back to patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                                                        .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                                         false);
                                                                 return 1;
                                                             }))
@@ -849,33 +1177,25 @@ public class ModCommands {
                                     context.getSource().sendSuccess(() ->
                                                     Component.literal("")
                                                             .append(Component.literal("==  ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                            .append(Component.literal("Better Glass: Glass Types").withStyle(ChatFormatting.BOLD))
-                                                            .append("\n")
-                                                            .append("Better Glass features various Glass Types, here's an explainer!")
-                                                            .append(Component.literal("\nColoration: ").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE))
-                                                            .append(Component.literal("There are two types of Coloration for Glass. Those are Stained (the entire block has a stain on it); and Colored (only opaque pixels are colored).").withStyle(ChatFormatting.ITALIC))
-                                                            .append("\n    ").append("Additionally, there is \"Patterned\" Glass, which is Stained Glass but with a special motif instead of a color.")
-                                                            .append(Component.literal("\nBehaviour: ").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE))
-                                                            .append(Component.literal("There are Blocks, Panes, Tinted Blocks, and Tinted Panes. Tinted Glass does not let light through and darkens the area.").withStyle(ChatFormatting.ITALIC))
-                                                            .append(Component.literal("\nVariants: ").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE))
-                                                            .append(Component.literal("Glass is available in Vanilla (using a vanilla-like texture), Scratched (using a texture resembling pre-1.14 Glass), and Clear (outline only).").withStyle(ChatFormatting.ITALIC))
-                                                            .append("\n\n").append("These are available in all possible combinations.")
-                                                            .append("\n").append(Component.literal("There is also a Chiseled Glass variant to celebrate 500 downloads, as of v1.1.0, is Creative-only.").withStyle(ChatFormatting.ITALIC)),
+                                                            .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("betterglass.modname"), Component.translatable("commands.betterglass.bgwiki.types")).withStyle(ChatFormatting.BOLD))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.types.introduction")))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content", Component.translatable("commands.betterglass.bgwiki.types.coloration").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE), Component.translatable("commands.betterglass.bgwiki.types.coloration.explainer").withStyle(ChatFormatting.ITALIC))))
+                                                            .append("\n    ").append(Component.translatable("commands.betterglass.bgwiki.types.coloration.explainer.extra"))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content", Component.translatable("commands.betterglass.bgwiki.types.behaviour").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE), Component.translatable("commands.betterglass.bgwiki.types.behaviour.explainer").withStyle(ChatFormatting.ITALIC))))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content", Component.translatable("commands.betterglass.bgwiki.types.variants").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE), Component.translatable("commands.betterglass.bgwiki.types.variants.explainer").withStyle(ChatFormatting.ITALIC))))
+                                                            .append("\n\n").append(Component.translatable("commands.betterglass.bgwiki.types.available"))
+                                                            .append("\n").append(Component.translatable("commands.betterglass.bgwiki.types.chiseled.creative_only_500").withStyle(ChatFormatting.ITALIC)),
                                             false);
                                     return 1;
                                 }))
                                 .then(Commands.literal("roadmap").executes(context -> {
                                     context.getSource().sendSuccess(() ->
                                                     Component.literal("").append(Component.literal("==  ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                            .append(Component.literal("Better Glass: Roadmap").withStyle(ChatFormatting.BOLD))
-                                                            .append("\n")
-                                                            .append("Better Glass has a Roadmap for the future. This roadmap has no particular timeframe and is non-binding. These changes may never occur, occur in a different order, or only release in the 22nd century.")
-                                                            .append(Component.literal("\nv1.2.0: ").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE))
-                                                            .append(Component.literal("Tech rewrite, Advancements, QoL (Culling fix & Resource Pack changes)"))
-                                                            .append(Component.literal("\nv1.3.0: ").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE))
-                                                            .append(Component.literal("Glasscutter, Patterning & Chiseling Station, new Glass, connecting & non-connecting blockstates"))
-                                                            .append(Component.literal("\nv1.4.0: ").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE))
-                                                            .append(Component.literal("Pane Upgrades (Better culling, more blockstates), new Glass")),
+                                                            .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("betterglass.modname"), Component.translatable("commands.betterglass.bgwiki.roadmap")).withStyle(ChatFormatting.BOLD))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.roadmap.introduction")))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content", Component.translatable("commands.betterglass.bgwiki.roadmap.120.name").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE), Component.translatable("commands.betterglass.bgwiki.roadmap.120.description"))))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content", Component.translatable("commands.betterglass.bgwiki.roadmap.130.name").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE), Component.translatable("commands.betterglass.bgwiki.roadmap.130.description"))))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content", Component.translatable("commands.betterglass.bgwiki.roadmap.140.name").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE), Component.translatable("commands.betterglass.bgwiki.roadmap.140.description")))),
                                             false);
                                     return 1;
                                 }))
@@ -883,16 +1203,12 @@ public class ModCommands {
                                     context.getSource().sendSuccess(() ->
                                                     Component.literal("")
                                                             .append(Component.literal("å ").withStyle(ChatFormatting.BOLD, ChatFormatting.OBFUSCATED, ChatFormatting.DARK_PURPLE))
-                                                            .append(Component.literal("Extra Info for Better Glass...").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_PURPLE))
+                                                            .append(Component.translatable("commands.betterglass.bgwiki.info.introduction").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_PURPLE))
                                                             .append(Component.literal(" å").withStyle(ChatFormatting.BOLD, ChatFormatting.OBFUSCATED, ChatFormatting.DARK_PURPLE))
-                                                            .append(Component.literal("\nVersion: ").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA))
-                                                            .append(Component.literal(BetterGlass.MOD_VERSION).withStyle(ChatFormatting.ITALIC))
-                                                            .append(Component.literal("\nGit Hash: ").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA))
-                                                            .append(Component.literal(BetterGlass.COMMIT_HASH).withStyle(ChatFormatting.ITALIC))
-                                                            .append(Component.literal("\nWebsite: ").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA))
-                                                            .append(Component.literal("petbyte.dev").withStyle(ChatFormatting.ITALIC))
-                                                            .append(Component.literal("\nAuthor: ").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA))
-                                                            .append(Component.literal("joelfrom08").withStyle(ChatFormatting.ITALIC))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content", Component.translatable("commands.betterglass.bgwiki.info.version").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA), Component.literal(BetterGlass.MOD_VERSION).withStyle(ChatFormatting.ITALIC))))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content", Component.translatable("commands.betterglass.bgwiki.info.git_hash").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA), Component.literal(BetterGlass.COMMIT_HASH).withStyle(ChatFormatting.ITALIC))))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content", Component.translatable("commands.betterglass.bgwiki.info.website").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA), Component.literal("petbyte.dev").withStyle(ChatFormatting.ITALIC))))
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content", Component.translatable("commands.betterglass.bgwiki.info.author").withStyle(ChatFormatting.BOLD, ChatFormatting.DARK_AQUA), Component.literal("joelfrom08").withStyle(ChatFormatting.ITALIC))))
                                                             .append(Component.literal("\n© 2026 PetByte 🧡").withStyle(ChatFormatting.GOLD)),
                                             false);
                                     return 1;
@@ -900,21 +1216,27 @@ public class ModCommands {
                                 .then(Commands.literal("faq").executes(context -> {
                                     context.getSource().sendSuccess(() ->
                                                     Component.literal("").append(Component.literal("==  ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
-                                                            .append(Component.literal("Better Glass: FAQ").withStyle(ChatFormatting.BOLD))
-                                                            .append(Component.literal("\nAm I forced to use your textures for Vanilla Glass? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
-                                                            .append("Currently, yes, but a toggle to switch back to Vanilla textures will be added in v1.2.0.")
-                                                            .append(Component.literal("\nMy Connected Textures don't work, why? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
-                                                            .append("Did you make sure to install the \"Continuity\" mod and enable the provided \"Better Glass: Connecting Textures\" resource pack? If yes, and it doesn't work, report the issue on the ")
-                                                            .append(Component.literal("GitHub repo").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.OpenUrl(URI.create("https://github.com/PetByteStudios/better-glass-mod")))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_BLUE))
-                                                            .append(Component.literal("\nHow am I supposed to deal with hundreds of different blocks and thousands of recipes!? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
-                                                            .append("I recognize there are a lot of blocks and recipes, it is definitely quite overwhelming. But I have good news for you. Currently planned for v1.3.0 are two workstations to make crafting easier. Additionally, you can use the \"JEI\" mod for a comprehensive overview or run ")
-                                                            .append(Component.literal("/bgwiki recipes").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
-                                                            .append(" for a simplified list of recipes.")
-                                                            .append(Component.literal("\nHow many Glass blocks are there? ").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN))
-                                                            .append("As of v1.1.0, if you sum up all Glass Types, Patterns, Colors, and Stains for normal and tinted blocks and panes, you'll receive ")
-                                                            .append(Component.literal("769").withStyle(ChatFormatting.BOLD, ChatFormatting.LIGHT_PURPLE))
-                                                            .append(".").append(" If you count in Chiseled blocks (which are Creative-only), you'll reach ")
-                                                            .append(Component.literal("1,138").withStyle(ChatFormatting.BOLD, ChatFormatting.LIGHT_PURPLE)).append("!"),
+                                                            .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("betterglass.modname"), Component.translatable("commands.betterglass.bgwiki.faq")).withStyle(ChatFormatting.BOLD))
+
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content",
+                                                                    Component.translatable("commands.betterglass.bgwiki.faq.forced_to_use_custom_textures_vanilla_glass").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN),
+                                                                    Component.translatable("commands.betterglass.bgwiki.faq.forced_to_use_custom_textures_vanilla_glass.answer"))))
+
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content",
+                                                                    Component.translatable("commands.betterglass.bgwiki.faq.connected_textures_do_not_work").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN),
+                                                                    Component.translatable("commands.betterglass.bgwiki.faq.connected_textures_do_not_work.answer",
+                                                                            Component.translatable("resourcePack.betterglass.connecting_textures.name"),
+                                                                            Component.translatable("commands.betterglass.generic.github_repo").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.OpenUrl(URI.create("https://github.com/PetByteStudios/better-glass-mod")))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.DARK_BLUE)))))
+
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content",
+                                                                    Component.translatable("commands.betterglass.bgwiki.faq.how_to_deal_with_recipes").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN),
+                                                                    Component.translatable("commands.betterglass.bgwiki.faq.how_to_deal_with_recipes.answer",
+                                                                            Component.literal("/bgwiki recipes").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes"))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)))))
+
+                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content",
+                                                                    Component.translatable("commands.betterglass.bgwiki.faq.how_many_glass_blocks").withStyle(ChatFormatting.ITALIC, ChatFormatting.GREEN),
+                                                                    Component.translatable("commands.betterglass.bgwiki.faq.how_many_glass_blocks.answer",
+                                                                            Component.literal("769").withStyle(ChatFormatting.BOLD, ChatFormatting.LIGHT_PURPLE), Component.literal("1,138").withStyle(ChatFormatting.BOLD, ChatFormatting.LIGHT_PURPLE))))),
                                             false);
                                     return 1;
                                 }))
