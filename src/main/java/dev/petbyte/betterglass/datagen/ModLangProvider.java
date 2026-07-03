@@ -151,14 +151,14 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.bgwiki.recipes.dye_once.info.output", "This recipe does one step, from Undyed to Colored, or Colored to Stained, and results in an output of %s.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.dye_twice", "Dye (Two Steps)");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.dye_twice.info.dye_once", "To go from Undyed to Colored, or Colored to Stained, check %s.");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.dye_twice.info.output", "This recipe does two steps, from Undyed to Stained and results in an output of %s.");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.dye_twice.info.output", "This recipe does two steps, from Undyed straight to Stained and results in an output of %s.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_dye", "Any Dye");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass", "Any Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.colored_or_stained", "Any Colored/Stained Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.identical", "Any Glass (must all be identical)");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.info.identical", "(must all be identical)");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.info.same_type_any_color_same_coloration", "(Same Type, any Color. Must all be Stained or Colored; no mixing)");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.info.same_type_any_color_stained_mixed_color_colored", "(Same Type. Same Stained; any Colored)");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.info.same_type_any_color_stained_mixed_color_colored", "(Same Type. Same Stained or any Colored; no mixing)");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.info.same_type_same_color_or_undyed", "(Same Type and Color, or Undyed)");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.undyed", "Any Undyed Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.undyed.same_type", "Any Undyed Glass (Same Type)");
@@ -203,7 +203,7 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.bgwiki.recipes.results_output", "This recipe results in an output of %s.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.specific_recipe", "%s Recipe (%s)");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.station_recipes", "%s Recipes");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.stonecutter", "Stonecutter");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.stonecutter", "Stonecutter/Glasscutter");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.stonecutter.info.one", "By inputting any Glass Block or Pane, you can easily change the Glass Type.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.stonecutter.info.two", "By inputting any Colored or Stained Glass Block or Pane, you can switch between Coloration type at no extra cost.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.tint", "Tint");
