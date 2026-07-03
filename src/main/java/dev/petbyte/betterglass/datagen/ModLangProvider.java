@@ -165,7 +165,7 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_pattern", "Any Pattern");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.transfem_transgender_transmasc_pattern", "Transfem/-gender/-masc Pattern");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.two_patterns", "%s = %s; %s = %s");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.introduction", "This command shows you recipes for Better Glass, it is meant as a small tool. However, I do recommend a Recipe Viewer, such as \"JEI\", for more details.");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.introduction", "This command shows you recipes for Better Glass, it is meant as a small tool. However, I do recommend a recipe viewer, such as \"JEI\", for more details.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.panes", "Panes");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.pattern", "Pattern");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.pattern_group", "Pattern Recipes");
@@ -221,16 +221,16 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.bgwiki.types.variants", "Variants:");
         translationBuilder.add("commands.betterglass.bgwiki.types.variants.explainer", "Glass is available in Vanilla (using a vanilla-like texture), Scratched (using a texture resembling pre-1.14 Glass), and Clear (outline only).");
         translationBuilder.add("commands.betterglass.bgwiki.types.available", "These are available in all possible combinations.");
-        translationBuilder.add("commands.betterglass.bgwiki.types.chiseled.creative_only_500", "There is also a Chiseled Glass variant to celebrate 500 downloads, as of v1.1.0, is Creative-only.");
+        translationBuilder.add("commands.betterglass.bgwiki.types.chiseled.creative_only_500", "There is also a Chiseled Glass variant to celebrate 500 downloads, which, as of v1.1.0, is Creative-only.");
 
         translationBuilder.add("commands.betterglass.bgwiki.roadmap", "Roadmap");
-        translationBuilder.add("commands.betterglass.bgwiki.roadmap.introduction", "Better Glass has a Roadmap for the future. This roadmap has no particular timeframe and is non-binding. These changes may never occur, occur in a different order, or only release in the 22nd century.");
+        translationBuilder.add("commands.betterglass.bgwiki.roadmap.introduction", "Better Glass has a roadmap for the future. This roadmap has no particular timeframe and is non-binding. These changes may never occur, occur in a different order, or only release in the 22nd century.");
         translationBuilder.add("commands.betterglass.bgwiki.roadmap.120.name", "v1.2.0:");
         translationBuilder.add("commands.betterglass.bgwiki.roadmap.120.description", "Tech rewrite, Advancements, QoL (Culling fix & Resource Pack changes)");
         translationBuilder.add("commands.betterglass.bgwiki.roadmap.130.name", "v1.3.0:");
-        translationBuilder.add("commands.betterglass.bgwiki.roadmap.130.description", "Glasscutter, Patterning & Chiseling Station, new Glass, connecting & non-connecting blockstates");
+        translationBuilder.add("commands.betterglass.bgwiki.roadmap.130.description", "Glasscutter, Patterning & Chiseling Station, new Glass, connecting & non-connecting block states");
         translationBuilder.add("commands.betterglass.bgwiki.roadmap.140.name", "v1.4.0:");
-        translationBuilder.add("commands.betterglass.bgwiki.roadmap.140.description", "Pane Upgrades (Better culling, more blockstates), new Glass");
+        translationBuilder.add("commands.betterglass.bgwiki.roadmap.140.description", "Pane Upgrades (better culling, more block states), new Glass");
 
         translationBuilder.add("commands.betterglass.bgwiki.info", "Extra Information");
         translationBuilder.add("commands.betterglass.bgwiki.info.introduction", "Extra Info for Better Glass...");
@@ -242,11 +242,11 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.bgwiki.faq", "FAQ");
         translationBuilder.add("commands.betterglass.bgwiki.faq.forced_to_use_custom_textures_vanilla_glass", "Am I forced to use your textures for Vanilla Glass?");
         translationBuilder.add("commands.betterglass.bgwiki.faq.forced_to_use_custom_textures_vanilla_glass.answer", "Currently, yes, but a toggle to switch back to Vanilla textures will be added in v1.2.0.");
-        translationBuilder.add("commands.betterglass.bgwiki.faq.connected_textures_do_not_work", "My Connected Textures don't work, why?");
+        translationBuilder.add("commands.betterglass.bgwiki.faq.connected_textures_do_not_work", "My Connected Textures don't work; why?");
         translationBuilder.add("commands.betterglass.bgwiki.faq.connected_textures_do_not_work.answer", "Did you make sure to install the \"Continuity\" mod and enable the provided \"%s\" resource pack? If yes, and it doesn't work, report the issue on the %s.");
         translationBuilder.add("commands.betterglass.bgwiki.faq.how_to_deal_with_recipes", "How am I supposed to deal with hundreds of different blocks and thousands of recipes!?");
-        translationBuilder.add("commands.betterglass.bgwiki.faq.how_to_deal_with_recipes.answer", "I recognize there are a lot of blocks and recipes, it is definitely quite overwhelming. But I have good news for you. Currently planned for v1.3.0 are two workstations to make crafting easier. Additionally, you can use the \"JEI\" mod for a comprehensive overview or run %s for a simplified list of recipes.");
-        translationBuilder.add("commands.betterglass.bgwiki.faq.how_many_glass_blocks", "How many Glass blocks are there?");
+        translationBuilder.add("commands.betterglass.bgwiki.faq.how_to_deal_with_recipes.answer", "I recognize there are a lot of blocks and recipes; it is definitely quite overwhelming. But I have good news for you. Currently planned for v1.3.0 are two workstations to make crafting easier. Additionally, you can use the \"JEI\" mod for a comprehensive overview or run %s for a simplified list of recipes.");
+        translationBuilder.add("commands.betterglass.bgwiki.faq.how_many_glass_blocks", "How many Glass Blocks are there?");
         translationBuilder.add("commands.betterglass.bgwiki.faq.how_many_glass_blocks.answer", "As of v1.1.0, if you sum up all Glass Types, Patterns, Colors, and Stains for normal and tinted blocks and panes, you'll receive %s. If you count in Chiseled blocks (which are Creative-only), you'll reach %s!");
     }
 
