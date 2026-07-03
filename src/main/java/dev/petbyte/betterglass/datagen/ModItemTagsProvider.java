@@ -27,6 +27,7 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NonNull Provider registries) {
         var conventionalTagGlassBlocksColorless = builder(ConventionalItemTags.GLASS_BLOCKS_COLORLESS);
+        var conventionalTagGlassPanesColorless = builder(ConventionalItemTags.GLASS_PANES_COLORLESS);
 
         for (Block block : ModBlocks.BETTER_GLASS_BLOCKS) {
             builder(ConventionalItemTags.GLASS_BLOCKS).add(itemKey(block.asItem()));
@@ -53,6 +54,8 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
         }
         conventionalTagGlassBlocksColorless.add(itemKey(ModBlocks.CLEAR_GLASS.asItem()));
         conventionalTagGlassBlocksColorless.add(itemKey(ModBlocks.SCRATCHED_GLASS.asItem()));
+        conventionalTagGlassPanesColorless.add(itemKey(ModBlocks.CLEAR_GLASS.asItem()));
+        conventionalTagGlassPanesColorless.add(itemKey(ModBlocks.SCRATCHED_GLASS.asItem()));
 
         for (ModTags.TagPair tag : ModTags.ALL_TAG_PAIRS) {
             copy(tag.block(), tag.item());
