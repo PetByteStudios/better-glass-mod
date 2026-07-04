@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.Block;
 import org.jspecify.annotations.NonNull;
 
 import java.util.Arrays;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
@@ -23,6 +24,44 @@ public class ModLangProvider extends FabricLanguageProvider {
 
     @Override
     public void generateTranslations(HolderLookup.@NonNull Provider registryLookup, @NonNull TranslationBuilder translationBuilder) {
+        Map<String, String> patternNames = Map.ofEntries(
+                Map.entry("empty", "Empty"),
+                Map.entry("checkerboard", "Checkerboard"),
+                Map.entry("null", "Null"),
+                Map.entry("agender", "Agender"),
+                Map.entry("androgyne", "Androgyne"),
+                Map.entry("aroace", "AroAce"),
+                Map.entry("aromantic", "Aromantic"),
+                Map.entry("asexual", "Asexual"),
+                Map.entry("asexual_new", "Asexual (New)"),
+                Map.entry("bigender", "Bigender"),
+                Map.entry("bisexual", "Bisexual"),
+                Map.entry("demiboy", "Demiboy"),
+                Map.entry("demigender", "Demigender"),
+                Map.entry("demigirl", "Demigirl"),
+                Map.entry("demiromantic", "Demiromantic"),
+                Map.entry("demisexual", "Demisexual"),
+                Map.entry("genderfluid", "Genderfluid"),
+                Map.entry("genderqueer", "Genderqueer"),
+                Map.entry("intersex", "Intersex"),
+                Map.entry("lesbian", "Lesbian"),
+                Map.entry("mlm", "MLM"),
+                Map.entry("neutrois", "Neutrois"),
+                Map.entry("nonbinary", "Non-Binary"),
+                Map.entry("omnisexual", "Omnisexual"),
+                Map.entry("pansexual", "Pansexual"),
+                Map.entry("philadelphia_pride", "Philadelphia Pride"),
+                Map.entry("polyamory", "Polyamory"),
+                Map.entry("polyamory_new", "Polyamory (New)"),
+                Map.entry("polygender", "Polygender"),
+                Map.entry("polysexual", "Polysexual"),
+                Map.entry("progress", "Progress"),
+                Map.entry("rainbow", "Rainbow"),
+                Map.entry("transfem", "Transfem"),
+                Map.entry("transgender", "Transgender"),
+                Map.entry("transmasc", "Transmasc")
+        );
+
         for (Block block : ModBlocks.BETTER_GLASS_ALL) {
             if (ModBlocks.BETTER_GLASS_PATTERNED_ALL.contains(block)) {
                 continue;
@@ -33,16 +72,24 @@ public class ModLangProvider extends FabricLanguageProvider {
         }
 
         for (Item item : ModItems.ALL_ITEMS) {
+            if (ModItems.PATTERNS.containsValue(item)) { continue; }
             String itemID = BuiltInRegistries.ITEM.getKey(item).toString().replace("betterglass:", "");
             String translation = capitalizeWords(itemID);
             translationBuilder.add(item.getDescriptionId(), translation);
         }
 
+        for (var pattern : ModItems.PATTERNS.entrySet()) {
+            String patternName = patternNames.getOrDefault(pattern.getKey(), capitalizeWords(pattern.getKey()));
+            String translation = "%s Pattern".formatted(patternName);
+            translationBuilder.add(pattern.getValue().getDescriptionId(), translation);
+        }
+
         for (Block block : ModBlocks.BETTER_GLASS_PATTERNED_ALL) {
             String blockID = BuiltInRegistries.BLOCK.getKey(block).toString().replace("betterglass:", "");
             String[] parts = blockID.split("_patterned_", 2);
-            String patternName = capitalizeWords(parts[0]);
+            String patternId = parts[0];
             String rest = capitalizeWords(parts[1]);
+            String patternName = patternNames.getOrDefault(patternId, capitalizeWords(patternId));
             String translation = "Patterned %s (%s)".formatted(rest, patternName);
             translationBuilder.add(block.getDescriptionId(), translation);
         }
@@ -79,41 +126,9 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("resourcePack.betterglass.base_assets.name", "Better Glass: Base Assets");
         translationBuilder.add("resourcePack.betterglass.base_assets.description", "The base textures for Better Glass");
 
-        translationBuilder.add("betterglass.pattern.empty", "Empty");
-        translationBuilder.add("betterglass.pattern.checkerboard", "Checkerboard");
-        translationBuilder.add("betterglass.pattern.null", "Null");
-        translationBuilder.add("betterglass.pattern.agender", "Agender");
-        translationBuilder.add("betterglass.pattern.androgyne", "Androgyne");
-        translationBuilder.add("betterglass.pattern.aroace", "AroAce");
-        translationBuilder.add("betterglass.pattern.aromantic", "Aromantic");
-        translationBuilder.add("betterglass.pattern.asexual", "Asexual");
-        translationBuilder.add("betterglass.pattern.asexual_new", "Asexual (New)");
-        translationBuilder.add("betterglass.pattern.bigender", "Bigender");
-        translationBuilder.add("betterglass.pattern.bisexual", "Bisexual");
-        translationBuilder.add("betterglass.pattern.demiboy", "Demiboy");
-        translationBuilder.add("betterglass.pattern.demigender", "Demigender");
-        translationBuilder.add("betterglass.pattern.demigirl", "Demigirl");
-        translationBuilder.add("betterglass.pattern.demiromantic", "Demiromantic");
-        translationBuilder.add("betterglass.pattern.demisexual", "Demisexual");
-        translationBuilder.add("betterglass.pattern.genderfluid", "Genderfluid");
-        translationBuilder.add("betterglass.pattern.genderqueer", "Genderqueer");
-        translationBuilder.add("betterglass.pattern.intersex", "Intersex");
-        translationBuilder.add("betterglass.pattern.lesbian", "Lesbian");
-        translationBuilder.add("betterglass.pattern.mlm", "MLM");
-        translationBuilder.add("betterglass.pattern.neutrois", "Neutrois");
-        translationBuilder.add("betterglass.pattern.nonbinary", "Non-Binary");
-        translationBuilder.add("betterglass.pattern.omnisexual", "Omnisexual");
-        translationBuilder.add("betterglass.pattern.pansexual", "Pansexual");
-        translationBuilder.add("betterglass.pattern.philadelphia_pride", "Philadelphia Pride");
-        translationBuilder.add("betterglass.pattern.polyamory", "Polyamory");
-        translationBuilder.add("betterglass.pattern.polyamory_new", "Polyamory (New)");
-        translationBuilder.add("betterglass.pattern.polygender", "Polygender");
-        translationBuilder.add("betterglass.pattern.polysexual", "Polysexual");
-        translationBuilder.add("betterglass.pattern.progress", "Progress");
-        translationBuilder.add("betterglass.pattern.rainbow", "Rainbow");
-        translationBuilder.add("betterglass.pattern.transfem", "Transfem");
-        translationBuilder.add("betterglass.pattern.transgender", "Transgender");
-        translationBuilder.add("betterglass.pattern.transmasc", "Transmasc");
+        patternNames.forEach((id, name) ->
+                translationBuilder.add("betterglass.pattern." + id, name)
+        );
 
         translationBuilder.add("betterglass.dye", "Dye");
         translationBuilder.add("betterglass.color.white", "White");
