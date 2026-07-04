@@ -1291,8 +1291,6 @@
   "commands.betterglass.bgwiki.recipes.recipe_action.patterns": "put a pattern on a Glass",
   "commands.betterglass.bgwiki.recipes.recipe_action.redye": "re-dye Glass",
   "commands.betterglass.bgwiki.recipes.recipe_action.tint": "craft Tinted Glass",
-  "commands.betterglass.bgwiki.recipes.recipe_action.undye": "un-dye Glass",
-  "commands.betterglass.bgwiki.recipes.recipe_action.untint": "un-tint Tinted Glass",
   "commands.betterglass.bgwiki.recipes.recipe_action.undye": "undye Glass",
   "commands.betterglass.bgwiki.recipes.recipe_action.untint": "untint Tinted Glass",
   "commands.betterglass.bgwiki.recipes.recipe_group": "%s Recipes (%s)",

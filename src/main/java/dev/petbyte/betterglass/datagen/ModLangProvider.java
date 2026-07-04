@@ -202,8 +202,6 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.patterns", "put a pattern on a Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.redye", "re-dye Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.tint", "craft Tinted Glass");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.undye", "un-dye Glass");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.untint", "un-tint Tinted Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.undye", "undye Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.untint", "untint Tinted Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_group", "%s Recipes (%s)");
