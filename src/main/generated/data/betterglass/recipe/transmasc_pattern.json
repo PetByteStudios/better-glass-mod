@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
+  "group": "transmasc_pattern",
   "key": {
     "I": "minecraft:pink_dye",
     "L": "minecraft:light_blue_dye",
