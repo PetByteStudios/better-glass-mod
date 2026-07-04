@@ -22,7 +22,14 @@ public class ModTags {
         }
     }
 
+    public static TagKey<Item> createItemTag(String name) {
+        TagKey<Item> itemTagKey = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(BetterGlass.MOD_ID, name));
+        ALL_ITEM_TAGS.add(itemTagKey);
+        return itemTagKey;
+    }
+
     public static final List<TagPair> ALL_TAG_PAIRS = new ArrayList<>();
+    public static final List<TagKey<Item>> ALL_ITEM_TAGS = new ArrayList<>();
 
     public static final TagPair CLEAR_GLASS_BLOCK = TagPair.create("clear_glass_block");
     public static final TagPair CLEAR_GLASS_PANE = TagPair.create("clear_glass_pane");
@@ -109,4 +116,6 @@ public class ModTags {
     public static final TagPair PATTERNED_SCRATCHED_TINTED_GLASS_BLOCK = TagPair.create("patterned_scratched_tinted_glass_block");
     public static final TagPair PATTERNED_SCRATCHED_TINTED_GLASS_PANE = TagPair.create("patterned_scratched_tinted_glass_pane");
     public static final TagPair PATTERNED_SCRATCHED_TINTED_GLASS_ALL = TagPair.create("patterned_scratched_tinted_glass_all");
+
+    public static final TagKey<Item> PATTERN_ITEMS = createItemTag("pattern_items");
 }
