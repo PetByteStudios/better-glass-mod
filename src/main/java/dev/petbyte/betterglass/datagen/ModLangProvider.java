@@ -145,10 +145,10 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.generic.hover.click_to_view.types", "Click to view types");
 
         translationBuilder.add("commands.betterglass.bgwiki.recipes", "Recipes");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.back_to_patterns", "Back to patterns");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.back_to_patterns", "Back to Patterns");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.back_to_root", "Back to root");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.check_info_on_patterns", "For info on patterns, check ");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.check_pattern_recipes", "For recipes of patterns, check below:");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.check_info_on_patterns", "For info on Patterns, check ");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.check_pattern_recipes", "For recipes of Patterns, check below:");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.click_below", "Click any of the recipes below.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.cycle_types", "Cycle Types");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.cycle_types.info.output", "This recipe cycles through Clear -> Scratched -> Vanilla -> ..., and results in an output of %s.");
@@ -200,9 +200,9 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.item.plural.a", "You can craft a %s using the following recipes:");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.item.plural.an", "You can craft an %s using the following recipes:");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.panes", "craft Glass Panes");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.patterns", "put a pattern on a Glass");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.patterns", "put a Pattern on a Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.redye", "re-dye Glass");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.strip_patterns", "remove patterns from Glass");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.strip_patterns", "remove Patterns from Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.tint", "craft Tinted Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.undye", "undye Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.untint", "untint Tinted Glass");
