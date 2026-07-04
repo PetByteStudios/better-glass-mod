@@ -55,9 +55,9 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider{
                 .add(ModBlocks.SCRATCHED_GLASS.asItem());
 
         for (Item pattern : ModItems.PATTERNS.values()) {
-            builder(ModTags.PATTERN_ITEMS).add(itemKey(pattern));
+            valueLookupBuilder(ModTags.PATTERN_ITEMS).add(pattern);
         }
-        builder(ModTags.PATTERN_ITEMS).add(itemKey(ModItems.EMPTY_PATTERN));
+        valueLookupBuilder(ModTags.PATTERN_ITEMS).add(ModItems.EMPTY_PATTERN);
 
         for (ModTags.TagPair tag : ModTags.ALL_TAG_PAIRS) {
             copy(tag.block(), tag.item());

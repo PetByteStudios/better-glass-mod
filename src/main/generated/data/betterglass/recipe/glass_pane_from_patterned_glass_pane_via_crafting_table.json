@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "minecraft:glass_pane",
   "key": {
     "F": "minecraft:flint",
