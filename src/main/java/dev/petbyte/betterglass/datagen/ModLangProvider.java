@@ -137,6 +137,12 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.generic.specific_section", "%s: %s");
         translationBuilder.add("commands.betterglass.generic.suffix", " — %s");
         translationBuilder.add("commands.betterglass.generic.two_spaces", "  %s");
+        translationBuilder.add("commands.betterglass.generic.hover.click_to_view.faq", "Click to view FAQ");
+        translationBuilder.add("commands.betterglass.generic.hover.click_to_view.info", "Click to view extra info");
+        translationBuilder.add("commands.betterglass.generic.hover.click_to_view.petbyte_website", "Click to view the PetByte website");
+        translationBuilder.add("commands.betterglass.generic.hover.click_to_view.recipes", "Click to view recipes");
+        translationBuilder.add("commands.betterglass.generic.hover.click_to_view.roadmap", "Click to view the roadmap");
+        translationBuilder.add("commands.betterglass.generic.hover.click_to_view.types", "Click to view types");
 
         translationBuilder.add("commands.betterglass.bgwiki.recipes", "Recipes");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.back_to_patterns", "Back to patterns");
