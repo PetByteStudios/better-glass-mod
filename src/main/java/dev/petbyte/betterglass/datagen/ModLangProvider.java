@@ -198,6 +198,8 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.tint", "craft Tinted Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.undye", "un-dye Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.untint", "un-tint Tinted Glass");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.undye", "undye Glass");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.untint", "untint Tinted Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_group", "%s Recipes (%s)");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.redye", "Re-Dye");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.results_output", "This recipe results in an output of %s.");
@@ -207,9 +209,9 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.bgwiki.recipes.stonecutter.info.one", "By inputting any Glass Block or Pane, you can easily change the Glass Type.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.stonecutter.info.two", "By inputting any Colored or Stained Glass Block or Pane, you can switch between Coloration type at no extra cost.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.tint", "Tint");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.undye", "Un-Dye");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.undye", "Undye");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.undye.info.output", "This recipe does one step, from Stained to Colored, and Colored to Undyed, and results in an output of %s.");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.untint", "Un-Tint");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.untint", "Untint");
 
         translationBuilder.add("commands.betterglass.bgwiki.types", "Glass Types");
         translationBuilder.add("commands.betterglass.bgwiki.types.introduction", "Better Glass features various Glass Types, here's an explainer!");
