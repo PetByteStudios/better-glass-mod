@@ -170,7 +170,7 @@ public class ModLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add("commands.betterglass.bgwiki.recipes", "Recipes");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.back_to_patterns", "Back to Patterns");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.back_to_root", "Back to root");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.back_to_recipes", "Back to Recipes");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.check_info_on_patterns", "For Pattern recipes, check %s. For removing a Pattern, check %s.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.check_pattern_recipes", "For specific Pattern recipes, see below. For removing a Pattern, check %s.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.click_below", "Click any of the recipes below.");

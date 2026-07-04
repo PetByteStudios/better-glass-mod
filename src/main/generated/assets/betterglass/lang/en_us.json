@@ -1235,7 +1235,7 @@
   "commands.betterglass.bgwiki.info.website": "Website:",
   "commands.betterglass.bgwiki.recipes": "Recipes",
   "commands.betterglass.bgwiki.recipes.back_to_patterns": "Back to Patterns",
-  "commands.betterglass.bgwiki.recipes.back_to_root": "Back to root",
+  "commands.betterglass.bgwiki.recipes.back_to_recipes": "Back to Recipes",
   "commands.betterglass.bgwiki.recipes.check_info_on_patterns": "For Pattern recipes, check %s. For removing a Pattern, check %s.",
   "commands.betterglass.bgwiki.recipes.check_pattern_recipes": "For specific Pattern recipes, see below. For removing a Pattern, check %s.",
   "commands.betterglass.bgwiki.recipes.click_below": "Click any of the recipes below.",
