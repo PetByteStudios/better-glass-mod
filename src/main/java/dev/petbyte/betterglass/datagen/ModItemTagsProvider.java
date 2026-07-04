@@ -1,6 +1,7 @@
 package dev.petbyte.betterglass.datagen;
 
 import dev.petbyte.betterglass.block.ModBlocks;
+import dev.petbyte.betterglass.item.ModItems;
 import dev.petbyte.betterglass.tag.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
@@ -56,6 +57,11 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
         conventionalTagGlassBlocksColorless.add(itemKey(ModBlocks.SCRATCHED_GLASS.asItem()));
         conventionalTagGlassPanesColorless.add(itemKey(ModBlocks.CLEAR_GLASS.asItem()));
         conventionalTagGlassPanesColorless.add(itemKey(ModBlocks.SCRATCHED_GLASS.asItem()));
+
+        for (Item pattern : ModItems.PATTERNS.values()) {
+            builder(ModTags.PATTERN_ITEMS).add(itemKey(pattern));
+        }
+        builder(ModTags.PATTERN_ITEMS).add(itemKey(ModItems.EMPTY_PATTERN));
 
         for (ModTags.TagPair tag : ModTags.ALL_TAG_PAIRS) {
             copy(tag.block(), tag.item());

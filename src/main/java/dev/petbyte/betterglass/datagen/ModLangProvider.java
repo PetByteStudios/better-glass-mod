@@ -56,6 +56,14 @@ public class ModLangProvider extends FabricLanguageProvider {
             translationBuilder.add(itemTagID, translation);
         }
 
+        for (TagKey<Item> itemTagKey : ModTags.ALL_ITEM_TAGS) {
+            String itemTagID = itemTagKey.getTranslationKey();
+            String translation = capitalizeWords(itemTagID.replaceAll("(tag.(block|item).betterglass.)", ""))
+                    .replace("All", "(All)");
+
+            translationBuilder.add(itemTagID, translation);
+        }
+
         translationBuilder.add("betterglass.modname", "Better Glass");
 
         translationBuilder.add("block.betterglass.glasscutter", "Glasscutter (Temp. W.I.P.)");
