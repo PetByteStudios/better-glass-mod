@@ -145,7 +145,25 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             Map.entry("colored_scratched_tinted_glass_all", ModTags.COLORED_SCRATCHED_TINTED_GLASS_ALL.item()),
             Map.entry("stained_scratched_tinted_glass_block", ModTags.STAINED_SCRATCHED_TINTED_GLASS_BLOCK.item()),
             Map.entry("stained_scratched_tinted_glass_pane", ModTags.STAINED_SCRATCHED_TINTED_GLASS_PANE.item()),
-            Map.entry("stained_scratched_tinted_glass_all", ModTags.STAINED_SCRATCHED_TINTED_GLASS_ALL.item())
+            Map.entry("stained_scratched_tinted_glass_all", ModTags.STAINED_SCRATCHED_TINTED_GLASS_ALL.item()),
+            Map.entry("patterned_glass_block", ModTags.PATTERNED_GLASS_BLOCK.item()),
+            Map.entry("patterned_glass_pane", ModTags.PATTERNED_GLASS_PANE.item()),
+            Map.entry("patterned_glass_all", ModTags.PATTERNED_GLASS_ALL.item()),
+            Map.entry("patterned_clear_glass_block", ModTags.PATTERNED_CLEAR_GLASS_BLOCK.item()),
+            Map.entry("patterned_clear_glass_pane", ModTags.PATTERNED_CLEAR_GLASS_PANE.item()),
+            Map.entry("patterned_clear_glass_all", ModTags.PATTERNED_CLEAR_GLASS_ALL.item()),
+            Map.entry("patterned_scratched_glass_block", ModTags.PATTERNED_SCRATCHED_GLASS_BLOCK.item()),
+            Map.entry("patterned_scratched_glass_pane", ModTags.PATTERNED_SCRATCHED_GLASS_PANE.item()),
+            Map.entry("patterned_scratched_glass_all", ModTags.PATTERNED_SCRATCHED_GLASS_ALL.item()),
+            Map.entry("patterned_tinted_glass_block", ModTags.PATTERNED_TINTED_GLASS_BLOCK.item()),
+            Map.entry("patterned_tinted_glass_pane", ModTags.PATTERNED_TINTED_GLASS_PANE.item()),
+            Map.entry("patterned_tinted_glass_all", ModTags.PATTERNED_TINTED_GLASS_ALL.item()),
+            Map.entry("patterned_clear_tinted_glass_block", ModTags.PATTERNED_CLEAR_TINTED_GLASS_BLOCK.item()),
+            Map.entry("patterned_clear_tinted_glass_pane", ModTags.PATTERNED_CLEAR_TINTED_GLASS_PANE.item()),
+            Map.entry("patterned_clear_tinted_glass_all", ModTags.PATTERNED_CLEAR_TINTED_GLASS_ALL.item()),
+            Map.entry("patterned_scratched_tinted_glass_block", ModTags.PATTERNED_SCRATCHED_TINTED_GLASS_BLOCK.item()),
+            Map.entry("patterned_scratched_tinted_glass_pane", ModTags.PATTERNED_SCRATCHED_TINTED_GLASS_PANE.item()),
+            Map.entry("patterned_scratched_tinted_glass_all", ModTags.PATTERNED_SCRATCHED_TINTED_GLASS_ALL.item())
     );
 
     @Override
@@ -315,6 +333,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         Blocks.TINTED_GLASS, ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.SCRATCHED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
                 patternizeGlass(List.of(Blocks.GLASS_PANE, ModBlocks.CLEAR_GLASS_PANE, ModBlocks.SCRATCHED_GLASS_PANE,
                         ModBlocks.TINTED_GLASS_PANE, ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.SCRATCHED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
+
+                stripPattern(List.of("patterned_glass_block", "patterned_clear_glass_block", "patterned_scratched_glass_block"), List.of(Blocks.GLASS, ModBlocks.CLEAR_GLASS, ModBlocks.SCRATCHED_GLASS), RecipeCategory.BUILDING_BLOCKS);
+                stripPattern(List.of("patterned_glass_pane", "patterned_clear_glass_pane", "patterned_scratched_glass_pane"), List.of(Blocks.GLASS_PANE, ModBlocks.CLEAR_GLASS_PANE, ModBlocks.SCRATCHED_GLASS_PANE), RecipeCategory.DECORATIONS);
+                stripPattern(List.of("patterned_tinted_glass_block", "patterned_clear_tinted_glass_block", "patterned_scratched_tinted_glass_block"), List.of(Blocks.TINTED_GLASS, ModBlocks.CLEAR_TINTED_GLASS, ModBlocks.SCRATCHED_TINTED_GLASS), RecipeCategory.BUILDING_BLOCKS);
+                stripPattern(List.of("patterned_tinted_glass_pane", "patterned_clear_tinted_glass_pane", "patterned_scratched_tinted_glass_pane"), List.of(ModBlocks.TINTED_GLASS_PANE, ModBlocks.CLEAR_TINTED_GLASS_PANE, ModBlocks.SCRATCHED_TINTED_GLASS_PANE), RecipeCategory.DECORATIONS);
 
                 blockToPaneCraftingTable(ModBlocks.BETTER_GLASS_PATTERNED_BLOCKS, ModBlocks.BETTER_GLASS_PATTERNED_PANES);
 
@@ -553,8 +576,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 String inputID = BuiltInRegistries.BLOCK.getKey(input).toString().replaceAll("(minecraft|betterglass):", "");
                 String resultID = BuiltInRegistries.BLOCK.getKey(result).toString().replaceAll("(minecraft|betterglass):", "");
                 shaped(recipeCategory, result, 4)
-                        .pattern(" G ").pattern("GHG").pattern(" G ").define('H', Items.HONEYCOMB)
-                        .define('G', input).unlockedBy("has_%s".formatted(inputID), has(input))
+                        .pattern(" G ").pattern("GHG").pattern(" G ").define('G', input)
+                        .define('H', Items.HONEYCOMB).unlockedBy("has_%s".formatted(inputID), has(input))
                         .unlockedBy("has_honeycomb", has(Items.HONEYCOMB)).group(resultID)
                         .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
             }
@@ -564,8 +587,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                     String inputID = BuiltInRegistries.BLOCK.getKey(input.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
                     String resultID = BuiltInRegistries.BLOCK.getKey(result.get(color)).toString().replaceAll("(minecraft|betterglass):", "");
                     shaped(recipeCategory, result.get(color), 4)
-                            .pattern(" G ").pattern("GHG").pattern(" G ").define('H', Items.HONEYCOMB)
-                            .define('G', input.get(color)).unlockedBy("has_%s".formatted(inputID), has(input.get(color)))
+                            .pattern(" G ").pattern("GHG").pattern(" G ").define('G', input.get(color))
+                            .define('H', Items.HONEYCOMB).unlockedBy("has_%s".formatted(inputID), has(input.get(color)))
                             .unlockedBy("has_honeycomb", has(Items.HONEYCOMB)).group(resultID)
                             .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
                 }
@@ -577,8 +600,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         String inputID = BuiltInRegistries.BLOCK.getKey(input.get(i).get(motif)).toString().replace("betterglass:", "");
                         String resultID = BuiltInRegistries.BLOCK.getKey(result.get(i).get(motif)).toString().replace("betterglass:", "");
                         shaped(recipeCategory, result.get(i).get(motif), 2)
-                                .pattern(" G ").pattern("GHG").pattern(" G ").define('H', Items.HONEYCOMB)
-                                .define('G', input.get(i).get(motif)).unlockedBy("has_%s".formatted(inputID), has(input.get(i).get(motif)))
+                                .pattern(" G ").pattern("GHG").pattern(" G ").define('G', input.get(i).get(motif))
+                                .define('H', Items.HONEYCOMB).unlockedBy("has_%s".formatted(inputID), has(input.get(i).get(motif)))
                                 .unlockedBy("has_honeycomb", has(Items.HONEYCOMB)).group(resultID)
                                 .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, inputID));
                     }
@@ -598,6 +621,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                                 .unlockedBy("has_%s".formatted(patternItem), has(patternItem)).unlockedBy("has_%s".formatted(resultID), has(result))
                                 .group(resultID).save(output, "%s_by_pattern_via_crafting_table".formatted(resultID));
                     }
+                }
+            }
+
+            private void stripPattern(List<String> inputTag, List<Block> result, RecipeCategory recipeCategory) {
+                for (int i = 0; i < inputTag.size(); i++) {
+                    String format = inputTag.get(i).replace("_block", "");
+                    String resultID = BuiltInRegistries.BLOCK.getKey(result.get(i)).toString().replace("betterglass:", "");
+                    shaped(recipeCategory, result.get(i), 8)
+                            .pattern("GGG").pattern("GFG").pattern("GGG").define('G', itemTags.get(inputTag.get(i)))
+                            .define('F', Items.FLINT).unlockedBy("has_%s".formatted(format), has(itemTags.get(inputTag.get(i))))
+                            .unlockedBy("has_flint", has(Items.FLINT)).group(resultID)
+                            .save(output, "%s_from_%s_via_crafting_table".formatted(resultID, format));
                 }
             }
 

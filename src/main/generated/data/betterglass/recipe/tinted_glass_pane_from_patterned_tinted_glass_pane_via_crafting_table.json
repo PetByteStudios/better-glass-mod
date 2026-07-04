@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tinted_glass_pane",
+  "key": {
+    "F": "minecraft:flint",
+    "G": "#betterglass:patterned_tinted_glass_pane"
+  },
+  "pattern": [
+    "GGG",
+    "GFG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:tinted_glass_pane"
+  }
+}

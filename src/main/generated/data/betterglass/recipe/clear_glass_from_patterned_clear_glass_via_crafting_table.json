@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "clear_glass",
+  "key": {
+    "F": "minecraft:flint",
+    "G": "#betterglass:patterned_clear_glass_block"
+  },
+  "pattern": [
+    "GGG",
+    "GFG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:clear_glass"
+  }
+}
