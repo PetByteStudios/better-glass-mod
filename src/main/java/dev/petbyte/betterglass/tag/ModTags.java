@@ -89,4 +89,24 @@ public class ModTags {
     public static final TagPair ANY_PATTERNED_GLASS_BLOCK = TagPair.create("any_patterned_glass_block");
     public static final TagPair ANY_PATTERNED_GLASS_PANE = TagPair.create("any_patterned_glass_pane");
     public static final TagPair ANY_PATTERNED_GLASS_ALL = TagPair.create("any_patterned_glass_all");
+
+    public static final TagPair PATTERNED_GLASS_BLOCK = TagPair.create("patterned_glass_block");
+    public static final TagPair PATTERNED_GLASS_PANE = TagPair.create("patterned_glass_pane");
+    public static final TagPair PATTERNED_GLASS_ALL = TagPair.create("patterned_glass_all");
+    public static final TagPair PATTERNED_CLEAR_GLASS_BLOCK = TagPair.create("patterned_clear_glass_block");
+    public static final TagPair PATTERNED_CLEAR_GLASS_PANE = TagPair.create("patterned_clear_glass_pane");
+    public static final TagPair PATTERNED_CLEAR_GLASS_ALL = TagPair.create("patterned_clear_glass_all");
+    public static final TagPair PATTERNED_SCRATCHED_GLASS_BLOCK = TagPair.create("patterned_scratched_glass_block");
+    public static final TagPair PATTERNED_SCRATCHED_GLASS_PANE = TagPair.create("patterned_scratched_glass_pane");
+    public static final TagPair PATTERNED_SCRATCHED_GLASS_ALL = TagPair.create("patterned_scratched_glass_all");
+
+    public static final TagPair PATTERNED_TINTED_GLASS_BLOCK = TagPair.create("patterned_tinted_glass_block");
+    public static final TagPair PATTERNED_TINTED_GLASS_PANE = TagPair.create("patterned_tinted_glass_pane");
+    public static final TagPair PATTERNED_TINTED_GLASS_ALL = TagPair.create("patterned_tinted_glass_all");
+    public static final TagPair PATTERNED_CLEAR_TINTED_GLASS_BLOCK = TagPair.create("patterned_clear_tinted_glass_block");
+    public static final TagPair PATTERNED_CLEAR_TINTED_GLASS_PANE = TagPair.create("patterned_clear_tinted_glass_pane");
+    public static final TagPair PATTERNED_CLEAR_TINTED_GLASS_ALL = TagPair.create("patterned_clear_tinted_glass_all");
+    public static final TagPair PATTERNED_SCRATCHED_TINTED_GLASS_BLOCK = TagPair.create("patterned_scratched_tinted_glass_block");
+    public static final TagPair PATTERNED_SCRATCHED_TINTED_GLASS_PANE = TagPair.create("patterned_scratched_tinted_glass_pane");
+    public static final TagPair PATTERNED_SCRATCHED_TINTED_GLASS_ALL = TagPair.create("patterned_scratched_tinted_glass_all");
 }
