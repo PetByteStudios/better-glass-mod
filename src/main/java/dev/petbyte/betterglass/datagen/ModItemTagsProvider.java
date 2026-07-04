@@ -49,6 +49,9 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider{
         valueLookupBuilder(ConventionalItemTags.GLASS_BLOCKS_COLORLESS)
                 .add(ModBlocks.CLEAR_GLASS.asItem())
                 .add(ModBlocks.SCRATCHED_GLASS.asItem());
+        valueLookupBuilder(ConventionalItemTags.GLASS_PANES_COLORLESS)
+                .add(ModBlocks.CLEAR_GLASS.asItem())
+                .add(ModBlocks.SCRATCHED_GLASS.asItem());
 
         for (ModTags.TagPair tag : ModTags.ALL_TAG_PAIRS) {
             copy(tag.block(), tag.item());
