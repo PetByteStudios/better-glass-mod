@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
+  "group": "progress_pattern",
   "key": {
     "P": "betterglass:philadelphia_pride_pattern",
     "T": "betterglass:transfem_pattern"
