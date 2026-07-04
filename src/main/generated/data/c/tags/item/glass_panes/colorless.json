@@ -1,6 +1,6 @@
 {
   "values": [
-    "betterglass:clear_glass",
-    "betterglass:scratched_glass"
+    "betterglass:clear_glass_pane",
+    "betterglass:scratched_glass_pane"
   ]
 }
