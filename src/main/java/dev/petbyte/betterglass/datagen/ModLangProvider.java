@@ -171,8 +171,8 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.bgwiki.recipes", "Recipes");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.back_to_patterns", "Back to Patterns");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.back_to_root", "Back to root");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.check_info_on_patterns", "For info on Patterns, check ");
-        translationBuilder.add("commands.betterglass.bgwiki.recipes.check_pattern_recipes", "For recipes of Patterns, check below:");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.check_info_on_patterns", "For Pattern recipes, check %s. For removing a Pattern, check %s.");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.check_pattern_recipes", "For specific Pattern recipes, see below. For removing a Pattern, check %s.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.click_below", "Click any of the recipes below.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.cycle_types", "Cycle Types");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.cycle_types.info.output", "This recipe cycles through Clear -> Scratched -> Vanilla -> ..., and results in an output of %s.");
