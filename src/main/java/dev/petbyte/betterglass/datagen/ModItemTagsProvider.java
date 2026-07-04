@@ -55,8 +55,8 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
         }
         conventionalTagGlassBlocksColorless.add(itemKey(ModBlocks.CLEAR_GLASS.asItem()));
         conventionalTagGlassBlocksColorless.add(itemKey(ModBlocks.SCRATCHED_GLASS.asItem()));
-        conventionalTagGlassPanesColorless.add(itemKey(ModBlocks.CLEAR_GLASS.asItem()));
-        conventionalTagGlassPanesColorless.add(itemKey(ModBlocks.SCRATCHED_GLASS.asItem()));
+        conventionalTagGlassPanesColorless.add(itemKey(ModBlocks.CLEAR_GLASS_PANE.asItem()));
+        conventionalTagGlassPanesColorless.add(itemKey(ModBlocks.SCRATCHED_GLASS_PANE.asItem()));
 
         for (Item pattern : ModItems.PATTERNS.values()) {
             builder(ModTags.PATTERN_ITEMS).add(itemKey(pattern));
