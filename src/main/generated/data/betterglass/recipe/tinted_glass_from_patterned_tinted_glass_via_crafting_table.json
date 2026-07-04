@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "minecraft:tinted_glass",
+  "key": {
+    "F": "minecraft:flint",
+    "G": "#betterglass:patterned_tinted_glass_block"
+  },
+  "pattern": [
+    "GGG",
+    "GFG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "minecraft:tinted_glass"
+  }
+}

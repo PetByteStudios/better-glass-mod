@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "scratched_glass_pane",
+  "key": {
+    "F": "minecraft:flint",
+    "G": "#betterglass:patterned_scratched_glass_pane"
+  },
+  "pattern": [
+    "GGG",
+    "GFG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "id": "betterglass:scratched_glass_pane"
+  }
+}
