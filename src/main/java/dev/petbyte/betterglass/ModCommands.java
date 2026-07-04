@@ -65,7 +65,8 @@ public class ModCommands {
                                                                             .append(Component.translatable("commands.betterglass.bgwiki.recipes.stonecutter").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes stonecutter")).withHoverEvent(new HoverEvent.ShowText(Component.literal("/bgwiki recipes stonecutter")))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append("\n\n    ").append(Component.translatable("commands.betterglass.bgwiki.recipes.check_info_on_patterns")
                                                                             .append(Component.translatable("commands.betterglass.bgwiki.recipes.patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns")).withHoverEvent(new HoverEvent.ShowText(Component.literal("/bgwiki recipes patterns")))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)))
-                                                                            .append("."),
+                                                                            .append(". ")
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.strip_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes strip_patterns")).withHoverEvent(new HoverEvent.ShowText(Component.literal("/bgwiki recipes strip_patterns")))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
                                                             false);
                                                     return 1;
                                                 })
@@ -249,6 +250,8 @@ public class ModCommands {
                                                                                     Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("P"),
                                                                                     Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_pattern"))))
                                                                             .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.results_output", 4)))
+                                                                            .append(Component.literal("\n  "))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.strip_patterns").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes strip_patterns")).withHoverEvent(new HoverEvent.ShowText(Component.literal("/bgwiki recipes strip_patterns")))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.translatable("commands.betterglass.generic.newline_surrounded", Component.translatable("commands.betterglass.bgwiki.recipes.check_pattern_recipes")))
                                                                             .append(Component.translatable("betterglass.pattern.empty").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes patterns empty")).withHoverEvent(new HoverEvent.ShowText(Component.literal("/bgwiki recipes patterns empty")))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED))
                                                                             .append(Component.literal("  "))
@@ -1169,6 +1172,25 @@ public class ModCommands {
                                                                 return 1;
                                                             }))
                                                 )
+                                                .then(Commands.literal("strip_patterns").executes(context -> {
+                                                    context.getSource().sendSuccess(() ->
+                                                                    Component.literal("")
+                                                                            .append(Component.literal("=== ").withStyle(ChatFormatting.BOLD, ChatFormatting.GOLD))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.specific_recipe", Component.translatable("commands.betterglass.bgwiki.recipes.strip_patterns"), Component.translatable("block.minecraft.crafting_table")).withStyle(ChatFormatting.BOLD))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.generic", Component.translatable("commands.betterglass.bgwiki.recipes.recipe_action.strip_patterns"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GGG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("G"),
+                                                                                            Component.translatable("commands.betterglass.bgwiki.recipes.ingredient.any_glass.patterned.same_type"))))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe.no_legend", Component.literal("GFG").withStyle(ChatFormatting.BOLD)))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.recipe", Component.literal("GGG").withStyle(ChatFormatting.BOLD),
+                                                                                    Component.translatable("commands.betterglass.bgwiki.recipes.recipe.ingredient_legend", Component.literal("F"),
+                                                                                            Component.translatable("item.minecraft.flint"))))
+                                                                            .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.recipes.results_output", 8)))
+                                                                            .append(Component.literal("\n  "))
+                                                                            .append(Component.translatable("commands.betterglass.bgwiki.recipes.back_to_root").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.RunCommand("/bgwiki recipes")).withHoverEvent(new HoverEvent.ShowText(Component.literal("/bgwiki recipes")))).withStyle(ChatFormatting.UNDERLINE, ChatFormatting.RED)),
+                                                            false);
+                                                    return 1;
+                                                }))
                                 )
                                 .then(Commands.literal("types").executes(context -> {
                                     context.getSource().sendSuccess(() ->
@@ -1177,10 +1199,10 @@ public class ModCommands {
                                                             .append(Component.translatable("commands.betterglass.generic.specific_section", Component.translatable("betterglass.modname"), Component.translatable("commands.betterglass.bgwiki.types")).withStyle(ChatFormatting.BOLD))
                                                             .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.bgwiki.types.introduction")))
                                                             .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content", Component.translatable("commands.betterglass.bgwiki.types.coloration").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE), Component.translatable("commands.betterglass.bgwiki.types.coloration.explainer").withStyle(ChatFormatting.ITALIC))))
-                                                            .append("\n    ").append(Component.translatable("commands.betterglass.bgwiki.types.coloration.explainer.extra"))
+                                                            .append("\n    ").append(Component.translatable("commands.betterglass.bgwiki.types.coloration.explainer.extra").withStyle(ChatFormatting.ITALIC))
                                                             .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content", Component.translatable("commands.betterglass.bgwiki.types.behaviour").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE), Component.translatable("commands.betterglass.bgwiki.types.behaviour.explainer").withStyle(ChatFormatting.ITALIC))))
                                                             .append(Component.translatable("commands.betterglass.generic.newline", Component.translatable("commands.betterglass.generic.label_content", Component.translatable("commands.betterglass.bgwiki.types.variants").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE), Component.translatable("commands.betterglass.bgwiki.types.variants.explainer").withStyle(ChatFormatting.ITALIC))))
-                                                            .append("\n\n").append(Component.translatable("commands.betterglass.bgwiki.types.available"))
+                                                            .append("\n\n").append(Component.translatable("commands.betterglass.bgwiki.types.available").withStyle(ChatFormatting.BOLD))
                                                             .append("\n").append(Component.translatable("commands.betterglass.bgwiki.types.chiseled.creative_only_500").withStyle(ChatFormatting.ITALIC)),
                                             false);
                                     return 1;

@@ -166,6 +166,7 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.info.same_type_any_color_same_coloration", "(Same Type, any Color. Must all be Stained or Colored; no mixing)");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.info.same_type_any_color_stained_mixed_color_colored", "(Same Type. Same Stained or any Colored; no mixing)");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.info.same_type_same_color_or_undyed", "(Same Type and Color, or Undyed)");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.patterned.same_type", "Any Patterned Glass (Same Base Type)");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.undyed", "Any Undyed Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_glass.undyed.same_type", "Any Undyed Glass (Same Type)");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.ingredient.any_pattern", "Any Pattern");
@@ -201,6 +202,7 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.panes", "craft Glass Panes");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.patterns", "put a pattern on a Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.redye", "re-dye Glass");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.strip_patterns", "remove patterns from Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.tint", "craft Tinted Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.undye", "undye Glass");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.recipe_action.untint", "untint Tinted Glass");
@@ -212,6 +214,7 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add("commands.betterglass.bgwiki.recipes.stonecutter", "Stonecutter/Glasscutter");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.stonecutter.info.one", "By inputting any Glass Block or Pane, you can easily change the Glass Type.");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.stonecutter.info.two", "By inputting any Colored or Stained Glass Block or Pane, you can switch between Coloration type at no extra cost.");
+        translationBuilder.add("commands.betterglass.bgwiki.recipes.strip_patterns", "Strip Patterns");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.tint", "Tint");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.undye", "Undye");
         translationBuilder.add("commands.betterglass.bgwiki.recipes.undye.info.output", "This recipe does one step, from Stained to Colored, and Colored to Undyed, and results in an output of %s.");
