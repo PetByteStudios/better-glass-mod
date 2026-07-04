@@ -881,46 +881,54 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('B', Items.DYE.black()).define('R', Items.DYE.brown())
                         .define('W', Items.DYE.white()).define('I', Items.DYE.pink())
                         .define('L', Items.DYE.lightBlue()).group("progress_pattern")
-                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_rainbow_pattern_extended_dyes");
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN))
+                        .group("progress_pattern").save(output, "progress_pattern_from_rainbow_pattern_extended_dyes");
 
                 shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
                         .pattern("PBR").pattern(" T ").define('P', ModItems.PATTERNS.get("rainbow"))
                         .define('B', Items.DYE.black()).define('R', Items.DYE.brown())
                         .define('T', ModItems.PATTERNS.get("transfem")).group("progress_pattern")
-                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_rainbow_pattern_extended_transfem");
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN))
+                        .group("progress_pattern").save(output, "progress_pattern_from_rainbow_pattern_extended_transfem");
 
                 shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
                         .pattern("PBR").pattern(" T ").define('P', ModItems.PATTERNS.get("rainbow"))
                         .define('B', Items.DYE.black()).define('R', Items.DYE.brown())
                         .define('T', ModItems.PATTERNS.get("transgender")).group("progress_pattern")
-                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_rainbow_pattern_extended_transgender");
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN))
+                        .group("progress_pattern").save(output, "progress_pattern_from_rainbow_pattern_extended_transgender");
 
                 shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
                         .pattern("PBR").pattern(" T ").define('P', ModItems.PATTERNS.get("rainbow"))
                         .define('B', Items.DYE.black()).define('R', Items.DYE.brown())
                         .define('T', ModItems.PATTERNS.get("transmasc")).group("progress_pattern")
-                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_rainbow_pattern_extended_transmasc");
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN))
+                        .group("progress_pattern").save(output, "progress_pattern_from_rainbow_pattern_extended_transmasc");
 
                 shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
                         .pattern("PWI").pattern(" L ").define('P', ModItems.PATTERNS.get("philadelphia_pride"))
                         .define('W', Items.DYE.white()).define('I', Items.DYE.pink())
                         .define('L', Items.DYE.lightBlue()).group("progress_pattern")
-                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_dyes");
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN))
+                        .group("progress_pattern").save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_dyes");
 
                 shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
                         .pattern("PT").define('P', ModItems.PATTERNS.get("philadelphia_pride"))
                         .define('T', ModItems.PATTERNS.get("transfem"))
-                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_transfem");
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN))
+                        .group("progress_pattern").save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_transfem");
 
                 shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
                         .pattern("PT").define('P', ModItems.PATTERNS.get("philadelphia_pride"))
                         .define('T', ModItems.PATTERNS.get("transgender"))
-                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_transgender");
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN))
+                        .group("progress_pattern").save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_transgender");
 
                 shaped(recipeCategory, ModItems.PATTERNS.get("progress"), 1)
                         .pattern("PT").define('P', ModItems.PATTERNS.get("philadelphia_pride"))
                         .define('T', ModItems.PATTERNS.get("transmasc"))
-                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_transmasc");
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN))
+                        .group("progress_pattern").save(output, "progress_pattern_from_philadelphia_pride_pattern_extended_transmasc");
 
                 shaped(recipeCategory, ModItems.PATTERNS.get("rainbow"), 1)
                         .pattern("PRO").pattern("YGB").pattern(" U ").define('P', EMPTY_PATTERN)
@@ -933,18 +941,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 shaped(recipeCategory, ModItems.PATTERNS.get("transfem"), 1)
                         .pattern("PLL").pattern(" II").define('P', EMPTY_PATTERN)
                         .define('L', Items.DYE.lightBlue()).define('I', Items.DYE.pink())
-                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).group("transfem_pattern").save(output);
 
                 shaped(recipeCategory, ModItems.PATTERNS.get("transgender"), 1)
                         .pattern("PLI").pattern("WIL").define('P', EMPTY_PATTERN)
                         .define('L', Items.DYE.lightBlue()).define('I', Items.DYE.pink())
                         .define('W', Items.DYE.white())
-                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).group("transgender_pattern").save(output);
 
                 shaped(recipeCategory, ModItems.PATTERNS.get("transmasc"), 1)
                         .pattern("PII").pattern(" LL").define('P', EMPTY_PATTERN)
                         .define('L', Items.DYE.lightBlue()).define('I', Items.DYE.pink())
-                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).save(output);
+                        .unlockedBy("has_empty_pattern", has(EMPTY_PATTERN)).group("transmasc_pattern").save(output);
 
                 // PRIDE CONVERSIONS
                 shapeless(recipeCategory, ModItems.PATTERNS.get("aroace"), 1)
