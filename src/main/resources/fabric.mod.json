@@ -35,7 +35,7 @@
 	},
 	"suggests": {
 		"continuity": "~3.0",
-		"jei": "29"
+		"jei": "30"
 	},
 	"custom": {
 		"modmenu": {
