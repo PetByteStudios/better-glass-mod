@@ -1,15 +1,15 @@
-[![Build](https://github.com/PetByteStudios/better-glass-mod/actions/workflows/build.yml/badge.svg?branch=mc26.2.x/v1.1.x)](https://github.com/PetByteStudios/better-glass-mod/actions/workflows/build.yml?query=branch%3Amc26.2.x%2Fv1.1.x)
-[![Check](https://github.com/PetByteStudios/better-glass-mod/actions/workflows/check.yml/badge.svg?branch=mc26.2.x/v1.1.x)](https://github.com/PetByteStudios/better-glass-mod/actions/workflows/check.yml?query=branch%3Amc26.2.x%2Fv1.1.x)
+[![Build](https://github.com/PetByteStudios/better-glass-mod/actions/workflows/build.yml/badge.svg?branch=mc26.2.x/fabric/v1.2.x)](https://github.com/PetByteStudios/better-glass-mod/actions/workflows/build.yml?query=branch%3Amc26.2.x%2Ffabric%2Fv1.2.x)
+[![Check](https://github.com/PetByteStudios/better-glass-mod/actions/workflows/check.yml/badge.svg?branch=mc26.2.x/fabric/v1.2.x)](https://github.com/PetByteStudios/better-glass-mod/actions/workflows/check.yml?query=branch%3Amc26.2.x%2Ffabric%2Fv1.2.x)
 [![Modrinth Downloads](https://img.shields.io/modrinth/dt/EvcABx9Z?color=1BD96A&label=Downloads&logo=modrinth)](https://modrinth.com/mod/petbyte-better-glass)
 [![CurseForge Downloads](https://img.shields.io/curseforge/dt/1564161?color=F16436&label=Downloads&logo=curseforge)](https://www.curseforge.com/minecraft/mc-mods/petbyte-better-glass)
 [![Modrinth Followers](https://img.shields.io/modrinth/followers/EvcABx9Z?color=1BD96A&label=Followers&logo=modrinth&style=flat)](https://modrinth.com/mod/petbyte-better-glass)
 
 <span title="Latest tag on this repository">[![Latest Tag](https://img.shields.io/github/v/tag/PetByteStudios/better-glass-mod?color=00AF5C&label=latest%20tag)](https://github.com/PetByteStudios/better-glass-mod/tags)</span>
 <span title="Latest tag for this MC version">[![MC latest Tag](https://img.shields.io/github/v/tag/PetByteStudios/better-glass-mod?color=00AF5C&label=latest%20tag%2026.2.x&filter=*mc26.2*)](https://github.com/PetByteStudios/better-glass-mod/tags)</span>
-<span title="Latest tag on this specific branch">[![Branch latest Tag](https://img.shields.io/github/v/tag/PetByteStudios/better-glass-mod?label=latest%20tag%20on%20branch&color=00AF5C&filter=v1.1.*mc26.2*)](https://github.com/PetByteStudios/better-glass-mod/tags)</span>
+<span title="Latest tag on this specific branch">[![Branch latest Tag](https://img.shields.io/github/v/tag/PetByteStudios/better-glass-mod?label=latest%20tag%20on%20branch&color=00AF5C&filter=v1.2.*mc26.2*.fabric*)](https://github.com/PetByteStudios/better-glass-mod/tags)</span>
+*This tag format will be changed for the final README.*
 
-<span title="Latest available release on Modrinth">[![Modrinth Latest Version](https://img.shields.io/modrinth/v/EvcABx9Z?color=1BD96A&label=latest&logo=modrinth)](https://modrinth.com/mod/petbyte-better-glass)
-</span>
+<span title="Latest available release on Modrinth">[![Modrinth Latest Version](https://img.shields.io/modrinth/v/EvcABx9Z?color=1BD96A&label=latest&logo=modrinth)](https://modrinth.com/mod/petbyte-better-glass)</span>
 <span title="Latest available release on CurseForge">[![CurseForge Latest Version](https://img.shields.io/curseforge/v/1564161?color=F16436&label=latest&logo=curseforge)](https://www.curseforge.com/minecraft/mc-mods/petbyte-better-glass)</span>
 
 [![Modloader: Fabric](https://img.shields.io/badge/modloader-Fabric-DBD0B4?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAMAAADDoWbgAAAAAXNSR0IArs4c6QAAABtQTFRFAAAAODQqgHptmpJ+rqaUvLKcxryl29C06OjofgVYZwAAAAl0Uk5TAP//////////NwKb1AAAAEdJREFUCJlVzkESgDAIQ1G+BXL/GzuCrcjuTQaIWQ82Bk2Sg4g4JPURqQgNKTO42ImiIrwSRW2xvJP34MM431geowmLX6+NG40KAXPnwSHdAAAAAElFTkSuQmCC)](https://fabricmc.net)
