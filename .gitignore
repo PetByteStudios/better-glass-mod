@@ -40,5 +40,6 @@ replay_*.log
 *.jfr
 
 # priv & testing
+/src/main/generated/.cache/
 /assets/
 /src/main/resources/assets/betterglass/lang/
