@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:polygender_patterned_tinted_glass_from_polygender_patterned_glass_via_crafting_table"
+        "recipes": "betterglass:polygender_patterned_tinted_glass_from_polygender_patterned_glass_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

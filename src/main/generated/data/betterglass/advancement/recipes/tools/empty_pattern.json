@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:empty_pattern"
+        "recipes": "betterglass:empty_pattern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

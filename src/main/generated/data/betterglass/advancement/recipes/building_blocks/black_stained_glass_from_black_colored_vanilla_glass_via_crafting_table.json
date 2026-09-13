@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:black_stained_glass_from_black_colored_vanilla_glass_via_crafting_table"
+        "recipes": "betterglass:black_stained_glass_from_black_colored_vanilla_glass_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

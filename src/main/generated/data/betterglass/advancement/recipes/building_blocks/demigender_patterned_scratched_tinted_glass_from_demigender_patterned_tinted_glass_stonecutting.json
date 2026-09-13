@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:demigender_patterned_scratched_tinted_glass_from_demigender_patterned_tinted_glass_stonecutting"
+        "recipes": "betterglass:demigender_patterned_scratched_tinted_glass_from_demigender_patterned_tinted_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

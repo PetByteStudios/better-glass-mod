@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:genderfluid_pattern"
+        "recipes": "betterglass:genderfluid_pattern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

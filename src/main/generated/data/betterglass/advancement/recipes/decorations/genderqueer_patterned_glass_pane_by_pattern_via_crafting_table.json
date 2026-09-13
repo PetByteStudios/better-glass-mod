@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:genderqueer_patterned_glass_pane_by_pattern_via_crafting_table"
+        "recipes": "betterglass:genderqueer_patterned_glass_pane_by_pattern_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

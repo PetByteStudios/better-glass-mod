@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:demiromantic_patterned_glass_pane_from_demiromantic_patterned_scratched_glass_pane_via_crafting_table"
+        "recipes": "betterglass:demiromantic_patterned_glass_pane_from_demiromantic_patterned_scratched_glass_pane_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

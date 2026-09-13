@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:genderfluid_patterned_scratched_glass_from_genderfluid_patterned_glass_stonecutting"
+        "recipes": "betterglass:genderfluid_patterned_scratched_glass_from_genderfluid_patterned_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

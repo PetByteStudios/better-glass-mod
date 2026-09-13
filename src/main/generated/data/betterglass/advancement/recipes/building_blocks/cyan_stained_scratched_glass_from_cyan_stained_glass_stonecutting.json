@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:cyan_stained_scratched_glass_from_cyan_stained_glass_stonecutting"
+        "recipes": "betterglass:cyan_stained_scratched_glass_from_cyan_stained_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

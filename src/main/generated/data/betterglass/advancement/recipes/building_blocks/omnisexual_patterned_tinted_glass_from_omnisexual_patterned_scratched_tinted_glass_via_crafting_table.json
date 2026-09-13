@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:omnisexual_patterned_tinted_glass_from_omnisexual_patterned_scratched_tinted_glass_via_crafting_table"
+        "recipes": "betterglass:omnisexual_patterned_tinted_glass_from_omnisexual_patterned_scratched_tinted_glass_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

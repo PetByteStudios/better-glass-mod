@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:brown_stained_glass_pane_from_brown_colored_vanilla_glass_pane_stonecutting"
+        "recipes": "betterglass:brown_stained_glass_pane_from_brown_colored_vanilla_glass_pane_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

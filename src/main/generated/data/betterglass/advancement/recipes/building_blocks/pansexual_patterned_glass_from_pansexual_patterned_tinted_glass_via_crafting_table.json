@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:pansexual_patterned_glass_from_pansexual_patterned_tinted_glass_via_crafting_table"
+        "recipes": "betterglass:pansexual_patterned_glass_from_pansexual_patterned_tinted_glass_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

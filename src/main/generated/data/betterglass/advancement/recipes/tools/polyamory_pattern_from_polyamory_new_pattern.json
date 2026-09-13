@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:polyamory_pattern_from_polyamory_new_pattern"
+        "recipes": "betterglass:polyamory_pattern_from_polyamory_new_pattern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

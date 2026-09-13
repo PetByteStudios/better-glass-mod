@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:light_gray_colored_scratched_glass_from_light_gray_colored_vanilla_glass_stonecutting"
+        "recipes": "betterglass:light_gray_colored_scratched_glass_from_light_gray_colored_vanilla_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

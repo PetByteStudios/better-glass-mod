@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:polyamory_patterned_glass_pane_from_polyamory_patterned_scratched_glass_pane_stonecutting"
+        "recipes": "betterglass:polyamory_patterned_glass_pane_from_polyamory_patterned_scratched_glass_pane_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

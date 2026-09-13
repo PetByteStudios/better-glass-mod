@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:blue_colored_clear_glass_from_blue_colored_vanilla_glass_stonecutting"
+        "recipes": "betterglass:blue_colored_clear_glass_from_blue_colored_vanilla_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

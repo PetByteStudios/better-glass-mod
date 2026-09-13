@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:rainbow_patterned_glass_from_rainbow_patterned_scratched_glass_stonecutting"
+        "recipes": "betterglass:rainbow_patterned_glass_from_rainbow_patterned_scratched_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

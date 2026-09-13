@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:lime_stained_glass_from_lime_stained_scratched_glass_stonecutting"
+        "recipes": "betterglass:lime_stained_glass_from_lime_stained_scratched_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

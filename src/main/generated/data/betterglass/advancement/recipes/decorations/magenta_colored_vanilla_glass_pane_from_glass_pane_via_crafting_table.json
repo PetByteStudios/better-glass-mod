@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:magenta_colored_vanilla_glass_pane_from_glass_pane_via_crafting_table"
+        "recipes": "betterglass:magenta_colored_vanilla_glass_pane_from_glass_pane_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

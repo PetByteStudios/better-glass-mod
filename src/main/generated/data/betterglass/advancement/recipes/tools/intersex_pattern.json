@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:intersex_pattern"
+        "recipes": "betterglass:intersex_pattern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

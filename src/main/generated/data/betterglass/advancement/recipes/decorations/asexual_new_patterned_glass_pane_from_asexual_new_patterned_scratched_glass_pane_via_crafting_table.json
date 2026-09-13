@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:asexual_new_patterned_glass_pane_from_asexual_new_patterned_scratched_glass_pane_via_crafting_table"
+        "recipes": "betterglass:asexual_new_patterned_glass_pane_from_asexual_new_patterned_scratched_glass_pane_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

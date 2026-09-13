@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:cyan_stained_clear_tinted_glass_from_cyan_colored_clear_tinted_glass_via_crafting_table"
+        "recipes": "betterglass:cyan_stained_clear_tinted_glass_from_cyan_colored_clear_tinted_glass_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

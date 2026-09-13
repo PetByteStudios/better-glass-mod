@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:asexual_new_pattern_from_asexual_pattern"
+        "recipes": "betterglass:asexual_new_pattern_from_asexual_pattern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

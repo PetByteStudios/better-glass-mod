@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:pink_colored_clear_glass_from_pink_stained_clear_glass_stonecutting"
+        "recipes": "betterglass:pink_colored_clear_glass_from_pink_stained_clear_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:brown_stained_scratched_tinted_glass_from_scratched_tinted_glass_via_crafting_table"
+        "recipes": "betterglass:brown_stained_scratched_tinted_glass_from_scratched_tinted_glass_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

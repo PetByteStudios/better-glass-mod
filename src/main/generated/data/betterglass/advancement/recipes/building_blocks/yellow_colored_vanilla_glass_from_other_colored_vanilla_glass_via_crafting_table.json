@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:yellow_colored_vanilla_glass_from_other_colored_vanilla_glass_via_crafting_table"
+        "recipes": "betterglass:yellow_colored_vanilla_glass_from_other_colored_vanilla_glass_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

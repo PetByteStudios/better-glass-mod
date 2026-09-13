@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:demigender_pattern_from_demigirl_pattern_and_dye"
+        "recipes": "betterglass:demigender_pattern_from_demigirl_pattern_and_dye"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:light_gray_stained_tinted_glass_pane_from_light_gray_stained_clear_tinted_glass_pane_stonecutting"
+        "recipes": "betterglass:light_gray_stained_tinted_glass_pane_from_light_gray_stained_clear_tinted_glass_pane_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

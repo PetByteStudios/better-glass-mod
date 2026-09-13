@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:yellow_stained_scratched_glass_from_yellow_colored_scratched_glass_stonecutting"
+        "recipes": "betterglass:yellow_stained_scratched_glass_from_yellow_colored_scratched_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

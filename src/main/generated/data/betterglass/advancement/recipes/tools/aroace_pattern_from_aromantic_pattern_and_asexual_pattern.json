@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:aroace_pattern_from_aromantic_pattern_and_asexual_pattern"
+        "recipes": "betterglass:aroace_pattern_from_aromantic_pattern_and_asexual_pattern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

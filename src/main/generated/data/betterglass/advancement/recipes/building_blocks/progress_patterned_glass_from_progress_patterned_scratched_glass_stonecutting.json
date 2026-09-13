@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:progress_patterned_glass_from_progress_patterned_scratched_glass_stonecutting"
+        "recipes": "betterglass:progress_patterned_glass_from_progress_patterned_scratched_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:transfem_pattern"
+        "recipes": "betterglass:transfem_pattern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

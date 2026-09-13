@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:white_stained_clear_tinted_glass_pane_from_white_stained_scratched_tinted_glass_pane_stonecutting"
+        "recipes": "betterglass:white_stained_clear_tinted_glass_pane_from_white_stained_scratched_tinted_glass_pane_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

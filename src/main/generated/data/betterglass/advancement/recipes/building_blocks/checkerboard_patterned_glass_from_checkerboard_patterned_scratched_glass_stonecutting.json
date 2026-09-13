@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:checkerboard_patterned_glass_from_checkerboard_patterned_scratched_glass_stonecutting"
+        "recipes": "betterglass:checkerboard_patterned_glass_from_checkerboard_patterned_scratched_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

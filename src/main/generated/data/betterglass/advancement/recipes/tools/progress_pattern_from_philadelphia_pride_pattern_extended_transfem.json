@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:progress_pattern_from_philadelphia_pride_pattern_extended_transfem"
+        "recipes": "betterglass:progress_pattern_from_philadelphia_pride_pattern_extended_transfem"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

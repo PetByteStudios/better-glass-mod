@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:bigender_patterned_glass_pane_from_bigender_patterned_tinted_glass_pane_via_crafting_table"
+        "recipes": "betterglass:bigender_patterned_glass_pane_from_bigender_patterned_tinted_glass_pane_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

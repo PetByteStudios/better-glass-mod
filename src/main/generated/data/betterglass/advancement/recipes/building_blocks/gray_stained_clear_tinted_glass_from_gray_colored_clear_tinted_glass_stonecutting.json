@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:gray_stained_clear_tinted_glass_from_gray_colored_clear_tinted_glass_stonecutting"
+        "recipes": "betterglass:gray_stained_clear_tinted_glass_from_gray_colored_clear_tinted_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

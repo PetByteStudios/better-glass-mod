@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:blue_colored_tinted_glass_from_tinted_glass_via_crafting_table"
+        "recipes": "betterglass:blue_colored_tinted_glass_from_tinted_glass_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

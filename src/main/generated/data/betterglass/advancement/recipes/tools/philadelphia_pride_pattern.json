@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:philadelphia_pride_pattern"
+        "recipes": "betterglass:philadelphia_pride_pattern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

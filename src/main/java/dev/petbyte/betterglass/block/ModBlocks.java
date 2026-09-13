@@ -35,8 +35,7 @@ public class ModBlocks {
                 .noOcclusion()
                 .isValidSpawn(Blocks::never)
                 .isRedstoneConductor(Blocks::never)
-                .isSuffocating(Blocks::never)
-                .isViewBlocking(Blocks::never);
+                .isSuffocating(Blocks::never);
     }
 
     private static BlockBehaviour.Properties glassPaneProperties() {

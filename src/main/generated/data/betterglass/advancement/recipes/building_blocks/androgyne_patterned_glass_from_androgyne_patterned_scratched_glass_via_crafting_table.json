@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:androgyne_patterned_glass_from_androgyne_patterned_scratched_glass_via_crafting_table"
+        "recipes": "betterglass:androgyne_patterned_glass_from_androgyne_patterned_scratched_glass_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

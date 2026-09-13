@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:aroace_patterned_tinted_glass_pane_by_pattern_via_crafting_table"
+        "recipes": "betterglass:aroace_patterned_tinted_glass_pane_by_pattern_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

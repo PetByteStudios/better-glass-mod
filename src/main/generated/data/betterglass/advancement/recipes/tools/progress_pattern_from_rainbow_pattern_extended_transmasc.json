@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:progress_pattern_from_rainbow_pattern_extended_transmasc"
+        "recipes": "betterglass:progress_pattern_from_rainbow_pattern_extended_transmasc"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

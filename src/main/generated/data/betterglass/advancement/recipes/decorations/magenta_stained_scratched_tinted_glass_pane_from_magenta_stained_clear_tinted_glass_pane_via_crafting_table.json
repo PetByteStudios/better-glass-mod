@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:magenta_stained_scratched_tinted_glass_pane_from_magenta_stained_clear_tinted_glass_pane_via_crafting_table"
+        "recipes": "betterglass:magenta_stained_scratched_tinted_glass_pane_from_magenta_stained_clear_tinted_glass_pane_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

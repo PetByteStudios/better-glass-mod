@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:pink_colored_scratched_glass_from_other_colored_scratched_glass_via_crafting_table"
+        "recipes": "betterglass:pink_colored_scratched_glass_from_other_colored_scratched_glass_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

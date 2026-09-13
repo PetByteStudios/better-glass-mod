@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:polyamory_patterned_tinted_glass_from_polyamory_patterned_scratched_tinted_glass_stonecutting"
+        "recipes": "betterglass:polyamory_patterned_tinted_glass_from_polyamory_patterned_scratched_tinted_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:demigender_pattern"
+        "recipes": "betterglass:demigender_pattern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

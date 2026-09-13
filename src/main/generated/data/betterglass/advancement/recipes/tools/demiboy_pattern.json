@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:demiboy_pattern"
+        "recipes": "betterglass:demiboy_pattern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

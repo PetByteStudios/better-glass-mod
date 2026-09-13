@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:philadelphia_pride_patterned_scratched_tinted_glass_pane_from_philadelphia_pride_patterned_scratched_glass_pane_via_crafting_table"
+        "recipes": "betterglass:philadelphia_pride_patterned_scratched_tinted_glass_pane_from_philadelphia_pride_patterned_scratched_glass_pane_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

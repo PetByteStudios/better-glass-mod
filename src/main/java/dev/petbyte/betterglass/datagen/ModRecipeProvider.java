@@ -7,17 +7,19 @@ import dev.petbyte.betterglass.tag.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import org.jspecify.annotations.NonNull;
@@ -168,8 +170,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     );
 
     @Override
-    protected @NonNull RecipeProvider createRecipeProvider(HolderLookup.@NonNull Provider registries, @NonNull RecipeOutput output) {
-        return new RecipeProvider(registries, output) {
+    protected @NonNull RecipeProvider createRecipeProvider(
+            HolderLookup.@NonNull Provider registries,
+            @NonNull BootstrapContext<Recipe<?>> recipes,
+            @NonNull BootstrapContext<Advancement> advancements) {
+        return new RecipeProvider(recipes, advancements) {
             @Override
             public void buildRecipes() {
                 reDyeCraftingTable("colored_clear_glass_block", ModBlocks.COLORED_CLEAR_GLASS, RecipeCategory.BUILDING_BLOCKS);

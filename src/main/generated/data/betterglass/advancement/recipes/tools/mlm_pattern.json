@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:mlm_pattern"
+        "recipes": "betterglass:mlm_pattern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

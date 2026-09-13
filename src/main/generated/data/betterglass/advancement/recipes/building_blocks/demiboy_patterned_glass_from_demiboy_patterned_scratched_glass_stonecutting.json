@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:demiboy_patterned_glass_from_demiboy_patterned_scratched_glass_stonecutting"
+        "recipes": "betterglass:demiboy_patterned_glass_from_demiboy_patterned_scratched_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:magenta_stained_glass_from_magenta_colored_vanilla_glass_stonecutting"
+        "recipes": "betterglass:magenta_stained_glass_from_magenta_colored_vanilla_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

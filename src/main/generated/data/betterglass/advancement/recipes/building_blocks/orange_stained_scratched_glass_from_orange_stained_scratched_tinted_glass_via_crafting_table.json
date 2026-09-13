@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:orange_stained_scratched_glass_from_orange_stained_scratched_tinted_glass_via_crafting_table"
+        "recipes": "betterglass:orange_stained_scratched_glass_from_orange_stained_scratched_tinted_glass_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

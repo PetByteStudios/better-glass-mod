@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:intersex_patterned_tinted_glass_from_intersex_patterned_scratched_tinted_glass_stonecutting"
+        "recipes": "betterglass:intersex_patterned_tinted_glass_from_intersex_patterned_scratched_tinted_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

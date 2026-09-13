@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:pansexual_patterned_tinted_glass_from_pansexual_patterned_clear_tinted_glass_stonecutting"
+        "recipes": "betterglass:pansexual_patterned_tinted_glass_from_pansexual_patterned_clear_tinted_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

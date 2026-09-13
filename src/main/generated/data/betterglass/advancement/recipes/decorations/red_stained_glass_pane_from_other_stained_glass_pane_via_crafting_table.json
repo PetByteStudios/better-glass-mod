@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:red_stained_glass_pane_from_other_stained_glass_pane_via_crafting_table"
+        "recipes": "betterglass:red_stained_glass_pane_from_other_stained_glass_pane_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

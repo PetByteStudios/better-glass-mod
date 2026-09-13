@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:transgender_patterned_clear_glass_from_transgender_patterned_glass_stonecutting"
+        "recipes": "betterglass:transgender_patterned_clear_glass_from_transgender_patterned_glass_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

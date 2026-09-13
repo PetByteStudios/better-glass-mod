@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:transmasc_patterned_tinted_glass_pane_from_transmasc_patterned_clear_tinted_glass_pane_stonecutting"
+        "recipes": "betterglass:transmasc_patterned_tinted_glass_pane_from_transmasc_patterned_clear_tinted_glass_pane_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

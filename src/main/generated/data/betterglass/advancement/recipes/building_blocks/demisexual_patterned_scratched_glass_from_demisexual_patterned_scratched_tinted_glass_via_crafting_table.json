@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:demisexual_patterned_scratched_glass_from_demisexual_patterned_scratched_tinted_glass_via_crafting_table"
+        "recipes": "betterglass:demisexual_patterned_scratched_glass_from_demisexual_patterned_scratched_tinted_glass_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

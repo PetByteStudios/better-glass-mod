@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:magenta_stained_tinted_glass_from_magenta_stained_glass_via_crafting_table"
+        "recipes": "betterglass:magenta_stained_tinted_glass_from_magenta_stained_glass_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

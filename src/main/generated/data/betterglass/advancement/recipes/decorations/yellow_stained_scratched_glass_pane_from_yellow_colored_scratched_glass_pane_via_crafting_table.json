@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterglass:yellow_stained_scratched_glass_pane_from_yellow_colored_scratched_glass_pane_via_crafting_table"
+        "recipes": "betterglass:yellow_stained_scratched_glass_pane_from_yellow_colored_scratched_glass_pane_via_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
